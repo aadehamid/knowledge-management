@@ -146,12 +146,34 @@ def convert_pdfs(pdfs: list[Path], output_dir: Path) -> int:
     for i, pdf in enumerate(pdfs, 1):
         print(f"\n[{i}/{len(pdfs)}] Converting: {pdf.name}")
         try:
-            text = pymupdf4llm.to_markdown(str(pdf))
+            # Create a per-paper image directory
+            img_dir = output_dir / f"{pdf.stem}_images"
+            img_dir.mkdir(exist_ok=True)
+
+            # write_images=True extracts charts/figures as PNGs and
+            # inserts markdown image links at the exact position they
+            # appear in the text, preserving the document flow.
+            # image_path sets where the PNGs are saved.
+            text = pymupdf4llm.to_markdown(
+                str(pdf),
+                write_images=True,
+                image_path=str(img_dir),
+                image_format="png",
+                dpi=150,
+            )
 
             # Write markdown
             md_path = output_dir / f"{pdf.stem}.md"
             md_path.write_text(text, encoding="utf-8")
-            print(f"  → {md_path.name}")
+
+            # Count extracted images
+            img_count = len(list(img_dir.glob("*.png")))
+            if img_count:
+                print(f"  → {md_path.name} + {img_count} chart(s)/figure(s)")
+            else:
+                # Remove empty image dir
+                img_dir.rmdir()
+                print(f"  → {md_path.name}")
 
             successes += 1
         except Exception as e:
