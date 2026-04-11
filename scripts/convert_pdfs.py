@@ -6,9 +6,23 @@ This uses PyMuPDF under the hood — lightweight (no PyTorch), fast, and
 produces clean Markdown from digital PDFs. For scanned/image-only PDFs
 that need OCR, consider marker-pdf (requires more disk space + GPU).
 
-Supports two input modes:
-  1. PDF files manually placed in resources/pdfs/
-  2. URLs listed in resources/pdfs/urls.txt (one per line)
+PDFs are organized by subject area. Each subject is a subdirectory:
+
+    resources/pdfs/
+      transformers/
+        urls.txt          # URLs for this subject
+        manual_paper.pdf  # or drop PDFs directly
+      reinforcement-learning/
+        urls.txt
+
+    references/papers/
+      transformers/
+        1706.03762.md     # output mirrors the subject structure
+      reinforcement-learning/
+        some_paper.md
+
+To add a new subject, just create a folder under resources/pdfs/ and
+add a urls.txt or drop PDF files in it.
 
 Incremental: only processes PDFs that don't already have a corresponding
 markdown file in the output directory.
@@ -147,6 +161,22 @@ def convert_pdfs(pdfs: list[Path], output_dir: Path) -> int:
 
 
 # ---------------------------------------------------------------------------
+# STEP 4: Discover subject directories
+# ---------------------------------------------------------------------------
+# Each subdirectory under pdf_dir is a "subject" (e.g., transformers,
+# reinforcement-learning). The script processes each subject independently,
+# mirroring the folder structure in the output directory.
+# ---------------------------------------------------------------------------
+
+
+def discover_subjects(pdf_dir: Path) -> list[Path]:
+    """Return sorted list of subject subdirectories under pdf_dir."""
+    return sorted(
+        [d for d in pdf_dir.iterdir() if d.is_dir() and not d.name.startswith(".")]
+    )
+
+
+# ---------------------------------------------------------------------------
 # MAIN: tie it all together
 # ---------------------------------------------------------------------------
 
@@ -158,39 +188,60 @@ def main():
     parser.add_argument(
         "--pdf-dir",
         default="resources/pdfs",
-        help="Directory containing PDFs and urls.txt (default: resources/pdfs)",
+        help="Root directory containing subject subdirectories (default: resources/pdfs)",
     )
     parser.add_argument(
         "--output-dir",
         default="references/papers",
-        help="Directory for markdown output (default: references/papers)",
+        help="Root directory for markdown output (default: references/papers)",
     )
     args = parser.parse_args()
 
     pdf_dir = Path(args.pdf_dir).resolve()
     output_dir = Path(args.output_dir).resolve()
-    url_file = pdf_dir / "urls.txt"
 
     pdf_dir.mkdir(parents=True, exist_ok=True)
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    # Phase 1: Download any new PDFs from URLs
-    print("=== Phase 1: Checking for new URLs to download ===")
-    downloaded = download_pdfs_from_urls(url_file, pdf_dir)
-    print(f"Downloaded {len(downloaded)} new PDF(s)\n")
+    # Discover all subject subdirectories
+    subjects = discover_subjects(pdf_dir)
+    if not subjects:
+        print(f"No subject directories found under {pdf_dir}/")
+        print("Create a subject folder (e.g., resources/pdfs/transformers/) with a urls.txt to get started.")
+        return
 
-    # Phase 2: Find PDFs not yet converted
-    print("=== Phase 2: Finding unconverted PDFs ===")
-    to_convert = find_unconverted_pdfs(pdf_dir, output_dir)
-    print(f"Found {len(to_convert)} PDF(s) to convert\n")
+    print(f"Found {len(subjects)} subject(s): {', '.join(s.name for s in subjects)}\n")
 
-    # Phase 3: Convert
-    if to_convert:
-        print("=== Phase 3: Converting to Markdown ===")
-        successes = convert_pdfs(to_convert, output_dir)
-        print(f"\nDone: {successes}/{len(to_convert)} converted successfully")
-    else:
-        print("Nothing new to convert. All PDFs already have markdown output.")
+    total_converted = 0
+
+    for subject_dir in subjects:
+        subject = subject_dir.name
+        subject_output = output_dir / subject
+        subject_output.mkdir(parents=True, exist_ok=True)
+        url_file = subject_dir / "urls.txt"
+
+        print(f"\n{'='*60}")
+        print(f"Subject: {subject}")
+        print(f"{'='*60}")
+
+        # Phase 1: Download any new PDFs from URLs
+        downloaded = download_pdfs_from_urls(url_file, subject_dir)
+        if downloaded:
+            print(f"  Downloaded {len(downloaded)} new PDF(s)")
+
+        # Phase 2: Find PDFs not yet converted
+        to_convert = find_unconverted_pdfs(subject_dir, subject_output)
+
+        # Phase 3: Convert
+        if to_convert:
+            print(f"  Converting {len(to_convert)} PDF(s)...")
+            successes = convert_pdfs(to_convert, subject_output)
+            total_converted += successes
+        else:
+            print("  All PDFs already converted.")
+
+    print(f"\n{'='*60}")
+    print(f"Done: {total_converted} new file(s) converted across {len(subjects)} subject(s)")
 
 
 if __name__ == "__main__":
