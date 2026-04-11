@@ -24,6 +24,7 @@ Usage (from repo root):
 import json
 import re
 import shutil
+import subprocess
 import sys
 from pathlib import Path
 
@@ -63,10 +64,45 @@ def wiki_filename(meta: dict, original_stem: str) -> str:
     return f"{source_type}-{slug}.md"
 
 
-def sync_subject(subject: str, source_dir: Path, vault_dir: Path) -> int:
+def add_to_notebooklm(notebook_id: str, file_path: Path) -> bool:
+    """Add a markdown file as a source to a NotebookLM notebook via the nlm CLI."""
+    try:
+        result = subprocess.run(
+            ["nlm", "add", notebook_id, str(file_path)],
+            capture_output=True,
+            text=True,
+            timeout=60,
+        )
+        if result.returncode == 0:
+            print(f"    📓 Added to NotebookLM")
+            return True
+        # nlm CLI may fail to parse the response even though the upload
+        # succeeded (known bug).  Treat as success when the output shows
+        # it attempted the upload and the error is just JSON parsing.
+        combined = result.stdout + result.stderr
+        if "Adding source" in combined and "parse response JSON" in combined:
+            print(f"    📓 Added to NotebookLM (nlm response-parse warning ignored)")
+            return True
+        print(f"    ⚠️  NotebookLM add failed: {result.stderr.strip()}")
+        return False
+    except FileNotFoundError:
+        print("    ⚠️  nlm CLI not found — skipping NotebookLM sync")
+        return False
+    except subprocess.TimeoutExpired:
+        print("    ⚠️  nlm CLI timed out — skipping")
+        return False
+
+
+def sync_subject(
+    subject: str,
+    source_dir: Path,
+    vault_dir: Path,
+    notebooklm_id: str | None = None,
+) -> int:
     """
     Copy new/updated markdown + images from source_dir to vault_dir.
     Adds frontmatter and renames files per wiki schema.
+    Optionally adds new files to a NotebookLM notebook.
     Returns count of files synced.
     """
     if not source_dir.exists():
@@ -127,6 +163,10 @@ def sync_subject(subject: str, source_dir: Path, vault_dir: Path) -> int:
         print(f"  → {dest_name}")
         synced += 1
 
+        # Add to NotebookLM if configured
+        if notebooklm_id:
+            add_to_notebooklm(notebooklm_id, md_file)
+
         # Copy associated images folder if it exists
         img_dir = source_dir / original_img_dir_name
         if img_dir.exists():
@@ -152,6 +192,7 @@ def main():
 
     config = json.loads(config_path.read_text())
     subjects = config.get("subjects", {})
+    notebooklm = config.get("notebooklm", {})
 
     if not subjects:
         print("No subjects configured in sync_config.json")
@@ -166,12 +207,15 @@ def main():
 
         vault_path = Path(vault_path_str)
         source_path = papers_dir / subject
+        nlm_id = notebooklm.get(subject)
 
         print(f"\n[{subject}]")
         print(f"  From: {source_path}")
         print(f"  To:   {vault_path}")
+        if nlm_id:
+            print(f"  NLM:  {nlm_id}")
 
-        synced = sync_subject(subject, source_path, vault_path)
+        synced = sync_subject(subject, source_path, vault_path, notebooklm_id=nlm_id)
         if synced:
             total_synced += synced
         else:
