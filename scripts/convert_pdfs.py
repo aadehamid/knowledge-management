@@ -68,6 +68,16 @@ def is_pdf_url(url: str) -> bool:
     return path.endswith(".pdf")
 
 
+def is_pdf_source(meta: dict) -> bool:
+    """Check if a source should be treated as a PDF.
+    Uses source_type metadata first (explicit), falls back to URL detection.
+    This handles cases like Google Drive links where the URL doesn't end in .pdf."""
+    source_type = meta.get("source_type", "").lower()
+    if source_type in ("pdf", "paper"):
+        return True
+    return is_pdf_url(meta.get("url", ""))
+
+
 def parse_url_line(line: str) -> dict:
     """
     Parse a line from urls.txt in the format: url | title | source_type
@@ -107,12 +117,12 @@ def download_pdfs_from_urls(url_file: Path, pdf_dir: Path, output_dir: Path) -> 
             continue
 
         meta = parse_url_line(line)
-        if not is_pdf_url(meta["url"]):
+        if not is_pdf_source(meta):
             continue  # Web URLs handled separately
 
-        # Derive a filename from the URL
+        # Derive a filename from the URL or title
         url_path = urlparse(meta["url"]).path
-        filename = Path(url_path).stem or sanitize_filename(meta["url"])
+        filename = Path(url_path).stem or sanitize_filename(meta.get("title") or meta["url"])
         if not filename.endswith(".pdf"):
             filename += ".pdf"
         dest = pdf_dir / filename
@@ -165,7 +175,7 @@ def convert_web_urls(url_file: Path, output_dir: Path) -> int:
             continue
 
         meta = parse_url_line(line)
-        if is_pdf_url(meta["url"]):
+        if is_pdf_source(meta):
             continue  # PDFs handled separately
 
         # Derive a filename from the URL path
