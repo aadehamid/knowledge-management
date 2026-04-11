@@ -1,2 +1,2 @@
-marker-pdf
+pymupdf4llm
 requests

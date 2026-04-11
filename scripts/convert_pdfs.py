@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """
-Convert PDF files to Markdown using marker-pdf.
+Convert PDF files to Markdown using pymupdf4llm.
+
+This uses PyMuPDF under the hood — lightweight (no PyTorch), fast, and
+produces clean Markdown from digital PDFs. For scanned/image-only PDFs
+that need OCR, consider marker-pdf (requires more disk space + GPU).
 
 Supports two input modes:
   1. PDF files manually placed in resources/pdfs/
@@ -108,12 +112,11 @@ def find_unconverted_pdfs(pdf_dir: Path, output_dir: Path) -> list[Path]:
 
 
 # ---------------------------------------------------------------------------
-# STEP 3: Convert PDFs to Markdown using Marker
+# STEP 3: Convert PDFs to Markdown using pymupdf4llm
 # ---------------------------------------------------------------------------
-# Marker loads several ML models (OCR, layout detection, table recognition)
-# into memory. We initialize them ONCE and reuse across all files. This is
-# important — loading models is slow (~10-30s), but conversion per file is
-# fast once models are loaded.
+# pymupdf4llm is lightweight (~50MB vs ~10GB for marker-pdf). It uses
+# PyMuPDF to extract text with layout awareness and outputs clean
+# Markdown. No ML models needed — conversion is near-instant.
 # ---------------------------------------------------------------------------
 
 
@@ -123,34 +126,18 @@ def convert_pdfs(pdfs: list[Path], output_dir: Path) -> int:
         print("No new PDFs to convert.")
         return 0
 
-    # Lazy import so the script starts fast (model loading is heavy)
-    from marker.converters.pdf import PdfConverter
-    from marker.models import create_model_dict
-    from marker.output import text_from_rendered
-
-    print("Loading Marker models (this may take a moment on first run)...")
-    converter = PdfConverter(artifact_dict=create_model_dict())
+    import pymupdf4llm
 
     successes = 0
     for i, pdf in enumerate(pdfs, 1):
         print(f"\n[{i}/{len(pdfs)}] Converting: {pdf.name}")
         try:
-            rendered = converter(str(pdf))
-            text, _, images = text_from_rendered(rendered)
+            text = pymupdf4llm.to_markdown(str(pdf))
 
             # Write markdown
             md_path = output_dir / f"{pdf.stem}.md"
             md_path.write_text(text, encoding="utf-8")
-
-            # Save extracted images (diagrams, figures, etc.)
-            if images:
-                img_dir = output_dir / f"{pdf.stem}_images"
-                img_dir.mkdir(exist_ok=True)
-                for img_name, img_data in images.items():
-                    img_data.save(str(img_dir / img_name))
-                print(f"  → {md_path.name} + {len(images)} images")
-            else:
-                print(f"  → {md_path.name}")
+            print(f"  → {md_path.name}")
 
             successes += 1
         except Exception as e:
