@@ -1,9 +1,7 @@
-# PDF URLs to download and convert to markdown.
-# One URL per line. Blank lines and lines starting with # are ignored.
-#
-# Examples:
-# https://arxiv.org/pdf/1706.03762.pdf
+# Source URLs with metadata for conversion to markdown.
+# Format: url | title | source_type
+# source_type: paper, blog, video, course, code, thread, pdf, doc
+# Blank lines and lines starting with # are ignored.
 
-# Test paper - Attention Is All You Need (Vaswani et al., 2017)
-https://arxiv.org/pdf/1706.03762.pdf
+https://arxiv.org/pdf/1706.03762.pdf | Attention Is All You Need | paper
 # https://arxiv.org/pdf/2005.14165.pdf

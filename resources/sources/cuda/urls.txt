@@ -1,5 +1,6 @@
-# CUDA subject area - URLs for PDF and HTML sources
-# One URL per line. Blank lines and lines starting with # are ignored.
+# CUDA subject area - URLs with metadata.
+# Format: url | title | source_type
+# source_type: paper, blog, video, course, code, thread, pdf, doc
+# Blank lines and lines starting with # are ignored.
 
-# NVIDIA CUDA Programming Guide
-https://docs.nvidia.com/cuda/cuda-programming-guide/index.html
+https://docs.nvidia.com/cuda/cuda-programming-guide/index.html | CUDA Programming Guide | doc

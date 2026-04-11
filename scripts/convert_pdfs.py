@@ -37,8 +37,10 @@ Or with custom paths:
 """
 
 import argparse
+import json
 import re
 import sys
+from datetime import date
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -66,11 +68,32 @@ def is_pdf_url(url: str) -> bool:
     return path.endswith(".pdf")
 
 
-def download_pdfs_from_urls(url_file: Path, pdf_dir: Path) -> list[Path]:
+def parse_url_line(line: str) -> dict:
+    """
+    Parse a line from urls.txt in the format: url | title | source_type
+    Falls back gracefully if title/source_type are missing.
+    """
+    parts = [p.strip() for p in line.split("|")]
+    return {
+        "url": parts[0],
+        "title": parts[1] if len(parts) > 1 else "",
+        "source_type": parts[2] if len(parts) > 2 else "pdf" if is_pdf_url(parts[0]) else "doc",
+    }
+
+
+def save_metadata(output_dir: Path, stem: str, meta: dict) -> None:
+    """Save a .meta.json sidecar file alongside the converted markdown."""
+    meta_path = output_dir / f"{stem}.meta.json"
+    meta["fetched_at"] = str(date.today())
+    meta_path.write_text(json.dumps(meta, indent=2), encoding="utf-8")
+
+
+def download_pdfs_from_urls(url_file: Path, pdf_dir: Path, output_dir: Path) -> list[Path]:
     """
     Read urls.txt, download any PDFs not already present in pdf_dir.
     Returns list of newly downloaded PDF paths.
-    Non-PDF URLs are skipped here (handled by convert_web_urls).
+    Also saves .meta.json sidecar for each PDF so the sync script
+    can add frontmatter later.
     """
     if not url_file.exists():
         return []
@@ -83,22 +106,27 @@ def download_pdfs_from_urls(url_file: Path, pdf_dir: Path) -> list[Path]:
         if not line or line.startswith("#"):
             continue
 
-        if not is_pdf_url(line):
+        meta = parse_url_line(line)
+        if not is_pdf_url(meta["url"]):
             continue  # Web URLs handled separately
 
         # Derive a filename from the URL
-        url_path = urlparse(line).path
-        filename = Path(url_path).stem or sanitize_filename(line)
+        url_path = urlparse(meta["url"]).path
+        filename = Path(url_path).stem or sanitize_filename(meta["url"])
         if not filename.endswith(".pdf"):
             filename += ".pdf"
         dest = pdf_dir / filename
 
+        # Save metadata sidecar (even if PDF already downloaded,
+        # in case metadata was added/updated in urls.txt)
+        save_metadata(output_dir, Path(filename).stem, meta)
+
         if dest.exists():
             continue  # Already downloaded
 
-        print(f"  Downloading PDF: {line}")
+        print(f"  Downloading PDF: {meta['url']}")
         try:
-            resp = requests.get(line, timeout=60, allow_redirects=True)
+            resp = requests.get(meta["url"], timeout=60, allow_redirects=True)
             resp.raise_for_status()
 
             content_type = resp.headers.get("content-type", "")
@@ -118,6 +146,7 @@ def download_pdfs_from_urls(url_file: Path, pdf_dir: Path) -> list[Path]:
 def convert_web_urls(url_file: Path, output_dir: Path) -> int:
     """
     Convert non-PDF URLs (HTML pages) directly to markdown via markitdown.
+    Also saves .meta.json sidecar for each URL.
     Returns count of successfully converted URLs.
     """
     if not url_file.exists():
@@ -135,25 +164,28 @@ def convert_web_urls(url_file: Path, output_dir: Path) -> int:
         if not line or line.startswith("#"):
             continue
 
-        if is_pdf_url(line):
+        meta = parse_url_line(line)
+        if is_pdf_url(meta["url"]):
             continue  # PDFs handled separately
 
         # Derive a filename from the URL path
-        url_path = urlparse(line).path.rstrip("/")
-        stem = Path(url_path).stem or sanitize_filename(line)
+        url_path = urlparse(meta["url"]).path.rstrip("/")
+        stem = Path(url_path).stem or sanitize_filename(meta["url"])
         if stem == "index":
-            # Use parent directory name for index.html pages
             parts = [p for p in url_path.split("/") if p and p != "index.html"]
-            stem = parts[-1] if parts else sanitize_filename(line)
+            stem = parts[-1] if parts else sanitize_filename(meta["url"])
 
         if stem in existing_md:
-            continue  # Already converted
+            # Still save/update metadata even if already converted
+            save_metadata(output_dir, stem, meta)
+            continue
 
-        print(f"  Converting web page: {line}")
+        print(f"  Converting web page: {meta['url']}")
         try:
-            result = md_converter.convert_url(line)
+            result = md_converter.convert_url(meta["url"])
             md_path = output_dir / f"{stem}.md"
             md_path.write_text(result.text_content, encoding="utf-8")
+            save_metadata(output_dir, stem, meta)
             print(f"    → {md_path.name}")
             successes += 1
         except Exception as e:
@@ -300,7 +332,7 @@ def main():
         print(f"{'='*60}")
 
         # Phase 1: Download any new PDFs from URLs
-        downloaded = download_pdfs_from_urls(url_file, subject_dir)
+        downloaded = download_pdfs_from_urls(url_file, subject_dir, subject_output)
         if downloaded:
             print(f"  Downloaded {len(downloaded)} new PDF(s)")
 
