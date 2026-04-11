@@ -57,3 +57,7 @@ logs/
 # Temp files
 tmp/
 temp/
+
+# PDFs — downloaded at runtime from urls.txt, not stored in git
+# (keeps repo size small; commit urls.txt instead)
+resources/pdfs/*.pdf

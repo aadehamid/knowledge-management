@@ -1,0 +1,6 @@
+# PDF URLs to download and convert to markdown.
+# One URL per line. Blank lines and lines starting with # are ignored.
+#
+# Examples:
+# https://arxiv.org/pdf/1706.03762.pdf
+# https://arxiv.org/pdf/2005.14165.pdf
