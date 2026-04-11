@@ -1,37 +1,39 @@
 #!/usr/bin/env python3
 """
-Convert PDF files to Markdown using pymupdf4llm.
+Convert PDFs and web pages to Markdown.
 
-This uses PyMuPDF under the hood — lightweight (no PyTorch), fast, and
-produces clean Markdown from digital PDFs. For scanned/image-only PDFs
-that need OCR, consider marker-pdf (requires more disk space + GPU).
+Uses two converters:
+  - pymupdf4llm for PDFs (lightweight, extracts images in-place)
+  - markitdown for web pages / HTML URLs
 
-PDFs are organized by subject area. Each subject is a subdirectory:
+The script auto-detects the source type from each URL.
 
-    resources/pdfs/
+Sources are organized by subject area. Each subject is a subdirectory:
+
+    resources/sources/
       transformers/
-        urls.txt          # URLs for this subject
-        manual_paper.pdf  # or drop PDFs directly
-      reinforcement-learning/
+        urls.txt              # URLs (PDF or HTML) for this subject
+        manual_paper.pdf      # or drop PDFs directly
+      cuda/
         urls.txt
 
     references/papers/
       transformers/
-        1706.03762.md     # output mirrors the subject structure
-      reinforcement-learning/
-        some_paper.md
+        1706.03762.md         # output mirrors the subject structure
+      cuda/
+        cuda-programming-guide.md
 
-To add a new subject, just create a folder under resources/pdfs/ and
+To add a new subject, just create a folder under resources/sources/ and
 add a urls.txt or drop PDF files in it.
 
-Incremental: only processes PDFs that don't already have a corresponding
+Incremental: only processes sources that don't already have a corresponding
 markdown file in the output directory.
 
 Usage (from repo root):
     python scripts/convert_pdfs.py
 
 Or with custom paths:
-    python scripts/convert_pdfs.py --pdf-dir /path/to/pdfs --output-dir /path/to/output
+    python scripts/convert_pdfs.py --source-dir /path/to/sources --output-dir /path/to/output
 """
 
 import argparse
@@ -43,11 +45,11 @@ from urllib.parse import urlparse
 import requests
 
 # ---------------------------------------------------------------------------
-# STEP 1: Download PDFs from URLs
+# STEP 1: Classify and process URLs
 # ---------------------------------------------------------------------------
-# Why a separate step? Some PDFs live on the web (arxiv, blogs, etc.) and
-# we want to fetch them once, save them locally, and then convert. This
-# keeps the conversion step uniform — it always works on local files.
+# URLs can point to PDFs or web pages. We detect the type by checking
+# the URL extension and HTTP content-type header. PDFs are downloaded
+# locally; web pages are converted directly to markdown via markitdown.
 # ---------------------------------------------------------------------------
 
 
@@ -58,15 +60,17 @@ def sanitize_filename(name: str) -> str:
     return name[:100]  # cap length
 
 
+def is_pdf_url(url: str) -> bool:
+    """Guess if a URL points to a PDF from its path."""
+    path = urlparse(url).path.lower()
+    return path.endswith(".pdf")
+
+
 def download_pdfs_from_urls(url_file: Path, pdf_dir: Path) -> list[Path]:
     """
     Read urls.txt, download any PDFs not already present in pdf_dir.
     Returns list of newly downloaded PDF paths.
-
-    Each line in urls.txt is either:
-      - A direct PDF URL (https://arxiv.org/pdf/2301.00001.pdf)
-      - A URL that redirects to a PDF
-    Blank lines and lines starting with # are skipped.
+    Non-PDF URLs are skipped here (handled by convert_web_urls).
     """
     if not url_file.exists():
         return []
@@ -79,6 +83,9 @@ def download_pdfs_from_urls(url_file: Path, pdf_dir: Path) -> list[Path]:
         if not line or line.startswith("#"):
             continue
 
+        if not is_pdf_url(line):
+            continue  # Web URLs handled separately
+
         # Derive a filename from the URL
         url_path = urlparse(line).path
         filename = Path(url_path).stem or sanitize_filename(line)
@@ -89,12 +96,11 @@ def download_pdfs_from_urls(url_file: Path, pdf_dir: Path) -> list[Path]:
         if dest.exists():
             continue  # Already downloaded
 
-        print(f"  Downloading: {line}")
+        print(f"  Downloading PDF: {line}")
         try:
             resp = requests.get(line, timeout=60, allow_redirects=True)
             resp.raise_for_status()
 
-            # Verify we actually got a PDF (not an HTML error page)
             content_type = resp.headers.get("content-type", "")
             if "pdf" not in content_type and not resp.content[:5] == b"%PDF-":
                 print(f"    SKIP: URL did not return a PDF ({content_type})")
@@ -107,6 +113,53 @@ def download_pdfs_from_urls(url_file: Path, pdf_dir: Path) -> list[Path]:
             print(f"    ERROR downloading: {e}", file=sys.stderr)
 
     return new_downloads
+
+
+def convert_web_urls(url_file: Path, output_dir: Path) -> int:
+    """
+    Convert non-PDF URLs (HTML pages) directly to markdown via markitdown.
+    Returns count of successfully converted URLs.
+    """
+    if not url_file.exists():
+        return 0
+
+    from markitdown import MarkItDown
+
+    md_converter = MarkItDown()
+    existing_md = {p.stem for p in output_dir.glob("*.md")}
+    lines = url_file.read_text().strip().splitlines()
+    successes = 0
+
+    for line in lines:
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+
+        if is_pdf_url(line):
+            continue  # PDFs handled separately
+
+        # Derive a filename from the URL path
+        url_path = urlparse(line).path.rstrip("/")
+        stem = Path(url_path).stem or sanitize_filename(line)
+        if stem == "index":
+            # Use parent directory name for index.html pages
+            parts = [p for p in url_path.split("/") if p and p != "index.html"]
+            stem = parts[-1] if parts else sanitize_filename(line)
+
+        if stem in existing_md:
+            continue  # Already converted
+
+        print(f"  Converting web page: {line}")
+        try:
+            result = md_converter.convert_url(line)
+            md_path = output_dir / f"{stem}.md"
+            md_path.write_text(result.text_content, encoding="utf-8")
+            print(f"    → {md_path.name}")
+            successes += 1
+        except Exception as e:
+            print(f"    ERROR: {e}", file=sys.stderr)
+
+    return successes
 
 
 # ---------------------------------------------------------------------------
@@ -205,12 +258,12 @@ def discover_subjects(pdf_dir: Path) -> list[Path]:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Convert PDFs to Markdown (incremental, with URL support)"
+        description="Convert PDFs and web pages to Markdown (incremental, by subject)"
     )
     parser.add_argument(
-        "--pdf-dir",
-        default="resources/pdfs",
-        help="Root directory containing subject subdirectories (default: resources/pdfs)",
+        "--source-dir",
+        default="resources/sources",
+        help="Root directory containing subject subdirectories (default: resources/sources)",
     )
     parser.add_argument(
         "--output-dir",
@@ -219,17 +272,17 @@ def main():
     )
     args = parser.parse_args()
 
-    pdf_dir = Path(args.pdf_dir).resolve()
+    source_dir = Path(args.source_dir).resolve()
     output_dir = Path(args.output_dir).resolve()
 
-    pdf_dir.mkdir(parents=True, exist_ok=True)
+    source_dir.mkdir(parents=True, exist_ok=True)
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # Discover all subject subdirectories
-    subjects = discover_subjects(pdf_dir)
+    subjects = discover_subjects(source_dir)
     if not subjects:
-        print(f"No subject directories found under {pdf_dir}/")
-        print("Create a subject folder (e.g., resources/pdfs/transformers/) with a urls.txt to get started.")
+        print(f"No subject directories found under {source_dir}/")
+        print("Create a subject folder (e.g., resources/sources/transformers/) with a urls.txt to get started.")
         return
 
     print(f"Found {len(subjects)} subject(s): {', '.join(s.name for s in subjects)}\n")
@@ -251,10 +304,13 @@ def main():
         if downloaded:
             print(f"  Downloaded {len(downloaded)} new PDF(s)")
 
-        # Phase 2: Find PDFs not yet converted
-        to_convert = find_unconverted_pdfs(subject_dir, subject_output)
+        # Phase 2: Convert web page URLs directly to markdown
+        web_converted = convert_web_urls(url_file, subject_output)
+        if web_converted:
+            total_converted += web_converted
 
-        # Phase 3: Convert
+        # Phase 3: Find and convert unconverted PDFs
+        to_convert = find_unconverted_pdfs(subject_dir, subject_output)
         if to_convert:
             print(f"  Converting {len(to_convert)} PDF(s)...")
             successes = convert_pdfs(to_convert, subject_output)
