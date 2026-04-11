@@ -3,4 +3,7 @@
 #
 # Examples:
 # https://arxiv.org/pdf/1706.03762.pdf
+
+# Test paper - Attention Is All You Need (Vaswani et al., 2017)
+https://arxiv.org/pdf/1706.03762.pdf
 # https://arxiv.org/pdf/2005.14165.pdf
