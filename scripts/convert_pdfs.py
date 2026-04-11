@@ -120,9 +120,15 @@ def download_pdfs_from_urls(url_file: Path, pdf_dir: Path, output_dir: Path) -> 
         if not is_pdf_source(meta):
             continue  # Web URLs handled separately
 
-        # Derive a filename from the URL or title
+        # Derive a filename — prefer title for non-standard URLs
+        # (e.g., Google Drive /uc paths produce useless stems like "uc")
         url_path = urlparse(meta["url"]).path
-        filename = Path(url_path).stem or sanitize_filename(meta.get("title") or meta["url"])
+        url_stem = Path(url_path).stem
+        generic_stems = {"uc", "download", "export", "file", "index", ""}
+        if meta.get("title") and url_stem.lower() in generic_stems:
+            filename = sanitize_filename(meta["title"])
+        else:
+            filename = url_stem or sanitize_filename(meta.get("title") or meta["url"])
         if not filename.endswith(".pdf"):
             filename += ".pdf"
         dest = pdf_dir / filename
