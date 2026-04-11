@@ -1,0 +1,42 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Secrets & credentials
+*.env
+.env.*
+secrets/
+credentials/
+
+# Logs
+*.log
+logs/
+
+# Temp files
+tmp/
+temp/

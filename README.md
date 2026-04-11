@@ -6,7 +6,13 @@ A personal knowledge management repository for organizing notes, references, and
 
 ```
 knowledge-management/
-├── README.md
+├── notes/          # Atomic notes, fleeting thoughts, and evergreen content
+├── references/     # Books, papers, articles, and external resources
+├── projects/       # Project-specific knowledge, decisions, and documentation
+├── resources/      # Reusable assets, datasets, and supporting materials
+├── templates/      # Reusable document and note templates
+├── .gitignore
+└── README.md
 ```
 
 ## Getting Started
