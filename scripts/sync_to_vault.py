@@ -100,16 +100,23 @@ def sync_subject(subject: str, source_dir: Path, vault_dir: Path) -> int:
         # Read the full original markdown body
         original_body = md_file.read_text(encoding="utf-8")
 
-        # Fix image paths: update references from the original image
-        # directory name to the wiki-schema-based name so Obsidian
-        # can find them in the same folder.
+        # Fix image paths: pymupdf4llm may generate paths like
+        # "references/papers/transformers/1706.03762_images/img.png"
+        # but in the vault, images sit next to the .md file. We use
+        # regex to strip any path prefix before the _images/ folder
+        # and rename to the wiki-schema-based directory name.
         original_img_dir_name = f"{md_file.stem}_images"
         wiki_stem = dest_name.removesuffix(".md")
         new_img_dir_name = f"{wiki_stem}_images"
-        if original_img_dir_name != new_img_dir_name:
-            original_body = original_body.replace(
-                original_img_dir_name, new_img_dir_name
-            )
+
+        # Match any path prefix ending with the original _images dir
+        # e.g. "references/papers/transformers/1706.03762_images/"
+        # or just "1706.03762_images/" — replace with new name only
+        original_body = re.sub(
+            r"[^\s()!\[\]]*" + re.escape(original_img_dir_name),
+            new_img_dir_name,
+            original_body,
+        )
 
         # Build frontmatter + full body
         frontmatter = build_frontmatter(meta)
