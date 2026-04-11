@@ -13,12 +13,29 @@
 __pycache__/
 *.py[cod]
 *.pyo
+*.pyd
 .env
 .venv/
 venv/
+env/
 *.egg-info/
 dist/
 build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+coverage.xml
+pyproject.toml.bak
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+*.dockerfile.swp
+.docker/
 
 # Node
 node_modules/
