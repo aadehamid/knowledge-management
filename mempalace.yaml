@@ -1,0 +1,35 @@
+wing: knowledge_management
+rooms:
+- name: research
+  description: Files from references/
+  keywords:
+  - research
+  - references
+- name: projects
+  description: Files from projects/
+  keywords:
+  - projects
+  - projects
+- name: resources
+  description: Files from resources/
+  keywords:
+  - resources
+  - resources
+- name: documentation
+  description: Files from notes/
+  keywords:
+  - documentation
+  - notes
+- name: scripts
+  description: Files from scripts/
+  keywords:
+  - scripts
+  - scripts
+- name: templates
+  description: Files from templates/
+  keywords:
+  - templates
+  - templates
+- name: general
+  description: Files that don't fit other rooms
+  keywords: []
