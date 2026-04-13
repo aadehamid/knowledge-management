@@ -8,3 +8,4 @@ https://arxiv.org/pdf/1706.03762.pdf | Attention Is All You Need | paper
 
 
 https://drive.google.com/uc?export=download&id=1bLB2xnuEKgy_rCxwW5tx-zSJ5IK8MhgM | Lucas Beyer Intro to Transformers | pdf
+https://fleetwood.dev/posts/you-could-have-designed-SOTA-positional-encoding | Positional Enconding Intuition | blog
