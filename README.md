@@ -83,7 +83,17 @@ Blank lines and lines starting with `#` are ignored.
    }
    ```
 
-3. Commit, push, and follow steps 3-5 from above.
+3. *(Optional)* Register a NotebookLM notebook for the subject so new markdown is synced to NotebookLM via the `nlm` CLI. Add the notebook ID under `notebooklm` in `sync_config.json`:
+   ```json
+   {
+     "notebooklm": {
+       "<new-subject>": "<notebook-id>"
+     }
+   }
+   ```
+   If omitted, only the NotebookLM push is skipped for this subject — the Obsidian vault sync (`sync_to_vault.py`) still runs normally.
+
+4. Commit, push, and follow steps 3-5 from above.
 
 ### Converters used
 
