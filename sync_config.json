@@ -1,9 +1,10 @@
 {
   "subjects": {
     "transformers": "/Users/hamidadesokan/Documents/Master Sync/Transformer from Scratch/Raw",
-    "cuda": ""
+    "cuda": "/Users/hamidadesokan/Documents/Master Sync/CUDA from Scratch/Raw"
   },
   "notebooklm": {
-    "transformers": "7fb8c920-8945-4577-a5f9-fe4bd97b560c"
+    "transformers": "7fb8c920-8945-4577-a5f9-fe4bd97b560c",
+    "cuda": "45808d79-6a6f-4e2a-abd7-299a023a6bec"
   }
 }
