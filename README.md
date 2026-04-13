@@ -93,7 +93,16 @@ Blank lines and lines starting with `#` are ignored.
    ```
    If omitted, only the NotebookLM push is skipped for this subject — the Obsidian vault sync (`sync_to_vault.py`) still runs normally.
 
-4. Commit, push, and follow steps 3-5 from above.
+4. Create the Obsidian vault for the subject area with the required layer folders:
+   ```sh
+   mkdir -p "/path/to/obsidian/vault/<new-subject>"/{Raw,Wiki,"Learning Path"}
+   cp "/path/to/obsidian/vault/<existing-subject>/CLAUDE.md" "/path/to/obsidian/vault/<new-subject>/CLAUDE.md"
+   ```
+   Then **adapt the cloned `CLAUDE.md` to the new domain** — strip every term, example, and Learning Path stage scope that belongs to the sibling subject, and substitute domain-native terms. A schema clone is a starting point, not a drop-in.
+
+5. **Run the vault bootstrap workflow** (defined in the vault's own `CLAUDE.md`, section "Bootstrap workflow"). This is a **mandatory one-time step** for every new subject-area vault. The bootstrap creates `Wiki/index.md`, `Wiki/log.md`, `Wiki/overview.md`, plus stub entity/concept pages for the domain's core terms, plus empty `Learning Path/` stage files. Without bootstrap, the first ingest has nothing to link into — summaries end up as orphans and the wiki graph-connectivity invariant is broken.
+
+6. Commit, push, and follow steps 3-5 from the "Adding a source to an existing subject" section above.
 
 ### Converters used
 
