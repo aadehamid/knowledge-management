@@ -4,3 +4,4 @@
 # Blank lines and lines starting with # are ignored.
 
 https://docs.nvidia.com/cuda/cuda-programming-guide/pdf/cuda-programming-guide.pdf | UDA Programming Guide | pdf
+https://developer.nvidia.com/blog/even-easier-introduction-cuda/ | An Even Easier Introduction to CUDA | blog
