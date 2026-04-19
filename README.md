@@ -104,6 +104,24 @@ Blank lines and lines starting with `#` are ignored.
 
 6. Commit, push, and follow steps 3-5 from the "Adding a source to an existing subject" section above.
 
+### Resuming a session on any vault
+
+When starting a new session — on any subject-area vault in this knowledge base — the LLM has no memory of prior work. Before giving any new instructions, ask it to orient itself by reading the load-bearing state files so it can pick up where the last session left off without guessing.
+
+**The three checks, in order:**
+
+1. **Read `Wiki/log.md`** for the vault you're working in — the append-only log tells you what's been ingested, what stubs were created, what's deferred, and what was touched last. This is the single most load-bearing file for session continuity.
+2. **Check `Raw/` for unprocessed files** — anything newer than the latest log entry is pending ingest.
+3. **Glance at `git status` and recent commits** — catches anything changed outside the log (config updates, `CLAUDE.md` edits, new subject areas, URL additions).
+
+**Suggested resume prompt** (vault-agnostic — just substitute the vault path):
+
+> Review `Wiki/log.md` in the `<vault-name>` vault, check `Raw/` for unprocessed files, glance at `git status` / recent commits, and tell me what state we're in before we start. Don't edit anything yet.
+
+If you're working across multiple vaults in one session (e.g., bouncing between the Transformer and CUDA vaults), ask for the orientation check on each vault explicitly — the LLM will only check the vault you name.
+
+The vault's own `CLAUDE.md` contains a longer-form version of this resume prompt tailored to that vault. Use the short form for daily interactive sessions; reach for the long form only when the vault is unfamiliar or it's been weeks since the last session.
+
 ### Converters used
 
 - **PDFs**: `pymupdf4llm` — lightweight, extracts images inline at their original position
