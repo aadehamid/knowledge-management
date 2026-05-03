@@ -129,6 +129,17 @@ def sync_subject(
         dest_name = wiki_filename(meta, md_file.stem)
         dest = vault_dir / dest_name
 
+        # Slug-collision guard: if the title-derived dest doesn't exist yet,
+        # check whether a vault file with the same URL-stem slug already exists
+        # under a different name (e.g., different source_type prefix or old slug).
+        # If so, reuse that file to avoid creating a duplicate.
+        url_stem_slug = slugify(md_file.stem)
+        if not dest.exists() and url_stem_slug not in dest_name:
+            for candidate in sorted(vault_dir.glob(f"*-{url_stem_slug}.md")):
+                dest = candidate
+                dest_name = candidate.name
+                break
+
         # Skip if already in vault and source hasn't changed
         if dest.exists() and dest.stat().st_mtime >= md_file.stat().st_mtime:
             continue

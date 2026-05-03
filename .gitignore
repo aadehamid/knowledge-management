@@ -62,8 +62,5 @@ temp/
 # (keeps repo size small; commit urls.txt instead)
 resources/sources/**/*.pdf
 
-# Metadata sidecars (generated at runtime by convert_pdfs.py)
-*.meta.json
-
 # Claude
 .claude/
