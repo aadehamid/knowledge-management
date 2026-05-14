@@ -1,0 +1,6 @@
+# LLM Inference Optimization subject area - URLs with metadata.
+# Format: url | title | source_type
+# source_type: paper, blog, video, course, code, thread, pdf, doc
+# Blank lines and lines starting with # are ignored.
+
+https://www.youtube.com/watch?v=EfM546A79aM | Stanford CS336 Language Modeling from Scratch Lecture 10 Inference | video
