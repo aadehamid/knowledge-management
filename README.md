@@ -44,11 +44,14 @@ The sync script renames files to the wiki schema (`<source_type>-<slug>.md`), pr
 
 ### urls.txt format
 
-Each line follows the format: `url | title | source_type`
+Each line follows the format: `url | title | source_type [| author]`
+
+The `author` field is optional but recommended for sites whose URLs have generic path stems (e.g. YouTube, where every video shares `/watch`). When provided, it is appended to the title slug to form the output filename, e.g. `llm-inference-lecture-roofline-analysis-for-gpu-faradawn-yang.md`.
 
 ```
 https://arxiv.org/pdf/1706.03762.pdf | Attention Is All You Need | paper
 https://docs.nvidia.com/cuda/cuda-programming-guide/index.html | CUDA Programming Guide | doc
+https://www.youtube.com/watch?v=7EJjdDLK4cg | LLM Inference Lecture: Roofline Analysis for GPU | video | Faradawn Yang
 ```
 
 Valid source types: `paper`, `blog`, `video`, `course`, `code`, `thread`, `pdf`, `doc`
@@ -63,8 +66,11 @@ Blank lines and lines starting with `#` are ignored.
    ```sh
    oz agent run-cloud --environment 3SyIIpxdPQfIyGOFd7ZQTs --prompt "Run: cd knowledge-management && python scripts/convert_pdfs.py. If any new files were generated, create a PR."
    ```
-4. Merge the PR, then `git pull`
-5. Run `python scripts/sync_to_vault.py`
+4. **Wait for the agent to confirm the PR is ready** before merging — the agent may push additional commits to the same branch after opening the PR (e.g. when processing multiple URLs added in the same session). Merge only after you see the agent's final completion message.
+5. Merge the PR, then `git pull`
+6. Run `python scripts/sync_to_vault.py`
+
+> **Note on YouTube URLs**: YouTube and similar sites use a generic path stem (`/watch`) for every video, which would cause filename collisions. The script resolves this by building a human-readable slug from the title and author fields: `<title-7-words>-<author-3-words>.md`. The `author` field in `urls.txt` is what enables the author part of the slug — add it whenever you submit a YouTube or similarly generic URL. If no title or author is available, the script falls back to the URL's unique query parameter (e.g. `?v=VIDEO_ID`).
 
 ### Adding a new subject area
 
