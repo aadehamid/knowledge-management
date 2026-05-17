@@ -42,7 +42,7 @@ import re
 import sys
 from datetime import date
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urlparse, parse_qs
 
 import requests
 
@@ -80,15 +80,70 @@ def is_pdf_source(meta: dict) -> bool:
 
 def parse_url_line(line: str) -> dict:
     """
-    Parse a line from urls.txt in the format: url | title | source_type
-    Falls back gracefully if title/source_type are missing.
+    Parse a line from urls.txt in the format: url | title | source_type [| author]
+    The author field is optional. Falls back gracefully if fields are missing.
     """
     parts = [p.strip() for p in line.split("|")]
     return {
         "url": parts[0],
         "title": parts[1] if len(parts) > 1 else "",
         "source_type": parts[2] if len(parts) > 2 else "pdf" if is_pdf_url(parts[0]) else "doc",
+        "author": parts[3] if len(parts) > 3 else "",
     }
+
+
+# Stems that are too generic to use as filenames — they appear across many
+# different sites and would cause collisions (e.g. every YouTube URL has
+# the path /watch, every Google Drive export URL has /uc, etc.).
+_GENERIC_STEMS = {
+    "watch", "index", "download", "view", "page", "uc", "export", "file", ""
+}
+
+
+def title_slug(text: str, max_words: int = 7) -> str:
+    """Convert a title or author name to a lowercase hyphen-separated slug.
+
+    Strips punctuation, lowercases, and joins the first ``max_words`` words
+    with hyphens. Example: "LLM Inference Lecture: Roofline Analysis for GPU"
+    → "llm-inference-lecture-roofline-analysis-for-gpu".
+    """
+    words = re.sub(r"[^\w\s]", "", text.lower()).split()
+    return "-".join(words[:max_words])
+
+
+def get_url_stem(url: str, title: str = "", author: str = "") -> str:
+    """Derive a collision-safe, human-readable filename stem from a URL.
+
+    Strategy (in order):
+    1. Use the URL path stem when it is unique (not in _GENERIC_STEMS).
+    2. Build a slug from the title (first 7 words) and, when available, the
+       author name (first 3 words): ``<title-slug>-<author-slug>``.
+       This keeps filenames self-documenting even for sites like YouTube
+       where every URL shares the same path stem (``/watch``).
+    3. Fall back to the URL's unique query parameter (e.g. ``?v=VIDEO_ID``).
+    4. Last resort: sanitized full URL.
+    """
+    parsed = urlparse(url)
+    path = parsed.path.rstrip("/")
+    stem = Path(path).stem
+
+    if stem.lower() not in _GENERIC_STEMS:
+        return stem
+
+    # Build a human-readable slug from title + optional author.
+    if title:
+        slug = title_slug(title)
+        if author:
+            slug = f"{slug}-{title_slug(author, max_words=3)}"
+        return slug
+
+    # Fall back to a unique query parameter (e.g. YouTube ?v=...).
+    query_params = parse_qs(parsed.query)
+    for key in ("v", "id", "p"):  # YouTube "v", generic "id"/"p"
+        if key in query_params:
+            return query_params[key][0]
+
+    return sanitize_filename(url)
 
 
 def save_metadata(output_dir: Path, stem: str, meta: dict) -> None:
@@ -184,12 +239,8 @@ def convert_web_urls(url_file: Path, output_dir: Path) -> int:
         if is_pdf_source(meta):
             continue  # PDFs handled separately
 
-        # Derive a filename from the URL path
-        url_path = urlparse(meta["url"]).path.rstrip("/")
-        stem = Path(url_path).stem or sanitize_filename(meta["url"])
-        if stem == "index":
-            parts = [p for p in url_path.split("/") if p and p != "index.html"]
-            stem = parts[-1] if parts else sanitize_filename(meta["url"])
+        # Derive a collision-safe filename stem from the URL.
+        stem = get_url_stem(meta["url"], meta.get("title", ""), meta.get("author", ""))
 
         if stem in existing_md:
             # Still save/update metadata even if already converted
