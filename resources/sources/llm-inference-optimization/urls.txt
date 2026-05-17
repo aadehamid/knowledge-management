@@ -8,3 +8,4 @@ https://www.youtube.com/watch?v=EfM546A79aM | Stanford CS336 Language Modeling f
 https://jax-ml.github.io/scaling-book/inference/ | Scaling LLMs: Inference (JAX ML Scaling Book) | doc
 https://kipp.ly/p/transformer-inference-arithmetic | Transformer Inference Arithmetic | blog
 https://www.youtube.com/watch?v=owoh5ywd2to | Chapter 10: Main Memory (MRAMs, PCM, ReRAM, Roofline model) -- Part V | video | Smruti R. Sarangi
+https://www.youtube.com/watch?v=7EJjdDLK4cg | LLM Inference Lecture: Roofline Analysis for GPU (arithmetic intensity, compute and memory bound) | video
