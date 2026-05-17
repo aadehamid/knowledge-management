@@ -6,6 +6,7 @@
   },
   "notebooklm": {
     "transformers": "7fb8c920-8945-4577-a5f9-fe4bd97b560c",
-    "cuda": "45808d79-6a6f-4e2a-abd7-299a023a6bec"
+    "cuda": "45808d79-6a6f-4e2a-abd7-299a023a6bec",
+    "llm-inference-optimization": "23b96d7f-9cd9-47ce-bc72-98ce84944365"
   }
 }

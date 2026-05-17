@@ -64,14 +64,49 @@ def wiki_filename(meta: dict, original_stem: str) -> str:
     return f"{source_type}-{slug}.md"
 
 
+def subject_to_display_name(subject: str) -> str:
+    """Convert a kebab-case subject key to a title-case display name.
+    e.g. 'llm-inference-optimization' -> 'LLM Inference Optimization'
+    """
+    acronyms = {"llm", "cuda", "gpu", "nlp", "ml", "ai", "gpt", "rag", "rlhf"}
+    words = subject.replace("-", " ").replace("_", " ").split()
+    return " ".join(w.upper() if w.lower() in acronyms else w.capitalize() for w in words)
+
+
+def create_notebooklm_notebook(display_name: str) -> str | None:
+    """Create a new NotebookLM notebook and return its ID, or None on failure."""
+    try:
+        result = subprocess.run(
+            ["nlm", "notebook", "create", display_name],
+            capture_output=True,
+            text=True,
+            timeout=60,
+        )
+        combined = result.stdout + result.stderr
+        # Parse notebook ID from output like: "Created notebook: <id>"
+        match = re.search(r"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}", combined)
+        if match:
+            notebook_id = match.group(0)
+            print(f"  NLM:  Created new notebook '{display_name}' → {notebook_id}")
+            return notebook_id
+        print(f"  NLM:  Failed to create notebook '{display_name}': {combined.strip()}")
+        return None
+    except FileNotFoundError:
+        print("  NLM:  nlm CLI not found — skipping notebook creation")
+        return None
+    except subprocess.TimeoutExpired:
+        print("  NLM:  nlm CLI timed out during notebook creation")
+        return None
+
+
 def add_to_notebooklm(notebook_id: str, file_path: Path) -> bool:
     """Add a markdown file as a source to a NotebookLM notebook via the nlm CLI."""
     try:
         result = subprocess.run(
-            ["nlm", "add", notebook_id, str(file_path)],
+            ["nlm", "source", "add", notebook_id, "--file", str(file_path), "--wait"],
             capture_output=True,
             text=True,
-            timeout=60,
+            timeout=120,
         )
         if result.returncode == 0:
             print(f"    📓 Added to NotebookLM")
@@ -208,6 +243,23 @@ def main():
     if not subjects:
         print("No subjects configured in sync_config.json")
         return
+
+    # Auto-provision NotebookLM notebooks for any new subjects not yet configured.
+    config_updated = False
+    for subject in subjects:
+        if subject not in notebooklm:
+            display_name = subject_to_display_name(subject)
+            print(f"\n[{subject}] No NotebookLM notebook configured — creating '{display_name}'...")
+            notebook_id = create_notebooklm_notebook(display_name)
+            if notebook_id:
+                notebooklm[subject] = notebook_id
+                config["notebooklm"] = notebooklm
+                config_updated = True
+
+    # Persist any newly created notebook IDs back to sync_config.json.
+    if config_updated:
+        config_path.write_text(json.dumps(config, indent=2) + "\n")
+        print("  Updated sync_config.json with new notebook IDs.")
 
     total_synced = 0
 
