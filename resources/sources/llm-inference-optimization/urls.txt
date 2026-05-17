@@ -6,3 +6,4 @@
 https://www.youtube.com/watch?v=EfM546A79aM | Stanford CS336 Language Modeling from Scratch Lecture 10 Inference | video
 https://jax-ml.github.io/scaling-book/inference/ | Scaling LLMs: Inference (JAX ML Scaling Book) | doc
 https://kipp.ly/p/transformer-inference-arithmetic | Transformer Inference Arithmetic | blog
+https://www.youtube.com/watch?v=owoh5ywd2to | Chapter 10: Main Memory (MRAMs, PCM, ReRAM, Roofline model) -- Part V | video
