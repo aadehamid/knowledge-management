@@ -2,6 +2,6 @@
   "url": "https://www.youtube.com/watch?v=7EJjdDLK4cg",
   "title": "LLM Inference Lecture: Roofline Analysis for GPU (arithmetic intensity, compute and memory bound)",
   "source_type": "video",
-  "fetched_at": "2026-05-17",
-  "author": "Faradawn Yang"
+  "author": "Faradawn Yang",
+  "fetched_at": "2026-05-17"
 }

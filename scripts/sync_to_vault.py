@@ -103,7 +103,7 @@ def add_to_notebooklm(notebook_id: str, file_path: Path) -> bool:
     """Add a markdown file as a source to a NotebookLM notebook via the nlm CLI."""
     try:
         result = subprocess.run(
-            ["nlm", "source", "add", notebook_id, "--file", str(file_path), "--wait"],
+            ["nlm", "add", notebook_id, str(file_path)],
             capture_output=True,
             text=True,
             timeout=120,
@@ -115,7 +115,7 @@ def add_to_notebooklm(notebook_id: str, file_path: Path) -> bool:
         # succeeded (known bug).  Treat as success when the output shows
         # it attempted the upload and the error is just JSON parsing.
         combined = result.stdout + result.stderr
-        if "Adding source" in combined and "parse response JSON" in combined:
+        if "Adding source from file" in combined and "parse response JSON" in combined:
             print(f"    📓 Added to NotebookLM (nlm response-parse warning ignored)")
             return True
         print(f"    ⚠️  NotebookLM add failed: {result.stderr.strip()}")
