@@ -78,25 +78,20 @@ jobs:
               2. Do NOT merge.
               3. Set MERGED=false
 
-            ## Step 5 — Send a detailed Slack summary
+            ## Step 5 — Post a summary comment on the PR
 
-            Always send one Slack message with ALL of the following sections:
-
-            [daily-source-conversion-reviewer] Review complete at <timestamp>
-            PR: <PR_URL>
-            Files reviewed: <N> | Subject areas: <list>
-
-            Checks summary:
-            • (a) Not empty .............. ✅ all passed  OR  ❌ <N> failed: <filenames>
-            • (b) Readable markdown ....... ✅ all passed  OR  ❌ <N> failed: <filenames>
-            • (c) meta.json valid ......... ✅ all passed  OR  ❌ <N> failed: <filenames>
-            • (d) Filename consistency .... ✅ all passed  OR  ❌ <N> failed: <filenames>
-            • (e) No duplicate URLs ....... ✅ all passed  OR  ❌ <N> failed: <filenames>
-            • (f) No scope creep .......... ✅ all passed  OR  ❌ <N> failed: <filenames>
-
-            Outcome: ✅ PR merged to main  OR  ❌ Changes requested — PR NOT merged
-
-            Send with:
-              curl -s -X POST -H "Content-type: application/json" \
-                --data "{\"text\":\"<full message above>\"}" \
-                "${{ secrets.SLACK_WEBHOOK_URL }}"
+            After posting the review, add a final comment to the PR summarising the outcome:
+              gh pr comment <PR_NUMBER> --repo aadehamid/knowledge-management --body "\
+            **[daily-source-conversion-reviewer]** Review complete at <timestamp>\
+            \nFiles reviewed: <N> | Subject areas: <list>\
+            \n\
+            \n| Check | Result |\
+            \n|---|---|\
+            \n| (a) Not empty | ✅ all passed OR ❌ N failed: filenames |\
+            \n| (b) Readable markdown | ✅ all passed OR ❌ N failed: filenames |\
+            \n| (c) meta.json valid | ✅ all passed OR ❌ N failed: filenames |\
+            \n| (d) Filename consistency | ✅ all passed OR ❌ N failed: filenames |\
+            \n| (e) No duplicate URLs | ✅ all passed OR ❌ N failed: filenames |\
+            \n| (f) No scope creep | ✅ all passed OR ❌ N failed: filenames |\
+            \n\
+            \n**Outcome: ✅ PR merged to main** OR **❌ Changes requested — PR NOT merged**"
