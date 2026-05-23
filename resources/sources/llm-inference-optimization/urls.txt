@@ -9,3 +9,34 @@ https://jax-ml.github.io/scaling-book/inference/ | Scaling LLMs: Inference (JAX 
 https://kipp.ly/p/transformer-inference-arithmetic | Transformer Inference Arithmetic | blog
 https://www.youtube.com/watch?v=owoh5ywd2to | Chapter 10: Main Memory (MRAMs, PCM, ReRAM, Roofline model) -- Part V | video | Smruti R. Sarangi
 https://www.youtube.com/watch?v=7EJjdDLK4cg | LLM Inference Lecture: Roofline Analysis for GPU (arithmetic intensity, compute and memory bound) | video | Faradawn Yang
+https://arxiv.org/pdf/2309.06180 | Efficient Memory Management for Large Language Model Serving with PagedAttention | pdf
+https://sankalp.bearblog.dev/how-prompt-caching-works/ | How prompt caching works - Paged Attention and Automatic Prefix Caching plus practical tips | blog
+https://www.aleksagordic.com/blog/vllm | Inside vLLM: Anatomy of a High-Throughput LLM Inference System | blog
+https://magazine.sebastianraschka.com/p/coding-the-kv-cache-in-llms | Understanding and Coding the KV Cache in LLMs from Scratch | blog
+https://www.baseten.co/resources/guide/the-baseten-inference-stack/ | The Baseten Inference Stack | blog
+https://ankitbko.github.io/blog/2025/08/prompt-engineering-kv-cache/ | KV-Cache Aware Prompt Engineering - How Stable Prefixes Unlock 65% Latency Improvements | blog
+https://github.com/vllm-project/vllm | vllm-project/vllm: A high-throughput and memory-efficient inference and serving engine for LLMs | code
+https://www.youtube.com/watch?v=kCc8FmEb1nY | Let's build GPT: from scratch, in code, spelled out | video | Andrej Karpathy
+https://docs.nvidia.com/nim/benchmarking/llm/latest/metrics.html | Metrics — NVIDIA NIM LLMs Benchmarking | doc
+https://github.com/karpathy/nanochat/blob/master/nanochat/gpt.py | nanochat/gpt.py (Karpathy) | code
+https://lmsys.org/blog/2024-01-17-sglang/ | Fast and Expressive LLM Inference with RadixAttention and SGLang | blog
+https://www.youtube.com/watch?v=Ny4xxErgFgQ | Efficient LLM Inference with SGLang | video | Lianmin Zheng, xAI
+https://www.youtube.com/watch?v=hMs8VNRy5Ys | Deep Dive: Optimizing LLM inference | video
+https://deepsense.ai/blog/llm-inference-optimization-how-to-speed-up-cut-costs-and-scale-ai-models/ | LLM Inference Optimization: Speed, Cost & Scalability for AI Models | blog
+https://www.dailydoseofds.com/p/kv-caching-in-llms-explained-visually/ | KV Caching in LLMs, explained visually | blog
+https://github.com/Engineer1999/A-Curated-List-of-ML-System-Design-Case-Studies | A Curated List of ML System Design Case Studies (300+ case studies) | code
+https://github.com/aadehamid/system-design | System Design interview prep | code
+https://medium.com/@lyx_62906/context-kills-vram-how-to-run-llms-on-consumer-gpus-a785e8035632 | Context Kills VRAM: How to Run LLMs on consumer GPUs | blog
+https://www.startuphub.ai/ai-news/ai-video/2025/maximizing-kv-cache-hit-rates-wekas-open-source-context-platform-engineering/ | Maximizing KV-Cache Hit Rates: WEKA's Open-Source Context Platform Engineering | blog
+https://ngrok.com/blog/prompt-caching | Prompt caching: 10x cheaper LLM tokens, but how? | blog
+https://modal.com/docs/guide/high-performance-llm-inference | High-performance LLM inference - Modal Docs | doc
+https://www.chiplog.io/p/a-deep-dive-into-nvidia-rubin-cpx | A Deep Dive into NVIDIA Rubin CPX: Architecture, Splitwise/DistServe, Inference Economics | blog
+https://www.modular.com/blog/the-five-eras-of-kvcache | Modular: The Five Eras of KVCache | blog
+https://vizuaraai.github.io/convolution-musical-journey/visual-walkthroughs.html | Vizuara Visual Walkthrough Library | doc
+https://vizuaraai.github.io/convolution-musical-journey/book.html | Inference Engineering — The Workshop Book | doc
+https://en.algorithmica.org/hpc/architecture/ | Computer Architecture | doc
+https://open.substack.com/pub/boringbot/p/kv-caching-and-speculative-decoding | KV Caching and Speculative Decoding | blog
+https://huggingface.co/blog/not-lain/kv-caching | KV Caching Explained: Optimizing Transformer Inference Efficiency | blog
+https://medium.com/@joaolages/kv-caching-explained-276520203249 | KV Caching Explained | blog
+https://open.substack.com/pub/sebastianraschka/p/coding-the-kv-cache-in-llms | Understanding and Coding the KV Cache in LLMs from Scratch | blog
+https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/ | Mastering LLM Techniques: Inference Optimization - NVIDIA Technical Blog | blog
