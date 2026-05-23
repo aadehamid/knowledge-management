@@ -22,12 +22,15 @@ jobs:
         uses: warpdotdev/oz-agent-action@main
         with:
           warp_api_key: ${{ secrets.WARP_API_KEY }}
-          environment: 3SyIIpxdPQfIyGOFd7ZQTs
           model: gpt-5-3-codex-medium
           prompt: |
             You are a quality reviewer for the daily-source-conversion pipeline in the knowledge-management repo (github.com/aadehamid/knowledge-management).
 
             Your job is to review the latest PR on the auto/daily-conversions branch, verify the conversion quality, merge it if clean, and send a detailed Slack summary.
+
+            ## Setup — authenticate gh CLI
+            Before running any gh commands, set the GitHub token:
+              export GH_TOKEN=${{ secrets.GITHUB_TOKEN }}
 
             ## Step 1 — Find the PR
             Run: gh pr list --repo aadehamid/knowledge-management --head auto/daily-conversions --state open --json number,title,url --jq ".[0]"
@@ -35,7 +38,7 @@ jobs:
             If no open PR exists, send a Slack message and exit:
               curl -s -X POST -H "Content-type: application/json" \
                 --data "{\"text\":\"[daily-source-conversion-reviewer] No open PR found on auto/daily-conversions at $(date -u +\"%Y-%m-%d %H:%M UTC\"). Conversion agent may not have run or found no new files.\"}" \
-                $SLACK_WEBHOOK_URL
+                "${{ secrets.SLACK_WEBHOOK_URL }}"
 
             ## Step 2 — Get the changed files
             Run: gh pr diff <PR_NUMBER> --repo aadehamid/knowledge-management --name-only
@@ -96,4 +99,4 @@ jobs:
             Send with:
               curl -s -X POST -H "Content-type: application/json" \
                 --data "{\"text\":\"<full message above>\"}" \
-                $SLACK_WEBHOOK_URL
+                "${{ secrets.SLACK_WEBHOOK_URL }}"
