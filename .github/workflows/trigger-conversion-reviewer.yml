@@ -1,0 +1,76 @@
+name: Trigger Source Conversion Reviewer
+
+# Fires on every push to auto/daily-conversions —
+# whether the conversion agent ran on schedule or was triggered manually.
+on:
+  push:
+    branches:
+      - auto/daily-conversions
+
+jobs:
+  review:
+    name: Review converted sources
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write   # reviewer agent posts PR review comments
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run source conversion reviewer
+        uses: warpdotdev/oz-agent-action@main
+        with:
+          warp_api_key: ${{ secrets.WARP_API_KEY }}
+          environment: 3SyIIpxdPQfIyGOFd7ZQTs
+          model: gpt-5-3-codex-medium
+          prompt: |
+            You are a quality reviewer for the daily-source-conversion pipeline in the knowledge-management repo (github.com/aadehamid/knowledge-management).
+
+            Your job is to review the latest PR on the auto/daily-conversions branch and verify the conversion was done correctly.
+
+            ## Step 1 — Find the PR
+            Run: gh pr list --repo aadehamid/knowledge-management --head auto/daily-conversions --state open --json number,title,url --jq ".[0]"
+
+            If no open PR exists, send a Slack message and exit:
+              curl -s -X POST -H "Content-type: application/json" \
+                --data "{\"text\":\"[daily-source-conversion-reviewer] No open PR found on auto/daily-conversions at $(date -u +\"%Y-%m-%d %H:%M UTC\"). Conversion agent may not have run or found no new files.\"}" \
+                $SLACK_WEBHOOK_URL
+
+            ## Step 2 — Get the changed files
+            Run: gh pr diff <PR_NUMBER> --repo aadehamid/knowledge-management --name-only
+
+            Collect all new .md files and their matching .meta.json sidecars.
+
+            ## Step 3 — Review each converted file. For every .md file, check:
+
+            a) NOT EMPTY: File has meaningful content (>300 chars). Flag files that are near-empty — likely a failed fetch.
+
+            b) READABLE MARKDOWN: Content is coherent prose or structured notes — not raw HTML soup, garbled unicode, repeated boilerplate, or binary artifacts. Check the first 50 lines:
+               gh api repos/aadehamid/knowledge-management/contents/<filepath>?ref=auto/daily-conversions --jq ".content" | base64 -d | head -50
+
+            c) META.JSON VALID: The sidecar exists and has all required fields: url, title, source_type, author, fetched_at.
+               gh api repos/aadehamid/knowledge-management/contents/<meta_path>?ref=auto/daily-conversions --jq ".content" | base64 -d
+
+            d) FILENAME CONSISTENCY: The filename is a reasonable slug of the title in meta.json (no completely unrelated names).
+
+            e) NO DUPLICATES: No two files share the same source URL in their meta.json.
+
+            f) NO SCOPE CREEP: No pre-existing files (files already on main) were accidentally included in the PR diff.
+
+            ## Step 4 — Post a PR review
+
+            Summarise findings and post a review:
+            - If all checks pass:
+                gh pr review <PR_NUMBER> --repo aadehamid/knowledge-management --approve \
+                  --body "All $(count) converted files passed quality checks. Filenames, meta.json sidecars, and markdown content look good. ✅"
+
+            - If issues found (any check failed):
+                gh pr review <PR_NUMBER> --repo aadehamid/knowledge-management --request-changes \
+                  --body "Found issues in <N> file(s):\n<list each issue with filename and description>"
+
+            ## Step 5 — Send a Slack summary
+            Always send a Slack message with the review outcome:
+              curl -s -X POST -H "Content-type: application/json" \
+                --data "{\"text\":\"[daily-source-conversion-reviewer] Review complete at $(date -u +\"%Y-%m-%d %H:%M UTC\").\nPR: <PR_URL>\nFiles reviewed: <N>\nOutcome: <APPROVED or CHANGES REQUESTED>\n<brief summary of any issues>\"}" \
+                $SLACK_WEBHOOK_URL
