@@ -100,10 +100,14 @@ def create_notebooklm_notebook(display_name: str) -> str | None:
 
 
 def add_to_notebooklm(notebook_id: str, file_path: Path) -> bool:
-    """Add a markdown file as a source to a NotebookLM notebook via the nlm CLI."""
+    """Add a markdown file as a source to a NotebookLM notebook via the nlm CLI.
+
+    Correct syntax (nlm 0.6.x+):
+        nlm source add <notebook_id> --file <file_path>
+    """
     try:
         result = subprocess.run(
-            ["nlm", "add", notebook_id, str(file_path)],
+            ["nlm", "source", "add", notebook_id, "--file", str(file_path)],
             capture_output=True,
             text=True,
             timeout=120,
@@ -111,14 +115,7 @@ def add_to_notebooklm(notebook_id: str, file_path: Path) -> bool:
         if result.returncode == 0:
             print(f"    📓 Added to NotebookLM")
             return True
-        # nlm CLI may fail to parse the response even though the upload
-        # succeeded (known bug).  Treat as success when the output shows
-        # it attempted the upload and the error is just JSON parsing.
-        combined = result.stdout + result.stderr
-        if "Adding source from file" in combined and "parse response JSON" in combined:
-            print(f"    📓 Added to NotebookLM (nlm response-parse warning ignored)")
-            return True
-        print(f"    ⚠️  NotebookLM add failed: {result.stderr.strip()}")
+        print(f"    ⚠️  NotebookLM add failed: {result.stderr.strip() or result.stdout.strip()}")
         return False
     except FileNotFoundError:
         print("    ⚠️  nlm CLI not found — skipping NotebookLM sync")
