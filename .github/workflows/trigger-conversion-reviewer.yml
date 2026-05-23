@@ -12,8 +12,8 @@ jobs:
     name: Review converted sources
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      pull-requests: write   # reviewer agent posts PR review comments
+      contents: write        # needed to merge the PR
+      pull-requests: write   # reviewer agent posts PR review + merges
 
     steps:
       - uses: actions/checkout@v4
@@ -27,7 +27,7 @@ jobs:
           prompt: |
             You are a quality reviewer for the daily-source-conversion pipeline in the knowledge-management repo (github.com/aadehamid/knowledge-management).
 
-            Your job is to review the latest PR on the auto/daily-conversions branch and verify the conversion was done correctly.
+            Your job is to review the latest PR on the auto/daily-conversions branch, verify the conversion quality, merge it if clean, and send a detailed Slack summary.
 
             ## Step 1 — Find the PR
             Run: gh pr list --repo aadehamid/knowledge-management --head auto/daily-conversions --state open --json number,title,url --jq ".[0]"
@@ -40,9 +40,9 @@ jobs:
             ## Step 2 — Get the changed files
             Run: gh pr diff <PR_NUMBER> --repo aadehamid/knowledge-management --name-only
 
-            Collect all new .md files and their matching .meta.json sidecars.
+            Collect all new .md files and their matching .meta.json sidecars. Keep a running log of results for each check below.
 
-            ## Step 3 — Review each converted file. For every .md file, check:
+            ## Step 3 — Review each converted file. For every .md file, run all 6 checks and record PASS/FAIL per file:
 
             a) NOT EMPTY: File has meaningful content (>300 chars). Flag files that are near-empty — likely a failed fetch.
 
@@ -58,19 +58,42 @@ jobs:
 
             f) NO SCOPE CREEP: No pre-existing files (files already on main) were accidentally included in the PR diff.
 
-            ## Step 4 — Post a PR review
+            ## Step 4 — Post a PR review and merge if clean
 
-            Summarise findings and post a review:
-            - If all checks pass:
-                gh pr review <PR_NUMBER> --repo aadehamid/knowledge-management --approve \
-                  --body "All $(count) converted files passed quality checks. Filenames, meta.json sidecars, and markdown content look good. ✅"
+            CASE A — All checks pass (zero FAILs across all files):
+              1. Approve the PR:
+                 gh pr review <PR_NUMBER> --repo aadehamid/knowledge-management --approve \
+                   --body "All <N> converted files passed all 6 quality checks. ✅ Merging to main."
+              2. Merge the PR using squash:
+                 gh pr merge <PR_NUMBER> --repo aadehamid/knowledge-management --squash --subject "Add converted markdown for new sources" --delete-branch
+              3. Set MERGED=true
 
-            - If issues found (any check failed):
-                gh pr review <PR_NUMBER> --repo aadehamid/knowledge-management --request-changes \
-                  --body "Found issues in <N> file(s):\n<list each issue with filename and description>"
+            CASE B — Any check failed:
+              1. Request changes:
+                 gh pr review <PR_NUMBER> --repo aadehamid/knowledge-management --request-changes \
+                   --body "Found issues in <N> file(s):\n<list each failing file, which check failed, and a one-line description>"
+              2. Do NOT merge.
+              3. Set MERGED=false
 
-            ## Step 5 — Send a Slack summary
-            Always send a Slack message with the review outcome:
+            ## Step 5 — Send a detailed Slack summary
+
+            Always send one Slack message with ALL of the following sections:
+
+            [daily-source-conversion-reviewer] Review complete at <timestamp>
+            PR: <PR_URL>
+            Files reviewed: <N> | Subject areas: <list>
+
+            Checks summary:
+            • (a) Not empty .............. ✅ all passed  OR  ❌ <N> failed: <filenames>
+            • (b) Readable markdown ....... ✅ all passed  OR  ❌ <N> failed: <filenames>
+            • (c) meta.json valid ......... ✅ all passed  OR  ❌ <N> failed: <filenames>
+            • (d) Filename consistency .... ✅ all passed  OR  ❌ <N> failed: <filenames>
+            • (e) No duplicate URLs ....... ✅ all passed  OR  ❌ <N> failed: <filenames>
+            • (f) No scope creep .......... ✅ all passed  OR  ❌ <N> failed: <filenames>
+
+            Outcome: ✅ PR merged to main  OR  ❌ Changes requested — PR NOT merged
+
+            Send with:
               curl -s -X POST -H "Content-type: application/json" \
-                --data "{\"text\":\"[daily-source-conversion-reviewer] Review complete at $(date -u +\"%Y-%m-%d %H:%M UTC\").\nPR: <PR_URL>\nFiles reviewed: <N>\nOutcome: <APPROVED or CHANGES REQUESTED>\n<brief summary of any issues>\"}" \
+                --data "{\"text\":\"<full message above>\"}" \
                 $SLACK_WEBHOOK_URL
