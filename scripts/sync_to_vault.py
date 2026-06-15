@@ -38,8 +38,55 @@ def slugify(title: str) -> str:
     return slug[:80]
 
 
-def build_frontmatter(meta: dict) -> str:
-    """Build YAML frontmatter string from metadata."""
+def read_existing_wiki_refs(dest: Path) -> str:
+    """Return the existing `wiki_refs:` YAML block (the value, including any
+    multi-line list items) from a vault file's frontmatter, or "[]" if absent.
+
+    The LLM maintains `wiki_refs` during ingest to record which wiki pages cite
+    a source. A naive re-sync would clobber that back to []; this lets us carry
+    the existing value forward so backlinks survive content refreshes.
+    """
+    if not dest.exists():
+        return "[]"
+    try:
+        text = dest.read_text(encoding="utf-8")
+    except OSError:
+        return "[]"
+    lines = text.splitlines()
+    if not lines or lines[0].strip() != "---":
+        return "[]"
+    # Find the closing frontmatter fence.
+    try:
+        end = lines.index("---", 1)
+    except ValueError:
+        return "[]"
+    fm = lines[1:end]
+    for i, line in enumerate(fm):
+        if line.startswith("wiki_refs:"):
+            value = line[len("wiki_refs:"):].strip()
+            if value and value != "[]":
+                return value  # inline non-empty (rare)
+            # Collect following indented list items.
+            items = []
+            for follow in fm[i + 1:]:
+                if follow.startswith((" ", "\t")) and follow.lstrip().startswith("-"):
+                    items.append(follow)
+                elif follow.strip() == "":
+                    continue
+                else:
+                    break
+            if items:
+                return "\n" + "\n".join(items)
+            return "[]"
+    return "[]"
+
+
+def build_frontmatter(meta: dict, existing_wiki_refs: str = "[]") -> str:
+    """Build YAML frontmatter string from metadata.
+
+    `existing_wiki_refs` carries forward any LLM-maintained backlinks from the
+    file already in the vault so a content re-sync doesn't wipe them.
+    """
     lines = ["---"]
     lines.append(f"url: {meta.get('url', '')}")
     lines.append(f"title: {meta.get('title', 'Untitled')}")
@@ -48,7 +95,7 @@ def build_frontmatter(meta: dict) -> str:
     lines.append(f"source_type: {meta.get('source_type', 'doc')}")
     lines.append("status: ingested")
     lines.append(f"fetched_at: {meta.get('fetched_at', '')}")
-    lines.append("wiki_refs: []")
+    lines.append(f"wiki_refs: {existing_wiki_refs}")
     lines.append("---")
     return "\n".join(lines)
 
@@ -166,8 +213,16 @@ def sync_subject(
         # under a different name (e.g., different source_type prefix or old slug).
         # If so, reuse that file to avoid creating a duplicate.
         url_stem_slug = slugify(md_file.stem)
-        if not dest.exists() and url_stem_slug not in dest_name:
+        if not dest.exists():
             for candidate in sorted(vault_dir.glob(f"*-{url_stem_slug}.md")):
+                # Only adopt a file whose slug matches exactly and differs
+                # solely by the source_type prefix (e.g. doc- vs pdf-). The
+                # prefix is a single hyphen-free token, so the slug is
+                # everything after the first '-'. This makes a source_type
+                # rename reuse the existing vault file instead of creating an
+                # orphaned "ghost" duplicate.
+                if candidate.name.split("-", 1)[-1] != f"{url_stem_slug}.md":
+                    continue
                 dest = candidate
                 dest_name = candidate.name
                 break
@@ -197,8 +252,10 @@ def sync_subject(
             original_body,
         )
 
-        # Build frontmatter + full body
-        frontmatter = build_frontmatter(meta)
+        # Build frontmatter + full body, preserving any LLM-maintained
+        # wiki_refs already present on the vault file (a content refresh must
+        # not clobber the backlinks recorded during ingest).
+        frontmatter = build_frontmatter(meta, read_existing_wiki_refs(dest))
         full_content = f"{frontmatter}\n\n{original_body}"
 
         # Write to vault
