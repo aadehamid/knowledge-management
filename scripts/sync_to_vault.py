@@ -149,12 +149,14 @@ def create_notebooklm_notebook(display_name: str) -> str | None:
 def add_to_notebooklm(notebook_id: str, file_path: Path) -> bool:
     """Add a markdown file as a source to a NotebookLM notebook via the nlm CLI.
 
-    Correct syntax (nlm 0.6.x+):
-        nlm source add <notebook_id> --file <file_path>
+    Syntax (current nlm): a local file path is passed as a positional source.
+        nlm source add <notebook_id> <file_path>
+    NOTE: do not pass a `--file` flag — current nlm builds don't recognize it
+    and would treat the literal "--file" as a separate 6-byte text source.
     """
     try:
         result = subprocess.run(
-            ["nlm", "source", "add", notebook_id, "--file", str(file_path)],
+            ["nlm", "source", "add", notebook_id, str(file_path)],
             capture_output=True,
             text=True,
             timeout=120,

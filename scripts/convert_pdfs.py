@@ -178,7 +178,14 @@ def download_pdfs_from_urls(url_file: Path, pdf_dir: Path, output_dir: Path) -> 
         # Derive a filename — prefer title for non-standard URLs
         # (e.g., Google Drive /uc paths produce useless stems like "uc")
         url_path = urlparse(meta["url"]).path
-        url_stem = Path(url_path).stem
+        # Only strip a real ".pdf" extension. For paths like arxiv's
+        # "/pdf/2309.06180" the trailing ".06180" is part of the identifier,
+        # not a file extension, so use the full final segment to avoid
+        # truncating distinct IDs (2309.06180, 2309.17453) to the same "2309".
+        if url_path.lower().endswith(".pdf"):
+            url_stem = Path(url_path).stem
+        else:
+            url_stem = Path(url_path).name
         generic_stems = {"uc", "download", "export", "file", "index", ""}
         if meta.get("title") and url_stem.lower() in generic_stems:
             filename = sanitize_filename(meta["title"])
