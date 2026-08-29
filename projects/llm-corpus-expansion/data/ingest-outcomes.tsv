@@ -1,0 +1,507 @@
+outcome	url	resulting_title
+SKIP-DUP	https://www.royvanrijn.com/anatomy-of-an-llm/	
+SKIP-DUP	https://huggingface.co/blog/torch-profiler	
+SKIP-DUP	https://learn.deeplearning.ai/courses/fast-and-efficient-llm-inference-with-vllm/lesson/rm60gb/introduction	
+SKIP-DUP	https://aiengineeringfromscratch.com/	
+SKIP-DUP	https://build-small-hackathon-field-guide.hf.space/partners/openbmb	
+MARKDOWN	https://alphaxiv.org/	Explore | alphaXiv
+MARKDOWN	https://huggingface.co/datalab-to/lift	datalab-to/lift · Hugging Face
+MARKDOWN	https://huggingface.co/llm-semantic-router	llm-semantic-router (vLLM Semantic Router)
+MARKDOWN	https://github.com/vllm-project/semantic-router	GitHub - vllm-project/semantic-router: A programmable Mixture-of-Models router for heterogeneous LLM inference · GitHub
+MARKDOWN	https://vllm-semantic-router.com/	Build Your Mixture-of-Models | vLLM Semantic Router
+MARKDOWN	https://developers.redhat.com/articles/2026/06/24/optimizing-distributed-ai-inference-advanced-deployment-patterns	Optimizing distributed AI inference: Advanced deployment patterns | Red Hat Developer
+MARKDOWN	https://developers.redhat.com/articles/2026/06/22/designing-distributed-ai-inference-core-concepts-and-scaling-dimensions	Designing distributed AI inference: Core concepts and scaling dimensions | Red Hat Developer
+MARKDOWN	https://www.etched.com/	Etched
+BOOKMARK	https://x.com/brian_armstrong/status/2070670644577280109?s=46	Brian Armstrong on X: "How to keep AI spend flat while token usage grows exponentially: Not with friction and spend alerts. With better defaults, routing, and caching. Better Defaults (not Usage Caps) – Engineers can choose any model they want, but defaults matter. We’re experimenting with default… / X
+MARKDOWN	https://medium.com/@saad.ahmed1926q/kv-cache-explained-intuitively-2b425a36dfc7	Medium
+MARKDOWN	https://outcomeschool.com/blog/prefill-vs-decode-llm-inference-optimization	Prefill vs Decode: LLM Inference Optimization
+MARKDOWN	https://lilianweng.github.io/posts/2026-07-04-harness/	Harness Engineering for Self-Improvement | Lil'Log
+MARKDOWN	https://github.com/stas00/ml-engineering	GitHub - stas00/ml-engineering: Machine Learning Engineering Open Book · GitHub
+MARKDOWN	https://hamzaelshafie.bearblog.dev/paged-attention-from-first-principles-a-view-inside-vllm/	Paged Attention from First Principles: A View Inside vLLM – Hamza's Blog
+MARKDOWN	https://recipes.vllm.ai/baidu/Unlimited-OCR	baidu/Unlimited-OCR | vLLM Recipes
+MARKDOWN	https://github.com/videlalvaro/leet-llm	GitHub - videlalvaro/inference-school: A hands-on Swift and Metal course for building LLM inference from first principles on Apple silicon, with 48 guided lessons, runnable exercises, a native macOS Studio, and a complete companion book. · GitHub
+MARKDOWN	https://www.distillabs.ai/	distil labs – Cut LLM Costs by 80% with Custom SLMs
+MARKDOWN	https://github.com/google-research/	fm
+BOOKMARK	https://learn.deeplearning.ai/courses/fast-llm-inference-with-cerebras/lesson/a4u81f/introduction	Fast LLM Inference with Cerebras - DeepLearning.AI
+MARKDOWN	https://www.deeplearning.ai/courses/fast-llm-inference-with-cerebras	Fast LLM Inference with Cerebras - DeepLearning.AI
+SKIP-DUP	https://github.com/unslothai/unsloth	
+MARKDOWN	https://www.coderabbit.ai/blog/teaching-nvidia-nemotron-3-5-lightning-to-route-code-reviews	Teaching NVIDIA Nemotron 3.5 Lightning to Route Code Reviews
+MARKDOWN	https://ml-visualized.com/	Machine Learning Visualized — Machine Learning Visualized
+MARKDOWN	https://sebastianraschka.com/teaching/pytorch-1h/	PyTorch in One Hour | Sebastian Raschka, PhD
+MARKDOWN	https://github.com/elizabetht/100-days-of-inference	GitHub - elizabetht/100-days-of-inference: 100 days of LLM inference engineering — daily posts, experiments, and visualizations · GitHub
+MARKDOWN	https://learn-inference.com/	Learn Inference: inference engineering, explained interactively
+MARKDOWN	https://www.jepeake.com/ai-chip-architectures	AI Chip Architectures - Jacob Peake
+MARKDOWN	https://huggingface.co/blog/pwc-search	How Hugging Face Inference Endpoints, Jobs, and Buckets Power Search on Papers with Code
+MARKDOWN	https://leoniemonigatti.com/blog/speculative-decoding.html	How speculative decoding makes LLMs go brrr – Leonie Monigatti
+MARKDOWN	https://github.com/FlashML-org/FreeToken	GitHub - FlashML-org/FreeToken: FreeToken brings datacenter-scale model serving to your desktop. Run massive models locally, fast and efficiently. · GitHub
+MARKDOWN	https://github.com/wafer-ai/gpu-perf-engineering-resources	GitHub - wafer-ai/gpu-perf-engineering-resources: A curated resource list for learning AI performance engineering, from GPU fundamentals to production inference. · GitHub
+MARKDOWN	https://thinkingmachines.ai/news/putting-task-expertise-into-rl/	Putting Task Expertise into RL Achieves State-of-the-Art Performance on Text-to-SQL - Thinking Machines Lab
+MARKDOWN	https://sustcsonglin.github.io/blog/2024/deltanet-1/	DeltaNet Explained (Part I) | Songlin Yang
+BOOKMARK	https://youtu.be/p3sij8QzONQ?si=dmggbgctRlShfBfC	LLMs from Scratch – Practical Engineering from Base Model to PPO RLHF - YouTube
+MARKDOWN	https://huggingface.co/smol-course	smol-course (a smol course)
+MARKDOWN	https://cmu-l3.github.io/anlp-fall2025/?utm_source=perplexity	CMU Advanced NLP F2025
+BOOKMARK	https://learn.deeplearning.ai/courses/fine-tuning-and-reinforcement-learning-for-llms-intro-to-post-training/lesson/rm98gb4q/conversation-between-sharon-zhou-and-andrew-ng	Fine-tuning & RL for LLMs: Intro to Post-training - DeepLearning.AI
+BOOKMARK	https://learn.deeplearning.ai/courses/fine-tuning-and-reinforcement-learning-for-llms-intro-to-post-training/information	Fine-tuning & RL for LLMs: Intro to Post-training - DeepLearning.AI
+MARKDOWN	https://www.freecodecamp.org/news/code-an-llm-from-scratch-theory-to-rlhf/	Code an LLM From Scratch – Theory to RLHF
+SKIP-DUP	https://github.com/vllm-project/vllm	
+MARKDOWN	https://github.com/ggml-org/llama.cpp	GitHub - ggml-org/llama.cpp: LLM inference in C/C++ · GitHub
+SKIP-DUP	https://huggingface.co/blog/hf-skills-training	
+MARKDOWN	https://platform.claude.com/cookbook	Claude Cookbook
+MARKDOWN	https://stanford.edu/~shervine/teaching/cs-229	Teaching - CS 229
+MARKDOWN	https://huggingface.co/nanochat-students	nanochat-students (nanochat students)
+MARKDOWN	https://rentry.org/samplers	Dummy's Guide to Modern Samplers
+MARKDOWN	https://developer.apple.com/metal/pytorch/	Accelerated PyTorch training on Mac - Metal - Apple Developer
+MARKDOWN	https://github.com/rasbt/LLMs-from-scratch/tree/main/ch05/12_gemma3	LLMs-from-scratch/ch05/12_gemma3 at main · rasbt/LLMs-from-scratch · GitHub
+MARKDOWN	https://www.thelmbook.com/	The Hundred-Page Language Models Book by Andriy Burkov
+MARKDOWN	https://trelis.com/advanced-fine-tuning-scripts/	Fine-tuning and Retrieval (RAG) – Trelis
+MARKDOWN	https://github.com/TrelisResearch	Trelis Research · GitHub
+MARKDOWN	https://blog.lancedb.com/a-practical-guide-to-fine-tuning-embedding-models/	A Practical Guide to Fine-Tuning Embedding Models
+MARKDOWN	https://ernie.baidu.com/blog/posts/ernie4.5/	Announcing the Open Source Release of the ERNIE 4.5 Model Family | ERNIE Blog
+MARKDOWN	https://huggingface.co/blog/train-sparse-encoder	Training and Finetuning Sparse Embedding Models with Sentence Transformers
+MARKDOWN	https://maven.com/p/935d62/improving-retrievers-by-reranking-and-embedding-fine-tuning?utm_medium=ll_share_link&utm_source=instructor	Improving retrievers by Reranking and embedding fine-tuning
+MARKDOWN	https://www.mixedbread.com/blog/maxsim-cpu	maxsim-cpu: Maximising Maxsim Efficiency
+MARKDOWN	https://docs.unsloth.ai/models/how-to-run-llms-with-docker	How to Run Local LLMs with Docker: Step-by-Step Guide | Unsloth Documentation
+MARKDOWN	https://blog.vllm.ai/2025/11/19/docker-model-runner-vllm.html	Docker Model Runner Integrates vLLM for High-Throughput Inferencing | vLLM Blog
+BOOKMARK	https://youtu.be/oxwsizy1Spw?si=uz5-VKZWJ8oTqr9j	Inference Providers: Best Way to Build with Open Source Models - YouTube
+MARKDOWN	https://www.deeplearning.ai/short-courses/finetuning-large-language-models/?utm_campaign=finetuning-launch&utm_content=279346493&utm_medium=social&utm_source=twitter&hss_channel=tw-992153930095251456	Finetuning Large Language Models - DeepLearning.AI
+MARKDOWN	https://maven.com/parlance-labs/fine-tuning	Mastering LLMs For Developers & Data Scientists by Dan Becker and Hamel Husain on Maven
+MARKDOWN	https://www.kaggle.com/models/metaresearch/llama-2	llama-2
+BOOKMARK	https://learn.deeplearning.ai/courses/intro-to-federated-learning-c2/lesson/1/introduction	Federated Fine-tuning of LLMs with Private Data - DeepLearning.AI
+MARKDOWN	https://www.inovex.de/de/blog/prompt-engineering-guide/	Prompt Engineering and Zero-Shot/Few-Shot Learning [Guide] - inovex GmbH
+MARKDOWN	https://machinelearningmastery.com/a-gentle-introduction-to-the-jacobian/	A Gentle Introduction to the Jacobian - MachineLearningMastery.com
+MARKDOWN	https://karpathy.medium.com/yes-you-should-understand-backprop-e2f06eab496b	Medium
+BOOKMARK	https://colab.research.google.com/drive/1WV2oi2fh9XXyldh02wupFQX0wh5ZC-z-?usp=sharing	Google Colab
+MARKDOWN	https://eli.thegreenplace.net/2018/backpropagation-through-a-fully-connected-layer/	Backpropagation through a fully-connected layer - Eli Bendersky's website
+MARKDOWN	https://cs231n.github.io/optimization-1/	CS231n Deep Learning for Computer Vision
+BOOKMARK	https://youtu.be/fGDT63dZcvE	Backpropagation: How Neural Networks Learn - YouTube
+BOOKMARK	https://www.youtube.com/watch?v=nTlCqaL7fCY&t=74s	01L – Gradient descent and the backpropagation algorithm - YouTube
+MARKDOWN	https://serverless-ml.org/	Serverless ML; Apps and MLOps: without the infrastructure
+MARKDOWN	https://apeatling.com/articles/simple-guide-to-local-llm-fine-tuning-on-a-mac-with-mlx/	A simple guide to local LLM fine-tuning on a Mac with MLX · Andy Peatling · Working with React.js, TypeScript, LLMs, & Agents
+MARKDOWN	https://github.com/ml-explore/mlx-examples/tree/main/lora	mlx-examples/lora at main · ml-explore/mlx-examples · GitHub
+BOOKMARK	https://www.youtube.com/watch?v=VMj-3S1tku0	The spelled-out intro to neural networks and backpropagation: building micrograd - YouTube
+MARKDOWN	http://inference.org.uk/itila/book.html	David MacKay: Information Theory, Inference, and Learning Algorithms: The Book
+MARKDOWN	https://www.inference.org.uk/mackay/	Inference Group: David MacKay: Homepage
+MARKDOWN	https://github.com/matheusfacure/causal-inference-in-python-code	GitHub - matheusfacure/causal-inference-in-python-code: Code for the Book Causal Inference in Python · GitHub
+MARKDOWN	https://github.com/facebookresearch/segment-anything	GitHub - facebookresearch/segment-anything: The repository provides code for running inference with the SegmentAnything Model (SAM), links for downloading the trained model checkpoints, and example notebooks that show how to use the model. · GitHub
+MARKDOWN	https://www.storminthecastle.com/posts/01_classification/?utm_source=substack&utm_medium=email	Object Detection from Scratch - Part 1
+MARKDOWN	https://lightning.ai/pages/courses/deep-learning-fundamentals/unit-7-overview-getting-started-with-computer-vision/	Unit 7 Overview: Getting Started with Computer Vision - Lightning AI
+MARKDOWN	https://sebastianraschka.com/blog/2023/pytorch-faster.html	PyTorch Training Speed Techniques | Sebastian Raschka, PhD
+BOOKMARK	https://www.youtube.com/watch?v=ZOWjOxC80qw	PyTorch 2.0 Q&A: Optimizing Transformers for Inference - YouTube
+MARKDOWN	https://github.com/Mozilla-Ocho/llamafile	GitHub - mozilla-ai/llamafile: Distribute and run LLMs with a single file. · GitHub
+MARKDOWN	https://simonwillison.net/2023/Nov/29/llamafile/	llamafile is the new best way to run an LLM on your own computer
+SKIP-DUP	https://github.com/OpenAccess-AI-Collective/axolotl	
+MARKDOWN	https://github.com/OpenAccess-AI-Collective/axolotl/blob/main/examples/llama-2/tiny-llama.yml	Rate limit · GitHub
+MARKDOWN	https://www.latent.space/p/axolotl	The Busy Person's Intro to Finetuning & Open Source AI - Wing Lian, Axolotl
+MARKDOWN	https://huggingface.co/unstructuredio	unstructuredio (unstructured.io)
+MARKDOWN	https://qdrant.tech/documentation/	Documentation - Qdrant
+BOOKMARK	https://www.youtube.com/watch?v=3fsn19OI_C8	The EASIEST way to finetune LLAMA-v2 on local machine! - YouTube
+MARKDOWN	https://huggingface.co/blog/hf-bitsandbytes-integration	A Gentle Introduction to 8-bit Matrix Multiplication for transformers at scale using transformers, accelerate and bitsandbytes
+MARKDOWN	https://blog.briankitano.com/llama-from-scratch/	Llama from scratch (or how to implement a paper without crying) – Brian Kitano
+MARKDOWN	https://lilianweng.github.io/posts/2018-06-24-attention/	Attention? Attention! | Lil'Log
+MARKDOWN	https://heartbeat.comet.ml/large-language-models-a-complete-guide-f818397c82d4	Medium
+MARKDOWN	https://magazine.sebastianraschka.com/p/finetuning-large-language-models	Finetuning Large Language Models
+MARKDOWN	https://mistral.ai/news/mistral-ocr	Mistral OCR | Mistral AI
+MARKDOWN	https://github.com/modelscope/ms-swift	GitHub - modelscope/ms-swift: Use PEFT or Full-parameter to CPT/SFT/DPO/GRPO 600+ LLMs (Qwen3.6, DeepSeek-V4, GLM-5.1, InternLM3, Llama4, ...) and 300+ MLLMs (Qwen3-VL, Qwen3-Omni, InternVL3.5, Ovis2.5, GLM4.5v, Gemma4, Llava, Phi4, ...) (AAAI 2025). · Git
+MARKDOWN	https://colbert.aiserv.cloud/	colbert.aiserv.cloud
+MARKDOWN	https://github.com/tonywu71/colpali-cookbooks/blob/b7a0798cbb8e4f1f6223f9c3b7dac2172b1b6ce1/examples/gen_colpali_similarity_maps.ipynb	colpali-cookbooks/examples/gen_colpali_similarity_maps.ipynb at b7a0798cbb8e4f1f6223f9c3b7dac2172b1b6ce1 · tonywu71/colpali-cookbooks · GitHub
+MARKDOWN	https://blog.vespa.ai/pretrained-transformer-language-models-for-search-part-3/	Pretrained Transformer Language Models for Search - part 3 | Vespa Blog
+MARKDOWN	https://huggingface.co/blog/fsommers/document-similarity-colpali	Document Similarity Search with ColPali
+MARKDOWN	https://github.com/illuin-tech/colpali	GitHub - illuin-tech/colpali: The code used to train and run inference with the ColVision models, e.g. ColPali, ColQwen2, and ColSmol. · GitHub
+MARKDOWN	https://github.com/tonywu71/colpali-cookbooks	GitHub - tonywu71/colpali-cookbooks: Recipes for learning, fine-tuning, and adapting ColPali to your multimodal RAG use cases. 👨🏻‍🍳 · GitHub
+BOOKMARK	https://colab.research.google.com/github/unslothai/notebooks/blob/main/nb/Qwen3_(4B	Google Colab
+MARKDOWN	https://lightning.ai/akshay-ddods/studios/fine-tuning-alibaba-s-qwen3-100-local?section=featured	Fine-tuning Alibaba's Qwen3 (100% local) - a Lightning template by avi-chawla
+MARKDOWN	https://huggingface.co/vidore/colqwen2-v0.1	vidore/colqwen2-v0.1 · Hugging Face
+MARKDOWN	https://learning.oreilly.com/library/view/pretrain-vision-and/9781804618257/B18942_TOC_ePub.xhtml	Access Denied
+MARKDOWN	https://github.com/merveenoyan/smol-vision/blob/main/Finetune_ColPali.ipynb	smol-vision/Finetune_ColPali.ipynb at main · merveenoyan/smol-vision · GitHub
+BOOKMARK	https://colab.research.google.com/drive/12v2u2IRcmda2fJTNZk88OLF246u_bfSH?usp=sharing	Google Colab
+MARKDOWN	https://www.byhand.ai/p/computer-vision-lectures	Computer Vision Lectures - by Prof. Tom Yeh - AI by Hand ✍️
+SKIP-DUP	https://docs.unsloth.ai/basics/qwen3-how-to-run-and-fine-tune	
+BOOKMARK	https://youtu.be/Ik6nbAjxLk4?si=R0hSkz3N3V6rWRLg	Fine tune Gemma 3, Qwen3, Llama 4, Phi 4 and Mistral Small with Unsloth and Transformers - YouTube
+BOOKMARK	https://colab.research.google.com/github/merveenoyan/smol-vision/blob/main/Fine_tune_PaliGemma.ipynb	Google Colab
+MARKDOWN	https://github.com/katanaml/sparrow	GitHub - katanaml/sparrow: Structured data extraction, instruction calling and agentic workflows with ML, LLM and Vision LLM · GitHub
+MARKDOWN	https://arxiv.org/abs/2502.08145	[2502.08145] Democratizing AI: Open-source Scalable LLM Training on GPU-based Supercomputers
+MARKDOWN	https://mistral.ai/solutions/document-ai	Document AI and OCR | Mistral AI
+MARKDOWN	https://huggingface.co/tasks/any-to-any	What is Any-to-Any? - Hugging Face
+SKIP-DUP	https://www.aleksagordic.com/blog/vllm	
+BOOKMARK	https://colab.research.google.com/github/unslothai/notebooks/blob/main/nb/Qwen3_VL_(8B	Google Colab
+SKIP-DUP	https://huggingface.co/PaddlePaddle/PaddleOCR-VL	
+MARKDOWN	https://allenai.org/blog/olmocr-2	olmOCR 2: Unit test rewards for document OCR | Ai2
+MARKDOWN	https://huggingface.co/allenai/olmOCR-2-7B-1025-FP8	allenai/olmOCR-2-7B-1025-FP8 · Hugging Face
+MARKDOWN	https://huggingface.co/deepseek-ai/DeepSeek-OCR	deepseek-ai/DeepSeek-OCR · Hugging Face
+MARKDOWN	https://www.deeplearning.ai/short-courses/improving-accuracy-of-llm-applications/?utm_campaign=lamini-launch&utm_content=304497717&utm_medium=social&utm_source=twitter&hss_channel=tw-992153930095251456	Improving Accuracy of LLM Applications - DeepLearning.AI
+MARKDOWN	https://www.answer.ai/posts/2024-03-06-fsdp-qlora.html	You can now train a 70b language model at home – Answer.AI
+MARKDOWN	https://huggingface.co/blog/visheratin/nomic-data-cleaning	Data exploration and filtering with Nomic Atlas
+MARKDOWN	https://buttondown.email/ainews/archive/ainews-cohere-command-r-anthropic-claude-tool-use/	[AINews] Cohere Command R+, Anthropic Claude Tool Use, OpenAI Finetuning • Buttondown
+MARKDOWN	https://huggingface.co/learn/cookbook/en/dspy_gepa	Prompt Optimization for Language Models with DSPy GEPA · Hugging Face
+BOOKMARK	https://youtube.com/playlist?list=PLuI8kc1bqP2junKkKVD-5441I8G7oXDTm&si=NmdhiqdX3ZokZ6dC	The Hands-on LLM Course - YouTube
+MARKDOWN	https://github.com/iusztinpaul/hands-on-llms?	=readme-ov-file
+MARKDOWN	https://github.com/rasbt/LLMs-from-scratch	GitHub - rasbt/LLMs-from-scratch: Implement a ChatGPT-like LLM in PyTorch from scratch, step by step · GitHub
+SKIP-DUP	https://magazine.sebastianraschka.com/p/coding-the-kv-cache-in-llms	
+MARKDOWN	https://book.theaiedge.io/home	The Big Book of LLMs
+MARKDOWN	https://huggingface.co/blog/kv-cache	KV Cache from scratch in nanoVLM
+MARKDOWN	https://mlabonne.github.io/blog/posts/A_Beginners_Guide_to_LLM_Finetuning.html	A Beginner’s Guide to LLM Fine-Tuning – Maxime Labonne
+MARKDOWN	https://github.com/eosphoros-ai/DB-GPT-Hub	GitHub - eosphoros-ai/DB-GPT-Hub: A repository that contains models, datasets, and fine-tuning techniques for DB-GPT, with the purpose of enhancing model performance in Text-to-SQL · GitHub
+BOOKMARK	https://youtube.com/live/pov3pLFMOPY?feature=share	QLoRA: Quantization for Fine Tuning - YouTube
+MARKDOWN	https://towardsdatascience.com/running-llama-2-on-cpu-inference-for-document-q-a-3d636037a3d8	Running Llama 2 on CPU Inference Locally for Document Q&A | Towards Data Science
+MARKDOWN	https://pub.towardsai.net/how-i-created-an-animation-of-the-embeddings-during-fine-tuning-2b8bdf49f822	Medium
+MARKDOWN	https://huggingface.co/blog/rlhf	Illustrating Reinforcement Learning from Human Feedback (RLHF)
+MARKDOWN	https://www.deeplearning.ai/short-courses/reinforcement-learning-from-human-feedback/	Reinforcement Learning From Human Feedback - DeepLearning.AI
+BOOKMARK	https://youtube.com/live/hhiLw5Q_UFg?feature=share	John Schulman - Reinforcement Learning from Human Feedback: Progress and Challenges - YouTube
+MARKDOWN	https://www.interconnects.ai/p/rlhf-resources	RLHF learning resources in 2024 - by Nathan Lambert
+MARKDOWN	https://gist.github.com/yoavg/6bff0fecd65950898eba1bb321cfbd81?utm_source=substack&utm_medium=email	rl-for-llms.md · GitHub
+SKIP-DUP	https://rlhfbook.com/	
+MARKDOWN	https://www.deeplearning.ai/short-courses/reinforcement-fine-tuning-llms-grpo/	Reinforcement Fine-Tuning LLMs With GRPO - DeepLearning.AI
+BOOKMARK	https://www.youtube.com/watch?v=Z_JUqJBpVOk&list=PLs8w1Cdi-zvbUan-KlgwKN2CycndyKXXS&pp=gAQB	Reinforcement Learning with Human Feedback (RLHF) - How to train and fine-tune Transformer Models - YouTube
+MARKDOWN	https://arxiv.org/abs/2503.01067	[2503.01067] All Roads Lead to Likelihood: The Value of Reinforcement Learning in Fine-Tuning
+MARKDOWN	https://docs.unsloth.ai/basics/reinforcement-learning-guide	Reinforcement Learning (RL) Guide | Unsloth Documentation
+MARKDOWN	https://www.deeplearning.ai/short-courses/finetuning-large-language-models/?utm_campaign=finetuning-launch&utm_medium=video&utm_source=youtube&utm_content=teaser	Finetuning Large Language Models - DeepLearning.AI
+MARKDOWN	https://www.wandb.courses/courses/training-fine-tuning-LLMs	Training LLMs Course: Discover Fine-Tuning Techniques
+MARKDOWN	https://sumanthrh.com/post/distributed-and-efficient-finetuning/	Everything about Distributed Training and Efficient Finetuning | Sumanth's Personal Website
+BOOKMARK	https://www.youtube.com/embed/zbKz4g100SQ?start=414	YouTube
+MARKDOWN	https://pytorch.org/blog/finetune-llms/?utm_content=278057354&utm_medium=social&utm_source=twitter&hss_channel=tw-776585502606721024	Finetune LLMs on your own consumer hardware using tools from PyTorch and Hugging Face ecosystem – PyTorch
+MARKDOWN	https://www.chrismccormick.ai/products/fine-tuning-bert-for-ner	ChrisMcCormick.AI
+MARKDOWN	https://github.com/kryvokhyzha/how-to-understand-bert	GitHub - kryvokhyzha/how-to-understand-bert: In this repository, I have collected different sources, visualizations, and code examples of BERT · GitHub
+BOOKMARK	https://youtu.be/dA-NhCtrrVE	Low-rank Adaption of Large Language Models: Explaining the Key Concepts Behind LoRA - YouTube
+MARKDOWN	https://web.stanford.edu/~jurafsky/slp3/	Speech and Language Processing
+MARKDOWN	https://github.com/karpathy/nanoGPT	GitHub - karpathy/nanoGPT: The simplest, fastest repository for training/finetuning medium-sized GPTs. · GitHub
+MARKDOWN	https://github.com/karpathy/nanoGPT/blob/master/model.py	nanoGPT/model.py at master · karpathy/nanoGPT · GitHub
+MARKDOWN	https://github.com/neo4j-labs/text2cypher/blob/main/finetuning/unsloth-llama3/README.md#llamaindex	Rate limit · GitHub
+MARKDOWN	https://e2eml.school/blog.html	Brandon Rohrer's blog
+MARKDOWN	https://end-to-end-machine-learning.teachable.com/courses/enrolled/612528	Write a Neural Network Framework | End to End Machine Learning
+BOOKMARK	https://www.youtube.com/watch?v=VMj-3S1tku0&list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ	The spelled-out intro to neural networks and backpropagation: building micrograd - YouTube
+BOOKMARK	https://m.youtube.com/watch?v=VMj-3S1tku0	The spelled-out intro to neural networks and backpropagation: building micrograd - YouTube
+MARKDOWN	https://karpathy.github.io/neuralnets/	Hacker's guide to Neural Networks
+MARKDOWN	https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/	A Step by Step Backpropagation Example | Matt Mazur
+MARKDOWN	https://karpathy.github.io/2019/04/25/recipe/	A Recipe for Training Neural Networks
+MARKDOWN	https://github.com/stas00/toolbox	GitHub - stas00/ml-engineering: Machine Learning Engineering Open Book · GitHub
+MARKDOWN	https://pyimagesearch.com/2022/12/26/automatic-differentiation-part-2-implementation-using-micrograd/	Automatic Differentiation Part 2: Implementation Using Micrograd - PyImageSearch
+MARKDOWN	https://pyimagesearch.com/2021/05/06/backpropagation-from-scratch-with-python/	Backpropagation from scratch with Python - PyImageSearch
+BOOKMARK	https://www.youtube.com/watch?v=QwZQrxIk6Dg&list=PLLHTzKZzVU9d_3TcHbyiAjl5qCbpJR-o0&index=2&t=1311s	03 – Inference with neural nets - YouTube
+BOOKMARK	https://m.youtube.com/watch?v=QwZQrxIk6Dg	03 – Inference with neural nets - YouTube
+MARKDOWN	https://lightning.ai/pages/courses/deep-learning-fundamentals/unit-1/unit-1-1/	What is Machine Learning? | Unit 1
+MARKDOWN	https://mapie.readthedocs.io/en/latest/index.html#	MAPIE
+MARKDOWN	https://github.com/labmlai/annotated_deep_learning_paper_implementations	GitHub - labmlai/annotated_deep_learning_paper_implementations: 🧑‍🏫 60+ Implementations/tutorials of deep learning papers with side-by-side notes 📝; including transformers (original, xl, switch, feedback, vit, ...), optimizers (adam, adabelief, sophia, 
+MARKDOWN	https://courses.d2l.ai/berkeley-stat-157/syllabus.html	Syllabus — STAT 157, Spring 19 documentation
+BOOKMARK	https://www.youtube.com/watch?v=DKSZHN7jftI&list=PLZoTAELRMXVPGU70ZGsckrMdr0FteeRUi	Tutorial 1- Introduction to Neural Network and Deep Learning - YouTube
+MARKDOWN	https://machinelearningmastery.com/implement-backpropagation-algorithm-scratch-python/	How to Code a Neural Network with Backpropagation In Python (from scratch) - MachineLearningMastery.com
+BOOKMARK	https://www.youtube.com/watch?v=CRB266Eyjkg&list=PLZoTAELRMXVPGU70ZGsckrMdr0FteeRUi&index=6	Tutorial 6-Chain Rule of Differentiation with BackPropagation - YouTube
+BOOKMARK	https://www.youtube.com/watch?v=lZrIPRnoGQQ&list=PLUl4u3cNGP63oMNUHXqIUcrkS2PivhN3k&index=29&t=58s	27. Backpropagation: Find Partial Derivatives - YouTube
+MARKDOWN	https://ocw.mit.edu/courses/mathematics/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/video-lectures/lecture-27-backpropagation-find-partial-derivatives/	Lecture 27: Backpropagation: Find Partial Derivatives | Matrix Methods in Data Analysis, Signal Processing, and Machine Learning | Mathematics | MIT OpenCourseWare
+MARKDOWN	https://arxiv.org/abs/1502.05767	[1502.05767] Automatic differentiation in machine learning: a survey
+MARKDOWN	http://timvieira.github.io/blog/post/2017/08/18/backprop-is-not-just-the-chain-rule/	Backprop Is Not Just the Chain Rule
+MARKDOWN	http://cs231n.stanford.edu/handouts/linear-backprop.pdf	Backpropagation for a Linear Layer
+MARKDOWN	http://colah.github.io/posts/2015-08-Backprop/	Calculus on Computational Graphs: Backpropagation -- colah's blog
+MARKDOWN	https://alexander-schiendorfer.github.io/2020/02/16/automatic-differentiation.html	Automatic Differentiation for Deep Learning, by example | Connecting deep dots
+MARKDOWN	http://cs231n.stanford.edu/slides/2020/section_2_annotated.pdf	Backpropagation
+MARKDOWN	http://cs231n.stanford.edu/slides/2020/section_2_backprop.pdf	Backpropagation
+MARKDOWN	http://neuralnetworksanddeeplearning.com/chap2.html	Neural networks and deep learning
+MARKDOWN	http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf	Ecient BackProp
+MARKDOWN	http://cs231n.stanford.edu/slides/2020/lecture_4.pdf	Lecture 4:
+MARKDOWN	http://people.idsia.ch/~juergen/who-invented-backpropagation.html	Who Invented Backpropagation?
+MARKDOWN	https://dl.acm.org/doi/book/10.5555/201784	201784
+MARKDOWN	https://brilliant.org/practice/backpropagation-vanishing-and-exploding-gradient/?p=1	Brilliant | Your Personal Tutor for Math and Coding
+MARKDOWN	https://leanpub.com/pytorch	Deep Learning with PyTorch Step-by-Step [Leanpub PDF/iPad/Kindle]
+MARKDOWN	https://huyenchip.com/2022/01/02/real-time-machine-learning-challenges-and-solutions.html	Real-time machine learning: challenges and solutions
+MARKDOWN	https://courses.edx.org/courses/course-v1:MITx+6.008.1x+3T2016/course/	course
+MARKDOWN	https://camdavidsonpilon.github.io/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/#using-the-book	Bayesian Methods for Hackers
+MARKDOWN	https://courses.edx.org/courses/course-v1:MITx+6.008.1x+3T2016/courseware/1__Probability_and_Inference/intro_prob/?activate_block_id=block-v1%3AMITx%2B6.008.1x%2B3T2016%2Btype%40sequential%2Bblock%40intro_prob	?activate_block_id=block-v1%3AMITx%2B6.008.1x%2B3T2016%2Btype%40sequential%2Bblock%40intro_prob
+MARKDOWN	https://towardsdatascience.com/guide-to-file-formats-for-machine-learning-columnar-training-inferencing-and-the-feature-store-2e0c3d18d4f9	Comparing Performance of Big Data File Formats: A Practical Guide | Towards Data Science
+MARKDOWN	https://huggingface.co/mrm8488/distilroberta-finetuned-financial-news-sentiment-analysis	mrm8488/distilroberta-finetuned-financial-news-sentiment-analysis · Hugging Face
+MARKDOWN	https://blog.llamaindex.ai/improving-retrieval-performance-by-fine-tuning-cohere-reranker-with-llamaindex-16c0c1f9b33b	Fine-Tune Cohere Reranker for Better RAG | LlamaIndex
+MARKDOWN	https://towardsdatascience.com/a-guide-on-12-tuning-strategies-for-production-ready-rag-applications-7ca646833439	Page not found | Towards Data Science
+MARKDOWN	https://www.quantamagazine.org/artificial-neural-nets-finally-yield-clues-to-how-brains-learn-20210218/	Artificial Neural Nets Finally Yield Clues to How Brains Learn | Quanta Magazine
+MARKDOWN	https://towardsdatascience.com/backpropagation-for-people-who-are-afraid-of-math-936a2cbebed7	Page not found | Towards Data Science
+MARKDOWN	https://statmodeling.stat.columbia.edu/2020/12/03/how-to-think-about-correlation-its-the-slope-of-the-regression-when-x-and-y-have-been-standardized/	How to think about correlation? It’s the slope of the regression when x and y have been standardized. | Statistical Modeling, Causal Inference, and Social Science
+MARKDOWN	https://jordivillar.com/data/sql-is-all-you-need/	SQL Is All You Need - Jordi Villar
+MARKDOWN	https://arxiv.org/abs/2307.09288	[2307.09288] Llama 2: Open Foundation and Fine-Tuned Chat Models
+MARKDOWN	https://lmsys.org/blog/2023-03-30-vicuna/	Vicuna: An Open-Source Chatbot Impressing GPT-4 with 90%* ChatGPT Quality - LMSYS Org
+MARKDOWN	https://pytorch.org/blog/accelerating-generative-ai-2/	Accelerating Generative AI with PyTorch II: GPT, Fast – PyTorch
+MARKDOWN	https://v0.dev/	v0 by Vercel - Build Full-Stack Web Apps with AI
+MARKDOWN	https://newsletter.vickiboykis.com/archive/my-favorite-use-case-for-ai-is-writing-logs/	My favorite use-case for AI is writing logs • Buttondown
+MARKDOWN	http://karpathy.github.io/neuralnets/	Hacker's guide to Neural Networks
+MARKDOWN	https://github.com/microsoft/nlp-recipes	GitHub - microsoft/nlp-recipes: Natural Language Processing Best Practices & Examples · GitHub
+MARKDOWN	https://simonwillison.net/2025/Jun/25/gemini-cli/	Gemini CLI
+MARKDOWN	https://simonwillison.net/2025/Jun/26/gemma-3n/	Introducing Gemma 3n: The developer guide
+MARKDOWN	https://slack.engineering/rebuilding-slack-com-b124c405c193	Rebuilding slack.com | Engineering at Slack
+MARKDOWN	http://yosinski.com/deepvis	Jason Yosinski
+MARKDOWN	http://neuralnetworksanddeeplearning.com/chap1.html	Neural networks and deep learning
+MARKDOWN	https://courses.edx.org/courses/course-v1:MITx+6.008.1x+3T2016/courseware/1__Probability_and_Inference/random_variables/	random_variables
+MARKDOWN	https://www.jeremyjordan.me/nn-learning-rate/?utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=NLP%20News	Setting the learning rate of your neural network.
+MARKDOWN	http://neuralnetworksanddeeplearning.com/chap2.html#proof_of_the_four_fundamental_equations_(optional	Neural networks and deep learning
+MARKDOWN	http://neuralnetworksanddeeplearning.com/chap1.html#implementing_our_network_to_classify_digits	Neural networks and deep learning
+MARKDOWN	https://scs.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=99641f66-f459-4e83-af27-aaaf00fad1ff	Panopto
+MARKDOWN	https://scs.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=80d8045f-1cf8-435d-8362-aaaf00fabe2a	Panopto
+MARKDOWN	https://docs.fast.ai/quick_start.html	Quick start – fastai
+MARKDOWN	https://cs230.stanford.edu/section/4/	Section 4 (Week 4)
+MARKDOWN	https://github.com/balavenkatesh3322/CV-pretrained-model	GitHub - balavenkatesh3322/CV-pretrained-model: A collection of computer vision pre-trained models. · GitHub
+MARKDOWN	http://www.inference.org.uk/mackay/itila/book.html	David MacKay: Information Theory, Inference, and Learning Algorithms: The Book
+BOOKMARK	https://www.youtube.com/watch?v=i94OvYb6noo&list=PLkt2uSq6rBVctENoVBg1TpCC7OQi31AlC&index=4	CS231n Winter 2016: Lecture 4: Backpropagation, Neural Networks 1 - YouTube
+MARKDOWN	http://iamtrask.github.io/	i am trask
+MARKDOWN	https://distill.pub/2018/differentiable-parameterizations/	Differentiable Image Parameterizations
+MARKDOWN	https://eigenfoo.xyz/floating-point-deep-learning/	Floating-Point Formats and Deep Learning | George Ho
+MARKDOWN	https://kyunghyuncho.me/a-few-qa-from-the-course/	A few QA’s from the course F’20 <Deep Learning> – Kyunghyun Cho
+MARKDOWN	https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design	SOLID Design Principles Explained: Building Better Software Architecture | DigitalOcean
+MARKDOWN	https://arxiv.org/abs/2102.05242	[2102.05242] Patterns, predictions, and actions: A story about machine learning
+MARKDOWN	https://lilianweng.github.io/posts/2021-12-05-semi-supervised/	Learning with not Enough Data Part 1: Semi-Supervised Learning | Lil'Log
+MARKDOWN	https://ai.facebook.com/blog/theseus-a-library-for-encoding-domain-knowledge-in-end-to-end-ai-models/	Error
+MARKDOWN	https://theorydish.blog/2021/12/16/backpropagation-%E2%89%A0-chain-rule/	Backpropagation ≠ Chain Rule – Theory Dish
+MARKDOWN	https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design	SOLID Design Principles Explained: Building Better Software Architecture | DigitalOcean
+MARKDOWN	https://vickiboykis.com/2020/06/09/getting-machine-learning-to-production/	Getting machine learning to production | ✰Vicki Boykis✰
+MARKDOWN	https://www.science.org/content/article/ai-learns-write-computer-code-stunning-advance	ai-learns-write-computer-code-stunning-advance
+MARKDOWN	https://openai.com/blog/how-should-ai-systems-behave	How should AI systems behave, and who should decide? | OpenAI
+MARKDOWN	https://huggingface.co/blog/falcon	The Falcon has landed in the Hugging Face ecosystem
+MARKDOWN	https://www.interconnects.ai/p/open-llm-company-playbook?utm_campaign=post&utm_medium=web	Open LLM company playbook - by Nathan Lambert
+MARKDOWN	https://huggingface.co/papers/2312.11514	Paper page - LLM in a flash: Efficient Large Language Model Inference with Limited Memory
+MARKDOWN	https://openai.com/research/weak-to-strong-generalization	Weak-to-strong generalization | OpenAI
+MARKDOWN	https://arxiv.org/abs/2312.06550	[2312.06550] LLM360: Towards Fully Transparent Open-Source LLMs
+MARKDOWN	https://arxiv.org/abs/2312.06585	[2312.06585] Beyond Human Data: Scaling Self-Training for Problem-Solving with Language Models
+MARKDOWN	https://mistral.ai/news/mixtral-of-experts/	Mixtral of experts | Mistral AI
+SKIP-DUP	https://huggingface.co/blog/moe	
+MARKDOWN	https://arxiv.org/abs/2305.14705	[2305.14705] Mixture-of-Experts Meets Instruction Tuning:A Winning Combination for Large Language Models
+MARKDOWN	https://arxiv.org/abs/2401.04088	[2401.04088] Mixtral of Experts
+MARKDOWN	https://bentoml.com/llm/	LLM Inference Handbook
+MARKDOWN	https://thinkingmachines.ai/blog/on-policy-distillation/	On-Policy Distillation - Thinking Machines Lab
+MARKDOWN	https://towardsdatascience.com/democratizing-llms-4-bit-quantization-for-optimal-llm-inference-be30cf4e0e34	Democratizing LLMs: 4-bit Quantization for Optimal LLM Inference | Towards Data Science
+MARKDOWN	https://www.deeplearning.ai/short-courses/llmops/?utm_campaign=googlecloud3-launch&utm_medium=email&_hsmi=290334501&_hsenc=p2ANqtz-9jr1OzWwqmAssp0mRPz75TfbTXA_PFZShkcS6A5GvfJOq-ZXvfS5xdYVvTN1MZSat3Iui8MJ2H_KusyLCl8IL2zEylug&utm_content=290334501&utm_source=hs_email	LLMOps - DeepLearning.AI
+MARKDOWN	https://github.com/microsoft/LLMLingua	GitHub - microsoft/LLMLingua: [EMNLP'23, ACL'24] To speed up LLMs' inference and enhance LLM's perceive of key information, compress the prompt and KV-Cache, which achieves up to 20x compression with minimal performance loss. · GitHub
+MARKDOWN	https://github.com/da-z/mlx-ui	GitHub - da-z/mlx-ui: A simple UI / Web / Frontend for MLX mlx-lm using Streamlit. · GitHub
+MARKDOWN	https://arxiv.org/abs/2401.08406	[2401.08406] RAG vs Fine-tuning: Pipelines, Tradeoffs, and a Case Study on Agriculture
+MARKDOWN	https://lightning.ai/lightning-ai/studios/pretrain-llms-tinyllama-1-1b	Pretrain LLMs - TinyLlama 1.1B - a Lightning template by adrian-111
+MARKDOWN	https://lightning.ai/lightning-ai/studios/finetune-llm-codellama-13b	Finetune LLM - CodeLlama 13B - a Lightning template by lantiga
+MARKDOWN	https://lightning.ai/lightning-ai/studios/optimized-llm-inference-api-for-mistral-7b-using-vllm?view=public&section=recent	Optimized LLM inference API for Mistral 7B using vLLM - a Lightning template by aniket
+MARKDOWN	https://medium.com/@georgeanil/visualizing-size-of-large-language-models-ec576caa5557	Medium
+MARKDOWN	https://huggingface.co/papers/2401.10020	Paper page - Self-Rewarding Language Models
+MARKDOWN	https://s	ility.ai/news/introducing-s
+MARKDOWN	https://lingo-mit.github.io/deductive-closure/	Deductive Closure Training of Language Models for Coherence, Accuracy, and Upda
+MARKDOWN	https://github.com/karpathy/llama2.c	GitHub - karpathy/llama2.c: Inference Llama 2 in one file of pure C · GitHub
+MARKDOWN	https://iamtrask.github.io/	i am trask
+BOOKMARK	https://youtube.com/watch?v=mrKuDK9dGlg&si=I_DP61Q8lh53hQG7	LLM Fine Tuning Crash Course: 1 Hour End-to-End Guide - YouTube
+MARKDOWN	https://lightning.ai/lightning-ai/studios/deploy-llm-chat-api-codellama-13b	Deploy LLM Chat API - CodeLlama 13B - a Lightning template by lantiga
+SKIP-DUP	https://www.philschmid.de/fine-tune-llms-in-2024-with-trl	
+MARKDOWN	https://github.com/facebookresearch/llama-recipes/blob/main/examples/Prompt_Engineering_with_Llama_2.ipynb?utm_source=twitter&utm_medium=organic_social&utm_campaign=llama&utm_content=video	Rate limit · GitHub
+MARKDOWN	https://github.com/stas00/ml-engineering#pdf-version	GitHub - stas00/ml-engineering: Machine Learning Engineering Open Book · GitHub
+MARKDOWN	https://lumiere-video.github.io/	Lumiere
+MARKDOWN	https://huggingface.co/papers/2401.08406	Paper page - RAG vs Fine-tuning: Pipelines, Tradeoffs, and a Case Study on Agriculture
+MARKDOWN	https://www.together.ai/	Together AI | The AI Native Cloud
+MARKDOWN	https://github.com/ashishpatel26/LLM-Finetuning	GitHub - ashishpatel26/LLM-Finetuning: LLM Finetuning with peft · GitHub
+BOOKMARK	https://youtu.be/mrKuDK9dGlg?si=ZJgWpR21-o4XidR6	LLM Fine Tuning Crash Course: 1 Hour End-to-End Guide - YouTube
+MARKDOWN	https://github.com/rasbt/LLMs-from-scratch/blob/main/ch03/02_bonus_efficient-multihead-attention/mha-implementations.ipynb	LLMs-from-scratch/ch03/02_bonus_efficient-multihead-attention/mha-implementations.ipynb at main · rasbt/LLMs-from-scratch · GitHub
+MARKDOWN	https://github.com/OpenAccess-AI-Collective/axolotl/blob/main/examples/llama-2/qlora-fsdp.yml	axolotl/examples/llama-2/qlora-fsdp.yml at main · axolotl-ai-cloud/axolotl · GitHub
+MARKDOWN	https://seeing-theory.brown.edu/	Seeing Theory
+MARKDOWN	https://research.ibm.com/blog/science-expert-LLM	IBM and NASA build language models to make scientific knowledge more accessible - IBM Research
+MARKDOWN	https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-D/01_main-chapter-code/appendix-D.ipynb	LLMs-from-scratch/appendix-D/01_main-chapter-code/appendix-D.ipynb at main · rasbt/LLMs-from-scratch · GitHub
+MARKDOWN	https://x.ai/blog/grok-os	Open Release of Grok-1 | SpaceXAI
+MARKDOWN	https://www.deeplearning.ai/short-courses/efficiently-serving-llms/	Efficiently Serving LLMs - DeepLearning.AI
+MARKDOWN	https://huggingface.co/blog/cosmopedia	Cosmopedia: how to create large-scale synthetic data for pre-training Large Language Models
+MARKDOWN	https://www.confident-ai.com/blog/llm-evaluation-metrics-everything-you-need-for-llm-evaluation?utm_source=substack&utm_medium=email	LLM Evaluation Metrics: The Ultimate LLM Evaluation Guide - Confident AI
+MARKDOWN	https://www.dipkumar.dev/becoming-the-unbea	le/posts/gpt-kvcache/
+MARKDOWN	https://github.com/mistralai-sf24/hackathon/blob/main/finetune/distributed.py	hackathon/finetune/distributed.py at main · mistralai-sf24/hackathon · GitHub
+MARKDOWN	https://a16z.com/generative-ai-enterprise-2024/	16 Changes to the Way Enterprises Are Building and Buying Generative AI | Andreessen Horowitz
+MARKDOWN	https://www.udacity.com/course/building-real-world-applications-with-large-language-models--cd13455	Building Real-World Applications With Large Language Models | Udacity
+MARKDOWN	https://huggingface.co/docs/text-generation-inference/en/index	Text Generation Inference · Hugging Face
+MARKDOWN	https://github.com/gordicaleksa/pytorch-original-transformer	GitHub - gordicaleksa/pytorch-original-transformer: My implementation of the original transformer model (Vaswani et al.). I've additionally included the playground.py file for visualizing otherwise seemingly hard concepts. Currently included IWSLT pretrain
+MARKDOWN	https://github.com/google-deepmind/penzai?	=readme-ov-file
+MARKDOWN	https://www.answer.ai/posts/2024-04-26-fsdp-qdora-llama3.html	Efficient finetuning of Llama 3 with FSDP QDoRA – Answer.AI
+MARKDOWN	https://www.latent.space/p/fastai	The End of Finetuning — with Jeremy Howard of Fast.ai
+MARKDOWN	https://www.philschmid.de/fsdp-qlora-llama3	Efficiently fine-tune Llama 3 with PyTorch FSDP and Q-Lora
+MARKDOWN	https://github.com/rasbt/LLMs-from-scratch/blob/main/ch06/01_main-chapter-code/ch06.ipynb	Rate limit · GitHub
+BOOKMARK	https://youtu.be/t-0s_2uZZU0?si=XYAtebcm-9Tkdph9	Generative AI Fine Tuning LLM Models Crash Course - YouTube
+MARKDOWN	https://github.com/mistralai/mistral-finetune	GitHub - mistralai/mistral-finetune · GitHub
+BOOKMARK	https://youtu.be/hDa-M91MSGU?si=LkS1nNfrcqCC1wLZ	Fine-tune PaliGemma for image to JSON use cases - YouTube
+MARKDOWN	https://gist.github.com/awni/773e2a12079da40a1cbc566686c84c8f	MLX LM LoRA Fine Tune.ipynb · GitHub
+BOOKMARK	https://x.com/hamelhusain/status/1798353336145674483?s=46	Hamel Husain on X: ". @johnowhitaker &#x27;s talk: Napkin Math For Fine Tuning was so popular that we ended up doing an encore! He answers q&#x27;s like: - When should I use LoRA? Quantization? GC? - What’s the cheapest option? most accurate? - What hardware? - What batch size / context length ..etc?" / X
+BOOKMARK	https://x.com/_philschmid/status/1798388387822317933?s=46	Philipp Schmid on X: "Creating a Pipeline for Generating Synthetic Data for Fine-Tuning Custom Embedding Models. 👀 Step 1 Create a Knowledge Base: Start with preparing your domain specific knowledge base, such as PDFs or other documents containing information. Convert the content of these documen… / X
+MARKDOWN	https://github.com/davanstrien/data-for-fine-tuning-llms	GitHub - davanstrien/data-for-fine-tuning-llms · GitHub
+MARKDOWN	https://mlops.systems/posts/2024-06-15-isafpr-first-finetune.html	Finetuning my first LLM(s) for structured data extraction with axolotl – Alex Strick van Linschoten
+MARKDOWN	https://github.com/rasbt/LLMs-from-scratch/blob/main/ch07/01_main-chapter-code/ch07.ipynb	LLMs-from-scratch/ch07/01_main-chapter-code/ch07.ipynb at main · rasbt/LLMs-from-scratch · GitHub
+MARKDOWN	https://changes.openinterpreter.com/log/local-iii	Open Interpreter - Introducing Local III
+MARKDOWN	https://huggingface.co/papers/2406.11813	Paper page - How Do Large Language Models Acquire Factual Knowledge During Pretraining?
+MARKDOWN	https://github.com/OpenAccess-AI-Collective/axolotl/tree/main/examples	axolotl/examples at main · axolotl-ai-cloud/axolotl · GitHub
+MARKDOWN	https://nrehiew.github.io/blog/pytorch/	Taking PyTorch for Granted | wh
+MARKDOWN	https://ml-science-book.com/supervised-ml.html	2 Bare-Bones Supervised Machine Learning – Supervised Machine Learning for Science
+MARKDOWN	https://github.com/stas00/ml-engineering/tree/master	GitHub - stas00/ml-engineering: Machine Learning Engineering Open Book · GitHub
+MARKDOWN	https://www.deeplearning.ai/short-courses/intro-to-federated-learning/	Intro to Federated Learning - DeepLearning.AI
+MARKDOWN	https://bentoml.com/blog/benchmarking-llm-inference-backends	Benchmarking LLM Inference Backends
+MARKDOWN	https://hamel.dev/blog/posts/course/	An Open Course on LLMs, Led by Practitioners – Hamel’s Blog
+SKIP-DUP	https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-quantization	
+MARKDOWN	https://flower.ai/	Flower: Advance Collaborative Superintelligence
+BOOKMARK	https://youtu.be/kPGTx4wcm_w?si=HloQuCjHDApzBGOj	Developing an LLM: Building, Training, Finetuning - YouTube
+MARKDOWN	https://www.deeplearning.ai/short-courses/improving-accuracy-of-llm-applications/	Improving Accuracy of LLM Applications - DeepLearning.AI
+MARKDOWN	https://www.axios.com/2024/06/23/leopold-aschenbrenner-ai-future-silicon-valley?utm_medium=social&utm_campaign=editorial&utm_source=twitter	Leopold Aschenbrenner's "Situational Awareness": AI from now to 2034
+MARKDOWN	https://github.com/Lightning-AI/litserve	GitHub - Lightning-AI/LitServe: A minimal Python framework for building custom AI inference servers with full control over logic, batching, and scaling. · GitHub
+MARKDOWN	https://github.com/linkedin/Liger-Kernel	GitHub - linkedin/Liger-Kernel: Efficient Triton Kernels for LLM Training · GitHub
+BOOKMARK	https://www.youtube.com/watch?v=VMj-3S1tku0&list=PPSV	The spelled-out intro to neural networks and backpropagation: building micrograd - YouTube
+MARKDOWN	https://distilabel.argilla.io/latest/	Distilabel Docs
+MARKDOWN	https://lightning.ai/lightning-ai/studios/create-synthetic-datasets-with-llama-3-1?utm_source=akshay	Create synthetic datasets with Llama 3.1 - a Lightning template by akshay
+MARKDOWN	https://v0.dev/chat	v0 by Vercel - Build Full-Stack Web Apps with AI
+MARKDOWN	https://github.com/zml/zml	GitHub - zml/zml: Any model. Any hardware. Zero compromise. Built with @ziglang / @openxla / MLIR / @bazelbuild · GitHub
+MARKDOWN	https://docs.ell.so/	Introduction | ell documentation
+BOOKMARK	https://colab.research.google.com/drive/1T5-zKWM_5OD21QHwXHiV9ixTRR7k3iB9?usp=sharing	Google Colab
+MARKDOWN	https://huggingface.co/blog/llama32	Llama can now see and run on your device - welcome Llama 3.2
+MARKDOWN	https://huggingface.co/blog	Hugging Face – Blog
+MARKDOWN	https://github.com/SylphAI-Inc/llm-engineer-handbook	GitHub - SylphAI-Inc/LLM-engineer-handbook: A curated list of Large Language Model resources, covering model training, serving, fine-tuning, and building LLM applications. · GitHub
+MARKDOWN	https://github.com/cohere-ai/cohere-finetune	GitHub - cohere-ai/cohere-finetune: A tool that facilitates easy, efficient and high-quality fine-tuning of Cohere's models · GitHub
+MARKDOWN	https://github.com/rasbt/LLMs-from-scratch?	=readme-ov-file#bonus-material
+MARKDOWN	https://boards.greenhouse.io/anthropic/jobs/4406493008	Jobs at Anthropic
+MARKDOWN	https://microsoft.github.io/LLM2CLIP/	LLM2CLIP: Powerful Language Model Unlock Richer Visual Representation
+MARKDOWN	https://aman.ai/primers/ai/LLM/	Aman's AI Journal • Primers • Overview of Large Language Models
+MARKDOWN	https://github.com/illuin-tech/colpali#community-projects	GitHub - illuin-tech/colpali: The code used to train and run inference with the ColVision models, e.g. ColPali, ColQwen2, and ColSmol. · GitHub
+MARKDOWN	http://thelmbook.com/	The Hundred-Page Language Models Book by Andriy Burkov
+MARKDOWN	https://github.com/adithya-s-k/AI-Engineering.academy?	=readme-ov-file#-why-choose-ai-engineering-academy
+MARKDOWN	https://www.philschmid.de/fine-tune-llms-in-2025	How to fine-tune open LLMs in 2025 with Hugging Face
+MARKDOWN	https://github.com/SkalskiP/vlms-zero-to-hero	GitHub - SkalskiP/vlms-zero-to-hero: This series will take you on a journey from the fundamentals of NLP and Computer Vision to the cutting edge of Vision-Language Models. · GitHub
+MARKDOWN	https://simonwillison.net/2024/Dec/9/llama-33-70b/#atom-everything	I can now run a GPT-4 class model on my laptop
+MARKDOWN	https://mistral.ai/news/codestral-2501/	Codestral 25.01 | Mistral AI
+MARKDOWN	https://magazine.sebastianraschka.com/p/ai-research-papers-2024-part-2?utm_source=post-email-title&publication_id=1174659&post_id=153692738&utm_campaign=email-post-title&isFreemail=true&r=1csfkw&triedRedirect=true&utm_medium=email	Noteworthy AI Research Papers of 2024 (Part Two)
+MARKDOWN	https://www.kaggle.com/code/iamleonie/fine-tuning-gemma-2-jpn-for-yomigana-with-lora	fine-tuning-gemma-2-jpn-for-yomigana-with-lora
+MARKDOWN	https://arxiv.org/abs/2501.09223	[2501.09223] Foundations of Large Language Models
+MARKDOWN	https://github.com/bespokelabsai/curator	GitHub - bespokelabsai/curator: Synthetic data curation for post-training and structured data extraction · GitHub
+MARKDOWN	https://www.interconnects.ai/p/deepseek-r1-recipe-for-o1	DeepSeek R1's recipe to replicate o1 and the future of reasoning LMs
+MARKDOWN	https://huggingface.co/unsloth/DeepSeek-R1-GGUF/tree/main/DeepSeek-R1-UD-IQ1_S	unsloth/DeepSeek-R1-GGUF at main
+MARKDOWN	https://news.ycombinator.com/item?id=42952605	Ingesting PDFs and why Gemini 2.0 changes everything | Hacker News
+MARKDOWN	https://www.answer.ai/posts/2025-02-10-modernbert-instruct.html	TIL: Masked Language Models Are Surprisingly Capable Zero-Shot Learners – Answer.AI
+BOOKMARK	https://colab.research.google.com/github/huggingface/notebooks/blob/main/course/en/chapter13/grpo_finetune.ipynb	Google Colab
+MARKDOWN	https://developers.googleblog.com/en/introducing-gemma3/	Introducing Gemma 3: The Developer Guide - Google Developers Blog
+MARKDOWN	https://github.com/neuralmagic/guidellm	GitHub - vllm-project/guidellm: Evaluate and Enhance Your LLM Deployments for Real-World Inference Needs · GitHub
+MARKDOWN	https://unsloth.ai/blog/gemma3	Fine-tune Gemma 3 with Unsloth
+BOOKMARK	https://colab.research.google.com/github/unslothai/notebooks/blob/main/nb/Llama3.1_(8B	Google Colab
+MARKDOWN	https://huggingface.co/ds4sd/SmolDocling-256M-preview	docling-project/SmolDocling-256M-preview · Hugging Face
+MARKDOWN	https://mistral.ai/news/mistral-small-3-1	Mistral Small 3.1 | Mistral AI
+MARKDOWN	https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503	mistralai/Mistral-Small-3.1-24B-Instruct-2503 · Hugging Face
+MARKDOWN	https://johnowhitaker.dev/essays/future-ai.html	My Thoughts on the Future of “AI” – johnowhitaker.dev
+MARKDOWN	https://huggingface.co/blog/train-reranker	Training and Finetuning Reranker Models with Sentence Transformers
+MARKDOWN	https://huggingface.co/reasoning-course	reasoning-course (Hugging Face Reasoning Course)
+SKIP-DUP	https://www.llmstxt.new/	
+MARKDOWN	https://www.alphaxiv.org/abs/2501.17161	SFT Memorizes, RL Generalizes: A Comparative Study of Foundation Model Post-training | alphaXiv
+MARKDOWN	https://docs.unsloth.ai/basics/datasets-guide	Datasets Guide | Unsloth Documentation
+MARKDOWN	https://docs.mistral.ai/capabilities/finetuning/classifier_factory/	Mistral Docs
+SKIP-DUP	https://www.jeremykun.com/2015/04/06/markov-chain-monte-carlo-without-all-the-bullshit/	
+SKIP-DUP	https://sander.ai/2025/04/15/latents.html	
+MARKDOWN	https://huggingface.co/docs/inference-providers/en/index	Inference Providers · Hugging Face
+BOOKMARK	https://colab.research.google.com/github/unslothai/notebooks/blob/main/nb/Meta_Synthetic_Data_Llama3_2_(3B	Google Colab
+MARKDOWN	https://www.latent.space/p/2025-papers	The 2025 AI Engineering Reading List - Latent.Space
+MARKDOWN	https://github.com/Goekdeniz-Guelmez/mlx-lm-lora	GitHub - Goekdeniz-Guelmez/mlx-lm-lora: Train Large Language Models on MLX. · GitHub
+MARKDOWN	https://mistral.ai/news/devstral	Devstral | Mistral AI
+MARKDOWN	https://marin.readthedocs.io/en/latest/reports/marin-8b-retro/	Marin 8B Retro - Marin Documentation
+MARKDOWN	https://github.com/jax-ml/scaling-book/	GitHub - jax-ml/scaling-book: Home for "How To Scale Your Model", a short blog-style textbook about scaling LLMs on TPUs · GitHub
+MARKDOWN	https://github.com/huggingface/nanoVLM/pull/69	Implementing KV Cache for inference by ariG23498 · Pull Request #69 · huggingface/nanoVLM · GitHub
+MARKDOWN	https://github.com/spiceai/spiceai	GitHub - spiceai/spiceai: Add a real-time analytics node to your operational da
+BOOKMARK	https://youtu.be/HNpYAz_I4yY?si=dJlVtPt8852lCHfv	Advanced Data Prep and Visualisation Techniques for Fine-tuning LLMs - YouTube
+MARKDOWN	http://deepdive.stanford.edu/quickstart	DeepDive Quick Start - DeepDive
+MARKDOWN	https://deepwiki.com/	DeepWiki | AI documentation you can talk to, for every repo
+MARKDOWN	https://www.deeplearning.ai/short-courses/orchestrating-workflows-for-genai-applications/	Orchestrating Workflows for GenAI Applications - DeepLearning.AI
+MARKDOWN	https://keras.io/keras_hub/	KerasHub
+MARKDOWN	https://unsloth.ai/docs/new/faster-moe	Fine-tune MoE Models 12x Faster with Unsloth | Unsloth Documentation
+MARKDOWN	https://openrouter.ai/z-ai/glm-5	glm-5
+MARKDOWN	https://modal.com/docs/examples/very_large_models	Serve very large language models (DeepSeek V3, Kimi-K2, GLM 4.7/5) | Modal Docs
+MARKDOWN	https://github.com/Goekdeniz-Guelmez/mlx-lm-lora-example-notebooks/blob/main/finetuning/Qwen3_4B_Instruct_32k.ipynb	mlx-lm-lora-example-notebooks/finetuning/Qwen3_4B_Instruct_32k.ipynb at main · Goekdeniz-Guelmez/mlx-lm-lora-example-notebooks · GitHub
+MARKDOWN	https://huggingface.co/datasets/uv-scripts/ocr	uv-scripts/ocr · Datasets at Hugging Face
+MARKDOWN	https://huggingface.co/blog/unsloth-jobs	Train AI models with Unsloth and Hugging Face Jobs for FREE
+MARKDOWN	https://complete-pathway.vizuara.ai/	10-Course AI & ML Bundle | Vizuara AI Labs
+MARKDOWN	https://www.baseten.co/about-us/	Meet the engineers behind Baseten
+MARKDOWN	https://github.com/AlexsJones/llmfit	GitHub - AlexsJones/llmfit: Hundreds of models & providers. One command to find what runs on your hardware. · GitHub
+MARKDOWN	https://pods.vizuara.ai/	Vizuara AI Pods — Learn AI from First Principles
+SKIP-DUP	https://kipp.ly/transformer-inference-arithmetic/	
+MARKDOWN	https://arxiv.org/abs/2603.03075	[2603.03075] TinyIceNet: Low-Power SAR Sea Ice Segmentation for On-Board FPGA Inference
+MARKDOWN	https://www.baseten.co/inference-engineering/	Inference Engineering | Baseten Books
+SKIP-DUP	https://aweers.de/blog/2026/rl-for-llms/	
+MARKDOWN	https://mistral.ai/news/leanstral	Leanstral: Open-Source foundation for trustworthy vibe-coding | Mistral AI
+SKIP-DUP	https://rlhfbook.com/c/06-policy-gradients	
+MARKDOWN	https://unsloth.ai/docs/new/studio	Introducing Unsloth Studio | Unsloth Documentation
+MARKDOWN	https://huggingface.co/baidu/Qianfan-OCR	baidu/Qianfan-OCR · Hugging Face
+MARKDOWN	https://unsloth.ai/docs/models/gemma-4	Gemma 4 - How to Run Locally | Unsloth Documentation
+MARKDOWN	https://docs.anarchai.org/	Docs - Mesh LLM
+MARKDOWN	https://unsloth.ai/docs/models/gemma-4/train	Gemma 4 Fine-tuning Guide | Unsloth Documentation
+MARKDOWN	https://www.suryasure.com/articles/breaking-down-turboquant	Surya Sure
+MARKDOWN	https://huggingface.co/tiiuae/Falcon-OCR	tiiuae/Falcon-OCR · Hugging Face
+MARKDOWN	https://github.com/tiiuae/Falcon-Perception	GitHub - tiiuae/Falcon-Perception: Inference repo for Falcon-Perception and Falcon-OCR model, early-fusion, natively multimodal, dense Autoregressive Transformer models. · GitHub
+MARKDOWN	https://machinelearningmastery.com/from-prompt-to-prediction-understanding-prefill-decode-and-the-kv-cache-in-llms/	From Prompt to Prediction: Understanding Prefill, Decode, and the KV Cache in LLMs - MachineLearningMastery.com
+MARKDOWN	https://github.com/mattmireles/gemma-tuner-multimodal	GitHub - mattmireles/gemma-tuner-multimodal: Fine-tune Gemma 4 and 3n with audio, images and text on Apple Silicon, using PyTorch and Metal Performance Shaders. · GitHub
+MARKDOWN	https://github.com/ARahim3/mlx-tune	GitHub - ARahim3/mlx-tune: Fine-tune LLMs on your Mac with Apple Silicon. SFT, DPO, GRPO, Vision, TTS, STT, Embedding, and OCR fine-tuning — natively on MLX. Unsloth-compatible API. · GitHub
+MARKDOWN	https://inference.vizuara.ai/	Inference Engineering Workshop · Vizuara AI Labs
+MARKDOWN	https://www.liquid.ai/blog/lfm2-5-vl-450m	LFM2.5-VL-450M: Structured Visual Intelligence, Edge to Cloud | Blog | Liquid AI
+BOOKMARK	https://learn.deeplearning.ai/courses/efficient-inference-with-sglang-text-and-image-generation/information	Efficient Inference with SGLang: Text and Image Generation - DeepLearning.AI
+MARKDOWN	https://docs.openclaw.ai/providers/inferrs	Inferrs - OpenClaw
+MARKDOWN	https://modal.com/blog/physical-intelligence-runs-real-time-remote-inference-for-robotic-control-on-modal	Real-time inference for robots at Physical Intelligence
+MARKDOWN	https://www.webai.com/blog/running-yolo26-natively-on-apple-silicon-with-mlx	Running YOLO26 Natively on Apple Silicon with MLX | webAI
+MARKDOWN	https://github.com/google-research/timesfm	GitHub - google-research/timesfm: TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting. · GitHub
+SKIP-DUP	https://github.com/hiyouga/LlamaFactory	
+MARKDOWN	https://www.akashtandon.in/interactive-explainers/dspy/	DSPy: Programming - Not Prompting - Language Models
+MARKDOWN	https://rlhfbook.com/course	Post-Training Course by Nathan Lambert
+MARKDOWN	https://github.com/avbiswas/neural-txt	GitHub - avbiswas/neural-txt: Super fast local inferencing for common NLP tasks on technical text · GitHub
+MARKDOWN	https://huggingface.co/openai/privacy-filter	openai/privacy-filter · Hugging Face
+MARKDOWN	https://build.nvidia.com/models	models
+MARKDOWN	https://shopify.engineering/fine-tuning-agent-shopify-flow	Flow generation through natural language: An agentic modeling approach (2026) - Shopify
+MARKDOWN	https://reiner-flashcards.vercel.app/	Dwarkesh Podcast Flashcards
+MARKDOWN	https://github.com/amitshekhariitbhu/llm-internals	GitHub - amitshekhariitbhu/llm-internals: Learn LLM internals step by step - from tokenization to attention to inference optimization. · GitHub
+MARKDOWN	https://leoniemonigatti.com/blog/fine-tuning-lfm2-5-1-2b-instruct-with-grpo.html	Fine-tuning LFM2.5-1.2B-Instruct with GRPO – Leonie Monigatti
+MARKDOWN	https://book.theaiedge.io/	The Big Book of LLMs
+MARKDOWN	https://github.com/walkinglabs/hands-on-modern-rl	GitHub - walkinglabs/hands-on-modern-rl: 🚀 An open-source, hands-on curriculum bridging the gap from basic RL concepts to LLM alignment, RLVR, and advanced Agentic systems. · GitHub
+MARKDOWN	https://omlx.ai/	oMLX — LLM inference, optimized for your Mac
+MARKDOWN	https://huggingface.co/context-course	context-course (Hugging Face Context Course)
+MARKDOWN	https://modal.com/blog/truly-serverless-gpus	How we achieved truly serverless GPUs
+MARKDOWN	https://www.datadoghq.com/blog/ai/toto-2/	Toto 2.0: Time series forecasting enters the scaling era | Datadog
+MARKDOWN	https://akyrillidis.github.io/aiowls/adapad.html	From PCA to LoRA · AI-OWLS
+MARKDOWN	https://github.com/walkinglabs/hands-on-modern-rl/releases/tag/v0.1.5	Release Hands-On Modern RL Open Textbook v0.1.5 · walkinglabs/hands-on-modern-rl · GitHub
+MARKDOWN	https://rl-production.vizuara.ai/	Reinforcement Learning in Production — Vizuara AI Labs
+MARKDOWN	https://ai-engineer.harshhh.me/	AI Engineer Roadmap — From Math to Production
+MARKDOWN	https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures	Recent Developments in LLM Architectures: KV Sharing, mHC, and Compressed Attention
+SKIP-DUP	https://vizuaraai.github.io/convolution-musical-journey/book.html	
+MARKDOWN	https://www.tensortonic.com/llm-internals/kv-cache	KV Cache in LLMs Explained: How Transformers Make Inference Fast | TensorTonic
+MARKDOWN	https://github.com/Mog9/research-papers	GitHub - Mog9/research-papers: Research implementations focused on inference efficiency and model optimization. Includes custom Triton kernels, LoRA, knowledge distillation pipelines, and more. · GitHub
+BOOKMARK	https://x.com/theahmadosman/status/2057183854444843202?s=12	Ahmad on X: "https://t.co/kvDM29hgTL" / X
+MARKDOWN	https://huggingface.co/blog/modernbert	Finally, a Replacement for BERT: Introducing ModernBERT
+MARKDOWN	https://simonwillison.net/2024/Dec/24/modernbert/	Finally, a replacement for BERT: Introducing ModernBERT
+MARKDOWN	https://www.philschmid.de/fine-tune-modern-bert-in-2025	Fine-tune classifier with ModernBERT in 2025
+MARKDOWN	https://drchrislevy.github.io/posts/modern_bert/modern_bert.html	Site not found · GitHub Pages
+MARKDOWN	https://github.com/andysingal/llm-course/blob/main/llama_finetune/README.md	Rate limit · GitHub
+MARKDOWN	https://ollama.com/library/llama3	llama3
+MARKDOWN	https://ollama.com/library/llama3.3	llama3.3
+SKIP-DUP	https://github.com/cfregly/ai-performance-engineering	
+MARKDOWN	https://bytesofintelligence.substack.com/p/maximizing-gpu-efficiency-the-battle?utm_source=post-banner&utm_medium=web&utm_campaign=posts-open-in-app&triedRedirect=true	Maximizing GPU Efficiency: The Battle of Inference Methods
+MARKDOWN	https://modal.com/blog/qart-codes-evals	How we used evals and inference-time compute scaling to generate beautiful QR codes that actually work
+MARKDOWN	https://huggingface.co/learn/llm-course/chapter3/1	Introduction · Hugging Face
+MARKDOWN	https://docs.unsloth.ai/get-started/fine-tuning-guide/lora-hyperparameters-guide	LoRA fine-tuning Hyperparameters Guide | Unsloth Documentation
+MARKDOWN	https://medium.com/@atharv6f_47401/wordpiece-tokenization-a-bpe-variant-73cc48865cbf	Medium
+MARKDOWN	https://sebastianraschka.com/blog/2025/bpe-from-scratch.html	BPE Tokenizer From Scratch | Sebastian Raschka, PhD
+MARKDOWN	https://huggingface.co/learn/llm-course/en/chapter6/5	Byte-Pair Encoding tokenization · Hugging Face
+MARKDOWN	https://docs.unsloth.ai/tutorials/how-to-finetune-llama-3-and-export-to-ollama	Tutorial: How to Finetune Llama-3 and Use In Ollama | Unsloth Documentation
+MARKDOWN	https://docs.unsloth.ai/basics/gemma-3n-how-to-run-and-fine-tune#fixes-for-gemma-3n	Gemma 3n: How to Run & Fine-tune | Unsloth Documentation
+MARKDOWN	https://github.com/huggingface/huggingface-gemma-recipes	GitHub - huggingface/huggingface-gemma-recipes: Inference, Fine Tuning and many more recipes with Gemma family of models · GitHub
+MARKDOWN	https://ai.google.dev/gemma/docs/core/prompt-structure	Gemma formatting and system instructions | Google AI for Developers
+MARKDOWN	https://www.kaggle.com/code/danielhanchen/gemma-3n-4b-multimodal-finetuning-inference	gemma-3n-4b-multimodal-finetuning-inference
+MARKDOWN	https://docs.unsloth.ai/basics/tutorials-how-to-fine-tune-and-run-llms	Large language model (LLMs) Tutorials | Unsloth Documentation
+MARKDOWN	https://towardsdatascience.com/how-to-finetune-small-language-models-to-think-with-reinforcement-learning/	How to Fine-Tune Small Language Models to Think with Reinforcement Learning | Towards Data Science
+MARKDOWN	https://cookbook.openai.com/articles/gpt-oss/fine-tune-transfomers	Fine-tuning with gpt-oss and Hugging Face Transformers
+BOOKMARK	https://youtu.be/oZoy79S-edw?si=Azs4u-aLOGYeV8V6	GPT OSS Release, Inference and Fine tuning - YouTube
+MARKDOWN	https://docs.unsloth.ai/get-started/fine-tuning-llms-guide?utm_source=perplexity	Fine-tuning LLMs Guide | Unsloth Documentation
+MARKDOWN	https://docs.unsloth.ai/basics/gpt-oss-how-to-run-and-fine-tune	gpt-oss: How to Run Guide | Unsloth Documentation
+BOOKMARK	https://colab.research.google.com/github/unslothai/notebooks/blob/main/nb/gpt-oss-(20B	Google Colab
+MARKDOWN	https://huggingface.co/papers/2507.04009	Paper page - Easy Dataset: A Unified and Extensible Framework for Synthesizing LLM Fine-Tuning Data from Unstructured Documents
+BOOKMARK	https://colab.research.google.com/github/unslothai/notebooks/blob/main/nb/OpenEnv_gpt_oss_(20B	Google Colab
+MARKDOWN	https://machinelearningmastery.com/the-machine-learning-practitioners-guide-to-fine-tuning-language-models/	The Machine Learning Practitioner's Guide to Fine-Tuning Language Models - MachineLearningMastery.com
+MARKDOWN	https://github.com/merveenoyan/smol-vision	GitHub - merveenoyan/smol-vision: Recipes for shrinking, optimizing, customizing cutting edge vision models. 💜 · GitHub
+MARKDOWN	https://developer.nvidia.com/blog/train-an-llm-on-an-nvidia-blackwell-desktop-with-unsloth-and-scale-it/	Train an LLM on NVIDIA Blackwell with Unsloth—and Scale for Production | NVIDIA Technical Blog
+MARKDOWN	https://docs.unsloth.ai/models/qwen3-vl-run-and-fine-tune	Qwen3-VL: How to Run Guide | Unsloth Documentation
+MARKDOWN	https://huggingface.co/learn/smol-course/unit0/1	Welcome to the 🤗 smol-course · Hugging Face
+MARKDOWN	https://modal.com/notebooks/modal-labs/_/nb-x2wXrLH7aqi7HGVQ8Fosh2	Inside vLLM - Anatomy of a High-Throughput LLM Inference System | Modal Notebooks
+SKIP-DUP	https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/	
+MARKDOWN	https://roboflow.com/open-source	Open Source at Roboflow
+MARKDOWN	https://modal.com/docs/guide/volumes	Volumes | Modal Docs
+MARKDOWN	https://docs.unsloth.ai/new/vision-reinforcement-learning-vlm-rl	Vision Reinforcement Learning (VLM RL) | Unsloth Documentation
+MARKDOWN	https://fleetwood.dev/posts/domain-specific-architectures	Domain specific architectures for AI inference
+MARKDOWN	https://arxiv.org/abs/2401.14489	[2401.14489] The Case for Co-Designing Model Architectures with Hardware
+MARKDOWN	https://szymonozog.github.io/posts/2025-09-21-Penny-worklog-1.html	Writing my own communications library - a worklog of creating Penny part 1 | Szymon Ożóg
+BOOKMARK	https://youtube.com/playlist?list=PLQxDHpeGU14BX9L83JMSoKHsdIjv98BGn&si=MmOccXVt8iAabla9	Complete LLM Finetuning - YouTube
+MARKDOWN	https://maximerivest.com/posts/is_dspy_worth_it.html	Maxime Rivest – DSPy sounds neat, but is it reliable?
+MARKDOWN	https://huggingface.co/Logics-MLLM/Logics-Parsing	Logics-MLLM/Logics-Parsing · Hugging Face
+MARKDOWN	https://github.com/rasbt/reasoning-from-scratch/blob/main/ch03/01_main-chapter-code/ch03_main.ipynb	Rate limit · GitHub
+MARKDOWN	https://thinkingmachines.ai/blog/lora/	LoRA Without Regret - Thinking Machines Lab
+BOOKMARK	https://colab.research.google.com/drive/1bT5LWeO1gPL83GKUZsFeFEleHmEDEQRy	Google Colab
+MARKDOWN	https://aiengineering.academy/LLM/ServerLessFinetuning/#core-concepts	Write Deep Learning Code Locally and Run on GPUs Instantly - AI Engineering Academy
+MARKDOWN	https://magazine.sebastianraschka.com/p/llm-evaluation-4-approaches	Understanding the 4 Main Approaches to LLM Evaluation (From Scratch)
+MARKDOWN	https://benanderson.work/blog/anatomy-of-finetuning-api/	Anatomy of a Modern Finetuning API
+MARKDOWN	https://huggingface.co/docs/trl/main/en/lora_without_regret	LoRA Without Regret · Hugging Face
+MARKDOWN	https://openai.com/index/introducing-agentkit/	Introducing AgentKit | OpenAI
+MARKDOWN	https://www.deeplearning.ai/short-courses/post-training-of-llms/?utm_content=350521648&utm_medium=social&utm_source=twitter&hss_channel=tw-992153930095251456	Post-training of LLMs - DeepLearning.AI
+MARKDOWN	https://github.com/SylphAI-Inc/LLM-engineer-handbook	GitHub - SylphAI-Inc/LLM-engineer-handbook: A curated list of Large Language Model resources, covering model training, serving, fine-tuning, and building LLM applications. · GitHub
