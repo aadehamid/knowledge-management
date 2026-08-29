@@ -312,6 +312,17 @@ def sync_subject(
         # Read the full original markdown body
         original_body = md_file.read_text(encoding="utf-8")
 
+        # Shell-fetch guard: warn BEFORE overwriting. A tiny body usually means
+        # the fetch failed (YouTube page shell, auth wall) — if we're about to
+        # refresh an existing ingested file with such a body, keep a backup of
+        # the previous version so nothing is lost while the anomaly is checked.
+        if len(original_body) < 2000:
+            print(f"    ⚠️  small body ({len(original_body)}B) — likely a stub/shell fetch (e.g. YouTube page shell); verify before ingest")
+            if dest.exists():
+                backup = dest.with_suffix(".md.pre-shell-fetch.bak")
+                shutil.copy2(dest, backup)
+                print(f"    ⚠️  prior version backed up to {backup.name}")
+
         # Fix image paths: pymupdf4llm may generate paths like
         # "references/papers/transformers/1706.03762_images/img.png"
         # but in the vault, images sit next to the .md file. We use
@@ -339,8 +350,6 @@ def sync_subject(
         # Write to vault
         dest.write_text(full_content, encoding="utf-8")
         print(f"  → {dest_name}")
-        if len(original_body) < 2000:
-            print(f"    ⚠️  small body ({len(original_body)}B) — likely a stub/shell fetch (e.g. YouTube page shell); verify before ingest")
         synced += 1
 
         # Add to NotebookLM if configured (and nlm isn't disabled by the
