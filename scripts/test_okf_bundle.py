@@ -92,8 +92,14 @@ for dp, dns, fns in os.walk(BUNDLE):
         if not fm or not fm.get("type"):
             failures.append(f"{rel}: missing type")
 
-        # wikilinks outside code spans (whole file; Raw is separate below)
-        clean = re.sub(r"`[^`]*`", "", open(p, encoding="utf-8").read())
+        # wikilinks outside code spans; Raw BODIES excluded — wikilink-shaped
+        # text in fetched sources (cross-reference notes, [[.]] artifacts) is
+        # immutable fetched content, not bundle links
+        check_txt = open(p, encoding="utf-8").read()
+        if rel.startswith("Raw/"):
+            _, _, rl = fm_of(p)
+            check_txt = "\n".join(rl[:rl.index("---", 1)])
+        clean = re.sub(r"`[^`]*`", "", check_txt)
         wl = re.findall(r"\[\[[^\]]+\]\]", clean)
         if wl: failures.append(f"{rel}: wikilinks present: {wl[:2]}")
 
