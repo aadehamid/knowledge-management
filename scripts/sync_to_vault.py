@@ -347,6 +347,19 @@ def sync_subject(
         frontmatter = build_frontmatter(meta, read_existing_wiki_refs(dest))
         full_content = f"{frontmatter}\n\n{original_body}"
 
+        # Copy associated images folder BEFORE writing the body, so an
+        # interrupted run can never leave the new body referencing images
+        # that haven't landed yet (stranded refs on a killed sync).
+        # Copy associated images folder if it exists
+        img_dir = source_dir / original_img_dir_name
+        if img_dir.exists():
+            dest_img_dir = vault_dir / new_img_dir_name
+            if dest_img_dir.exists():
+                shutil.rmtree(dest_img_dir)
+            shutil.copytree(img_dir, dest_img_dir)
+            img_count = len(list(dest_img_dir.glob("*")))
+            print(f"    + {img_count} image(s)")
+
         # Write to vault
         dest.write_text(full_content, encoding="utf-8")
         print(f"  → {dest_name}")
@@ -357,15 +370,6 @@ def sync_subject(
         if notebooklm_id and nlm_enabled():
             add_to_notebooklm(notebooklm_id, md_file)
 
-        # Copy associated images folder if it exists
-        img_dir = source_dir / original_img_dir_name
-        if img_dir.exists():
-            dest_img_dir = vault_dir / new_img_dir_name
-            if dest_img_dir.exists():
-                shutil.rmtree(dest_img_dir)
-            shutil.copytree(img_dir, dest_img_dir)
-            img_count = len(list(dest_img_dir.glob("*")))
-            print(f"    + {img_count} image(s)")
 
     return synced
 
