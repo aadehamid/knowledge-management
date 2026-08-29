@@ -89,6 +89,30 @@ def read_existing_wiki_refs(dest: Path) -> str:
     return "[]"
 
 
+
+def yaml_scalar(value: str) -> str:
+    """Render a string as a safe YAML scalar, quoting only when necessary.
+
+    A raw f-string like f"title: {title}" produces INVALID YAML whenever the
+    title contains ': ' (e.g. 'H2O: Heavy-Hitter Oracle ...' -> 'mapping
+    values are not allowed in this context'). Quote on demand instead.
+    """
+    v = str(value)
+    if v == "":
+        return '""'
+    needs_quote = bool(
+        re.search(r"[:#\"'\n\r\t\[\]{}|>&*!%@`]", v)
+        or v != v.strip()
+        or re.match(r"^[\-?.]", v)
+        or v.strip().lower() in ("true", "false", "null", "yes", "no", "on", "off")
+    )
+    if not needs_quote:
+        return v
+    if '"' not in v:
+        return '"' + v.replace("\\", "\\\\") + '"'
+    return "'" + v.replace("'", "''") + "'"
+
+
 def build_frontmatter(meta: dict, existing_wiki_refs: str = "[]") -> str:
     """Build YAML frontmatter string from metadata.
 
@@ -96,10 +120,10 @@ def build_frontmatter(meta: dict, existing_wiki_refs: str = "[]") -> str:
     file already in the vault so a content re-sync doesn't wipe them.
     """
     lines = ["---"]
-    lines.append(f"url: {meta.get('url', '')}")
-    lines.append(f"title: {meta.get('title', 'Untitled')}")
+    lines.append(f"url: {yaml_scalar(meta.get('url', ''))}")
+    lines.append(f"title: {yaml_scalar(meta.get('title', 'Untitled'))}")
     if meta.get("author"):
-        lines.append(f"author: {meta['author']}")
+        lines.append(f"author: {yaml_scalar(meta['author'])}")
     lines.append(f"source_type: {meta.get('source_type', 'doc')}")
     lines.append("status: ingested")
     lines.append(f"fetched_at: {meta.get('fetched_at', '')}")
