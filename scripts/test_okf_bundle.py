@@ -71,7 +71,11 @@ for dp, dns, fns in os.walk(BUNDLE):
 
         if reserved:
             if raw_fm is not None:
-                fm = yaml.safe_load(raw_fm) or {}
+                fm, ferr = load_fm(raw_fm)
+                if ferr:
+                    failures.append(f"{rel}: YAML parse error: {ferr}")
+                    continue
+                fm = fm or {}
                 allowed = {"okf_version"} if rel == "index.md" else set()
                 extra = set(fm.keys()) - allowed
                 if extra: failures.append(f"{rel}: reserved file has frontmatter keys {extra}")
@@ -90,7 +94,14 @@ for dp, dns, fns in os.walk(BUNDLE):
         if err:
             failures.append(f"{rel}: YAML parse error: {err}"); continue
         if not fm or not fm.get("type"):
-            failures.append(f"{rel}: missing type")
+            failures.append(f"{rel}: missing type"); continue
+        ALLOWED = {
+            "entity", "concept", "paper", "summary", "overview", "index",
+            "Source", "Process", "Curriculum Stage", "learning-path-stage",
+            "learning-path-index",
+        }
+        if fm["type"] not in ALLOWED:
+            failures.append(f"{rel}: invalid type {fm['type']!r}")
 
         # wikilinks outside code spans; Raw BODIES excluded — wikilink-shaped
         # text in fetched sources (cross-reference notes, [[.]] artifacts) is
@@ -118,7 +129,8 @@ for dp, dns, fns in os.walk(BUNDLE):
         # sources[].resource resolves from containing file
         if isinstance(fm.get("sources"), list):
             for s in fm["sources"]:
-                if isinstance(s, dict) and s.get("resource"):
+                if not isinstance(s, dict) or not s.get("resource") or not s.get("id") or not s.get("title"):
+                    failures.append(f"{rel}: incomplete sources entry {s}"); continue
                     r = s["resource"]
                     if r.startswith(("http://", "https://")): continue
                     if not os.path.exists(resolve_from(p, r)):
@@ -141,6 +153,11 @@ if os.path.isdir(raw_dir):
         # Only frontmatter-provided paths are checked here.
         if re.search(r"^status:", raw_fm, re.M):
             failures.append(f"Raw/{f}: uses lifecycle 'status' (must be fetch_status)")
+        rfm, _ = load_fm(raw_fm)
+        if not rfm or rfm.get("type") != "Source":
+            failures.append(f"Raw/{f}: missing/incorrect type (expected Source)")
+        if not rfm or not rfm.get("fetch_status"):
+            failures.append(f"Raw/{f}: missing fetch_status")
         _, err = load_fm(raw_fm)
         if err:
             failures.append(f"Raw/{f}: YAML parse error: {err}")
