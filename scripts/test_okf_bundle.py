@@ -130,11 +130,12 @@ for dp, dns, fns in os.walk(BUNDLE):
         if isinstance(fm.get("sources"), list):
             for s in fm["sources"]:
                 if not isinstance(s, dict) or not s.get("resource") or not s.get("id") or not s.get("title"):
-                    failures.append(f"{rel}: incomplete sources entry {s}"); continue
-                    r = s["resource"]
-                    if r.startswith(("http://", "https://")): continue
-                    if not os.path.exists(resolve_from(p, r)):
-                        failures.append(f"{rel}: broken provenance resource {r}")
+                    failures.append(f"{rel}: incomplete sources entry {s}")
+                    continue
+                r = s["resource"]
+                if r.startswith(("http://", "https://")): continue
+                if not os.path.exists(resolve_from(p, r)):
+                    failures.append(f"{rel}: broken provenance resource {r}")
 
         # description present on wiki-type pages
         if rel.startswith("Wiki/") and not fm.get("description"):
