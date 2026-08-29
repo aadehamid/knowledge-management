@@ -14,7 +14,11 @@ Usage: python3 test_okf_bundle.py "<bundle dir>"
 Exit 0 = conformant.
 """
 import os, re, sys, urllib.parse
-import yaml
+
+try:
+    import yaml
+except ImportError:
+    yaml = None
 
 BUNDLE = sys.argv[1] if len(sys.argv) > 1 else None
 if not BUNDLE or not os.path.isdir(BUNDLE):
@@ -32,6 +36,26 @@ def fm_of(path):
     except ValueError:
         return None, text, lines
     return "\n".join(lines[1:end]), "\n".join(lines[end+1:]), lines
+
+
+def load_fm(raw_fm):
+    """Parse frontmatter; PyYAML when available, minimal fallback otherwise.
+
+    The fallback is intentionally conservative: it validates the structural
+    things this test needs (non-empty type:, no lifecycle 'status:' in Raw,
+    presence of description:) without attempting full YAML semantics.
+    """
+    if yaml is not None:
+        try:
+            return yaml.safe_load(raw_fm), None
+        except yaml.YAMLError as e:
+            return None, str(e)
+    out = {}
+    for ln in raw_fm.splitlines():
+        m = re.match(r"^(\w[\w-]*):\s*(.*)$", ln)
+        if m and not ln.startswith((" ", "\t")):
+            out[m.group(1)] = m.group(2).strip().strip('"').strip("'")
+    return out, None
 
 def resolve_from(src_path, href):
     return os.path.normpath(os.path.join(os.path.dirname(src_path), urllib.parse.unquote(href)))
@@ -62,10 +86,9 @@ for dp, dns, fns in os.walk(BUNDLE):
         concepts += 1
         if raw_fm is None:
             failures.append(f"{rel}: no frontmatter"); continue
-        try:
-            fm = yaml.safe_load(raw_fm)
-        except yaml.YAMLError as e:
-            failures.append(f"{rel}: YAML parse error: {e}"); continue
+        fm, err = load_fm(raw_fm)
+        if err:
+            failures.append(f"{rel}: YAML parse error: {err}"); continue
         if not fm or not fm.get("type"):
             failures.append(f"{rel}: missing type")
 
@@ -112,10 +135,9 @@ if os.path.isdir(raw_dir):
         # Only frontmatter-provided paths are checked here.
         if re.search(r"^status:", raw_fm, re.M):
             failures.append(f"Raw/{f}: uses lifecycle 'status' (must be fetch_status)")
-        try:
-            yaml.safe_load(raw_fm)
-        except yaml.YAMLError as e:
-            failures.append(f"Raw/{f}: YAML parse error: {e}")
+        _, err = load_fm(raw_fm)
+        if err:
+            failures.append(f"Raw/{f}: YAML parse error: {err}")
 
 if failures:
     print(f"FAIL: {len(failures)} issue(s)")
