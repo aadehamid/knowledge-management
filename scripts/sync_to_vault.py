@@ -22,11 +22,19 @@ Usage (from repo root):
 """
 
 import json
+import os
 import re
 import shutil
 import subprocess
 import sys
 from pathlib import Path
+
+
+def nlm_enabled() -> bool:
+    """Respect NLM_SKIP=1 (set by pull_and_sync.sh when the nlm pre-flight
+    auth check fails) so an expired session doesn't cost a 401-timeout per
+    newly synced file."""
+    return os.environ.get("NLM_SKIP", "") != "1"
 
 
 def slugify(title: str) -> str:
@@ -221,7 +229,10 @@ def add_to_notebooklm(notebook_id: str, file_path: Path) -> bool:
         print(f"    ⚠️  NotebookLM add failed: {result.stderr.strip() or result.stdout.strip()}")
         return False
     except FileNotFoundError:
-        print("    ⚠️  nlm CLI not found — skipping NotebookLM sync")
+        if nlm_enabled():
+            print("    ⚠️  nlm CLI not found — skipping NotebookLM sync")
+        else:
+            print("    ⚠️  nlm disabled (NLM_SKIP=1, expired auth detected) — skipping NotebookLM sync")
         return False
     except subprocess.TimeoutExpired:
         print("    ⚠️  nlm CLI timed out — skipping")
@@ -332,8 +343,9 @@ def sync_subject(
             print(f"    ⚠️  small body ({len(original_body)}B) — likely a stub/shell fetch (e.g. YouTube page shell); verify before ingest")
         synced += 1
 
-        # Add to NotebookLM if configured
-        if notebooklm_id:
+        # Add to NotebookLM if configured (and nlm isn't disabled by the
+        # pre-flight auth check — NLM_SKIP=1)
+        if notebooklm_id and nlm_enabled():
             add_to_notebooklm(notebooklm_id, md_file)
 
         # Copy associated images folder if it exists
@@ -370,7 +382,7 @@ def main():
     # Auto-provision NotebookLM notebooks for any new subjects not yet configured.
     config_updated = False
     for subject in subjects:
-        if subject not in notebooklm:
+        if subject not in notebooklm and nlm_enabled():
             display_name = subject_to_display_name(subject)
             print(f"\n[{subject}] No NotebookLM notebook configured — creating '{display_name}'...")
             notebook_id = create_notebooklm_notebook(display_name)
