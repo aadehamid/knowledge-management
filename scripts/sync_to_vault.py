@@ -125,7 +125,8 @@ def build_frontmatter(meta: dict, existing_wiki_refs: str = "[]") -> str:
     if meta.get("author"):
         lines.append(f"author: {yaml_scalar(meta['author'])}")
     lines.append(f"source_type: {meta.get('source_type', 'doc')}")
-    lines.append("status: ingested")
+    lines.append("type: Source")
+    lines.append("fetch_status: ingested")
     lines.append(f"fetched_at: {meta.get('fetched_at', '')}")
     lines.append(f"wiki_refs: {existing_wiki_refs}")
     lines.append("---")
