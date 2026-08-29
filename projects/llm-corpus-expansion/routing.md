@@ -5,7 +5,8 @@ read and assigned a subject by judgement on title and captured content. Output i
 `data/routing.tsv`; this document explains the method and surfaces the calls that need
 a human decision.
 
-**Nothing has been written to `resources/sources/` or any vault yet.** This is a proposal.
+**Nothing has been written to `resources/sources/` or any vault yet.** All routing
+decisions are resolved (see below); seeding is the next step.
 
 ## Method
 
@@ -19,7 +20,7 @@ inference, nanoGPT to fine-tuning, and backprop to transformers, because first-m
 regex cannot separate "quantization for serving" from "quantization during fine-tuning".
 See the handoff's "Rejected approaches".
 
-## Result
+## Result — as first routed, before the decisions below
 
 | Subject | Records | Unique URLs | Net-new to add | Low-confidence | Bookmark-only |
 |---|---|---|---|---|---|
@@ -41,83 +42,108 @@ LRIO pipeline work, not new material. **480 lines are genuinely net-new.**
 Note the corpus is far more fine-tuning than inference, despite the source file being
 named `llm-inference-optimization-urls.txt`.
 
-## Decisions needed
+## Decisions — resolved 2026-08-29
 
-### 1. Five sources already filed under `llm-inference-optimization` that I would move
+All eight open questions are closed. `data/routing.tsv` reflects the resolutions below.
 
-These are in the existing `resources/sources/llm-inference-optimization/urls.txt` but
-route elsewhere on content:
+### 1. Sources already in LRIO that route elsewhere — move 4, keep 1
 
-| # | Title | Currently | Proposed |
-|---|---|---|---|
-| 10 | Let's build GPT: from scratch (Karpathy) | LRIO | `transformers` |
-| 12 | `nanochat/gpt.py` (Karpathy) | LRIO | `transformers` |
-| 18 | A Curated List of ML System Design Case Studies | LRIO | `ai-engineering` |
-| 19 | `aadehamid/system-design` | LRIO | `ai-engineering` |
-| 32 | Computer Architecture (algorithmica HPC) | LRIO | `cuda` |
+**The user's criterion was to make each OKF bundle as topically coherent as possible.**
+Checking the vault before acting changed the answer on one of the five:
 
-Worth noting: the 2026-06-15 vault run independently judged `lets-build-gpt`,
-`system-design-interview-prep`, and `computer-architecture` **out of scope** for LRIO
-and recorded that in the end-of-run decision list. This routing reproduces that
-judgement from content alone. Moving them makes the earlier call durable instead of a
-note in a log — but it means editing an existing `urls.txt`, which has downstream
-effects on already-converted files.
+| # | Source | Resolution |
+|---|---|---|
+| 10 | Let's build GPT (Karpathy) | → `transformers` |
+| 18 | ML System Design Case Studies | → `ai-engineering` |
+| 19 | `aadehamid/system-design` | → `ai-engineering` |
+| 32 | Computer Architecture (algorithmica) | → `cuda` |
+| 12 | `nanochat/gpt.py` (Karpathy) | **stays in LRIO** |
 
-### 2. Training-systems sources — filed under `llm-finetuning`, but they are neither
+Moving the first four costs nothing: `Wiki/summaries/out-of-scope-records.md` already
+records #19, #32 and #10 as assessed-and-out-of-scope, explicitly stating "no wiki pages,
+enrichment, or claims were derived from them". #18's own summary says the bulk is outside
+the vault's focus and that no concept page links to it. Relocating them makes a judgement
+that currently lives in a log durable in the corpus itself.
 
-ZeRO (#51), PipeDream (#57), "How to Parallelize a Transformer for Training" (#60),
-"Democratizing AI: Open-source Scalable LLM Training on GPU Supercomputers" (#174).
+**#12 was my routing error.** I assigned it to `transformers` on the title. In fact
+`Wiki/entities/KV Cache.md` cites it as the production-style reference that builds the
+cache on the FlashAttention `flash_attn_with_kvcache` kernel alongside GQA and sliding
+window, and it has a full summary page. It is inference material despite the
+"build a ChatGPT" framing, and moving it would break a live citation in a core entity.
 
-These are distributed-*training* systems papers. They are not fine-tuning, not
-inference, and not GPU-kernel material. I put them in `llm-finetuning` as the closest
-fit, but a `distributed-training` subject would hold them properly. Four sources is
-thin for its own vault; the alternative is accepting them in `llm-finetuning`.
+Vault cleanup this implies (**not yet performed** — the vault is not git-tracked, so it
+needs a backup first): delete 4 `Raw/` files, delete `Wiki/summaries/out-of-scope-records.md`
+and `Wiki/summaries/ml-system-design-case-studies-catalog.md`, drop their `Wiki/index.md`
+entries, and add a `Wiki/log.md` entry.
 
-### 3. Inference hardware / architecture — split across two subjects
+### 2. Distributed-training papers → `llm-inference-optimization`
 
-"Domain specific architectures for AI inference" (#516) and "AI Chip Architectures"
-(#93) went to inference; "The Case for Co-Designing Model Architectures with Hardware"
-(#517) and "Three Other Models of Computer System Performance" (#58) went to `cuda`.
-The boundary is genuinely arbitrary. Pick one home for inference-hardware material and
-I will make it consistent.
+User's decision. ZeRO (#51), PipeDream (#57), "How to Parallelize a Transformer for
+Training" (#60) and "Democratizing AI: Open-source Scalable LLM Training" (#174) are now
+routed to LRIO rather than parked in `llm-finetuning`. No separate `distributed-training`
+subject is created.
 
-### 4. `RAG vs Fine-tuning` (#311, #324) — coin flip
+### 3. Drop anything with no retrievable content — 27 records removed
 
-Same paper twice, one arXiv and one HF paper page. Routed to `llm-finetuning`; equally
-defensible in `rag-retrieval`.
+User's decision ("remove any doc that adds no value"). The criterion applied is **no
+retrievable content**, not "bad title":
 
-### 5. Model pages vs. run guides
+| Reason | n |
+|---|---|
+| Dead or blocked page (404, 403, Cloudflare, edX auth, Panopto) | 12 |
+| Private Colab drive link, nothing behind it | 4 |
+| Truncated Colab URL, 2-4 candidate notebooks, unresolvable | 5 |
+| x.com post with no retrievable content | 2 |
+| Bare YouTube embed fragment | 1 |
+| Job posting / blog index / site landing page | 3 |
 
-Model releases (Gemma 3, Mistral Small, Llama 3.2, `ollama/llama3`) → `llm-landscape`.
-Unsloth "How to Run" guides for the *same models* → `llm-inference-optimization` or
-`llm-finetuning`. Defensible, but it means a Gemma 4 release note and the Gemma 4 run
-guide land in different vaults.
+**`_inbox` is now empty** and dissolves as a bucket.
 
-### 6. `Recent Developments in LLM Architectures: KV Sharing, mHC, Compressed Attention` (#476)
+Two things were deliberately *not* dropped:
 
-Raschka. Architecture survey by framing, inference-efficiency by content. Routed to
-inference.
+- **Six records with real content but a useless `<title>`** — Medium and similar serving
+  a bare "Medium" tag. This includes Karpathy's "Yes you should understand backprop"
+  (1,598 words). Titles were repaired from the URL slug rather than the records discarded.
+- **Three Colab links that were recoverable** — rewritten from
+  `colab.research.google.com/github/...` to `raw.githubusercontent.com/...`, including
+  one truncated Unsloth notebook whose name resolved unambiguously against the repo's
+  file list. The other five truncated ones had 2-4 candidates each and were dropped.
 
-### 7. `modal.com/blog/truly-serverless-gpus` (#471)
+### 4-8. Remaining calls
 
-Already the CUDA vault's one known net-new source per the 2026-06-15 state. Routed to
-`cuda`, consistent — flagged so it is not double-added.
+Resolved as routed, no change: `RAG vs Fine-tuning` stays in `llm-finetuning`;
+inference-hardware material stays split, with chip/architecture surveys in
+`llm-inference-optimization` and CPU/GPU performance-modelling in `cuda`; model release
+pages stay in `llm-landscape` while run/fine-tune guides follow their task;
+`truly-serverless-gpus` (#471) is flagged as already present in `cuda`.
 
-### 8. The `_inbox` 20
+## Final shape
 
-Colab drive links with no title, Panopto players, dead x.com posts, an "Access Denied"
-O'Reilly TOC, a GitHub Pages 404. Options: drop them, keep them as bookmark-only Raw
-files for the record, or hold them out of the pipeline entirely. My recommendation is
-to drop them — they carry no content and their URLs are mostly dead or unresolvable.
+| Subject | Net-new `urls.txt` lines |
+|---|---|
+| `llm-finetuning` | 126 |
+| `llm-inference-optimization` | 82 |
+| `ml-foundations` | 79 |
+| `llm-landscape` | 48 |
+| `transformers` | 39 |
+| `ai-engineering` | 38 |
+| `rag-retrieval` | 33 |
+| `cuda` | 10 |
+| **Total** | **455** |
+
+455 net-new sources, from 546 records: 31 duplicates, 35 already in a repo `urls.txt`,
+27 dropped as valueless.
 
 ## Notes for the seeding step
 
-- `llm-finetuning` is the largest subject at 133 net-new sources — larger than the
-  entire existing LRIO corpus. Consider seeding it in tranches.
+- `llm-finetuning` is the largest subject at 126 net-new sources — more than three times
+  the entire existing LRIO corpus (39 files). Consider seeding it in tranches.
 - 121 records are bookmark-only (no captured text). 51 of those are in
   `llm-inference-optimization`. For YouTube among them the repo pipeline will do better
   than DEVONthink did — `markitdown` pulls transcripts — so those should go through the
   normal converter rather than being pre-seeded.
-- Low-confidence assignments cluster where the title is uninformative. Nine bare
-  "Google Colab" / "Medium" / "YouTube" titles were routed from their URL path alone
-  and are the likeliest individual errors.
+- Low-confidence assignments cluster where the title is uninformative. After the drop
+  pass and the six title repairs, the remaining low-confidence rows are genuine
+  subject-boundary calls rather than missing metadata.
+- The `#12 nanochat` correction is a reminder that titles alone misroute: check whether
+  a source is already cited in a vault before relocating it.
