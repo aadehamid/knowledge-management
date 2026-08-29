@@ -9,11 +9,9 @@ rooms:
   description: Files from projects/
   keywords:
   - projects
-  - projects
 - name: resources
   description: Files from resources/
   keywords:
-  - resources
   - resources
 - name: documentation
   description: Files from notes/
@@ -24,11 +22,9 @@ rooms:
   description: Files from scripts/
   keywords:
   - scripts
-  - scripts
 - name: templates
   description: Files from templates/
   keywords:
-  - templates
   - templates
 - name: general
   description: Files that don't fit other rooms

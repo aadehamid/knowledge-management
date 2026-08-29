@@ -111,6 +111,60 @@ def wiki_filename(meta: dict, original_stem: str) -> str:
     return f"{source_type}-{slug}.md"
 
 
+def find_existing_by_url(vault_dir: Path, url: str) -> Path | None:
+    """
+    Find a vault file whose frontmatter `url:` matches this source's URL.
+
+    This is the strongest duplicate signal: it catches re-deliveries of a
+    source that was previously synced under a different filename (e.g. an
+    April-era manual fetch named by hand, then a June pipeline delivery
+    named from the title). Without it, a re-run creates a "ghost" duplicate
+    of an already-ingested source and its wiki_refs get stranded on the
+    old copy.
+
+    URL comparison is normalized: trailing slash stripped, scheme-agnostic
+    (http/https), and arxiv /pdf/<id> and /abs/<id> forms are NOT unified
+    (they are different fetches of possibly different quality).
+    """
+    if not url:
+        return None
+    norm = url.rstrip("/")
+    if norm.startswith("http://"):
+        norm = "https://" + norm[len("http://"):]
+    if not vault_dir.exists():
+        return None
+    matches = []
+    for candidate in sorted(vault_dir.glob("*.md")):
+        try:
+            text = candidate.read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            continue
+        lines = text.splitlines()
+        if not lines or lines[0].strip() != "---":
+            continue
+        try:
+            end = lines.index("---", 1)
+        except ValueError:
+            continue
+        for ln in lines[1:end]:
+            if ln.startswith("url:"):
+                existing = ln[len("url:"):].strip().rstrip("/")
+                if existing.startswith("http://"):
+                    existing = "https://" + existing[len("http://"):]
+                if existing and existing == norm:
+                    matches.append(candidate)
+                break
+    if not matches:
+        return None
+    # Prefer a file the wiki already cites (wiki_refs non-empty): refreshing
+    # it keeps backlinks alive; refreshing the empty one strands them.
+    # read_existing_wiki_refs handles both inline values and multi-line lists.
+    for m in matches:
+        if read_existing_wiki_refs(m) != "[]":
+            return m
+    return matches[0]
+
+
 def subject_to_display_name(subject: str) -> str:
     """Convert a kebab-case subject key to a title-case display name.
     e.g. 'llm-inference-optimization' -> 'LLM Inference Optimization'
@@ -210,6 +264,17 @@ def sync_subject(
         dest_name = wiki_filename(meta, md_file.stem)
         dest = vault_dir / dest_name
 
+        # Duplicate guard 1 (strongest): does a vault file already exist with
+        # this source's URL in its frontmatter? If so, sync into THAT file
+        # (content refresh) rather than creating a ghost duplicate under the
+        # new title-derived name. This catches re-deliveries of sources that
+        # were first fetched manually under a hand-named file.
+        url_match = find_existing_by_url(vault_dir, meta.get("url", ""))
+        if url_match is not None and url_match != dest:
+            print(f"  = URL already in vault as {url_match.name} — refreshing that file instead of creating {dest_name}")
+            dest = url_match
+            dest_name = url_match.name
+
         # Slug-collision guard: if the title-derived dest doesn't exist yet,
         # check whether a vault file with the same URL-stem slug already exists
         # under a different name (e.g., different source_type prefix or old slug).
@@ -263,6 +328,8 @@ def sync_subject(
         # Write to vault
         dest.write_text(full_content, encoding="utf-8")
         print(f"  → {dest_name}")
+        if len(original_body) < 2000:
+            print(f"    ⚠️  small body ({len(original_body)}B) — likely a stub/shell fetch (e.g. YouTube page shell); verify before ingest")
         synced += 1
 
         # Add to NotebookLM if configured
