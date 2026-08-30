@@ -1,0 +1,81 @@
+# ML Foundations subject area - URLs with metadata.
+# Format: url | title | source_type [| author]
+# source_type: paper, blog, video, course, code, thread, pdf, doc
+# author: optional; used in the output filename for sites with generic URL paths (e.g. YouTube)
+# Blank lines and lines starting with # are ignored.
+
+
+# --- corpus expansion 2026-08-29 (73 sources) ---
+https://github.com/stas00/ml-engineering | GitHub - stas00/ml-engineering: Machine Learning Engineering Open Book · GitHub | code
+https://ml-visualized.com/ | Machine Learning Visualized — Machine Learning Visualized | doc
+https://sebastianraschka.com/teaching/pytorch-1h/ | PyTorch in One Hour - Sebastian Raschka, PhD | doc
+https://stanford.edu/~shervine/teaching/cs-229 | Teaching - CS 229 | doc
+https://machinelearningmastery.com/a-gentle-introduction-to-the-jacobian/ | A Gentle Introduction to the Jacobian - MachineLearningMastery.com | doc
+https://karpathy.medium.com/yes-you-should-understand-backprop-e2f06eab496b | Yes you should understand backprop | blog
+https://eli.thegreenplace.net/2018/backpropagation-through-a-fully-connected-layer/ | Backpropagation through a fully-connected layer - Eli Bendersky's website | doc
+https://cs231n.github.io/optimization-1/ | CS231n Deep Learning for Computer Vision | code
+https://youtu.be/fGDT63dZcvE | Backpropagation: How Neural Networks Learn - YouTube | video
+https://www.youtube.com/watch?v=nTlCqaL7fCY&t=74s | 01L – Gradient descent and the backpropagation algorithm - YouTube | video
+https://www.youtube.com/watch?v=VMj-3S1tku0 | The spelled-out intro to neural networks and backpropagation: building micrograd - YouTube | video
+http://inference.org.uk/itila/book.html | David MacKay: Information Theory, Inference, and Learning Algorithms: The Book | doc
+https://www.inference.org.uk/mackay/ | Inference Group: David MacKay: Homepage | doc
+https://github.com/facebookresearch/segment-anything | GitHub - facebookresearch/segment-anything: The repository provides code for running inference with the SegmentAnything Model (SAM), links for downloading the trained model checkpoints, and example notebooks that show how to use the model. · GitHub | code
+https://www.storminthecastle.com/posts/01_classification/?utm_source=substack&utm_medium=email | Object Detection from Scratch - Part 1 | doc
+https://lightning.ai/pages/courses/deep-learning-fundamentals/unit-7-overview-getting-started-with-computer-vision/ | Unit 7 Overview: Getting Started with Computer Vision - Lightning AI | doc
+https://www.byhand.ai/p/computer-vision-lectures | Computer Vision Lectures - by Prof. Tom Yeh - AI by Hand ✍️ | doc
+https://pub.towardsai.net/how-i-created-an-animation-of-the-embeddings-during-fine-tuning-2b8bdf49f822 | How I created an animation of the embeddings during fine-tuning | doc
+https://e2eml.school/blog.html | Brandon Rohrer's blog | doc
+https://end-to-end-machine-learning.teachable.com/courses/enrolled/612528 | Write a Neural Network Framework - End to End Machine Learning | doc
+https://karpathy.github.io/neuralnets/ | Hacker's guide to Neural Networks | code
+https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/ | A Step by Step Backpropagation Example - Matt Mazur | doc
+https://karpathy.github.io/2019/04/25/recipe/ | A Recipe for Training Neural Networks | code
+https://pyimagesearch.com/2022/12/26/automatic-differentiation-part-2-implementation-using-micrograd/ | Automatic Differentiation Part 2: Implementation Using Micrograd - PyImageSearch | doc
+https://pyimagesearch.com/2021/05/06/backpropagation-from-scratch-with-python/ | Backpropagation from scratch with Python - PyImageSearch | doc
+https://www.youtube.com/watch?v=QwZQrxIk6Dg&list=PLLHTzKZzVU9d_3TcHbyiAjl5qCbpJR-o0&index=2&t=1311s | 03 – Inference with neural nets - YouTube | video
+https://lightning.ai/pages/courses/deep-learning-fundamentals/unit-1/unit-1-1/ | What is Machine Learning? - Unit 1 | doc
+https://mapie.readthedocs.io/en/latest/index.html# | MAPIE | doc
+https://github.com/labmlai/annotated_deep_learning_paper_implementations | GitHub - labmlai/annotated_deep_learning_paper_implementations: 🧑‍🏫 60+ Implementations/tutorials of deep learning papers with side-by-side notes 📝; including transformers (original, xl, switch, feedback, vit, ...), optimizers (adam, adabelief, sophia, | code
+https://courses.d2l.ai/berkeley-stat-157/syllabus.html | Syllabus — STAT 157, Spring 19 documentation | doc
+https://www.youtube.com/watch?v=DKSZHN7jftI&list=PLZoTAELRMXVPGU70ZGsckrMdr0FteeRUi | Tutorial 1- Introduction to Neural Network and Deep Learning - YouTube | video
+https://machinelearningmastery.com/implement-backpropagation-algorithm-scratch-python/ | How to Code a Neural Network with Backpropagation In Python (from scratch) - MachineLearningMastery.com | doc
+https://www.youtube.com/watch?v=CRB266Eyjkg&list=PLZoTAELRMXVPGU70ZGsckrMdr0FteeRUi&index=6 | Tutorial 6-Chain Rule of Differentiation with BackPropagation - YouTube | video
+https://www.youtube.com/watch?v=lZrIPRnoGQQ&list=PLUl4u3cNGP63oMNUHXqIUcrkS2PivhN3k&index=29&t=58s | 27. Backpropagation: Find Partial Derivatives - YouTube | video
+https://ocw.mit.edu/courses/mathematics/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/video-lectures/lecture-27-backpropagation-find-partial-derivatives/ | Lecture 27: Backpropagation: Find Partial Derivatives - Matrix Methods in Data Analysis, Signal Processing, and Machine Learning - Mathematics - MIT OpenCourseWare | doc
+https://arxiv.org/pdf/1502.05767 | [1502.05767] Automatic differentiation in machine learning: a survey | pdf
+http://timvieira.github.io/blog/post/2017/08/18/backprop-is-not-just-the-chain-rule/ | Backprop Is Not Just the Chain Rule | code
+http://cs231n.stanford.edu/handouts/linear-backprop.pdf | Backpropagation for a Linear Layer | pdf
+http://colah.github.io/posts/2015-08-Backprop/ | Calculus on Computational Graphs: Backpropagation -- colah's blog | code
+https://alexander-schiendorfer.github.io/2020/02/16/automatic-differentiation.html | Automatic Differentiation for Deep Learning, by example - Connecting deep dots | code
+http://cs231n.stanford.edu/slides/2020/section_2_annotated.pdf | Backpropagation | pdf
+http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf | Ecient BackProp | pdf
+http://cs231n.stanford.edu/slides/2020/lecture_4.pdf | Lecture 4: | pdf
+http://people.idsia.ch/~juergen/who-invented-backpropagation.html | Who Invented Backpropagation? | doc
+https://brilliant.org/practice/backpropagation-vanishing-and-exploding-gradient/?p=1 | Brilliant - Your Personal Tutor for Math and Coding | doc
+https://leanpub.com/pytorch | Deep Learning with PyTorch Step-by-Step [Leanpub PDF/iPad/Kindle] | doc
+https://camdavidsonpilon.github.io/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/#using-the-book | Bayesian Methods for Hackers | code
+https://towardsdatascience.com/guide-to-file-formats-for-machine-learning-columnar-training-inferencing-and-the-feature-store-2e0c3d18d4f9 | Comparing Performance of Big Data File Formats: A Practical Guide - Towards Data Science | doc
+https://www.quantamagazine.org/artificial-neural-nets-finally-yield-clues-to-how-brains-learn-20210218/ | Artificial Neural Nets Finally Yield Clues to How Brains Learn - Quanta Magazine | doc
+https://statmodeling.stat.columbia.edu/2020/12/03/how-to-think-about-correlation-its-the-slope-of-the-regression-when-x-and-y-have-been-standardized/ | How to think about correlation? It’s the slope of the regression when x and y have been standardized. - Statistical Modeling, Causal Inference, and Social Science | doc
+http://yosinski.com/deepvis | Jason Yosinski | doc
+http://neuralnetworksanddeeplearning.com/chap1.html | Neural networks and deep learning | doc
+https://www.jeremyjordan.me/nn-learning-rate/?utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=NLP%20News | Setting the learning rate of your neural network. | doc
+https://docs.fast.ai/quick_start.html | Quick start – fastai | doc
+https://cs230.stanford.edu/section/4/ | Section 4 (Week 4) | doc
+https://github.com/balavenkatesh3322/CV-pretrained-model | GitHub - balavenkatesh3322/CV-pretrained-model: A collection of computer vision pre-trained models. · GitHub | code
+https://www.youtube.com/watch?v=i94OvYb6noo&list=PLkt2uSq6rBVctENoVBg1TpCC7OQi31AlC&index=4 | CS231n Winter 2016: Lecture 4: Backpropagation, Neural Networks 1 - YouTube | video
+http://iamtrask.github.io/ | i am trask | code
+https://kyunghyuncho.me/a-few-qa-from-the-course/ | A few QA’s from the course F’20 <Deep Learning> – Kyunghyun Cho | doc
+https://arxiv.org/pdf/2102.05242 | [2102.05242] Patterns, predictions, and actions: A story about machine learning | pdf
+https://lilianweng.github.io/posts/2021-12-05-semi-supervised/ | Learning with not Enough Data Part 1: Semi-Supervised Learning - Lil'Log | code
+https://theorydish.blog/2021/12/16/backpropagation-%E2%89%A0-chain-rule/ | Backpropagation ≠ Chain Rule – Theory Dish | blog
+https://seeing-theory.brown.edu/ | Seeing Theory | doc
+https://github.com/google-deepmind/penzai?tab=readme-ov-file | GitHub - google-deepmind/penzai: A JAX research toolkit for building, editing, and visualizing neural networks. · GitHub | code
+https://nrehiew.github.io/blog/pytorch/ | Taking PyTorch for Granted - wh | code
+https://ml-science-book.com/supervised-ml.html | 2 Bare-Bones Supervised Machine Learning – Supervised Machine Learning for Science | doc
+https://keras.io/keras_hub/ | KerasHub | doc
+https://complete-pathway.vizuara.ai/ | 10-Course AI & ML Bundle - Vizuara AI Labs | doc
+https://pods.vizuara.ai/ | Vizuara AI Pods — Learn AI from First Principles | doc
+https://roboflow.com/open-source | Open Source at Roboflow | doc
+https://github.com/matheusfacure/causal-inference-in-python-code | GitHub - matheusfacure/causal-inference-in-python-code: Code for the Book Causal Inference in Python · GitHub | code
+https://distill.pub/2018/differentiable-parameterizations/ | Differentiable Image Parameterizations | doc
+https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design | SOLID Design Principles Explained: Building Better Software Architecture - DigitalOcean | doc

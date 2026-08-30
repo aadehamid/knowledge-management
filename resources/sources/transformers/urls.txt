@@ -12,3 +12,42 @@ https://fleetwood.dev/posts/you-could-have-designed-SOTA-positional-encoding | P
 https://arxiv.org/pdf/2410.06205 | Round and Round We Go! What makes Rotary Positional Encodings useful? | paper
 https://kipp.ly/p/transformer-inference-arithmetic | Transformer Inference Arithmetic | blog
 https://www.youtube.com/watch?v=kCc8FmEb1nY | Let's build GPT: from scratch, in code, spelled out | video | Andrej Karpathy
+
+# --- corpus expansion 2026-08-29 (37 sources) ---
+https://www.royvanrijn.com/anatomy-of-an-llm/ | The Anatomy of an LLM - Interactive Visual Guide to How Language Models Work | doc
+https://sustcsonglin.github.io/blog/2024/deltanet-1/ | DeltaNet Explained (Part I) - Songlin Yang | code
+https://cmu-l3.github.io/anlp-fall2025/?utm_source=perplexity | CMU Advanced NLP F2025 | code
+https://www.freecodecamp.org/news/code-an-llm-from-scratch-theory-to-rlhf/ | Code an LLM From Scratch – Theory to RLHF | doc
+https://huggingface.co/nanochat-students | nanochat-students (nanochat students) | blog
+https://github.com/rasbt/LLMs-from-scratch/tree/main/ch05/12_gemma3 | LLMs-from-scratch/ch05/12_gemma3 at main · rasbt/LLMs-from-scratch · GitHub | code
+https://www.thelmbook.com/ | The Hundred-Page Language Models Book by Andriy Burkov | doc
+https://blog.briankitano.com/llama-from-scratch/ | Llama from scratch (or how to implement a paper without crying) – Brian Kitano | blog
+https://lilianweng.github.io/posts/2018-06-24-attention/ | Attention? Attention! - Lil'Log | code
+https://huggingface.co/tasks/any-to-any | What is Any-to-Any? - Hugging Face | blog
+https://github.com/rasbt/LLMs-from-scratch | GitHub - rasbt/LLMs-from-scratch: Implement a ChatGPT-like LLM in PyTorch from scratch, step by step · GitHub | code
+https://book.theaiedge.io/home | The Big Book of LLMs | doc
+https://github.com/kryvokhyzha/how-to-understand-bert | GitHub - kryvokhyzha/how-to-understand-bert: In this repository, I have collected different sources, visualizations, and code examples of BERT · GitHub | code
+https://web.stanford.edu/~jurafsky/slp3/ | Speech and Language Processing | doc
+https://github.com/karpathy/nanoGPT | GitHub - karpathy/nanoGPT: The simplest, fastest repository for training/finetuning medium-sized GPTs. · GitHub | code
+https://github.com/karpathy/nanoGPT/blob/master/model.py | nanoGPT/model.py at master · karpathy/nanoGPT · GitHub | code
+https://github.com/microsoft/nlp-recipes | GitHub - microsoft/nlp-recipes: Natural Language Processing Best Practices & Examples · GitHub | code
+https://arxiv.org/pdf/2401.04088 | [2401.04088] Mixtral of Experts | pdf
+https://lightning.ai/lightning-ai/studios/pretrain-llms-tinyllama-1-1b | Pretrain LLMs - TinyLlama 1.1B - a Lightning template by adrian-111 | doc
+https://github.com/rasbt/LLMs-from-scratch/blob/main/ch03/02_bonus_efficient-multihead-attention/mha-implementations.ipynb | LLMs-from-scratch/ch03/02_bonus_efficient-multihead-attention/mha-implementations.ipynb at main · rasbt/LLMs-from-scratch · GitHub | code
+https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-D/01_main-chapter-code/appendix-D.ipynb | LLMs-from-scratch/appendix-D/01_main-chapter-code/appendix-D.ipynb at main · rasbt/LLMs-from-scratch · GitHub | code
+https://github.com/gordicaleksa/pytorch-original-transformer | GitHub - gordicaleksa/pytorch-original-transformer: My implementation of the original transformer model (Vaswani et al.). I've additionally included the playground.py file for visualizing otherwise seemingly hard concepts. Currently included IWSLT pretrain | code
+https://github.com/rasbt/LLMs-from-scratch/blob/main/ch06/01_main-chapter-code/ch06.ipynb | LLMs-from-scratch/ch06/01_main-chapter-code/ch06.ipynb · rasbt/LLMs-from-scratch | code
+https://github.com/rasbt/LLMs-from-scratch/blob/main/ch07/01_main-chapter-code/ch07.ipynb | LLMs-from-scratch/ch07/01_main-chapter-code/ch07.ipynb at main · rasbt/LLMs-from-scratch · GitHub | code
+https://huggingface.co/papers/2406.11813 | Paper page - How Do Large Language Models Acquire Factual Knowledge During Pretraining? | blog
+https://youtu.be/kPGTx4wcm_w?si=HloQuCjHDApzBGOj | Developing an LLM: Building, Training, Finetuning - YouTube | video
+https://microsoft.github.io/LLM2CLIP/ | LLM2CLIP: Powerful Language Model Unlock Richer Visual Representation | code
+https://aman.ai/primers/ai/LLM/ | Aman's AI Journal • Primers • Overview of Large Language Models | doc
+https://github.com/SkalskiP/vlms-zero-to-hero | GitHub - SkalskiP/vlms-zero-to-hero: This series will take you on a journey from the fundamentals of NLP and Computer Vision to the cutting edge of Vision-Language Models. · GitHub | code
+https://arxiv.org/pdf/2501.09223 | [2501.09223] Foundations of Large Language Models | pdf
+https://www.answer.ai/posts/2025-02-10-modernbert-instruct.html | TIL: Masked Language Models Are Surprisingly Capable Zero-Shot Learners – Answer.AI | doc
+https://github.com/amitshekhariitbhu/llm-internals | GitHub - amitshekhariitbhu/llm-internals: Learn LLM internals step by step - from tokenization to attention to inference optimization. · GitHub | code
+https://huggingface.co/blog/modernbert | Finally, a Replacement for BERT: Introducing ModernBERT | blog
+https://medium.com/@atharv6f_47401/wordpiece-tokenization-a-bpe-variant-73cc48865cbf | WordPiece Tokenization: A BPE Variant | blog
+https://sebastianraschka.com/blog/2025/bpe-from-scratch.html | BPE Tokenizer From Scratch - Sebastian Raschka, PhD | doc
+https://huggingface.co/learn/llm-course/en/chapter6/5 | Byte-Pair Encoding tokenization · Hugging Face | blog
+https://github.com/rasbt/reasoning-from-scratch/blob/main/ch03/01_main-chapter-code/ch03_main.ipynb | reasoning-from-scratch/ch03/01_main-chapter-code/ch03_main.ipynb · rasbt/reasoning-from-scratch | code

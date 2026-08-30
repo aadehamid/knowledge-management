@@ -49,14 +49,14 @@ idx	subject	confidence	is_duplicate	in_repo	drop_reason	url_rewritten	note	recor
 48	llm-inference-optimization	hi	dup	llm-inference-optimization				bookmark	0	https://vizuaraai.github.io/convolution-musical-journey/book.html#ch00-inference-engineers-world	Inference Engineering — The Workshop Book
 49	rag-retrieval	hi						bookmark	0	https://www.llamaindex.ai/blog/parse-gateway-smart-page-level-document-parser-routing	Parse Gateway: Smart, Page-Level Document Parsing Routing
 50	rag-retrieval	hi						bookmark	0	https://github.com/run-llama/parse-gateway	run-llama/parse-gateway: Route every page to the right parser
-51	llm-inference-optimization	hi					distributed-training paper, user-assigned to LRIO	PDF document	11245		ZeRO: Memory Optimizations Toward Training Trillion Parameter Models
+51	llm-inference-optimization	hi					PDF imported without a source URL; canonical arXiv URL identified from the paper text	PDF document	11245	https://arxiv.org/pdf/1910.02054	ZeRO: Memory Optimizations Toward Training Trillion Parameter Models
 52	cuda	hi						bookmark	0	https://horace.io/brrr_intro.html	Making Deep Learning go Brrrr From First Principles
 53	_inbox	hi			x.com post, no retrievable content			bookmark	0	https://x.com/_arohan_/status/2081073678109098256?s=12	rohan anil (@_arohan_) 391 likes · 53 replies
 54	llm-inference-optimization	hi	dup	llm-inference-optimization				bookmark	0	https://www.aleksagordic.com/blog/vllm	Inside vLLM: Anatomy of a High-Throughput LLM Inference System
 55	llm-inference-optimization	hi						bookmark	0	https://handbook.modular.com/	LLM Inference Handbook
 56	llm-inference-optimization	hi						bookmark	0	https://www.bentoml.com/blog/the-shift-to-distributed-llm-inference	The Shift to Distributed LLM Inference: 3 Key Technologies Breaking Single-Node Bottlenecks
-57	llm-inference-optimization	hi	dup				distributed-training paper, user-assigned to LRIO	PDF document	9067		PipeDream: Fast and EﬃcientPipeline Parallel DNN Training
-58	cuda	lo	dup					PDF document	1994		Three Other Models of Computer System Performance
+57	llm-inference-optimization	hi					PDF imported without a source URL; canonical arXiv URL identified from the paper text	PDF document	9067	https://arxiv.org/pdf/1806.03377	PipeDream: Fast and Efficient Pipeline Parallel DNN Training
+58	cuda	lo					PDF imported without a source URL; canonical arXiv URL identified from the paper text	PDF document	1994	https://arxiv.org/pdf/1901.02926	Three Other Models of Computer System Performance
 59	llm-inference-optimization	hi	dup	llm-inference-optimization				bookmark	0	https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/	Mastering LLM Techniques: Inference Optimization | NVIDIA Technical Blog
 60	llm-inference-optimization	hi					distributed-training paper, user-assigned to LRIO	bookmark	0	https://ezyang.github.io/interactive-parallelize-transformer/	How to Parallelize a Transformer for Training — an explorable explanation
 61	llm-inference-optimization	hi						bookmark	0	https://arxiv.org/abs/2606.17081	The Price of Anarchy in Disaggregated Inference

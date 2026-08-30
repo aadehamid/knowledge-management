@@ -42,3 +42,86 @@ https://arxiv.org/pdf/2404.14469 | SnapKV: LLM Knows What You are Looking for Be
 https://arxiv.org/pdf/2502.11089 | Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention (DeepSeek NSA) | paper
 https://github.com/zilliztech/gptcache | GPTCache: Semantic cache for LLMs | code
 https://arxiv.org/pdf/2411.05276 | GPT Semantic Cache: Reducing LLM Costs and Latency via Semantic Embedding Caching | paper
+
+# --- corpus expansion 2026-08-29 (80 sources) ---
+https://kipp.ly/transformer-inference-arithmetic/ | Transformer Inference Arithmetic - kipply's blog | doc
+https://www.clarifai.com/blog/llm-inference-optimization/ | LLM Inference Optimization Techniques - Clarifai Guide | doc
+https://huggingface.co/docs/transformers/llm_tutorial_optimization | Optimizing LLMs for Speed and Memory · Hugging Face | doc
+https://www.ankursnewsletter.com/p/inference-optimization-strategies?utm_campaign=post&utm_medium=web | Inference Optimization Strategies for Large Language Models: Current Trends and Future Outlook | doc
+https://huggingface.co/docs/transformers/perf_infer_gpu_one | Optimizing inference on GPU | doc
+https://www.databricks.com/blog/llm-inference-performance-engineering-best-practices | LLM Inference Performance Engineering: Best Practices | doc
+https://redwerk.com/blog/llm-inference-optimization-techniques/ | llm-inference-optimization-techniques | doc
+https://arxiv.org/pdf/1910.02054 | ZeRO: Memory Optimizations Toward Training Trillion Parameter Models | pdf
+https://www.bentoml.com/blog/the-shift-to-distributed-llm-inference | The Shift to Distributed LLM Inference: 3 Key Technologies Breaking Single-Node Bottlenecks | doc
+https://ezyang.github.io/interactive-parallelize-transformer/ | How to Parallelize a Transformer for Training — an explorable explanation | code
+https://arxiv.org/pdf/2606.17081 | The Price of Anarchy in Disaggregated Inference | pdf
+https://learn.deeplearning.ai/courses/fast-and-efficient-llm-inference-with-vllm/lesson/rm60gb/introduction | Fast & Efficient LLM Inference with vLLM - DeepLearning.AI | course
+https://huggingface.co/llm-semantic-router | llm-semantic-router (vLLM Semantic Router) | blog
+https://github.com/vllm-project/semantic-router | GitHub - vllm-project/semantic-router: A programmable Mixture-of-Models router for heterogeneous LLM inference · GitHub | code
+https://vllm-semantic-router.com/ | Build Your Mixture-of-Models - vLLM Semantic Router | doc
+https://developers.redhat.com/articles/2026/06/24/optimizing-distributed-ai-inference-advanced-deployment-patterns | Optimizing distributed AI inference: Advanced deployment patterns - Red Hat Developer | doc
+https://developers.redhat.com/articles/2026/06/22/designing-distributed-ai-inference-core-concepts-and-scaling-dimensions | Designing distributed AI inference: Core concepts and scaling dimensions - Red Hat Developer | doc
+https://www.etched.com/ | Etched | doc
+https://medium.com/@saad.ahmed1926q/kv-cache-explained-intuitively-2b425a36dfc7 | KV Cache Explained Intuitively | blog
+https://outcomeschool.com/blog/prefill-vs-decode-llm-inference-optimization | Prefill vs Decode: LLM Inference Optimization | doc
+https://hamzaelshafie.bearblog.dev/paged-attention-from-first-principles-a-view-inside-vllm/ | Paged Attention from First Principles: A View Inside vLLM – Hamza's Blog | blog
+https://recipes.vllm.ai/baidu/Unlimited-OCR | baidu/Unlimited-OCR - vLLM Recipes | doc
+https://github.com/videlalvaro/leet-llm | GitHub - videlalvaro/inference-school: A hands-on Swift and Metal course for building LLM inference from first principles on Apple silicon, with 48 guided lessons, runnable exercises, a native macOS Studio, and a complete companion book. · GitHub | code
+https://www.deeplearning.ai/courses/fast-llm-inference-with-cerebras | Fast LLM Inference with Cerebras - DeepLearning.AI | course
+https://github.com/elizabetht/100-days-of-inference | GitHub - elizabetht/100-days-of-inference: 100 days of LLM inference engineering — daily posts, experiments, and visualizations · GitHub | code
+https://learn-inference.com/ | Learn Inference: inference engineering, explained interactively | doc
+https://leoniemonigatti.com/blog/speculative-decoding.html | How speculative decoding makes LLMs go brrr – Leonie Monigatti | doc
+https://github.com/FlashML-org/FreeToken | GitHub - FlashML-org/FreeToken: FreeToken brings datacenter-scale model serving to your desktop. Run massive models locally, fast and efficiently. · GitHub | code
+https://github.com/ggml-org/llama.cpp | GitHub - ggml-org/llama.cpp: LLM inference in C/C++ · GitHub | code
+https://rentry.org/samplers | Dummy's Guide to Modern Samplers | doc
+https://docs.unsloth.ai/models/how-to-run-llms-with-docker | How to Run Local LLMs with Docker: Step-by-Step Guide - Unsloth Documentation | doc
+https://blog.vllm.ai/2025/11/19/docker-model-runner-vllm.html | Docker Model Runner Integrates vLLM for High-Throughput Inferencing - vLLM Blog | blog
+https://youtu.be/oxwsizy1Spw?si=uz5-VKZWJ8oTqr9j | Inference Providers: Best Way to Build with Open Source Models - YouTube | video
+https://www.youtube.com/watch?v=ZOWjOxC80qw | PyTorch 2.0 Q&A: Optimizing Transformers for Inference - YouTube | video
+https://github.com/Mozilla-Ocho/llamafile | GitHub - mozilla-ai/llamafile: Distribute and run LLMs with a single file. · GitHub | code
+https://simonwillison.net/2023/Nov/29/llamafile/ | llamafile is the new best way to run an LLM on your own computer | doc
+https://huggingface.co/blog/hf-bitsandbytes-integration | A Gentle Introduction to 8-bit Matrix Multiplication for transformers at scale using transformers, accelerate and bitsandbytes | blog
+https://arxiv.org/pdf/2502.08145 | [2502.08145] Democratizing AI: Open-source Scalable LLM Training on GPU-based Supercomputers | pdf
+https://huggingface.co/blog/kv-cache | KV Cache from scratch in nanoVLM | blog
+https://towardsdatascience.com/running-llama-2-on-cpu-inference-for-document-q-a-3d636037a3d8 | Running Llama 2 on CPU Inference Locally for Document Q&A - Towards Data Science | doc
+https://pytorch.org/blog/accelerating-generative-ai-2/ | Accelerating Generative AI with PyTorch II: GPT, Fast – PyTorch | doc
+https://huggingface.co/papers/2312.11514 | Paper page - LLM in a flash: Efficient Large Language Model Inference with Limited Memory | blog
+https://bentoml.com/llm/ | LLM Inference Handbook | doc
+https://towardsdatascience.com/democratizing-llms-4-bit-quantization-for-optimal-llm-inference-be30cf4e0e34 | Democratizing LLMs: 4-bit Quantization for Optimal LLM Inference - Towards Data Science | doc
+https://github.com/microsoft/LLMLingua | GitHub - microsoft/LLMLingua: [EMNLP'23, ACL'24] To speed up LLMs' inference and enhance LLM's perceive of key information, compress the prompt and KV-Cache, which achieves up to 20x compression with minimal performance loss. · GitHub | code
+https://github.com/da-z/mlx-ui | GitHub - da-z/mlx-ui: A simple UI / Web / Frontend for MLX mlx-lm using Streamlit. · GitHub | code
+https://lightning.ai/lightning-ai/studios/optimized-llm-inference-api-for-mistral-7b-using-vllm?view=public&section=recent | Optimized LLM inference API for Mistral 7B using vLLM - a Lightning template by aniket | doc
+https://github.com/karpathy/llama2.c | GitHub - karpathy/llama2.c: Inference Llama 2 in one file of pure C · GitHub | code
+https://lightning.ai/lightning-ai/studios/deploy-llm-chat-api-codellama-13b | Deploy LLM Chat API - CodeLlama 13B - a Lightning template by lantiga | doc
+https://www.deeplearning.ai/short-courses/efficiently-serving-llms/ | Efficiently Serving LLMs - DeepLearning.AI | course
+https://www.dipkumar.dev/becoming-the-unbeatable/posts/gpt-kvcache/ | Speeding up the GPT - KV cache - Becoming The Unbeatable against AGI | doc
+https://huggingface.co/docs/text-generation-inference/en/index | Text Generation Inference · Hugging Face | doc
+https://bentoml.com/blog/benchmarking-llm-inference-backends | Benchmarking LLM Inference Backends | doc
+https://github.com/Lightning-AI/litserve | GitHub - Lightning-AI/LitServe: A minimal Python framework for building custom AI inference servers with full control over logic, batching, and scaling. · GitHub | code
+https://github.com/zml/zml | GitHub - zml/zml: Any model. Any hardware. Zero compromise. Built with @ziglang / @openxla / MLIR / @bazelbuild · GitHub | code
+https://github.com/neuralmagic/guidellm | GitHub - vllm-project/guidellm: Evaluate and Enhance Your LLM Deployments for Real-World Inference Needs · GitHub | code
+https://huggingface.co/docs/inference-providers/en/index | Inference Providers · Hugging Face | doc
+https://github.com/jax-ml/scaling-book/ | GitHub - jax-ml/scaling-book: Home for "How To Scale Your Model", a short blog-style textbook about scaling LLMs on TPUs · GitHub | code
+https://modal.com/docs/examples/very_large_models | Serve very large language models (DeepSeek V3, Kimi-K2, GLM 4.7/5) - Modal Docs | doc
+https://github.com/AlexsJones/llmfit | GitHub - AlexsJones/llmfit: Hundreds of models & providers. One command to find what runs on your hardware. · GitHub | code
+https://arxiv.org/pdf/2603.03075 | [2603.03075] TinyIceNet: Low-Power SAR Sea Ice Segmentation for On-Board FPGA Inference | pdf
+https://www.baseten.co/inference-engineering/ | Inference Engineering - Baseten Books | doc
+https://unsloth.ai/docs/models/gemma-4 | Gemma 4 - How to Run Locally - Unsloth Documentation | doc
+https://www.suryasure.com/articles/breaking-down-turboquant | Surya Sure | doc
+https://machinelearningmastery.com/from-prompt-to-prediction-understanding-prefill-decode-and-the-kv-cache-in-llms/ | From Prompt to Prediction: Understanding Prefill, Decode, and the KV Cache in LLMs - MachineLearningMastery.com | doc
+https://inference.vizuara.ai/ | Inference Engineering Workshop · Vizuara AI Labs | doc
+https://learn.deeplearning.ai/courses/efficient-inference-with-sglang-text-and-image-generation/information | Efficient Inference with SGLang: Text and Image Generation - DeepLearning.AI | course
+https://docs.openclaw.ai/providers/inferrs | Inferrs - OpenClaw | doc
+https://modal.com/blog/physical-intelligence-runs-real-time-remote-inference-for-robotic-control-on-modal | Real-time inference for robots at Physical Intelligence | doc
+https://www.webai.com/blog/running-yolo26-natively-on-apple-silicon-with-mlx | Running YOLO26 Natively on Apple Silicon with MLX - webAI | doc
+https://github.com/avbiswas/neural-txt | GitHub - avbiswas/neural-txt: Super fast local inferencing for common NLP tasks on technical text · GitHub | code
+https://omlx.ai/ | oMLX — LLM inference, optimized for your Mac | doc
+https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures | Recent Developments in LLM Architectures: KV Sharing, mHC, and Compressed Attention | doc
+https://www.tensortonic.com/llm-internals/kv-cache | KV Cache in LLMs Explained: How Transformers Make Inference Fast - TensorTonic | doc
+https://github.com/Mog9/research-papers | GitHub - Mog9/research-papers: Research implementations focused on inference efficiency and model optimization. Includes custom Triton kernels, LoRA, knowledge distillation pipelines, and more. · GitHub | code
+https://modal.com/notebooks/modal-labs/_/nb-x2wXrLH7aqi7HGVQ8Fosh2 | Inside vLLM - Anatomy of a High-Throughput LLM Inference System - Modal Notebooks | doc
+https://fleetwood.dev/posts/domain-specific-architectures | Domain specific architectures for AI inference | doc
+https://bytesofintelligence.substack.com/p/maximizing-gpu-efficiency-the-battle?utm_source=post-banner&utm_medium=web&utm_campaign=posts-open-in-app&triedRedirect=true | Maximizing GPU Efficiency: The Battle of Inference Methods | blog
+https://huggingface.co/unsloth/DeepSeek-R1-GGUF/tree/main/DeepSeek-R1-UD-IQ1_S | unsloth/DeepSeek-R1-GGUF at main | blog
+https://github.com/huggingface/nanoVLM/pull/69 | Implementing KV Cache for inference by ariG23498 · Pull Request #69 · huggingface/nanoVLM · GitHub | code
+https://arxiv.org/pdf/1806.03377 | PipeDream: Fast and Efficient Pipeline Parallel DNN Training | pdf

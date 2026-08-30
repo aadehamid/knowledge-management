@@ -1,0 +1,589 @@
+title: GitHub - amitshekhariitbhu/llm-internals: Learn LLM internals step by step - from tokenization to attention to inference optimization.
+description: Learn LLM internals step by step - from tokenization to attention to inference optimization. - amitshekhariitbhu/llm-internals
+
+# GitHub - amitshekhariitbhu/llm-internals: Learn LLM internals step by step - from tokenization to attention to inference optimization.
+
+ [![LLM Internals](https://github.com/amitshekhariitbhu/llm-internals/raw/main/assets/banner.png)](https://github.com/amitshekhariitbhu/llm-internals/blob/main/assets/banner.png) 
+
+**Learn LLM internals step by step - from tokenization to attention to inference optimization.**
+
+---
+
+Prepared and maintained by the **Founder** of Outcome School: [Amit Shekhar](https://x.com/amitiitbhu)
+
+---
+
+**Note: This series will continue to grow as I write more blogs and create more videos on new topics. Keep learning.**
+
+---
+
+Before diving into the internals of an LLM, it’s a good idea to first understand what an LLM actually is.
+
+In this video, we will cover the following:
+
+- LLM
+- RAG
+- MCP
+- Agent
+- Fine-tuning
+- Quantization
+
+Let's get started: [AI Engineering Explained: LLM, RAG, MCP, Agent, Fine-Tuning, Quantization](https://www.youtube.com/watch?v=lnfWvX66FUk)
+
+---
+
+In this video, we will learn about Tokenization and why they are essential for Large Language Models.
+
+Let's get started: [Tokenization in Large Language Models (LLMs)](https://www.youtube.com/watch?v=sK2s9I84EVI)
+
+---
+
+In this blog, we will learn about BPE (Byte Pair Encoding) - the tokenization algorithm used by most modern Large Language Models (LLMs) to break text into smaller pieces before processing it.
+
+We will understand what BPE is, why it is needed, and how it works step by step with a simple example.
+
+We will cover the following:
+
+- What is Tokenization?
+- The Problem: How to Break Text into Tokens?
+- What is BPE (Byte Pair Encoding)?
+- How BPE Works: Step by Step
+- How BPE Tokenizes New Text
+- Why BPE is Used in Modern LLMs
+
+Let's get started: [Byte Pair Encoding in LLMs](https://outcomeschool.com/blog/bpe-in-llms)
+
+---
+
+In this blog, we will learn about the math behind Attention: Query(Q), Key(K), and Value(V) with a step-by-step numeric example.
+
+We will cover the following:
+
+- The Attention Formula
+- Setting Up: From Words to Vectors
+- Creating Q, K, and V Matrices
+- Computing Attention Scores (Q x K\^T)
+- Scaling the Scores
+- Applying Softmax
+- Computing the Final Output (Attention Weights x V)
+- Putting It All Together
+
+Let's get started: [Math behind Attention - Q, K, and V](https://outcomeschool.com/blog/math-behind-attention-qkv)
+
+---
+
+In this blog, we will learn about why we scale the dot product attention by √dₖ in the Transformer architecture with a step-by-step numeric example.
+
+We will cover the following:
+
+- The Attention Formula (Quick Recap)
+- What Happens Without Scaling?
+- Why Do Dot Products Grow with dₖ?
+- Understanding Variance of the Dot Product
+- Proving It Step by Step: Variance of the Dot Product is dₖ
+- What Large Dot Products Do to Softmax
+- Why √dₖ is the Right Scaling Factor
+- Seeing It with Real Numbers
+- Putting It All Together
+
+Let's get started: [Math behind √dₖ Scaling Factor in Attention](https://outcomeschool.com/blog/scaling-dot-product-attention)
+
+---
+
+In this blog, we will learn about causal masking in attention.
+
+We will start with the introduction of causal masking, understand the problem of seeing future tokens through an example, and then walk through its implementation to see how masked attention prevents the model from accessing future tokens.
+
+We will cover the following:
+
+- Without Causal Masking
+- With Causal Masking
+- Implementation of Causal Masking
+- The Causal Mask Matrix
+
+Let's get started: [Causal Masking in Attention](https://outcomeschool.com/blog/causal-masking-in-attention)
+
+---
+
+In this blog, we will learn about the math behind backpropagation in neural networks.
+
+Backpropagation is the core algorithm that allows neural networks to learn from their mistakes. Without it, training neural networks efficiently would not be possible. Understanding the math behind it gives us a deeper understanding of how neural networks actually learn. Do not worry, we will learn about each concept step by step so that everything is clear.
+
+We will cover the following:
+
+- What is backpropagation?
+- The chain rule of calculus
+- Forward pass
+- Loss calculation
+- Backward pass (backpropagation)
+- Step-by-step numeric example
+- Weight update using gradient descent
+- Backpropagation in Python
+
+Let's get started: [Math Behind Backpropagation](https://outcomeschool.com/blog/math-behind-backpropagation)
+
+---
+
+In this blog, we will learn about the math behind Cross-Entropy Loss with a step-by-step numeric example.
+
+When we train a classification model in machine learning, the model predicts probabilities for each class. For example, given an image, the model outputs something like: "I am 70% sure this is a cat, 20% sure it is a dog, and 10% sure it is a rabbit." To train the model, we need a way to measure how wrong these predictions are compared to the true answer. This is exactly what Cross-Entropy Loss does. It is the most widely used loss function in classification tasks, and it powers the training of almost every modern AI model, including GPT, BERT, and image classifiers.
+
+We will cover the following:
+
+- The Big Picture
+- What is Cross-Entropy
+- The Cross-Entropy Loss Formula
+- Why We Take the Negative Log
+- Binary Cross-Entropy Loss
+- Categorical Cross-Entropy Loss
+- Step-by-Step Numeric Example
+- Cross-Entropy Loss for Language Models
+- The Gradient of Cross-Entropy Loss
+- Quick Summary
+
+Let's get started: [Math Behind Cross-Entropy Loss](https://outcomeschool.com/blog/math-behind-cross-entropy-loss)
+
+---
+
+In this blog, we will learn about the Transformer architecture by decoding it piece by piece - understanding what each component does, how they work together, and why this architecture powers every modern Large Language Model (LLM).
+
+We will cover the following:
+
+- Why the Transformer was needed
+- The two halves of the architecture
+- Tokenization, Embedding, and Positional Encoding
+- The Attention Mechanism and Multi-Head Attention
+- Feed-Forward Networks, Residual Connections, and Layer Normalization
+- How the Encoder and Decoder work
+- How data flows through the entire architecture
+- The three variants of the Transformer
+- Why the Transformer is so powerful
+
+Let's get started: [Decoding Transformer Architecture](https://outcomeschool.com/blog/decoding-transformer-architecture)
+
+---
+
+In this blog, we will learn about Feed-Forward Networks in LLMs - understanding what they are, how they work inside the Transformer architecture, why every Transformer layer needs one, and what role they play in making Large Language Models so powerful.
+
+We will cover the following:
+
+- What is a Feed-Forward Network?
+- Understanding Feed-Forward Networks with a Real-World Analogy
+- Where Does the Feed-Forward Network Sit in a Transformer?
+- How Does a Feed-Forward Network Work - Step by Step
+- The Expand-then-Contract Pattern
+- Why Does the FFN Expand and Then Contract?
+- ReLU and Activation Functions
+- What Does the Feed-Forward Network Actually Learn?
+- How Much of the Model is the Feed-Forward Network?
+- Feed-Forward Networks in Mixture of Experts
+- Why Feed-Forward Networks Are So Important
+
+Let's get started: [Feed-Forward Networks in LLMs](https://outcomeschool.com/blog/feed-forward-networks-in-llms)
+
+---
+
+In this blog, we are going to learn about Batch Normalization vs Layer Normalization. We will also see how Batch Normalization and Layer Normalization differ from each other and when to use which one.
+
+We will cover the following:
+
+- What is Normalization?
+- Why do we need Normalization?
+- What is Batch Normalization?
+- What is Layer Normalization?
+- Batch Normalization vs Layer Normalization
+- When to use which one?
+
+Let's get started: [Batch Normalization vs Layer Normalization](https://outcomeschool.com/blog/batch-normalization-vs-layer-normalization)
+
+---
+
+In this blog, we will learn about KV Cache - where K stands for Key and V stands for Value - and why it is used in Large Language Models (LLMs) to speed up text generation.
+
+We will start with how LLMs generate text one token at a time, understand the role of Key, Value, and Query inside the model, see the problem of repeated computation through an example, and then walk through how KV Cache solves this problem by storing and reusing past results.
+
+We will cover the following:
+
+- How LLMs Generate Text
+- What Happens Inside the Model
+- The Problem: Repeated Computation
+- The Solution: KV Cache
+- Why Only Key and Value Are Cached, Not Query
+- How Much Faster Does It Get
+- The Trade-Off: Speed vs Memory
+
+Let's get started: [KV Cache in LLMs](https://outcomeschool.com/blog/kv-cache-in-llms)
+
+---
+
+In this blog, we will learn about Paged Attention, a technique that solves the memory waste problem of KV Cache, allowing LLMs to serve many more users at the same time.
+
+We will start with a quick recap of KV Cache, understand the memory problem it creates, see how traditional memory allocation wastes space through an example, and then walk through how Paged Attention solves this problem by borrowing an idea from how computers manage memory.
+
+We will cover the following:
+
+- Quick Recap: KV Cache
+- The Problem: Memory Waste in KV Cache
+- What is Paged Attention?
+- How Paged Attention Works
+- Why Paged Attention Is So Effective
+- Memory Sharing Across Requests
+
+Let's get started: [Paged Attention in LLMs](https://outcomeschool.com/blog/paged-attention-in-llms)
+
+---
+
+In this blog, we will learn about Flash Attention by decoding it piece by piece - understanding why standard attention is slow, what makes Flash Attention fast, how it uses GPU memory cleverly, and why it is used in almost every modern Large Language Model (LLM).
+
+We will cover the following:
+
+- A quick recap of standard attention
+- Why standard attention is slow
+- How GPU memory actually works (HBM vs SRAM)
+- The core idea behind Flash Attention
+- Tiling: breaking the work into small blocks
+- Online softmax: computing softmax without the full matrix
+- Recomputation in the backward pass
+- Flash Attention 2
+- Flash Attention 3
+- Advantages and impact of Flash Attention
+
+Let's get started: [Decoding Flash Attention in LLMs](https://outcomeschool.com/blog/decoding-flash-attention)
+
+---
+
+In this blog, we will learn about Speculative Decoding - what it is, why LLM generation is slow without it, how a small draft model and a big target model work together to produce tokens faster, the rejection sampling math that guarantees no quality loss, real numbers showing the 2x to 3x speedup, where it is used in production, and the trade-offs to watch out for.
+
+We will cover the following:
+
+- What problem does Speculative Decoding solve?
+- The Big Picture
+- Why is LLM generation slow?
+- The core idea behind Speculative Decoding
+- Step-by-step walkthrough
+- The verification step
+- Real numbers and speedup
+- Where it is used
+- Trade-offs
+- Quick Summary
+
+Let's get started: [Speculative Decoding](https://outcomeschool.com/blog/speculative-decoding)
+
+---
+
+In this blog, we will learn about Continuous Batching, a technique that lets LLM servers handle many more users at the same time by keeping the GPU busy at every single step of generation.
+
+We will cover the following:
+
+- The Big Picture
+- Quick Recap: How an LLM Generates Tokens
+- Why Batching Matters for LLMs
+- The Old Way: Static Batching
+- The Problem with Static Batching
+- What is Continuous Batching?
+- The Ride-Share Analogy
+- How Continuous Batching Works Step by Step
+- A Numeric Example
+- Real Numbers and Speedup
+- Benefits of Continuous Batching
+- A Few Important Notes
+- Quick Summary
+
+Let's get started: [Continuous Batching in LLMs](https://outcomeschool.com/blog/continuous-batching-in-llms)
+
+---
+
+In this blog, we will learn about how Prompt Caching works. We will also see why we need it, how it actually works inside a large language model, and where it is used in real systems like AI assistants and agents.
+
+We will cover the following:
+
+- What is a prompt
+- A quick recap of how an LLM reads a prompt
+- What is Prompt Caching
+- Why we need Prompt Caching
+- The core idea behind Prompt Caching
+- The exact-prefix rule
+- Cache write vs cache read and TTL
+- What we should put in the cache
+- The benefits of Prompt Caching
+- Prompt Caching in the real world
+
+Let's get started: [How does Prompt Caching work?](https://outcomeschool.com/blog/how-does-prompt-caching-work)
+
+---
+
+In this blog, we will learn about Prefill vs Decode, the two phases of LLM inference, and how understanding them helps us optimize the speed of an LLM. We will also see how the prefill and decode phases work, how the KV cache connects them, how they differ and when to use which one based on our use case, and how we optimize each phase to make an LLM faster.
+
+We will cover the following:
+
+- What is LLM inference
+- The two phases: Prefill and Decode
+- Prefill explained in simple words
+- Decode explained in simple words
+- A diagram of the two phases and the KV cache flow
+- The KV cache as the bridge between the two phases
+- A step-by-step walkthrough of a few decode steps
+- Prefill vs Decode comparison table
+- Why this split matters: compute-bound vs memory-bound
+- The key metrics: TTFT, TPOT, throughput, and end-to-end latency
+- Optimization techniques mapped to each phase
+- Conclusion
+
+Let's get started: [Prefill vs Decode: LLM Inference Optimization](https://outcomeschool.com/blog/prefill-vs-decode-llm-inference-optimization)
+
+---
+
+In this blog, we will learn about the Mixture of Experts (MoE) architecture - understanding what experts are, how the router picks them, why MoE makes large models faster and cheaper, and why it powers many of today's most powerful Large Language Models (LLMs).
+
+We will cover the following:
+
+- Why Mixture of Experts was needed
+- What an "expert" really means
+- The router and how it picks experts
+- Where MoE sits inside a Transformer
+- Sparse activation and why it saves compute
+- Load balancing across experts
+- Advantages and challenges of MoE
+- Why MoE powers many modern LLMs
+
+Let's get started: [Mixture of Experts Explained](https://outcomeschool.com/blog/mixture-of-experts)
+
+---
+
+In this blog, we will learn about Grouped-Query Attention (GQA) and how it differs from Multi-Head Attention (MHA). We will also learn about Multi-Query Attention (MQA) along the way and see when to use which one.
+
+We will cover the following:
+
+- The Big Picture
+- Quick Recap: Multi-Head Attention (MHA)
+- The Problem with Multi-Head Attention
+- What is Multi-Query Attention (MQA)?
+- What is Grouped-Query Attention (GQA)?
+- How Grouped-Query Attention Works
+- GQA is a Generalization of MHA and MQA
+- GQA vs MHA vs MQA
+- Real-World Use Cases
+- A Note on Terminology
+- Uptraining: Converting MHA to GQA
+- Quick Summary
+
+Let's get started: [Grouped Query Attention](https://outcomeschool.com/blog/grouped-query-attention)
+
+---
+
+In this blog, we will learn about the math behind Rotary Position Embedding (RoPE) and why it is used in modern Large Language Models.
+
+We will cover the following:
+
+- The Big Picture
+- Why a Transformer Needs Position Information
+- Older Approaches and Their Problems
+- The Core Idea Behind RoPE
+- The 2D Rotation Math
+- How RoPE Is Applied to Q and K
+- Why the Dot Product Captures Relative Position
+- A Small Numeric Example
+- Real-World Use Cases
+- Quick Summary
+
+Let's get started: [Math Behind RoPE (Rotary Position Embedding)](https://outcomeschool.com/blog/math-behind-rope-rotary-position-embedding)
+
+---
+
+In this blog, we will learn about RMSNorm, a faster and simpler alternative to Layer Normalization that powers most modern Large Language Models like Llama, Mistral, Gemma, Qwen, PaLM, and DeepSeek.
+
+We will cover the following:
+
+- Why normalization is needed in deep networks
+- A quick recap of Layer Normalization (LayerNorm)
+- What RMSNorm is and how it works
+- The math behind RMSNorm with a concrete numeric example
+- LayerNorm vs RMSNorm - the key differences
+- Why modern LLMs prefer RMSNorm
+- A code example
+- Where RMSNorm fits in a Transformer
+- Quick Summary
+
+Let's get started: [RMSNorm (Root Mean Square Layer Normalization)](https://outcomeschool.com/blog/rmsnorm-root-mean-square-layer-normalization)
+
+---
+
+In this blog, we will learn about LoRA - Low-Rank Adaptation of Large Language Models.
+
+We will cover the following:
+
+- The Big Picture
+- Why Full Fine-Tuning Is Expensive
+- The Core Idea Behind LoRA
+- How LoRA Works Step by Step
+- A Small Numeric Example
+- Where LoRA Is Applied in a Transformer
+- Merging LoRA Back Into the Model
+- Real-World Use Cases
+- Quick Summary
+
+Let's get started: [LoRA: Low-Rank Adaptation of LLMs](https://outcomeschool.com/blog/lora-low-rank-adaptation-of-llms)
+
+---
+
+In this blog, we will learn about Large Reasoning Models (LRMs), how they are different from standard Large Language Models, how they think before they answer, how they are trained, and when we must use them.
+
+We will cover the following:
+
+- The Big Picture
+- What is a Large Reasoning Model (LRM)?
+- LLM vs LRM
+- How does an LRM actually think?
+- Test-time compute: thinking longer makes them smarter
+- How are LRMs trained?
+- Input and Output: training phase vs prediction phase
+- When to use an LRM, and when to use a regular LLM
+- Popular LRMs we should know
+- Common Mistakes when using LRMs
+- Quick Summary
+
+Let's get started: [Large Reasoning Models (LRMs)](https://outcomeschool.com/blog/large-reasoning-models)
+
+---
+
+In this blog, we will learn about Reinforcement Learning from Human Feedback (RLHF), the training technique that turns a raw pre-trained LLM into a helpful, honest, and safe assistant by teaching it from human preferences.
+
+We will cover the following:
+
+- What is RLHF
+- Why we need RLHF
+- The Big Picture
+- Stage 1: Supervised Fine-Tuning (SFT)
+- Stage 2: Training the Reward Model
+- Stage 3: RL Fine-Tuning with PPO
+- The KL Penalty
+- Putting It All Together
+- Reward Hacking
+- Common Mistakes
+- Best Practices
+- Quick Summary
+
+Let's get started: [Reinforcement Learning from Human Feedback (RLHF)](https://outcomeschool.com/blog/reinforcement-learning-from-human-feedback-rlhf)
+
+---
+
+In this blog, we will learn about DeepSeek-V4, the new family of open Mixture-of-Experts language models that natively supports a one-million-token context with dramatically lower inference cost.
+
+DeepSeek-V4 makes one-million-token context roughly a tenth as expensive as it was in DeepSeek-V3.2. It introduces a new attention design, a new way of doing residual connections, a new optimizer, and a new post-training pipeline. We will decode each of these one by one.
+
+We will cover the following:
+
+- The Big Picture
+- Two Models: DeepSeek-V4-Pro and DeepSeek-V4-Flash
+- Hybrid Attention with CSA and HCA
+- Manifold-Constrained Hyper-Connections (mHC)
+- Muon Optimizer
+- FP4 Quantization-Aware Training
+- Pre-Training
+- Post-Training: Specialist Training and On-Policy Distillation
+- Reasoning Modes
+- Putting It All Together
+- Quick Summary
+
+Let's get started: [Decoding DeepSeek-V4](https://outcomeschool.com/blog/decoding-deepseek-v4)
+
+---
+
+In this blog, we will learn about Prompt Injection in Large Language Models. We will also see why it happens, how an attacker uses it, why the obvious fixes fail, and how we can defend our AI applications against it in the real world.
+
+We will cover the following:
+
+- The system prompt and the user prompt
+- What is Prompt Injection
+- The root cause of Prompt Injection
+- A simple example of Prompt Injection
+- Direct Prompt Injection
+- Indirect Prompt Injection
+- A step-by-step walkthrough of a real attack
+- A code example of how the attack sneaks in
+- Prompt Injection vs Jailbreaking
+- Why Prompt Injection is not like SQL Injection
+- What an attacker can achieve
+- The defenses, one approach at a time
+- A defense checklist
+- How to test our own application
+- Why this problem is still not solved
+
+Let's get started: [Prompt Injection in LLMs](https://outcomeschool.com/blog/prompt-injection-in-llms)
+
+---
+
+In this blog, we will learn about the Lost in the Middle problem in LLMs, the strange behaviour where a model reads a very long text, uses the beginning and the end very well, and quietly ignores whatever is sitting in the middle. We will also see what a context window really means, how the accuracy forms a U-shaped curve, why the middle gets forgotten, how this silently breaks RAG systems and long conversations, how we can test our own model for it, and what we can do to fix it.
+
+We will cover the following:
+
+- What is a context window
+- What is the Lost in the Middle problem
+- Let's understand it with an example
+- The U-shaped curve
+- Why does this happen
+- Where this hurts us in real life
+- How to test for the Lost in the Middle problem
+- How to solve the Lost in the Middle problem
+- Key points to remember
+
+Let's get started: [The Lost in the Middle Problem in LLMs](https://outcomeschool.com/blog/lost-in-the-middle-problem-in-llms)
+
+---
+
+In this blog, we will learn about how LLM watermarking works, the hidden signal that a model quietly leaves inside the text it writes. We will also see why we need it, how an LLM picks one token at a time, how a secret key silently changes those choices without touching the meaning, how a detector finds that hidden pattern later, why the quality of the text does not break, how it is different from an AI text detector, and where it works well and where it fails.
+
+We will cover the following:
+
+- What is a watermark?
+- Why do we need a watermark in LLM-generated text?
+- How does an LLM write text?
+- How does an LLM choose the next word?
+- The hidden freedom that makes watermarking possible
+- Here comes the secret key into the picture
+- Preferred tokens and other tokens
+- Slightly changing the probabilities
+- Why the preferred set keeps changing
+- One token vs thousands of tokens
+- How does the detection work?
+- How is this different from an AI text detector?
+- Why the quality of the text does not break
+- What happens when someone edits the text?
+- Where is LLM watermarking used in the real world?
+- Advantages and disadvantages of LLM watermarking
+
+Let's get started: [How Does LLM Watermarking Work?](https://outcomeschool.com/blog/how-does-llm-watermarking-work)
+
+---
+
+In this blog, we will learn about Harness Engineering in AI. We will understand what a harness is, why we need it, and how it is used in AI Agents and evaluation systems.
+
+We will cover the following:
+
+- What is a Harness in AI?
+- Why do we need Harness Engineering?
+- Components of an AI Harness
+- Harness Engineering for AI Agents
+- Harness Engineering for Evaluation
+- Best Practices in Harness Engineering
+- Putting It All Together
+
+Let's get started: [Harness Engineering in AI](https://outcomeschool.com/blog/harness-engineering-in-ai)
+
+---
+
+```
+Copyright (C) 2026 Outcome School
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+```

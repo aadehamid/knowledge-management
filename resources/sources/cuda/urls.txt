@@ -7,3 +7,16 @@ https://docs.nvidia.com/cuda/cuda-programming-guide/pdf/cuda-programming-guide.p
 https://developer.nvidia.com/blog/even-easier-introduction-cuda/ | An Even Easier Introduction to CUDA | blog
 https://modal.com/blog/truly-serverless-gpus | Truly Serverless GPUs | blog
 https://en.algorithmica.org/hpc/architecture/ | Computer Architecture | doc
+
+# --- corpus expansion 2026-08-29 (10 sources) ---
+https://horace.io/brrr_intro.html | Making Deep Learning go Brrrr From First Principles | doc
+https://huggingface.co/blog/torch-profiler | Profiling in PyTorch (Part 1): A Beginner's Guide to torch.profiler | blog
+https://www.jepeake.com/ai-chip-architectures | AI Chip Architectures - Jacob Peake | doc
+https://github.com/wafer-ai/gpu-perf-engineering-resources | GitHub - wafer-ai/gpu-perf-engineering-resources: A curated resource list for learning AI performance engineering, from GPU fundamentals to production inference. · GitHub | code
+https://developer.apple.com/metal/pytorch/ | Accelerated PyTorch training on Mac - Metal - Apple Developer | doc
+https://sebastianraschka.com/blog/2023/pytorch-faster.html | PyTorch Training Speed Techniques - Sebastian Raschka, PhD | doc
+https://eigenfoo.xyz/floating-point-deep-learning/ | Floating-Point Formats and Deep Learning - George Ho | doc
+https://github.com/linkedin/Liger-Kernel | GitHub - linkedin/Liger-Kernel: Efficient Triton Kernels for LLM Training · GitHub | code
+https://arxiv.org/pdf/2401.14489 | [2401.14489] The Case for Co-Designing Model Architectures with Hardware | pdf
+https://szymonozog.github.io/posts/2025-09-21-Penny-worklog-1.html | Writing my own communications library - a worklog of creating Penny part 1 - Szymon Ożóg | code
+https://arxiv.org/pdf/1901.02926 | Three Other Models of Computer System Performance | pdf

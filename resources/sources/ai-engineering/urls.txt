@@ -6,3 +6,42 @@
 
 https://github.com/Engineer1999/A-Curated-List-of-ML-System-Design-Case-Studies | A Curated List of ML System Design Case Studies (300+ case studies) | code
 https://github.com/aadehamid/system-design | System Design interview prep | code
+
+# --- corpus expansion 2026-08-29 (37 sources) ---
+https://aiengineeringfromscratch.com/ | AI Engineering from Scratch | doc
+https://lilianweng.github.io/posts/2026-07-04-harness/ | Harness Engineering for Self-Improvement - Lil'Log | code
+https://www.coderabbit.ai/blog/teaching-nvidia-nemotron-3-5-lightning-to-route-code-reviews | Teaching NVIDIA Nemotron 3.5 Lightning to Route Code Reviews | doc
+https://platform.claude.com/cookbook | Claude Cookbook | doc
+https://www.inovex.de/de/blog/prompt-engineering-guide/ | Prompt Engineering and Zero-Shot/Few-Shot Learning [Guide] - inovex GmbH | doc
+https://serverless-ml.org/ | Serverless ML; Apps and MLOps: without the infrastructure | doc
+https://www.deeplearning.ai/short-courses/improving-accuracy-of-llm-applications/?utm_campaign=lamini-launch&utm_content=304497717&utm_medium=social&utm_source=twitter&hss_channel=tw-992153930095251456 | Improving Accuracy of LLM Applications - DeepLearning.AI | course
+https://huggingface.co/learn/cookbook/en/dspy_gepa | Prompt Optimization for Language Models with DSPy GEPA · Hugging Face | blog
+https://youtube.com/playlist?list=PLuI8kc1bqP2junKkKVD-5441I8G7oXDTm&si=NmdhiqdX3ZokZ6dC | The Hands-on LLM Course - YouTube | video
+https://github.com/iusztinpaul/hands-on-llms?tab=readme-ov-file | GitHub - iusztinpaul/hands-on-llms: 🦖 𝗟𝗲𝗮𝗿𝗻 about 𝗟𝗟𝗠𝘀, 𝗟𝗟𝗠𝗢𝗽𝘀, and 𝘃𝗲𝗰𝘁𝗼𝗿 𝗗𝗕𝘀 for free by designing, training, and deploying a real-time financial advisor LLM system ~ 𝘴𝘰𝘶𝘳𝘤𝘦 𝘤𝘰𝘥𝘦 + 𝘷𝘪𝘥𝘦𝘰 & 𝘳𝘦𝘢𝘥𝘪𝘯𝘨 𝘮𝘢𝘵𝘦𝘳 | code
+https://huyenchip.com/2022/01/02/real-time-machine-learning-challenges-and-solutions.html | Real-time machine learning: challenges and solutions | doc
+https://jordivillar.com/data/sql-is-all-you-need/ | SQL Is All You Need - Jordi Villar | doc
+https://v0.dev/ | v0 by Vercel - Build Full-Stack Web Apps with AI | doc
+https://newsletter.vickiboykis.com/archive/my-favorite-use-case-for-ai-is-writing-logs/ | My favorite use-case for AI is writing logs • Buttondown | doc
+https://simonwillison.net/2025/Jun/25/gemini-cli/ | Gemini CLI | doc
+https://slack.engineering/rebuilding-slack-com-b124c405c193 | Rebuilding slack.com - Engineering at Slack | doc
+https://vickiboykis.com/2020/06/09/getting-machine-learning-to-production/ | Getting machine learning to production - ✰Vicki Boykis✰ | doc
+https://www.deeplearning.ai/short-courses/llmops/?utm_campaign=googlecloud3-launch&utm_medium=email&_hsmi=290334501&_hsenc=p2ANqtz-9jr1OzWwqmAssp0mRPz75TfbTXA_PFZShkcS6A5GvfJOq-ZXvfS5xdYVvTN1MZSat3Iui8MJ2H_KusyLCl8IL2zEylug&utm_content=290334501&utm_source=hs_email | LLMOps - DeepLearning.AI | course
+https://github.com/meta-llama/llama-cookbook/blob/85ea8691b46d02d22abf2c19f07dad18098ec7ad/examples/Prompt_Engineering_with_Llama_2.ipynb | Prompt_Engineering_with_Llama_2.ipynb · meta-llama/llama-cookbook (recovered @ 85ea8691) | code
+https://www.confident-ai.com/blog/llm-evaluation-metrics-everything-you-need-for-llm-evaluation?utm_source=substack&utm_medium=email | LLM Evaluation Metrics: The Ultimate LLM Evaluation Guide - Confident AI | doc
+https://www.udacity.com/course/building-real-world-applications-with-large-language-models--cd13455 | Building Real-World Applications With Large Language Models - Udacity | course
+https://changes.openinterpreter.com/log/local-iii | Open Interpreter - Introducing Local III | doc
+https://docs.ell.so/ | Introduction - ell documentation | doc
+https://github.com/SylphAI-Inc/llm-engineer-handbook | GitHub - SylphAI-Inc/LLM-engineer-handbook: A curated list of Large Language Model resources, covering model training, serving, fine-tuning, and building LLM applications. · GitHub | code
+https://github.com/adithya-s-k/AI-Engineering.academy?tab=readme-ov-file#-why-choose-ai-engineering-academy | GitHub - adithya-s-k/AI-Engineering.academy: Mastering Applied AI, One Concept at a Time · GitHub | code
+https://github.com/spiceai/spiceai | GitHub - spiceai/spiceai: Add a real-time analytics node to your operational database. Spice is a portable, accelerated SQL query, search, and LLM-inference engine in Rust for data-grounded AI apps and agents. · GitHub | code
+https://deepwiki.com/ | DeepWiki - AI documentation you can talk to, for every repo | doc
+https://www.deeplearning.ai/short-courses/orchestrating-workflows-for-genai-applications/ | Orchestrating Workflows for GenAI Applications - DeepLearning.AI | course
+https://www.akashtandon.in/interactive-explainers/dspy/ | DSPy: Programming - Not Prompting - Language Models | doc
+https://huggingface.co/context-course | context-course (Hugging Face Context Course) | blog
+https://modal.com/blog/qart-codes-evals | How we used evals and inference-time compute scaling to generate beautiful QR codes that actually work | doc
+https://ai.google.dev/gemma/docs/core/prompt-structure | Gemma formatting and system instructions - Google AI for Developers | doc
+https://modal.com/docs/guide/volumes | Volumes - Modal Docs | doc
+https://maximerivest.com/posts/is_dspy_worth_it.html | Maxime Rivest – DSPy sounds neat, but is it reliable? | doc
+https://openai.com/index/introducing-agentkit/ | Introducing AgentKit - OpenAI | doc
+https://magazine.sebastianraschka.com/p/llm-evaluation-4-approaches | Understanding the 4 Main Approaches to LLM Evaluation (From Scratch) | doc
+https://ai-engineer.harshhh.me/ | AI Engineer Roadmap — From Math to Production | doc

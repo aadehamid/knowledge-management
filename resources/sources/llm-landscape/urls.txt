@@ -1,0 +1,56 @@
+# LLM Landscape subject area - URLs with metadata.
+# Format: url | title | source_type [| author]
+# source_type: paper, blog, video, course, code, thread, pdf, doc
+# author: optional; used in the output filename for sites with generic URL paths (e.g. YouTube)
+# Blank lines and lines starting with # are ignored.
+
+
+# --- corpus expansion 2026-08-29 (48 sources) ---
+https://ourworldindata.org/scaling-up-ai | Scaling up: how increasing inputs has made artificial intelligence more capable | doc
+https://build-small-hackathon-field-guide.hf.space/partners/openbmb | OpenBMB · Build Small | doc
+https://x.com/brian_armstrong/status/2070670644577280109?s=46 | Brian Armstrong on X: "How to keep AI spend flat while token usage grows exponentially: Not with friction and spend alerts. With better defaults, routing, and caching. Better Defaults (not Usage Caps) – Engineers can choose any model they want, but default | thread
+https://github.com/google-research/tabfm | GitHub - google-research/tabfm: TabFM (Tabular Foundation Model) is a pretrained tabular foundation model developed by Google Research for tabular data regression and classification. · GitHub | code
+https://huggingface.co/blog/pwc-search | How Hugging Face Inference Endpoints, Jobs, and Buckets Power Search on Papers with Code | blog
+https://ernie.baidu.com/blog/posts/ernie4.5/ | Announcing the Open Source Release of the ERNIE 4.5 Model Family - ERNIE Blog | doc
+https://www.kaggle.com/models/metaresearch/llama-2 | Meta - Llama 2 - Kaggle | doc
+https://heartbeat.comet.ml/large-language-models-a-complete-guide-f818397c82d4 | Large Language Models: A Complete Guide | doc
+https://buttondown.email/ainews/archive/ainews-cohere-command-r-anthropic-claude-tool-use/ | [AINews] Cohere Command R+, Anthropic Claude Tool Use, OpenAI Finetuning • Buttondown | doc
+https://arxiv.org/pdf/2307.09288 | [2307.09288] Llama 2: Open Foundation and Fine-Tuned Chat Models | pdf
+https://lmsys.org/blog/2023-03-30-vicuna/ | Vicuna: An Open-Source Chatbot Impressing GPT-4 with 90%* ChatGPT Quality - LMSYS Org | doc
+https://simonwillison.net/2025/Jun/26/gemma-3n/ | Introducing Gemma 3n: The developer guide | doc
+https://openai.com/blog/how-should-ai-systems-behave | How should AI systems behave, and who should decide? - OpenAI | doc
+https://huggingface.co/blog/falcon | The Falcon has landed in the Hugging Face ecosystem | blog
+https://www.interconnects.ai/p/open-llm-company-playbook?utm_campaign=post&utm_medium=web | Open LLM company playbook - by Nathan Lambert | doc
+https://arxiv.org/pdf/2312.06550 | [2312.06550] LLM360: Towards Fully Transparent Open-Source LLMs | pdf
+https://mistral.ai/news/mixtral-of-experts/ | Mixtral of experts - Mistral AI | doc
+https://medium.com/@georgeanil/visualizing-size-of-large-language-models-ec576caa5557 | Visualizing the Size of Large Language Models | blog
+https://stability.ai/news/introducing-stable-lm-2 | Introducing Stable LM 2 1.6B — Stability AI | doc
+https://www.together.ai/ | Together AI - The AI Native Cloud | doc
+https://research.ibm.com/blog/science-expert-LLM | IBM and NASA build language models to make scientific knowledge more accessible - IBM Research | doc
+https://x.ai/blog/grok-os | Open Release of Grok-1 - SpaceXAI | doc
+https://a16z.com/generative-ai-enterprise-2024/ | 16 Changes to the Way Enterprises Are Building and Buying Generative AI - Andreessen Horowitz | doc
+https://www.axios.com/2024/06/23/leopold-aschenbrenner-ai-future-silicon-valley?utm_medium=social&utm_campaign=editorial&utm_source=twitter | Leopold Aschenbrenner's "Situational Awareness": AI from now to 2034 | doc
+https://huggingface.co/blog/llama32 | Llama can now see and run on your device - welcome Llama 3.2 | blog
+https://simonwillison.net/2024/Dec/9/llama-33-70b/#atom-everything | I can now run a GPT-4 class model on my laptop | doc
+https://mistral.ai/news/codestral-2501/ | Codestral 25.01 - Mistral AI | doc
+https://magazine.sebastianraschka.com/p/ai-research-papers-2024-part-2?utm_source=post-email-title&publication_id=1174659&post_id=153692738&utm_campaign=email-post-title&isFreemail=true&r=1csfkw&triedRedirect=true&utm_medium=email | Noteworthy AI Research Papers of 2024 (Part Two) | doc
+https://developers.googleblog.com/en/introducing-gemma3/ | Introducing Gemma 3: The Developer Guide - Google Developers Blog | blog
+https://mistral.ai/news/mistral-small-3-1 | Mistral Small 3.1 - Mistral AI | doc
+https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503 | mistralai/Mistral-Small-3.1-24B-Instruct-2503 · Hugging Face | blog
+https://johnowhitaker.dev/essays/future-ai.html | My Thoughts on the Future of “AI” – johnowhitaker.dev | doc
+https://www.latent.space/p/2025-papers | The 2025 AI Engineering Reading List - Latent.Space | doc
+https://mistral.ai/news/devstral | Devstral - Mistral AI | doc
+https://marin.readthedocs.io/en/latest/reports/marin-8b-retro/ | Marin 8B Retro - Marin Documentation | doc
+https://openrouter.ai/z-ai/glm-5 | GLM 5 - API Pricing & Benchmarks - OpenRouter | doc
+https://www.baseten.co/about-us/ | Meet the engineers behind Baseten | doc
+https://mistral.ai/news/leanstral | Leanstral: Open-Source foundation for trustworthy vibe-coding - Mistral AI | doc
+https://docs.anarchai.org/ | Docs - Mesh LLM | doc
+https://www.liquid.ai/blog/lfm2-5-vl-450m | LFM2.5-VL-450M: Structured Visual Intelligence, Edge to Cloud - Blog - Liquid AI | doc
+https://github.com/google-research/timesfm | GitHub - google-research/timesfm: TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting. · GitHub | code
+https://huggingface.co/openai/privacy-filter | openai/privacy-filter · Hugging Face | blog
+https://build.nvidia.com/models | Models - Try NVIDIA NIM APIs | doc
+https://reiner-flashcards.vercel.app/ | Dwarkesh Podcast Flashcards | doc
+https://www.datadoghq.com/blog/ai/toto-2/ | Toto 2.0: Time series forecasting enters the scaling era - Datadog | doc
+https://ollama.com/library/llama3 | llama3 | doc
+https://ollama.com/library/llama3.3 | llama3.3 | doc
+https://lumiere-video.github.io/ | Lumiere | code

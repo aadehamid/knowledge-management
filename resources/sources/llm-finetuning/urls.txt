@@ -1,0 +1,132 @@
+# LLM Fine-tuning subject area - URLs with metadata.
+# Format: url | title | source_type [| author]
+# source_type: paper, blog, video, course, code, thread, pdf, doc
+# author: optional; used in the output filename for sites with generic URL paths (e.g. YouTube)
+# Blank lines and lines starting with # are ignored.
+
+
+# --- corpus expansion 2026-08-29 (124 sources) ---
+https://github.com/OpenAccess-AI-Collective/axolotl | Axolotl — LLM Fine-tuning Framework (GitHub) | code
+https://www.distillabs.ai/ | distil labs – Cut LLM Costs by 80% with Custom SLMs | doc
+https://thinkingmachines.ai/news/putting-task-expertise-into-rl/ | Putting Task Expertise into RL Achieves State-of-the-Art Performance on Text-to-SQL - Thinking Machines Lab | doc
+https://youtu.be/p3sij8QzONQ?si=dmggbgctRlShfBfC | LLMs from Scratch – Practical Engineering from Base Model to PPO RLHF - YouTube | video
+https://huggingface.co/smol-course | smol-course (a smol course) | blog
+https://learn.deeplearning.ai/courses/fine-tuning-and-reinforcement-learning-for-llms-intro-to-post-training/lesson/rm98gb4q/conversation-between-sharon-zhou-and-andrew-ng | Fine-tuning & RL for LLMs: Intro to Post-training - DeepLearning.AI | course
+https://trelis.com/advanced-fine-tuning-scripts/ | Fine-tuning and Retrieval (RAG) – Trelis | doc
+https://www.deeplearning.ai/short-courses/finetuning-large-language-models/?utm_campaign=finetuning-launch&utm_content=279346493&utm_medium=social&utm_source=twitter&hss_channel=tw-992153930095251456 | Finetuning Large Language Models - DeepLearning.AI | course
+https://maven.com/parlance-labs/fine-tuning | Mastering LLMs For Developers & Data Scientists by Dan Becker and Hamel Husain on Maven | course
+https://learn.deeplearning.ai/courses/intro-to-federated-learning-c2/lesson/1/introduction | Federated Fine-tuning of LLMs with Private Data - DeepLearning.AI | course
+https://apeatling.com/articles/simple-guide-to-local-llm-fine-tuning-on-a-mac-with-mlx/ | A simple guide to local LLM fine-tuning on a Mac with MLX · Andy Peatling · Working with React.js, TypeScript, LLMs, & Agents | doc
+https://github.com/ml-explore/mlx-examples/tree/main/lora | mlx-examples/lora at main · ml-explore/mlx-examples · GitHub | code
+https://github.com/axolotl-ai-cloud/axolotl/blob/4d2e842e46bf8bd6dd0fda4d2667a7e7d80b4cd4/examples/llama-2/tiny-llama.yml | axolotl/examples/llama-2/tiny-llama.yml (recovered @ 4d2e842e) | code
+https://www.latent.space/p/axolotl | The Busy Person's Intro to Finetuning & Open Source AI - Wing Lian, Axolotl | doc
+https://www.youtube.com/watch?v=3fsn19OI_C8 | The EASIEST way to finetune LLAMA-v2 on local machine! - YouTube | video
+https://magazine.sebastianraschka.com/p/finetuning-large-language-models | Finetuning Large Language Models | doc
+https://github.com/modelscope/ms-swift | GitHub - modelscope/ms-swift: Use PEFT or Full-parameter to CPT/SFT/DPO/GRPO 600+ LLMs (Qwen3.6, DeepSeek-V4, GLM-5.1, InternLM3, Llama4, ...) and 300+ MLLMs (Qwen3-VL, Qwen3-Omni, InternVL3.5, Ovis2.5, GLM4.5v, Gemma4, Llava, Phi4, ...) (AAAI 2025). · Git | code
+https://lightning.ai/akshay-ddods/studios/fine-tuning-alibaba-s-qwen3-100-local?section=featured | Fine-tuning Alibaba's Qwen3 (100% local) - a Lightning template by avi-chawla | doc
+https://youtu.be/Ik6nbAjxLk4?si=R0hSkz3N3V6rWRLg | Fine tune Gemma 3, Qwen3, Llama 4, Phi 4 and Mistral Small with Unsloth and Transformers - YouTube | video
+https://raw.githubusercontent.com/merveenoyan/smol-vision/main/Fine_tune_PaliGemma.ipynb | Google Colab | code
+https://www.answer.ai/posts/2024-03-06-fsdp-qlora.html | You can now train a 70b language model at home – Answer.AI | doc
+https://huggingface.co/blog/visheratin/nomic-data-cleaning | Data exploration and filtering with Nomic Atlas | blog
+https://mlabonne.github.io/blog/posts/A_Beginners_Guide_to_LLM_Finetuning.html | A Beginner’s Guide to LLM Fine-Tuning – Maxime Labonne | code
+https://github.com/eosphoros-ai/DB-GPT-Hub | GitHub - eosphoros-ai/DB-GPT-Hub: A repository that contains models, datasets, and fine-tuning techniques for DB-GPT, with the purpose of enhancing model performance in Text-to-SQL · GitHub | code
+https://huggingface.co/blog/rlhf | Illustrating Reinforcement Learning from Human Feedback (RLHF) | blog
+https://www.deeplearning.ai/short-courses/reinforcement-learning-from-human-feedback/ | Reinforcement Learning From Human Feedback - DeepLearning.AI | course
+https://www.interconnects.ai/p/rlhf-resources | RLHF learning resources in 2024 - by Nathan Lambert | doc
+https://gist.github.com/yoavg/6bff0fecd65950898eba1bb321cfbd81?utm_source=substack&utm_medium=email | rl-for-llms.md · GitHub | code
+https://www.deeplearning.ai/short-courses/reinforcement-fine-tuning-llms-grpo/ | Reinforcement Fine-Tuning LLMs With GRPO - DeepLearning.AI | course
+https://www.youtube.com/watch?v=Z_JUqJBpVOk&list=PLs8w1Cdi-zvbUan-KlgwKN2CycndyKXXS&pp=gAQB | Reinforcement Learning with Human Feedback (RLHF) - How to train and fine-tune Transformer Models - YouTube | video
+https://arxiv.org/pdf/2503.01067 | [2503.01067] All Roads Lead to Likelihood: The Value of Reinforcement Learning in Fine-Tuning | pdf
+https://docs.unsloth.ai/basics/reinforcement-learning-guide | Reinforcement Learning (RL) Guide - Unsloth Documentation | doc
+https://www.wandb.courses/courses/training-fine-tuning-LLMs | Training LLMs Course: Discover Fine-Tuning Techniques | course
+https://sumanthrh.com/post/distributed-and-efficient-finetuning/ | Everything about Distributed Training and Efficient Finetuning - Sumanth's Personal Website | doc
+https://pytorch.org/blog/finetune-llms/?utm_content=278057354&utm_medium=social&utm_source=twitter&hss_channel=tw-776585502606721024 | Finetune LLMs on your own consumer hardware using tools from PyTorch and Hugging Face ecosystem – PyTorch | doc
+https://www.chrismccormick.ai/products/fine-tuning-bert-for-ner | ChrisMcCormick.AI | doc
+https://youtu.be/dA-NhCtrrVE | Low-rank Adaption of Large Language Models: Explaining the Key Concepts Behind LoRA - YouTube | video
+https://huggingface.co/mrm8488/distilroberta-finetuned-financial-news-sentiment-analysis | mrm8488/distilroberta-finetuned-financial-news-sentiment-analysis · Hugging Face | blog
+https://openai.com/research/weak-to-strong-generalization | Weak-to-strong generalization - OpenAI | doc
+https://arxiv.org/pdf/2312.06585 | [2312.06585] Beyond Human Data: Scaling Self-Training for Problem-Solving with Language Models | pdf
+https://arxiv.org/pdf/2305.14705 | [2305.14705] Mixture-of-Experts Meets Instruction Tuning:A Winning Combination for Large Language Models | pdf
+https://thinkingmachines.ai/blog/on-policy-distillation/ | On-Policy Distillation - Thinking Machines Lab | doc
+https://arxiv.org/pdf/2401.08406 | [2401.08406] RAG vs Fine-tuning: Pipelines, Tradeoffs, and a Case Study on Agriculture | pdf
+https://lightning.ai/lightning-ai/studios/finetune-llm-codellama-13b | Finetune LLM - CodeLlama 13B - a Lightning template by lantiga | doc
+https://huggingface.co/papers/2401.10020 | Paper page - Self-Rewarding Language Models | blog
+https://lingo-mit.github.io/deductive-closure/ | Deductive Closure Training of Language Models for Coherence, Accuracy, and Updatability - Project page for the Deductive Closure Training. | code
+https://youtube.com/watch?v=mrKuDK9dGlg&si=I_DP61Q8lh53hQG7 | LLM Fine Tuning Crash Course: 1 Hour End-to-End Guide - YouTube | video
+https://huggingface.co/papers/2401.08406 | Paper page - RAG vs Fine-tuning: Pipelines, Tradeoffs, and a Case Study on Agriculture | blog
+https://github.com/ashishpatel26/LLM-Finetuning | GitHub - ashishpatel26/LLM-Finetuning: LLM Finetuning with peft · GitHub | code
+https://github.com/OpenAccess-AI-Collective/axolotl/blob/main/examples/llama-2/qlora-fsdp.yml | axolotl/examples/llama-2/qlora-fsdp.yml at main · axolotl-ai-cloud/axolotl · GitHub | code
+https://huggingface.co/blog/cosmopedia | Cosmopedia: how to create large-scale synthetic data for pre-training Large Language Models | blog
+https://github.com/mistralai-sf24/hackathon/blob/main/finetune/distributed.py | hackathon/finetune/distributed.py at main · mistralai-sf24/hackathon · GitHub | code
+https://www.answer.ai/posts/2024-04-26-fsdp-qdora-llama3.html | Efficient finetuning of Llama 3 with FSDP QDoRA – Answer.AI | doc
+https://www.latent.space/p/fastai | The End of Finetuning — with Jeremy Howard of Fast.ai | doc
+https://www.philschmid.de/fsdp-qlora-llama3 | Efficiently fine-tune Llama 3 with PyTorch FSDP and Q-Lora | doc
+https://youtu.be/t-0s_2uZZU0?si=XYAtebcm-9Tkdph9 | Generative AI Fine Tuning LLM Models Crash Course - YouTube | video
+https://youtu.be/hDa-M91MSGU?si=LkS1nNfrcqCC1wLZ | Fine-tune PaliGemma for image to JSON use cases - YouTube | video
+https://gist.github.com/awni/773e2a12079da40a1cbc566686c84c8f | MLX LM LoRA Fine Tune.ipynb · GitHub | code
+https://x.com/hamelhusain/status/1798353336145674483?s=46 | Hamel Husain on X: ". @johnowhitaker &#x27;s talk: Napkin Math For Fine Tuning was so popular that we ended up doing an encore! He answers q&#x27;s like: - When should I use LoRA? Quantization? GC? - What’s the cheapest option? most accurate? - What hardwa | thread
+https://x.com/_philschmid/status/1798388387822317933?s=46 | Philipp Schmid on X: "Creating a Pipeline for Generating Synthetic Data for Fine-Tuning Custom Embedding Models. 👀 Step 1 Create a Knowledge Base: Start with preparing your domain specific knowledge base, such as PDFs or other documents containing informa | thread
+https://github.com/davanstrien/data-for-fine-tuning-llms | GitHub - davanstrien/data-for-fine-tuning-llms · GitHub | code
+https://mlops.systems/posts/2024-06-15-isafpr-first-finetune.html | Finetuning my first LLM(s) for structured data extraction with axolotl – Alex Strick van Linschoten | doc
+https://github.com/OpenAccess-AI-Collective/axolotl/tree/main/examples | axolotl/examples at main · axolotl-ai-cloud/axolotl · GitHub | code
+https://www.deeplearning.ai/short-courses/intro-to-federated-learning/ | Intro to Federated Learning - DeepLearning.AI | course
+https://hamel.dev/blog/posts/course/ | An Open Course on LLMs, Led by Practitioners – Hamel’s Blog | doc
+https://flower.ai/ | Flower: Advance Collaborative Superintelligence | doc
+https://distilabel.argilla.io/latest/ | Distilabel Docs | doc
+https://lightning.ai/lightning-ai/studios/create-synthetic-datasets-with-llama-3-1?utm_source=akshay | Create synthetic datasets with Llama 3.1 - a Lightning template by akshay | doc
+https://github.com/cohere-ai/cohere-finetune | GitHub - cohere-ai/cohere-finetune: A tool that facilitates easy, efficient and high-quality fine-tuning of Cohere's models · GitHub | code
+https://www.philschmid.de/fine-tune-llms-in-2025 | How to fine-tune open LLMs in 2025 with Hugging Face | doc
+https://www.kaggle.com/code/iamleonie/fine-tuning-gemma-2-jpn-for-yomigana-with-lora | Fine-tuning Gemma 2 JPN for Yomigana with LoRA - Kaggle | course
+https://github.com/bespokelabsai/curator | GitHub - bespokelabsai/curator: Synthetic data curation for post-training and structured data extraction · GitHub | code
+https://www.interconnects.ai/p/deepseek-r1-recipe-for-o1 | DeepSeek R1's recipe to replicate o1 and the future of reasoning LMs | doc
+https://raw.githubusercontent.com/huggingface/notebooks/main/course/en/chapter13/grpo_finetune.ipynb | GRPO fine-tuning notebook (HF LLM course, ch13) | code
+https://unsloth.ai/blog/gemma3 | Fine-tune Gemma 3 with Unsloth | doc
+https://huggingface.co/reasoning-course | reasoning-course (Hugging Face Reasoning Course) | blog
+https://www.alphaxiv.org/abs/2501.17161 | SFT Memorizes, RL Generalizes: A Comparative Study of Foundation Model Post-training - alphaXiv | doc
+https://docs.unsloth.ai/basics/datasets-guide | Datasets Guide - Unsloth Documentation | doc
+https://docs.mistral.ai/capabilities/finetuning/classifier_factory/ | Mistral Docs | doc
+https://github.com/Goekdeniz-Guelmez/mlx-lm-lora | GitHub - Goekdeniz-Guelmez/mlx-lm-lora: Train Large Language Models on MLX. · GitHub | code
+https://youtu.be/HNpYAz_I4yY?si=dJlVtPt8852lCHfv | Advanced Data Prep and Visualisation Techniques for Fine-tuning LLMs - YouTube | video
+https://unsloth.ai/docs/new/faster-moe | Fine-tune MoE Models 12x Faster with Unsloth - Unsloth Documentation | doc
+https://github.com/Goekdeniz-Guelmez/mlx-lm-lora-example-notebooks/blob/main/finetuning/Qwen3_4B_Instruct_32k.ipynb | mlx-lm-lora-example-notebooks/finetuning/Qwen3_4B_Instruct_32k.ipynb at main · Goekdeniz-Guelmez/mlx-lm-lora-example-notebooks · GitHub | code
+https://huggingface.co/blog/unsloth-jobs | Train AI models with Unsloth and Hugging Face Jobs for FREE | blog
+https://unsloth.ai/docs/new/studio | Introducing Unsloth Studio - Unsloth Documentation | doc
+https://unsloth.ai/docs/models/gemma-4/train | Gemma 4 Fine-tuning Guide - Unsloth Documentation | doc
+https://github.com/mattmireles/gemma-tuner-multimodal | GitHub - mattmireles/gemma-tuner-multimodal: Fine-tune Gemma 4 and 3n with audio, images and text on Apple Silicon, using PyTorch and Metal Performance Shaders. · GitHub | code
+https://github.com/ARahim3/mlx-tune | GitHub - ARahim3/mlx-tune: Fine-tune LLMs on your Mac with Apple Silicon. SFT, DPO, GRPO, Vision, TTS, STT, Embedding, and OCR fine-tuning — natively on MLX. Unsloth-compatible API. · GitHub | code
+https://rlhfbook.com/course | Post-Training Course by Nathan Lambert | doc
+https://shopify.engineering/fine-tuning-agent-shopify-flow | Flow generation through natural language: An agentic modeling approach (2026) - Shopify | doc
+https://leoniemonigatti.com/blog/fine-tuning-lfm2-5-1-2b-instruct-with-grpo.html | Fine-tuning LFM2.5-1.2B-Instruct with GRPO – Leonie Monigatti | doc
+https://github.com/walkinglabs/hands-on-modern-rl | GitHub - walkinglabs/hands-on-modern-rl: 🚀 An open-source, hands-on curriculum bridging the gap from basic RL concepts to LLM alignment, RLVR, and advanced Agentic systems. · GitHub | code
+https://akyrillidis.github.io/aiowls/adapad.html | From PCA to LoRA · AI-OWLS | code
+https://github.com/walkinglabs/hands-on-modern-rl/releases/tag/v0.1.5 | Release Hands-On Modern RL Open Textbook v0.1.5 · walkinglabs/hands-on-modern-rl · GitHub | code
+https://rl-production.vizuara.ai/ | Reinforcement Learning in Production — Vizuara AI Labs | doc
+https://www.philschmid.de/fine-tune-modern-bert-in-2025 | Fine-tune classifier with ModernBERT in 2025 | doc
+https://github.com/andysingal/llm-course/blob/main/llama_finetune/README.md | llama_finetune/README.md · andysingal/llm-course | code
+https://huggingface.co/learn/llm-course/chapter3/1 | Introduction · Hugging Face | blog
+https://docs.unsloth.ai/get-started/fine-tuning-guide/lora-hyperparameters-guide | LoRA fine-tuning Hyperparameters Guide - Unsloth Documentation | doc
+https://docs.unsloth.ai/tutorials/how-to-finetune-llama-3-and-export-to-ollama | Tutorial: How to Finetune Llama-3 and Use In Ollama - Unsloth Documentation | doc
+https://docs.unsloth.ai/basics/gemma-3n-how-to-run-and-fine-tune#fixes-for-gemma-3n | Gemma 3n: How to Run & Fine-tune - Unsloth Documentation | doc
+https://github.com/huggingface/huggingface-gemma-recipes | GitHub - huggingface/huggingface-gemma-recipes: Inference, Fine Tuning and many more recipes with Gemma family of models · GitHub | code
+https://www.kaggle.com/code/danielhanchen/gemma-3n-4b-multimodal-finetuning-inference | Gemma 3N 4B Multimodal finetuning + inference - Kaggle | course
+https://docs.unsloth.ai/basics/tutorials-how-to-fine-tune-and-run-llms | Large language model (LLMs) Tutorials - Unsloth Documentation | doc
+https://towardsdatascience.com/how-to-finetune-small-language-models-to-think-with-reinforcement-learning/ | How to Fine-Tune Small Language Models to Think with Reinforcement Learning - Towards Data Science | doc
+https://cookbook.openai.com/articles/gpt-oss/fine-tune-transfomers | Fine-tuning with gpt-oss and Hugging Face Transformers | doc
+https://youtu.be/oZoy79S-edw?si=Azs4u-aLOGYeV8V6 | GPT OSS Release, Inference and Fine tuning - YouTube | video
+https://docs.unsloth.ai/get-started/fine-tuning-llms-guide?utm_source=perplexity | Fine-tuning LLMs Guide - Unsloth Documentation | doc
+https://docs.unsloth.ai/basics/gpt-oss-how-to-run-and-fine-tune | gpt-oss: How to Run Guide - Unsloth Documentation | doc
+https://huggingface.co/papers/2507.04009 | Paper page - Easy Dataset: A Unified and Extensible Framework for Synthesizing LLM Fine-Tuning Data from Unstructured Documents | blog
+https://machinelearningmastery.com/the-machine-learning-practitioners-guide-to-fine-tuning-language-models/ | The Machine Learning Practitioner's Guide to Fine-Tuning Language Models - MachineLearningMastery.com | doc
+https://github.com/merveenoyan/smol-vision | GitHub - merveenoyan/smol-vision: Recipes for shrinking, optimizing, customizing cutting edge vision models. 💜 · GitHub | code
+https://developer.nvidia.com/blog/train-an-llm-on-an-nvidia-blackwell-desktop-with-unsloth-and-scale-it/ | Train an LLM on NVIDIA Blackwell with Unsloth—and Scale for Production - NVIDIA Technical Blog | doc
+https://docs.unsloth.ai/models/qwen3-vl-run-and-fine-tune | Qwen3-VL: How to Run Guide - Unsloth Documentation | doc
+https://huggingface.co/learn/smol-course/unit0/1 | Welcome to the 🤗 smol-course · Hugging Face | blog
+https://docs.unsloth.ai/new/vision-reinforcement-learning-vlm-rl | Vision Reinforcement Learning (VLM RL) - Unsloth Documentation | doc
+https://thinkingmachines.ai/blog/lora/ | LoRA Without Regret - Thinking Machines Lab | doc
+https://aiengineering.academy/LLM/ServerLessFinetuning/#core-concepts | Write Deep Learning Code Locally and Run on GPUs Instantly - AI Engineering Academy | doc
+https://benanderson.work/blog/anatomy-of-finetuning-api/ | Anatomy of a Modern Finetuning API | doc
+https://huggingface.co/docs/trl/main/en/lora_without_regret | LoRA Without Regret · Hugging Face | doc
+https://www.deeplearning.ai/short-courses/post-training-of-llms/?utm_content=350521648&utm_medium=social&utm_source=twitter&hss_channel=tw-992153930095251456 | Post-training of LLMs - DeepLearning.AI | course
+https://github.com/neo4j-labs/text2cypher/blob/main/finetuning/unsloth-llama3/README.md#llamaindex | text2cypher/finetuning/unsloth-llama3/README.md at main · neo4j-labs/text2cypher · GitHub | code
+https://github.com/mistralai/mistral-finetune | GitHub - mistralai/mistral-finetune · GitHub | code
+https://github.com/TrelisResearch | Trelis Research · GitHub | code

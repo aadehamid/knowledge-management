@@ -1,0 +1,41 @@
+# RAG & Retrieval subject area - URLs with metadata.
+# Format: url | title | source_type [| author]
+# source_type: paper, blog, video, course, code, thread, pdf, doc
+# author: optional; used in the output filename for sites with generic URL paths (e.g. YouTube)
+# Blank lines and lines starting with # are ignored.
+
+
+# --- corpus expansion 2026-08-29 (33 sources) ---
+https://www.llamaindex.ai/blog/parse-gateway-smart-page-level-document-parser-routing | Parse Gateway: Smart, Page-Level Document Parsing Routing | doc
+https://github.com/run-llama/parse-gateway | run-llama/parse-gateway: Route every page to the right parser | code
+https://huggingface.co/datalab-to/lift | datalab-to/lift · Hugging Face | blog
+https://blog.lancedb.com/a-practical-guide-to-fine-tuning-embedding-models/ | A Practical Guide to Fine-Tuning Embedding Models | blog
+https://huggingface.co/blog/train-sparse-encoder | Training and Finetuning Sparse Embedding Models with Sentence Transformers | blog
+https://www.mixedbread.com/blog/maxsim-cpu | maxsim-cpu: Maximising Maxsim Efficiency | doc
+https://huggingface.co/unstructuredio | unstructuredio (unstructured.io) | blog
+https://mistral.ai/news/mistral-ocr | Mistral OCR - Mistral AI | doc
+https://colbert.aiserv.cloud/ | ColBERT Inference in the Browser | doc
+https://github.com/tonywu71/colpali-cookbooks/blob/b7a0798cbb8e4f1f6223f9c3b7dac2172b1b6ce1/examples/gen_colpali_similarity_maps.ipynb | colpali-cookbooks/examples/gen_colpali_similarity_maps.ipynb at b7a0798cbb8e4f1f6223f9c3b7dac2172b1b6ce1 · tonywu71/colpali-cookbooks · GitHub | code
+https://blog.vespa.ai/pretrained-transformer-language-models-for-search-part-3/ | Pretrained Transformer Language Models for Search - part 3 - Vespa Blog | blog
+https://huggingface.co/blog/fsommers/document-similarity-colpali | Document Similarity Search with ColPali | blog
+https://github.com/illuin-tech/colpali | GitHub - illuin-tech/colpali: The code used to train and run inference with the ColVision models, e.g. ColPali, ColQwen2, and ColSmol. · GitHub | code
+https://github.com/tonywu71/colpali-cookbooks | GitHub - tonywu71/colpali-cookbooks: Recipes for learning, fine-tuning, and adapting ColPali to your multimodal RAG use cases. 👨🏻‍🍳 · GitHub | code
+https://huggingface.co/vidore/colqwen2-v0.1 | vidore/colqwen2-v0.1 · Hugging Face | blog
+https://github.com/merveenoyan/smol-vision/blob/main/Finetune_ColPali.ipynb | smol-vision/Finetune_ColPali.ipynb at main · merveenoyan/smol-vision · GitHub | code
+https://github.com/katanaml/sparrow | GitHub - katanaml/sparrow: Structured data extraction, instruction calling and agentic workflows with ML, LLM and Vision LLM · GitHub | code
+https://mistral.ai/solutions/document-ai | Document AI and OCR - Mistral AI | doc
+https://allenai.org/blog/olmocr-2 | olmOCR 2: Unit test rewards for document OCR - Ai2 | doc
+https://huggingface.co/allenai/olmOCR-2-7B-1025-FP8 | allenai/olmOCR-2-7B-1025-FP8 · Hugging Face | blog
+https://huggingface.co/deepseek-ai/DeepSeek-OCR | deepseek-ai/DeepSeek-OCR · Hugging Face | blog
+https://blog.llamaindex.ai/improving-retrieval-performance-by-fine-tuning-cohere-reranker-with-llamaindex-16c0c1f9b33b | Fine-Tune Cohere Reranker for Better RAG - LlamaIndex | blog
+https://news.ycombinator.com/item?id=42952605 | Ingesting PDFs and why Gemini 2.0 changes everything - Hacker News | doc
+https://huggingface.co/ds4sd/SmolDocling-256M-preview | docling-project/SmolDocling-256M-preview · Hugging Face | blog
+https://huggingface.co/blog/train-reranker | Training and Finetuning Reranker Models with Sentence Transformers | blog
+http://deepdive.stanford.edu/quickstart | DeepDive Quick Start - DeepDive | doc
+https://huggingface.co/datasets/uv-scripts/ocr | uv-scripts/ocr · Datasets at Hugging Face | blog
+https://huggingface.co/baidu/Qianfan-OCR | baidu/Qianfan-OCR · Hugging Face | blog
+https://huggingface.co/tiiuae/Falcon-OCR | tiiuae/Falcon-OCR · Hugging Face | blog
+https://github.com/tiiuae/Falcon-Perception | GitHub - tiiuae/Falcon-Perception: Inference repo for Falcon-Perception and Falcon-OCR model, early-fusion, natively multimodal, dense Autoregressive Transformer models. · GitHub | code
+https://huggingface.co/Logics-MLLM/Logics-Parsing | Logics-MLLM/Logics-Parsing · Hugging Face | blog
+https://maven.com/p/935d62/improving-retrievers-by-reranking-and-embedding-fine-tuning?utm_medium=ll_share_link&utm_source=instructor | Improving retrievers by Reranking and embedding fine-tuning | course
+https://qdrant.tech/documentation/ | Documentation - Qdrant | doc
