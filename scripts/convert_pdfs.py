@@ -37,6 +37,7 @@ Or with custom paths:
 """
 
 import argparse
+import hashlib
 import json
 import re
 import sys
@@ -146,6 +147,58 @@ def get_url_stem(url: str, title: str = "", author: str = "") -> str:
     return sanitize_filename(url)
 
 
+def host_slug(url: str, max_words: int = 3) -> str:
+    """Slug of a URL's host, used to disambiguate colliding filename stems."""
+    host = urlparse(url).netloc.lower()
+    for prefix in ("www.", "m.", "docs.", "blog."):
+        host = host.removeprefix(prefix)
+    parts = [p for p in host.split(".") if p not in ("com", "org", "net", "io", "ai", "co", "dev", "app")]
+    return "-".join(parts[:max_words]) or "src"
+
+
+def claimed_stems(output_dir: Path) -> dict:
+    """Map each already-converted stem to the URL that owns it.
+
+    Read from the .meta.json sidecars so a re-run recognises its own files.
+    A stem whose sidecar is missing maps to "" (owned, but by an unknown URL).
+    """
+    claimed = {}
+    for md in output_dir.glob("*.md"):
+        sidecar = output_dir / f"{md.stem}.meta.json"
+        url = ""
+        if sidecar.exists():
+            try:
+                url = json.loads(sidecar.read_text(encoding="utf-8")).get("url", "")
+            except (OSError, json.JSONDecodeError):
+                url = ""
+        claimed[md.stem] = url
+    return claimed
+
+
+def assign_stem(url: str, title: str, author: str, claimed: dict) -> str:
+    """Collision-free filename stem for one source.
+
+    ``get_url_stem`` alone is not injective: distinct sources routinely share a
+    path stem (``/introduction``, ``/book``, ``/lora``), and ``Path.stem`` also
+    truncates dotted names (``llama3.3`` -> ``llama3``, arXiv ``2401.04088`` ->
+    ``2401``). Two such sources would overwrite each other's markdown.
+
+    ``claimed`` maps taken stems to the URL that owns them. A source always
+    keeps the stem it already owns, so names on disk never churn; only a
+    genuine collision with a DIFFERENT source gets the host appended, then a
+    short URL hash.
+    """
+    base = get_url_stem(url, title, author)
+    owner = claimed.get(base)
+    if owner is None or owner == url:
+        return base
+    candidate = f"{base}-{host_slug(url)}"
+    owner = claimed.get(candidate)
+    if owner is None or owner == url:
+        return candidate
+    return f"{candidate}-{hashlib.sha1(url.encode()).hexdigest()[:6]}"
+
+
 def save_metadata(output_dir: Path, stem: str, meta: dict) -> None:
     """Save a .meta.json sidecar file alongside the converted markdown."""
     meta_path = output_dir / f"{stem}.meta.json"
@@ -233,7 +286,7 @@ def convert_web_urls(url_file: Path, output_dir: Path) -> int:
     from markitdown import MarkItDown
 
     md_converter = MarkItDown()
-    existing_md = {p.stem for p in output_dir.glob("*.md")}
+    claimed = claimed_stems(output_dir)
     lines = url_file.read_text().strip().splitlines()
     successes = 0
 
@@ -247,13 +300,15 @@ def convert_web_urls(url_file: Path, output_dir: Path) -> int:
             continue  # PDFs handled separately
 
         # Derive a collision-safe filename stem from the URL.
-        stem = get_url_stem(meta["url"], meta.get("title", ""), meta.get("author", ""))
+        stem = assign_stem(meta["url"], meta.get("title", ""), meta.get("author", ""), claimed)
 
-        if stem in existing_md:
+        if (output_dir / f"{stem}.md").exists():
             # Still save/update metadata even if already converted
+            claimed[stem] = meta["url"]
             save_metadata(output_dir, stem, meta)
             continue
 
+        claimed[stem] = meta["url"]   # reserve within this run
         print(f"  Converting web page: {meta['url']}")
         try:
             result = md_converter.convert_url(meta["url"])

@@ -21,6 +21,7 @@ Usage (from repo root):
     python scripts/sync_to_vault.py
 """
 
+import hashlib
 import json
 import os
 import re
@@ -28,6 +29,7 @@ import shutil
 import subprocess
 import sys
 from pathlib import Path
+from urllib.parse import urlparse
 
 
 def nlm_enabled() -> bool:
@@ -142,6 +144,41 @@ def wiki_filename(meta: dict, original_stem: str) -> str:
     title = meta.get("title", "")
     slug = slugify(title) if title else slugify(original_stem)
     return f"{source_type}-{slug}.md"
+
+
+def frontmatter_url(path: Path) -> str:
+    """Read the `url:` value from a vault file's frontmatter ("" if absent)."""
+    try:
+        text = path.read_text(encoding="utf-8")
+    except OSError:
+        return ""
+    lines = text.splitlines()
+    if not lines or lines[0].strip() != "---":
+        return ""
+    for line in lines[1:]:
+        if line.strip() == "---":
+            break
+        if line.startswith("url:"):
+            return line[len("url:"):].strip().strip('"').strip("'")
+    return ""
+
+
+def disambiguate(vault_dir: Path, dest: Path, url: str) -> Path:
+    """Pick a free filename when `dest` is already held by a DIFFERENT source.
+
+    Vault names are `<source_type>-<title-slug>.md`, and distinct sources do
+    share a title slug (two "Finetuning Large Language Models", three
+    "stas00/ml-engineering" URLs). Without this the second source silently
+    overwrites the first, taking its frontmatter url with it. The incumbent
+    keeps its name; the newcomer gets the host appended, then a short hash.
+    """
+    host = urlparse(url).netloc.lower().removeprefix("www.").removeprefix("m.")
+    host_part = re.sub(r"[^a-z0-9]+", "-", host.split(".")[0]).strip("-") or "src"
+    candidate = dest.with_name(f"{dest.stem}-{host_part}.md")
+    if not candidate.exists():
+        return candidate
+    digest = hashlib.sha1(url.encode()).hexdigest()[:6]
+    return dest.with_name(f"{dest.stem}-{host_part}-{digest}.md")
 
 
 def find_existing_by_url(vault_dir: Path, url: str) -> Path | None:
@@ -329,6 +366,17 @@ def sync_subject(
                 dest = candidate
                 dest_name = candidate.name
                 break
+
+        # Distinct-source collision guard: the title-derived name is already
+        # held by a file carrying a DIFFERENT url. Overwriting it would destroy
+        # that source (and its wiki_refs), so rename this newcomer instead.
+        if dest.exists():
+            held_by = frontmatter_url(dest)
+            if held_by and held_by.rstrip("/") != meta.get("url", "").rstrip("/"):
+                new_dest = disambiguate(vault_dir, dest, meta.get("url", ""))
+                print(f"  ! {dest.name} belongs to another source — writing {new_dest.name}")
+                dest = new_dest
+                dest_name = new_dest.name
 
         # Skip if already in vault and source hasn't changed
         if dest.exists() and dest.stat().st_mtime >= md_file.stat().st_mtime:
