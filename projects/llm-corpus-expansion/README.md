@@ -2,6 +2,11 @@
 
 Working folder for the 506-URL reading-list expansion (started 2026-08-29).
 
+- **[INGEST-RUNBOOK.md](INGEST-RUNBOOK.md)** — **start here if you are the agent doing
+  the ingest.** Step-by-step operating instructions, templates, the verification command,
+  and the failure modes that past reviews actually caught.
+- **[INGEST-LEDGER.md](INGEST-LEDGER.md)** — what is done, what remains, batch order.
+  Update it at the end of every batch.
 - **[routing.md](routing.md)** — the routing pass: all 546 records assigned to subject
   areas, with the eight open decisions that need your call.
 - **[handoff.md](handoff.md)** — session handoff: current state, decisions and who made
