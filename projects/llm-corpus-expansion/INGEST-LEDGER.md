@@ -109,6 +109,13 @@ for v in ["Transformer from Scratch","CUDA from Scratch","LLM Inference Optimiza
     print(f"{v:<30}{len(raw):>5}{done:>7}{len(raw)-done:>8}")
 ```
 
+## Recall sync
+
+2026-08-30: diffed the Recall knowledge base (561 cards) against this corpus and appended
+**50 new sources**, 22 of them CUDA/GPU material. They are in `urls.txt` but **not yet
+converted or synced** — run `convert_pdfs.py` then `sync_to_vault.py`, then add them to
+the counts above. Procedure: `RECALL-SYNC.md`.
+
 ## Standing decisions
 
 - `LLM Landscape` is catalog-shaped by design; do not grow a concept layer there.

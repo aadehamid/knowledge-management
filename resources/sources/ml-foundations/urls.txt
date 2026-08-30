@@ -79,3 +79,10 @@ https://roboflow.com/open-source | Open Source at Roboflow | doc
 https://github.com/matheusfacure/causal-inference-in-python-code | GitHub - matheusfacure/causal-inference-in-python-code: Code for the Book Causal Inference in Python · GitHub | code
 https://distill.pub/2018/differentiable-parameterizations/ | Differentiable Image Parameterizations | doc
 https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design | SOLID Design Principles Explained: Building Better Software Architecture - DigitalOcean | doc
+
+# --- from Recall knowledge base 2026-08-30 (5 sources) ---
+https://end-to-end-machine-learning.teachable.com/p/write-a-neural-network-framework | Build a Neural Network Framework | course
+https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-27-backpropagation-find-partial-derivatives/index.html | MIT 18.065 Lecture 27: Backpropagation - Find Partial Derivatives | video
+https://theorydish.blog/2021/12/16/backpropagation-≠-chain-rule/ | Backpropagation is not the Chain Rule | blog
+https://towardsdatascience.com/comparing-performance-of-big-data-file-formats-a-practical-guide-ef366561b7d2/ | Comparing Performance of Big Data File Formats: A Practical Guide | blog
+https://www.jeremykun.com/2015/04/06/markov-chain-monte-carlo-without-all-the-bullshit/ | Markov Chain Monte Carlo Without all the Bullshit | blog

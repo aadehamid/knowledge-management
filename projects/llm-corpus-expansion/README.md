@@ -9,6 +9,8 @@ Working folder for the 506-URL reading-list expansion (started 2026-08-29).
   and the failure modes that past reviews actually caught.
 - **[INGEST-LEDGER.md](INGEST-LEDGER.md)** — what is done, what remains, batch order.
   Update it at the end of every batch.
+- **[RECALL-SYNC.md](RECALL-SYNC.md)** — how to diff the Recall knowledge base against
+  this corpus and route the difference in. Repeatable.
 - **[routing.md](routing.md)** — the routing pass: all 546 records assigned to subject
   areas, with the eight open decisions that need your call.
 - **[handoff.md](handoff.md)** — session handoff: current state, decisions and who made

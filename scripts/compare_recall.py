@@ -55,7 +55,40 @@ UNSLOTH_SLUGS = {
 }
 
 
+# Sites that moved domain. Each pair was confirmed present on both sides with
+# the same article slug before being added here.
+HOST_MOVES = {
+    "mlops.systems": "alexstrick.com",          # same author, same post slugs
+    "e2eml.school": "brandonrohrer.com",
+    "buttondown.email": "buttondown.com",
+    "camdavidsonpilon.github.io": "dataorigami.net",
+    "eigenfoo.xyz": "georgeho.org",
+    "v0.dev": "v0.app",
+}
+
+
 def apply_aliases(host: str, path: str) -> tuple[str, str]:
+    host = HOST_MOVES.get(host, host)
+    # apeatling moved dated permalinks to /articles/.
+    if host == "apeatling.com":
+        path = re.sub(r"^/\d{4}/\d{2}/\d{2}/", "/articles/", path).removesuffix(".html")
+    # The OpenAI cookbook moved to developers.openai.com/cookbook/.
+    if host == "cookbook.openai.com":
+        host, path = "developers.openai.com", "/cookbook" + path
+    # x.ai renamed /blog/ to /news/; jordivillar /data/ to /blog/.
+    if host == "x.ai":
+        path = path.replace("/blog/", "/news/")
+    if host == "jordivillar.com":
+        path = path.replace("/data/", "/blog/")
+    # MIT OCW dropped the department segment from course paths.
+    if host == "ocw.mit.edu":
+        path = re.sub(r"^/courses/[a-z-]+/(\d)", r"/courses/\1", path)
+    # Renamed repos / model orgs.
+    path = re.sub(r"/videlalvaro/leet-llm", "/videlalvaro/inference-school", path, flags=re.I)
+    path = re.sub(r"/ds4sd/smoldocling", "/docling-project/SmolDocling", path, flags=re.I)
+    # The "Inside vLLM" article is published on both the author's site and vllm.ai.
+    if (host, path) == ("vllm.ai", "/blog/2025-09-05-anatomy-of-vllm"):
+        host, path = "aleksagordic.com", "/blog/vllm"
     # Unsloth moved docs.unsloth.ai/X to unsloth.ai/docs/X AND restructured the
     # tree underneath. Page slugs stayed unique, so key on the final slug.
     if host in ("docs.unsloth.ai", "unsloth.ai") and (host == "docs.unsloth.ai"
@@ -63,6 +96,26 @@ def apply_aliases(host: str, path: str) -> tuple[str, str]:
         slug = path.rstrip("/").split("/")[-1]
         slug = UNSLOTH_SLUGS.get(slug, slug)
         return "unsloth.ai", "/docs/" + slug
+
+    # Blog subdomain vs /blog/ path — same article, two URL shapes.
+    for sub, base in (("blog.lancedb.com", "lancedb.com"),
+                      ("blog.llamaindex.ai", "llamaindex.ai"),
+                      ("blog.vllm.ai", "vllm.ai")):
+        if host == sub:
+            host, path = base, "/blog" + path
+    if host == "vllm.ai" and path.startswith("/blog/"):
+        # blog.vllm.ai/2025/11/19/slug.html vs vllm.ai/blog/2025-11-19-slug
+        path = re.sub(r"^/blog/(\d{4})/(\d{2})/(\d{2})/([^/]+?)(\.html)?$",
+                      r"/blog/\1-\2-\3-\4", path)
+    # Stability renamed /news/ to /news-updates/.
+    if host == "stability.ai":
+        path = path.replace("/news-updates/", "/news/")
+    # Slack engineering dropped the Medium hash suffix from its slugs.
+    if host == "slack.engineering":
+        path = re.sub(r"-[0-9a-f]{12}$", "", path)
+    # O'Reilly moved the reader to learning.oreilly.com.
+    if host == "learning.oreilly.com":
+        host = "oreilly.com"
 
     # Lightning renamed /studios/ to /templates/ and /pages/courses/ to /courses/.
     if host == "lightning.ai":
@@ -100,8 +153,9 @@ def norm(url: str) -> str:
         vid = q.get("v", [None])[0]
         if not vid and host == "youtu.be":
             vid = path.lstrip("/")
-        if not vid and "/embed/" in path:
-            vid = path.split("/embed/")[-1]
+        for seg in ("/embed/", "/live/", "/shorts/", "/v/"):
+            if not vid and seg in path:
+                vid = path.split(seg)[-1].split("/")[0]
         if not vid and (lst := q.get("list", [None])[0]):
             return f"youtube:playlist:{lst}"
         return f"youtube:{vid}" if vid else "youtube:" + path
@@ -191,6 +245,19 @@ def main():
     args = ap.parse_args()
 
     dt = load_inventory(Path(args.inventory))
+    # The corpus is whatever the pipeline already knows about: the DEVONthink
+    # inventory PLUS every resources/sources/*/urls.txt. Comparing against the
+    # inventory alone reports sources as missing when they are already queued.
+    for uf in sorted((REPO / "resources" / "sources").glob("*/urls.txt")):
+        subject = uf.parent.name
+        for line in uf.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            k = norm(line.split("|")[0])
+            if k:
+                dt.setdefault(k, {"url": line.split("|")[0].strip(),
+                                  "title": "", "_from": f"urls.txt:{subject}"})
     subjects = load_subjects(Path(args.routing))
     recall_urls = urls_from(args.recall)
     recall = {}

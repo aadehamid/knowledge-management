@@ -130,3 +130,13 @@ https://www.deeplearning.ai/short-courses/post-training-of-llms/?utm_content=350
 https://github.com/neo4j-labs/text2cypher/blob/main/finetuning/unsloth-llama3/README.md#llamaindex | text2cypher/finetuning/unsloth-llama3/README.md at main · neo4j-labs/text2cypher · GitHub | code
 https://github.com/mistralai/mistral-finetune | GitHub - mistralai/mistral-finetune · GitHub | code
 https://github.com/TrelisResearch | Trelis Research · GitHub | code
+
+# --- from Recall knowledge base 2026-08-30 (8 sources) ---
+https://aweers.de/blog/2026/rl-for-llms/ | State of RL for reasoning LLMs | blog
+https://docs.mistral.ai/resources/deprecated/finetuning | Mistral fine-tuning docs | doc
+https://github.com/unslothai/unsloth | unslothai/unsloth - local UI to run and train LLMs and diffusion models | code
+https://huggingface.co/blog/hf-skills-training | We Got Claude to Fine-Tune an Open Source LLM | blog
+https://rlhfbook.com/ | RLHF Book: Reinforcement Learning from Human Feedback and LLM Post-Training | doc
+https://rlhfbook.com/c/06-policy-gradients | RLHF Book chapter 6: Policy Gradients | doc
+https://unsloth.ai/docs/models/tutorials/qwen3-how-to-run-and-fine-tune | Qwen3 - How to Run and Fine-tune | doc
+https://www.philschmid.de/fine-tune-llms-in-2024-with-trl | How to Fine-Tune LLMs in 2024 with Hugging Face | blog

@@ -54,3 +54,6 @@ https://www.datadoghq.com/blog/ai/toto-2/ | Toto 2.0: Time series forecasting en
 https://ollama.com/library/llama3 | llama3 | doc
 https://ollama.com/library/llama3.3 | llama3.3 | doc
 https://lumiere-video.github.io/ | Lumiere | blog
+
+# --- from Recall knowledge base 2026-08-30 (1 sources) ---
+https://flashcards.dwarkesh.com/ | Dwarkesh Podcast Flashcards | doc

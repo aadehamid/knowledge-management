@@ -51,3 +51,8 @@ https://medium.com/@atharv6f_47401/wordpiece-tokenization-a-bpe-variant-73cc4886
 https://sebastianraschka.com/blog/2025/bpe-from-scratch.html | BPE Tokenizer From Scratch - Sebastian Raschka, PhD | doc
 https://huggingface.co/learn/llm-course/en/chapter6/5 | Byte-Pair Encoding tokenization · Hugging Face | blog
 https://github.com/rasbt/reasoning-from-scratch/blob/main/ch03/01_main-chapter-code/ch03_main.ipynb | reasoning-from-scratch/ch03/01_main-chapter-code/ch03_main.ipynb · rasbt/reasoning-from-scratch | code
+
+# --- from Recall knowledge base 2026-08-30 (3 sources) ---
+https://huggingface.co/blog/moe | Mixture of Experts Explained | blog
+https://mojolang.org/docs/manual/values/ownership/ | Ownership - Mojo manual | doc
+https://sander.ai/2025/04/15/latents.html | Generative modelling in latent space | blog

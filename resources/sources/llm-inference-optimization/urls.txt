@@ -125,3 +125,12 @@ https://bytesofintelligence.substack.com/p/maximizing-gpu-efficiency-the-battle?
 https://huggingface.co/unsloth/DeepSeek-R1-GGUF/tree/main/DeepSeek-R1-UD-IQ1_S | unsloth/DeepSeek-R1-GGUF at main | blog
 https://github.com/huggingface/nanoVLM/pull/69 | Implementing KV Cache for inference by ariG23498 · Pull Request #69 · huggingface/nanoVLM · GitHub | code
 https://arxiv.org/pdf/1806.03377 | PipeDream: Fast and Efficient Pipeline Parallel DNN Training | pdf
+
+# --- from Recall knowledge base 2026-08-30 (7 sources) ---
+https://github.com/amitshekhariitbhu/llm-inference-engineering | Learn LLM Inference Engineering step by step - KV cache, PagedAttention, continuous batching, vLLM, SGLang | code
+https://github.com/cfregly/ai-performance-engineering | cfregly/ai-performance-engineering - GPU optimization, distributed training, inference scaling | code
+https://livebook.manning.com/book/quantization-and-fast-inference/chapter-1/v-1#28 | Quantization and Fast Inference, Chapter 1: Facing the Efficiency Wall | doc
+https://modal.com/notebooks/modal-labs/charles-dev/nb-x2wXrLH7aqi7HGVQ8Fosh2 | Inside vLLM - Anatomy of a High-Throughput LLM Inference System (Modal Notebook) | doc
+https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-quantization | A Visual Guide to Quantization | blog
+https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/ | Defeating Nondeterminism in LLM Inference | blog
+https://www.youtube.com/watch?v=3TBT4WPkDaw | Inference, Serving, PagedAttention and vLLM | video

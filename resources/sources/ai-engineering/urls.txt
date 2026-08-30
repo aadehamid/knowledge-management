@@ -45,3 +45,7 @@ https://maximerivest.com/posts/is_dspy_worth_it.html | Maxime Rivest – DSPy so
 https://openai.com/index/introducing-agentkit/ | Introducing AgentKit - OpenAI | doc
 https://magazine.sebastianraschka.com/p/llm-evaluation-4-approaches | Understanding the 4 Main Approaches to LLM Evaluation (From Scratch) | doc
 https://ai-engineer.harshhh.me/ | AI Engineer Roadmap — From Math to Production | doc
+
+# --- from Recall knowledge base 2026-08-30 (2 sources) ---
+https://developer.ibm.com/articles/awb-token-optimization-backbone-of-effective-prompt-engineering/ | Token optimization: the backbone of effective prompt engineering | blog
+https://www.llmstxt.new/ | Generate llms.txt | doc

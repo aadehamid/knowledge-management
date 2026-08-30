@@ -20,3 +20,27 @@ https://github.com/linkedin/Liger-Kernel | GitHub - linkedin/Liger-Kernel: Effic
 https://arxiv.org/pdf/2401.14489 | [2401.14489] The Case for Co-Designing Model Architectures with Hardware | pdf
 https://szymonozog.github.io/posts/2025-09-21-Penny-worklog-1.html | Writing my own communications library - a worklog of creating Penny part 1 - Szymon Ożóg | blog
 https://arxiv.org/pdf/1901.02926 | Three Other Models of Computer System Performance | pdf
+
+# --- from Recall knowledge base 2026-08-30 (22 sources) ---
+https://carpentries-incubator.github.io/lesson-gpu-programming/global_local_memory.html | GPU Programming: Registers, Global, and Local Memory | doc
+https://cvw.cac.cornell.edu/gpu-architecture/gpu-memory/memory_types | Cornell Virtual Workshop: GPU Memory Types | doc
+https://developer.nvidia.com/blog/nvidia-ampere-architecture-in-depth/ | NVIDIA Ampere Architecture In-Depth | blog
+https://developer.nvidia.com/blog/nvidia-hopper-architecture-in-depth/ | NVIDIA Hopper Architecture In-Depth | blog
+https://developer.nvidia.com/blog/using-shared-memory-cuda-cc/ | Using Shared Memory in CUDA C/C++ | blog
+https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html | CUDA C++ Programming Guide | doc
+https://enccs.github.io/gpu-programming/4-gpu-concepts/ | GPU programming concepts (ENCCS) | doc
+https://michalpitr.substack.com/p/gpu-programming | GPU Programming | blog
+https://michalpitr.substack.com/p/optimizing-matrix-multiplication | Optimizing matrix multiplication | blog
+https://modal.com/gpu-glossary/device-hardware/cuda-device-architecture | What is a CUDA Device Architecture? GPU Glossary | doc
+https://modal.com/gpu-glossary/device-hardware/streaming-multiprocessor | What is a Streaming Multiprocessor? GPU Glossary | doc
+https://people.freebsd.org/~lstewart/articles/cpumemory.pdf | What Every Programmer Should Know About Memory | pdf
+https://standardkernel.com/blog/in-pursuit-of-high-fidelity-gpu-kernel-benchmarking/ | In Pursuit of High-Fidelity GPU Kernel Benchmarking | blog
+https://www.aleksagordic.com/blog/matmul | Inside NVIDIA GPUs: Anatomy of high performance matmul kernels | blog
+https://www.microway.com/hpc-tech-tips/cuda-parallel-thread-management/ | CUDA Parallel Thread Management | blog
+https://www.microway.com/hpc-tech-tips/gpu-memory-types-performance-comparison/ | GPU Memory Types - Performance Comparison | blog
+https://www.microway.com/hpc-tech-tips/parallel-code-maximizing-your-performance-potential/ | Parallel Code: Maximizing your Performance Potential | blog
+https://www.youtube.com/watch?v=CKmNpAO5rS4 | Stanford CS149 Parallel Computing Lecture 2 - A Modern Multi-Core Processor | video
+https://www.youtube.com/watch?v=F4bVSyz_jxo | Stanford CS149 Lecture 3 - Multi-core Arch Part II + ISPC Programming Abstractions | video
+https://www.youtube.com/watch?v=LMk8nqIFXLo | ScaleML Series Day 5 - GPU Programming for Foundation Models | video
+https://www.youtube.com/watch?v=h9Z4oGN89MU | How do Graphics Cards Work? Exploring GPU Architecture | video
+https://www.youtube.com/watch?v=uyzqxIoiobU | Ex-NVIDIA Engineer: Why AI Is About to Get 1000x Cheaper | video

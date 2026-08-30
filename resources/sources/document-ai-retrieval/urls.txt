@@ -39,3 +39,7 @@ https://github.com/tiiuae/Falcon-Perception | GitHub - tiiuae/Falcon-Perception:
 https://huggingface.co/Logics-MLLM/Logics-Parsing | Logics-MLLM/Logics-Parsing · Hugging Face | blog
 https://maven.com/p/935d62/improving-retrievers-by-reranking-and-embedding-fine-tuning?utm_medium=ll_share_link&utm_source=instructor | Improving retrievers by Reranking and embedding fine-tuning | course
 https://qdrant.tech/documentation/ | Documentation - Qdrant | doc
+
+# --- from Recall knowledge base 2026-08-30 (2 sources) ---
+https://arxiv.org/pdf/2005.11401 | Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks | pdf
+https://huggingface.co/PaddlePaddle/PaddleOCR-VL | PaddlePaddle/PaddleOCR-VL | blog
