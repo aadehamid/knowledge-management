@@ -2,6 +2,8 @@
 
 Working folder for the 506-URL reading-list expansion (started 2026-08-29).
 
+- **[AGENT-PROMPT.md](AGENT-PROMPT.md)** — the prompt to paste when starting a new agent
+  on this work.
 - **[INGEST-RUNBOOK.md](INGEST-RUNBOOK.md)** — **start here if you are the agent doing
   the ingest.** Step-by-step operating instructions, templates, the verification command,
   and the failure modes that past reviews actually caught.
