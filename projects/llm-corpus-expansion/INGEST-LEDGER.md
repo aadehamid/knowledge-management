@@ -12,14 +12,14 @@ filename. Recompute with the snippet at the bottom rather than trusting the numb
 | Vault | Raw | Processed | Remaining | Bundle shape |
 |---|---|---|---|---|
 | Transformer from Scratch | 218 | 89 | **129** | concept + curriculum |
-| LLM Fine-tuning | 123 | 36 | **87** | concept + curriculum |
+| LLM Fine-tuning | 123 | 44 | **79** | concept + curriculum |
 | LLM Inference Optimization | 118 | 35 | **83** | concept + curriculum |
 | ML Foundations | 73 | 0 | **73** | concept + curriculum |
 | LLM Landscape | 47 | 0 | **47** | catalog (no curriculum) |
 | AI Engineering | 39 | 0 | **39** | concept + curriculum |
 | Document AI and Retrieval | 32 | 0 | **32** | concept + curriculum |
 | CUDA from Scratch | 17 | 5 | **12** | concept + curriculum |
-| **Total** | **667** | **165** | **502** | |
+| **Total** | **667** | **173** | **494** | |
 
 ## Batch order
 
@@ -35,8 +35,8 @@ missing page.
 | 3 | Datasets and synthetic data | 8 | **done** — review deferred to the batch-5 gate |
 | 4 | Unsloth tooling and run guides | 13 | **done** — DeepSeek review deferred to batch-6 gate |
 | 5 | Frameworks: Axolotl, ms-swift (+4 config/example sources) | 7 | **done** — review deferred to batch-6 gate |
-| 6 | Quantized training and memory | ~8 | next |
-| 7 | Vision and multimodal fine-tuning | ~15 | |
+| 6 | Quantized training and memory | 8 | **done** — review pending (DeepSeek gate) |
+| 7 | Vision and multimodal fine-tuning | ~15 | next |
 | 8 | Courses and overviews | ~14 | |
 | 9 | MLX / Apple silicon, distillation, remainder | ~10 | |
 
