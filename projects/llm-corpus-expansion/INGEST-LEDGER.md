@@ -1,0 +1,106 @@
+# Ingest ledger
+
+The running record of which sources have been turned into wiki knowledge, and which
+have not. **Update this at the end of every batch.** It is the resume point: a fresh
+agent should be able to read this file and know exactly where to pick up.
+
+Counting rule: a Raw source is *processed* when some page under `Wiki/` cites its
+filename. Recompute with the snippet at the bottom rather than trusting the numbers.
+
+## Status — 2026-08-30
+
+| Vault | Raw | Processed | Remaining | Bundle shape |
+|---|---|---|---|---|
+| Transformer from Scratch | 218 | 89 | **129** | concept + curriculum |
+| LLM Fine-tuning | 123 | 12 | **111** | concept + curriculum |
+| LLM Inference Optimization | 118 | 35 | **83** | concept + curriculum |
+| ML Foundations | 73 | 0 | **73** | concept + curriculum |
+| LLM Landscape | 47 | 0 | **47** | catalog (no curriculum) |
+| AI Engineering | 39 | 0 | **39** | concept + curriculum |
+| Document AI and Retrieval | 32 | 0 | **32** | concept + curriculum |
+| CUDA from Scratch | 17 | 5 | **12** | concept + curriculum |
+| **Total** | **667** | **141** | **526** | |
+
+## Batch order
+
+Sequenced so that foundational vocabulary lands before the material that leans on it,
+and so each vault's stub pages get filled early — a stub nobody fills is worse than a
+missing page.
+
+### LLM Fine-tuning (123 sources)
+| # | Cluster | Sources | Status |
+|---|---|---|---|
+| 1 | LoRA fundamentals and hyperparameters | 4 | **done** — Codex review, 8 findings applied |
+| 2 | RLHF / DPO / GRPO — preference and RL post-training | 4 | **done** — Codex review, 8 findings applied |
+| 3 | Datasets and synthetic data | ~32 | next |
+| 4 | Unsloth tooling and run guides | ~13 | |
+| 5 | Frameworks: Axolotl, LlamaFactory, ms-swift, TRL | ~7 | |
+| 6 | Quantized training and memory | ~8 | |
+| 7 | Vision and multimodal fine-tuning | ~15 | |
+| 8 | Courses and overviews | ~14 | |
+| 9 | MLX / Apple silicon, distillation, remainder | ~10 | |
+
+### ML Foundations (73)
+Backprop cluster first — 1,352 mentions, the densest coherent cluster in the whole
+corpus. Then autodiff, training dynamics, generalization, probability, courses.
+
+### LLM Inference Optimization (83 new)
+Already the most mature wiki. Prioritise sources that fill known gaps over breadth —
+`concepts/HBM vs SRAM` has been an unfilled bootstrap stub since May despite heavy
+inbound references.
+
+### Transformer from Scratch (129)
+Largest remaining. Much of it is the from-scratch / nanoGPT / tokenizer material.
+
+### Document AI and Retrieval (32)
+OCR-dominant (595 mentions). Document parsing, then embeddings, then rerankers.
+
+### AI Engineering (39)
+Agents (312 mentions), then evals, MCP, prompt/context engineering.
+
+### CUDA from Scratch (12)
+Small; fold in when convenient.
+
+### LLM Landscape (47)
+Catalog bundle — **no concept pages**. Only summaries for sources worth more than their
+metadata, plus a running `Wiki/overview.md`. Most of these need no ingest at all.
+
+## Per-batch procedure (non-negotiable steps)
+
+1. Plan the cluster; state sources and scope calls. No per-file takeaways pause.
+2. Read every source end-to-end before writing. Claims must trace to the source —
+   **outside knowledge is invention**, however true it is. (Batch 1 lost FSDP mechanics
+   to this.)
+3. Write summaries; fill/extend entity and concept pages; update `Wiki/index.md`,
+   `Wiki/log.md`, Raw `wiki_refs`, and the Learning Path stages.
+4. Trust stamps on every touched page: `generated: { by, at }`.
+5. Learning Path: clear `> SKELETON.`, add `> Populated with N sources: ...`, bump `updated`.
+6. Self-QA: `scripts/test_okf_bundle.py <vault>`, link resolution, wiki_refs round-trip.
+7. **Independent Codex review, report-only.** Apply every HIGH and MEDIUM, re-QA,
+   record the reviewer and finding count in `log.md`, and save the review under
+   `projects/llm-corpus-expansion/reviews/`.
+8. Update this ledger.
+
+## Recount snippet
+
+```python
+from pathlib import Path
+KM=Path("/Users/hamidadesokan/Documents/Knowledge Management")
+for v in ["Transformer from Scratch","CUDA from Scratch","LLM Inference Optimization",
+          "LLM Fine-tuning","ML Foundations","LLM Landscape","AI Engineering",
+          "Document AI and Retrieval"]:
+    raw=sorted((KM/v/"Raw").glob("*.md"))
+    wiki="".join(p.read_text(encoding="utf-8",errors="ignore")
+                 for p in (KM/v/"Wiki").rglob("*.md"))
+    done=sum(1 for r in raw if r.name in wiki)
+    print(f"{v:<30}{len(raw):>5}{done:>7}{len(raw)-done:>8}")
+```
+
+## Standing decisions
+
+- `LLM Landscape` is catalog-shaped by design; do not grow a concept layer there.
+- `Document AI and Retrieval` was renamed from `rag-retrieval` because OCR dominates.
+- NotebookLM stays gated: the five new subjects have `null` notebook ids, which blocks
+  both auto-provisioning and push. Lift deliberately, per subject, after content settles.
+- Judgment calls that are genuinely the user's go in the end-of-run decision list, not
+  into a mid-run interruption.
