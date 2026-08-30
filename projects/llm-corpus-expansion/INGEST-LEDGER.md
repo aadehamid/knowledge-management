@@ -11,15 +11,15 @@ filename. Recompute with the snippet at the bottom rather than trusting the numb
 
 | Vault | Raw | Processed | Remaining | Bundle shape |
 |---|---|---|---|---|
-| Transformer from Scratch | 218 | 89 | **129** | concept + curriculum |
-| LLM Fine-tuning | 123 | 44 | **79** | concept + curriculum |
-| LLM Inference Optimization | 118 | 35 | **83** | concept + curriculum |
-| ML Foundations | 73 | 0 | **73** | concept + curriculum |
+| Transformer from Scratch | 218 | 187 | **31** | concept + curriculum |
+| LLM Fine-tuning | 123 | 81 | **42** | concept + curriculum |
+| LLM Inference Optimization | 118 | 51 | **67** | concept + curriculum |
+| ML Foundations | 73 | 21 | **52** | concept + curriculum |
 | LLM Landscape | 47 | 47 | **0** | catalog (no curriculum) |
-| AI Engineering | 39 | 0 | **39** | concept + curriculum |
-| Document AI and Retrieval | 32 | 0 | **32** | concept + curriculum |
-| CUDA from Scratch | 17 | 5 | **12** | concept + curriculum |
-| **Total** | **667** | **220** | **447** | |
+| AI Engineering | 39 | 9 | **30** | concept + curriculum |
+| Document AI and Retrieval | 32 | 5 | **27** | concept + curriculum |
+| CUDA from Scratch | 17 | 7 | **10** | concept + curriculum |
+| **Total** | **667** | **408** | **259** | |
 
 ## Batch order
 
