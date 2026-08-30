@@ -139,6 +139,49 @@ The vault's own `CLAUDE.md` contains a longer-form version of this resume prompt
 - **Docker image**: `warpdotdev/dev-base:latest-agents`
 - **Setup command**: `cd knowledge-management && pip install --break-system-packages -r requirements.txt`
 
+## Working practices for agents
+
+Adopted 2026-08-29 after a corpus-expansion session where checking beat assuming, every
+time. Any agent working in this repo or its vaults — Claude, Codex, or otherwise — should
+follow these. They are cheap; the mistakes they prevent are not.
+
+1. **Never classify or route a source by its title or by keywords.** A first-match regex
+   classifier sent Unsloth to inference, nanoGPT to fine-tuning, and backprop to
+   transformers, because it cannot tell "quantization for serving" from "quantization
+   during fine-tuning". Read the captured content. When a page serves a useless `<title>`
+   (`Medium`, `Google Colab`), recover the real title from the URL slug rather than
+   discarding the record — one such record was Karpathy's "Yes you should understand
+   backprop".
+
+2. **Before moving or deleting a source, grep the vault for inbound references.**
+   `nanochat/gpt.py` reads as a "build a ChatGPT" repo and was routed out of the inference
+   vault on that basis; it is in fact cited by `Wiki/entities/KV Cache.md` as the
+   production reference building the cache on the FlashAttention `flash_attn_with_kvcache`
+   kernel. Titles mislead; citations don't.
+
+3. **Ask what would undo the change.** Deleting a `Raw/` file is not durable by itself:
+   `scripts/sync_to_vault.py` recreates any destination that no longer exists, so the daily
+   launchd sync restores it unless the `urls.txt` line and the converted
+   `references/papers/` files move too. Trace the pipeline to its end before calling a
+   cleanup done, and dry-run the sync to prove it.
+
+4. **Re-verify state established earlier in the session.** Other sessions edit this repo
+   and these vaults concurrently; during that session a commit and three vault files
+   changed underneath the work in progress. Re-read `git log` / `git status` / mtimes
+   instead of trusting an earlier reading.
+
+5. **Distrust your own aggregate numbers.** A URL-overlap count was reported wrong because
+   the normalizer stripped query strings, collapsing every YouTube link to
+   `youtube.com/watch`. When a number is surprising, re-derive it a second way before
+   reporting it — and correct it plainly when it was wrong.
+
+6. **Back up before irreversible work; verify after.** The vaults are not git-tracked.
+   `cp -R` the vault first, then confirm with `python3 scripts/test_okf_bundle.py "<vault>"`
+   that the bundle is still conformant and no orphan links remain.
+
+See `projects/llm-corpus-expansion/routing.md` for these applied to a concrete decision,
+and each vault's `CLAUDE.md` for the step-by-step source relocation/removal workflow.
+
 ## Getting Started
 
 Clone the repository and install dependencies:
