@@ -11,3 +11,4 @@ https://drive.google.com/uc?export=download&id=1bLB2xnuEKgy_rCxwW5tx-zSJ5IK8MhgM
 https://fleetwood.dev/posts/you-could-have-designed-SOTA-positional-encoding | Positional Encoding Intuition | blog
 https://arxiv.org/pdf/2410.06205 | Round and Round We Go! What makes Rotary Positional Encodings useful? | paper
 https://kipp.ly/p/transformer-inference-arithmetic | Transformer Inference Arithmetic | blog
+https://www.youtube.com/watch?v=kCc8FmEb1nY | Let's build GPT: from scratch, in code, spelled out | video | Andrej Karpathy

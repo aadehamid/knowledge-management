@@ -1,0 +1,8 @@
+# AI Engineering subject area - URLs with metadata.
+# Format: url | title | source_type [| author]
+# source_type: paper, blog, video, course, code, thread, pdf, doc
+# NOTE: not yet wired into sync_config.json - nothing syncs to a vault or
+# NotebookLM until the corpus-expansion seeding step gates that push.
+
+https://github.com/Engineer1999/A-Curated-List-of-ML-System-Design-Case-Studies | A Curated List of ML System Design Case Studies (300+ case studies) | code
+https://github.com/aadehamid/system-design | System Design interview prep | code

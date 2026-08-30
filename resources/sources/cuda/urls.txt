@@ -6,3 +6,4 @@
 https://docs.nvidia.com/cuda/cuda-programming-guide/pdf/cuda-programming-guide.pdf | CUDA Programming Guide | pdf
 https://developer.nvidia.com/blog/even-easier-introduction-cuda/ | An Even Easier Introduction to CUDA | blog
 https://modal.com/blog/truly-serverless-gpus | Truly Serverless GPUs | blog
+https://en.algorithmica.org/hpc/architecture/ | Computer Architecture | doc
