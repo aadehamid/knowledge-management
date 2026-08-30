@@ -18,8 +18,8 @@ filename. Recompute with the snippet at the bottom rather than trusting the numb
 | LLM Landscape | 47 | 47 | **0** | catalog (no curriculum) |
 | AI Engineering | 39 | 9 | **30** | concept + curriculum |
 | Document AI and Retrieval | 32 | 5 | **27** | concept + curriculum |
-| CUDA from Scratch | 17 | 7 | **10** | concept + curriculum |
-| **Total** | **667** | **408** | **259** | |
+| CUDA from Scratch | 17 | 17 | **0** | concept + curriculum |
+| **Total** | **667** | **418** | **249** | |
 
 ## Batch order
 
@@ -58,8 +58,8 @@ OCR-dominant (595 mentions). Document parsing, then embeddings, then rerankers.
 ### AI Engineering (39)
 Agents (312 mentions), then evals, MCP, prompt/context engineering.
 
-### CUDA from Scratch (12)
-Small; fold in when convenient.
+### CUDA from Scratch (17) — **DONE**
+All 17 sources processed across batches (final batch: AI chip architectures, performance engineering, profiling, communications, floating-point formats).
 
 ### LLM Landscape (47) — **DONE**
 Catalog bundle — completed as a single overview.md catalog entry per source (title,
