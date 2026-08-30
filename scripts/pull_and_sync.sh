@@ -105,7 +105,10 @@ echo "[$TIMESTAMP] Result: $PULL_STATUS" >> "$LOG"
 # Step 2: Sync to Obsidian vault
 echo "" >> "$LOG"
 echo "[$TIMESTAMP] Step 2: Syncing to Obsidian vault..." >> "$LOG"
-SYNC_OUTPUT=$(python3 "$REPO_DIR/scripts/sync_to_vault.py" 2>&1)
+# Prefer the repo virtualenv (created by `uv venv`); fall back to system python3.
+PYBIN="$REPO_DIR/.venv/bin/python"
+[ -x "$PYBIN" ] || PYBIN="$(command -v python3)"
+SYNC_OUTPUT=$("$PYBIN" "$REPO_DIR/scripts/sync_to_vault.py" 2>&1)
 echo "$SYNC_OUTPUT" >> "$LOG"
 
 if echo "$SYNC_OUTPUT" | grep -q "0 file(s) synced"; then

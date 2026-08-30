@@ -20,7 +20,7 @@ knowledge-management/
 │       └── cuda/
 │           └── urls.txt
 ├── scripts/
-│   ├── convert_pdfs.py           # Cloud agent conversion script
+│   ├── convert_pdfs.py           # Conversion script (run locally in .venv)
 │   └── sync_to_vault.py          # Local Obsidian vault sync script
 ├── projects/                     # Project-specific knowledge and documentation
 ├── templates/                    # Reusable document and note templates
@@ -36,9 +36,11 @@ The pipeline converts PDFs and web pages to markdown, extracts images from PDFs,
 ### How it works
 
 1. **Add source URLs** to `resources/sources/<subject>/urls.txt`
-2. **Cloud agent** downloads PDFs, converts all sources to markdown (with images), and opens a PR
-3. **Merge the PR** and `git pull` locally
-4. **Sync to Obsidian** with `python scripts/sync_to_vault.py`
+2. **Convert locally**: `.venv/bin/python scripts/convert_pdfs.py` downloads PDFs and
+   converts every source to markdown (with images). It is incremental — a source whose
+   markdown already exists is skipped, so re-running is safe and cheap.
+3. **Review the diff** and commit
+4. **Sync to Obsidian** with `.venv/bin/python scripts/sync_to_vault.py`
 
 The sync script renames files to the wiki schema (`<source_type>-<slug>.md`), prepends YAML frontmatter, and copies extracted images alongside the markdown.
 
@@ -62,13 +64,16 @@ Blank lines and lines starting with `#` are ignored.
 
 1. Add the URL to `resources/sources/<subject>/urls.txt`
 2. Commit and push
-3. Run the cloud agent:
+3. Convert:
    ```sh
-   oz agent run-cloud --environment 3SyIIpxdPQfIyGOFd7ZQTs --prompt "Run: cd knowledge-management && python scripts/convert_pdfs.py. If any new files were generated, create a PR."
+   .venv/bin/python scripts/convert_pdfs.py
    ```
-4. **Wait for the agent to confirm the PR is ready** before merging — the agent may push additional commits to the same branch after opening the PR (e.g. when processing multiple URLs added in the same session). Merge only after you see the agent's final completion message.
-5. Merge the PR, then `git pull`
-6. Run `python scripts/sync_to_vault.py`
+   For a reviewable diff on a larger batch, do it on a branch first
+   (`git checkout -b corpus/<name>`) and merge once the output looks right.
+4. Check the new files — a suspiciously small `.md` usually means the fetch hit a login
+   wall or a JS-only page. Delete those rather than syncing a blank Raw file; the
+   `urls.txt` line stays, so a later run retries.
+5. Commit, then run `.venv/bin/python scripts/sync_to_vault.py`
 
 > **Note on YouTube URLs**: YouTube and similar sites use a generic path stem (`/watch`) for every video, which would cause filename collisions. The script resolves this by building a human-readable slug from the title and author fields: `<title-7-words>-<author-3-words>.md`. The `author` field in `urls.txt` is what enables the author part of the slug — add it whenever you submit a YouTube or similarly generic URL. If no title or author is available, the script falls back to the URL's unique query parameter (e.g. `?v=VIDEO_ID`).
 
@@ -133,11 +138,25 @@ The vault's own `CLAUDE.md` contains a longer-form version of this resume prompt
 - **PDFs**: `pymupdf4llm` — lightweight, extracts images inline at their original position
 - **Web pages**: `markitdown` (Microsoft) — converts HTML URLs directly to markdown
 
-### Warp cloud environment
+### Local conversion environment
 
-- **Environment ID**: `3SyIIpxdPQfIyGOFd7ZQTs`
-- **Docker image**: `warpdotdev/dev-base:latest-agents`
-- **Setup command**: `cd knowledge-management && pip install --break-system-packages -r requirements.txt`
+Conversion runs locally in a virtualenv (`.venv/`, git-ignored):
+
+```sh
+uv venv --python 3.12
+uv pip install -r requirements.txt
+```
+
+Then always invoke the scripts through it: `.venv/bin/python scripts/convert_pdfs.py`.
+
+> **The `youtube-transcription` extra is load-bearing.** `requirements.txt` pins
+> `markitdown[youtube-transcription]`, not bare `markitdown`. Without the extra,
+> markitdown returns only a video's title and description — a 13,000-word lecture
+> becomes a 200-word shell, and the failure is silent. If video conversions come back
+> at a few hundred words, that extra is missing.
+
+(This replaced a Warp cloud agent that ran the same script and opened a PR. The only
+thing lost is the PR review gate; use a branch for large batches instead.)
 
 ## Working practices for agents
 

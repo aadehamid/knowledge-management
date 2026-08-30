@@ -1,3 +1,6 @@
 pymupdf4llm
-markitdown
+# youtube-transcription extra is REQUIRED: without it markitdown returns
+# only a video's title/description, not its transcript (a 13,000-word file
+# becomes a 200-word shell).
+markitdown[youtube-transcription]
 requests
