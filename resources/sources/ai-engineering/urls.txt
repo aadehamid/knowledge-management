@@ -9,7 +9,7 @@ https://github.com/aadehamid/system-design | System Design interview prep | code
 
 # --- corpus expansion 2026-08-29 (37 sources) ---
 https://aiengineeringfromscratch.com/ | AI Engineering from Scratch | doc
-https://lilianweng.github.io/posts/2026-07-04-harness/ | Harness Engineering for Self-Improvement - Lil'Log | code
+https://lilianweng.github.io/posts/2026-07-04-harness/ | Harness Engineering for Self-Improvement - Lil'Log | blog
 https://www.coderabbit.ai/blog/teaching-nvidia-nemotron-3-5-lightning-to-route-code-reviews | Teaching NVIDIA Nemotron 3.5 Lightning to Route Code Reviews | doc
 https://platform.claude.com/cookbook | Claude Cookbook | doc
 https://www.inovex.de/de/blog/prompt-engineering-guide/ | Prompt Engineering and Zero-Shot/Few-Shot Learning [Guide] - inovex GmbH | doc

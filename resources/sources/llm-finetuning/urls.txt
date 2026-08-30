@@ -28,7 +28,7 @@ https://youtu.be/Ik6nbAjxLk4?si=R0hSkz3N3V6rWRLg | Fine tune Gemma 3, Qwen3, Lla
 https://raw.githubusercontent.com/merveenoyan/smol-vision/main/Fine_tune_PaliGemma.ipynb | Google Colab | code
 https://www.answer.ai/posts/2024-03-06-fsdp-qlora.html | You can now train a 70b language model at home – Answer.AI | doc
 https://huggingface.co/blog/visheratin/nomic-data-cleaning | Data exploration and filtering with Nomic Atlas | blog
-https://mlabonne.github.io/blog/posts/A_Beginners_Guide_to_LLM_Finetuning.html | A Beginner’s Guide to LLM Fine-Tuning – Maxime Labonne | code
+https://mlabonne.github.io/blog/posts/A_Beginners_Guide_to_LLM_Finetuning.html | A Beginner’s Guide to LLM Fine-Tuning – Maxime Labonne | blog
 https://github.com/eosphoros-ai/DB-GPT-Hub | GitHub - eosphoros-ai/DB-GPT-Hub: A repository that contains models, datasets, and fine-tuning techniques for DB-GPT, with the purpose of enhancing model performance in Text-to-SQL · GitHub | code
 https://huggingface.co/blog/rlhf | Illustrating Reinforcement Learning from Human Feedback (RLHF) | blog
 https://www.deeplearning.ai/short-courses/reinforcement-learning-from-human-feedback/ | Reinforcement Learning From Human Feedback - DeepLearning.AI | course
@@ -51,7 +51,7 @@ https://thinkingmachines.ai/blog/on-policy-distillation/ | On-Policy Distillatio
 https://arxiv.org/pdf/2401.08406 | [2401.08406] RAG vs Fine-tuning: Pipelines, Tradeoffs, and a Case Study on Agriculture | pdf
 https://lightning.ai/lightning-ai/studios/finetune-llm-codellama-13b | Finetune LLM - CodeLlama 13B - a Lightning template by lantiga | doc
 https://huggingface.co/papers/2401.10020 | Paper page - Self-Rewarding Language Models | blog
-https://lingo-mit.github.io/deductive-closure/ | Deductive Closure Training of Language Models for Coherence, Accuracy, and Updatability - Project page for the Deductive Closure Training. | code
+https://lingo-mit.github.io/deductive-closure/ | Deductive Closure Training of Language Models for Coherence, Accuracy, and Updatability - Project page for the Deductive Closure Training. | blog
 https://youtube.com/watch?v=mrKuDK9dGlg&si=I_DP61Q8lh53hQG7 | LLM Fine Tuning Crash Course: 1 Hour End-to-End Guide - YouTube | video
 https://huggingface.co/papers/2401.08406 | Paper page - RAG vs Fine-tuning: Pipelines, Tradeoffs, and a Case Study on Agriculture | blog
 https://github.com/ashishpatel26/LLM-Finetuning | GitHub - ashishpatel26/LLM-Finetuning: LLM Finetuning with peft · GitHub | code
@@ -98,7 +98,7 @@ https://rlhfbook.com/course | Post-Training Course by Nathan Lambert | doc
 https://shopify.engineering/fine-tuning-agent-shopify-flow | Flow generation through natural language: An agentic modeling approach (2026) - Shopify | doc
 https://leoniemonigatti.com/blog/fine-tuning-lfm2-5-1-2b-instruct-with-grpo.html | Fine-tuning LFM2.5-1.2B-Instruct with GRPO – Leonie Monigatti | doc
 https://github.com/walkinglabs/hands-on-modern-rl | GitHub - walkinglabs/hands-on-modern-rl: 🚀 An open-source, hands-on curriculum bridging the gap from basic RL concepts to LLM alignment, RLVR, and advanced Agentic systems. · GitHub | code
-https://akyrillidis.github.io/aiowls/adapad.html | From PCA to LoRA · AI-OWLS | code
+https://akyrillidis.github.io/aiowls/adapad.html | From PCA to LoRA · AI-OWLS | blog
 https://github.com/walkinglabs/hands-on-modern-rl/releases/tag/v0.1.5 | Release Hands-On Modern RL Open Textbook v0.1.5 · walkinglabs/hands-on-modern-rl · GitHub | code
 https://rl-production.vizuara.ai/ | Reinforcement Learning in Production — Vizuara AI Labs | doc
 https://www.philschmid.de/fine-tune-modern-bert-in-2025 | Fine-tune classifier with ModernBERT in 2025 | doc

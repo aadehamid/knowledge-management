@@ -53,7 +53,7 @@ https://www.databricks.com/blog/llm-inference-performance-engineering-best-pract
 https://redwerk.com/blog/llm-inference-optimization-techniques/ | llm-inference-optimization-techniques | doc
 https://arxiv.org/pdf/1910.02054 | ZeRO: Memory Optimizations Toward Training Trillion Parameter Models | pdf
 https://www.bentoml.com/blog/the-shift-to-distributed-llm-inference | The Shift to Distributed LLM Inference: 3 Key Technologies Breaking Single-Node Bottlenecks | doc
-https://ezyang.github.io/interactive-parallelize-transformer/ | How to Parallelize a Transformer for Training — an explorable explanation | code
+https://ezyang.github.io/interactive-parallelize-transformer/ | How to Parallelize a Transformer for Training — an explorable explanation | blog
 https://arxiv.org/pdf/2606.17081 | The Price of Anarchy in Disaggregated Inference | pdf
 https://learn.deeplearning.ai/courses/fast-and-efficient-llm-inference-with-vllm/lesson/rm60gb/introduction | Fast & Efficient LLM Inference with vLLM - DeepLearning.AI | course
 https://huggingface.co/llm-semantic-router | llm-semantic-router (vLLM Semantic Router) | blog

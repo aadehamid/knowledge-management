@@ -1,7 +1,8 @@
 {
   "url": "https://lilianweng.github.io/posts/2018-06-24-attention/",
   "title": "Attention? Attention! - Lil'Log",
-  "source_type": "code",
+  "source_type": "blog",
   "fetched_at": "2026-08-29",
-  "converter": "devonthink-readability-capture"
+  "converter": "devonthink-readability-capture",
+  "author": "Lilian Weng"
 }

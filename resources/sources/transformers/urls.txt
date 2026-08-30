@@ -15,14 +15,14 @@ https://www.youtube.com/watch?v=kCc8FmEb1nY | Let's build GPT: from scratch, in 
 
 # --- corpus expansion 2026-08-29 (37 sources) ---
 https://www.royvanrijn.com/anatomy-of-an-llm/ | The Anatomy of an LLM - Interactive Visual Guide to How Language Models Work | doc
-https://sustcsonglin.github.io/blog/2024/deltanet-1/ | DeltaNet Explained (Part I) - Songlin Yang | code
-https://cmu-l3.github.io/anlp-fall2025/?utm_source=perplexity | CMU Advanced NLP F2025 | code
+https://sustcsonglin.github.io/blog/2024/deltanet-1/ | DeltaNet Explained (Part I) - Songlin Yang | blog
+https://cmu-l3.github.io/anlp-fall2025/?utm_source=perplexity | CMU Advanced NLP F2025 | blog
 https://www.freecodecamp.org/news/code-an-llm-from-scratch-theory-to-rlhf/ | Code an LLM From Scratch – Theory to RLHF | doc
 https://huggingface.co/nanochat-students | nanochat-students (nanochat students) | blog
 https://github.com/rasbt/LLMs-from-scratch/tree/main/ch05/12_gemma3 | LLMs-from-scratch/ch05/12_gemma3 at main · rasbt/LLMs-from-scratch · GitHub | code
 https://www.thelmbook.com/ | The Hundred-Page Language Models Book by Andriy Burkov | doc
 https://blog.briankitano.com/llama-from-scratch/ | Llama from scratch (or how to implement a paper without crying) – Brian Kitano | blog
-https://lilianweng.github.io/posts/2018-06-24-attention/ | Attention? Attention! - Lil'Log | code
+https://lilianweng.github.io/posts/2018-06-24-attention/ | Attention? Attention! - Lil'Log | blog
 https://huggingface.co/tasks/any-to-any | What is Any-to-Any? - Hugging Face | blog
 https://github.com/rasbt/LLMs-from-scratch | GitHub - rasbt/LLMs-from-scratch: Implement a ChatGPT-like LLM in PyTorch from scratch, step by step · GitHub | code
 https://book.theaiedge.io/home | The Big Book of LLMs | doc
@@ -40,7 +40,7 @@ https://github.com/rasbt/LLMs-from-scratch/blob/main/ch06/01_main-chapter-code/c
 https://github.com/rasbt/LLMs-from-scratch/blob/main/ch07/01_main-chapter-code/ch07.ipynb | LLMs-from-scratch/ch07/01_main-chapter-code/ch07.ipynb at main · rasbt/LLMs-from-scratch · GitHub | code
 https://huggingface.co/papers/2406.11813 | Paper page - How Do Large Language Models Acquire Factual Knowledge During Pretraining? | blog
 https://youtu.be/kPGTx4wcm_w?si=HloQuCjHDApzBGOj | Developing an LLM: Building, Training, Finetuning - YouTube | video
-https://microsoft.github.io/LLM2CLIP/ | LLM2CLIP: Powerful Language Model Unlock Richer Visual Representation | code
+https://microsoft.github.io/LLM2CLIP/ | LLM2CLIP: Powerful Language Model Unlock Richer Visual Representation | blog
 https://aman.ai/primers/ai/LLM/ | Aman's AI Journal • Primers • Overview of Large Language Models | doc
 https://github.com/SkalskiP/vlms-zero-to-hero | GitHub - SkalskiP/vlms-zero-to-hero: This series will take you on a journey from the fundamentals of NLP and Computer Vision to the cutting edge of Vision-Language Models. · GitHub | code
 https://arxiv.org/pdf/2501.09223 | [2501.09223] Foundations of Large Language Models | pdf

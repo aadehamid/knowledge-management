@@ -18,5 +18,5 @@ https://sebastianraschka.com/blog/2023/pytorch-faster.html | PyTorch Training Sp
 https://eigenfoo.xyz/floating-point-deep-learning/ | Floating-Point Formats and Deep Learning - George Ho | doc
 https://github.com/linkedin/Liger-Kernel | GitHub - linkedin/Liger-Kernel: Efficient Triton Kernels for LLM Training · GitHub | code
 https://arxiv.org/pdf/2401.14489 | [2401.14489] The Case for Co-Designing Model Architectures with Hardware | pdf
-https://szymonozog.github.io/posts/2025-09-21-Penny-worklog-1.html | Writing my own communications library - a worklog of creating Penny part 1 - Szymon Ożóg | code
+https://szymonozog.github.io/posts/2025-09-21-Penny-worklog-1.html | Writing my own communications library - a worklog of creating Penny part 1 - Szymon Ożóg | blog
 https://arxiv.org/pdf/1901.02926 | Three Other Models of Computer System Performance | pdf

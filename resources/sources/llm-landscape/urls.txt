@@ -53,4 +53,4 @@ https://reiner-flashcards.vercel.app/ | Dwarkesh Podcast Flashcards | doc
 https://www.datadoghq.com/blog/ai/toto-2/ | Toto 2.0: Time series forecasting enters the scaling era - Datadog | doc
 https://ollama.com/library/llama3 | llama3 | doc
 https://ollama.com/library/llama3.3 | llama3.3 | doc
-https://lumiere-video.github.io/ | Lumiere | code
+https://lumiere-video.github.io/ | Lumiere | blog

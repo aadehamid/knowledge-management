@@ -13,7 +13,7 @@ https://stanford.edu/~shervine/teaching/cs-229 | Teaching - CS 229 | doc
 https://machinelearningmastery.com/a-gentle-introduction-to-the-jacobian/ | A Gentle Introduction to the Jacobian - MachineLearningMastery.com | doc
 https://karpathy.medium.com/yes-you-should-understand-backprop-e2f06eab496b | Yes you should understand backprop | blog
 https://eli.thegreenplace.net/2018/backpropagation-through-a-fully-connected-layer/ | Backpropagation through a fully-connected layer - Eli Bendersky's website | doc
-https://cs231n.github.io/optimization-1/ | CS231n Deep Learning for Computer Vision | code
+https://cs231n.github.io/optimization-1/ | CS231n Deep Learning for Computer Vision | blog
 https://youtu.be/fGDT63dZcvE | Backpropagation: How Neural Networks Learn - YouTube | video
 https://www.youtube.com/watch?v=nTlCqaL7fCY&t=74s | 01L – Gradient descent and the backpropagation algorithm - YouTube | video
 https://www.youtube.com/watch?v=VMj-3S1tku0 | The spelled-out intro to neural networks and backpropagation: building micrograd - YouTube | video
@@ -26,9 +26,9 @@ https://www.byhand.ai/p/computer-vision-lectures | Computer Vision Lectures - by
 https://pub.towardsai.net/how-i-created-an-animation-of-the-embeddings-during-fine-tuning-2b8bdf49f822 | How I created an animation of the embeddings during fine-tuning | doc
 https://e2eml.school/blog.html | Brandon Rohrer's blog | doc
 https://end-to-end-machine-learning.teachable.com/courses/enrolled/612528 | Write a Neural Network Framework - End to End Machine Learning | doc
-https://karpathy.github.io/neuralnets/ | Hacker's guide to Neural Networks | code
+https://karpathy.github.io/neuralnets/ | Hacker's guide to Neural Networks | blog
 https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/ | A Step by Step Backpropagation Example - Matt Mazur | doc
-https://karpathy.github.io/2019/04/25/recipe/ | A Recipe for Training Neural Networks | code
+https://karpathy.github.io/2019/04/25/recipe/ | A Recipe for Training Neural Networks | blog
 https://pyimagesearch.com/2022/12/26/automatic-differentiation-part-2-implementation-using-micrograd/ | Automatic Differentiation Part 2: Implementation Using Micrograd - PyImageSearch | doc
 https://pyimagesearch.com/2021/05/06/backpropagation-from-scratch-with-python/ | Backpropagation from scratch with Python - PyImageSearch | doc
 https://www.youtube.com/watch?v=QwZQrxIk6Dg&list=PLLHTzKZzVU9d_3TcHbyiAjl5qCbpJR-o0&index=2&t=1311s | 03 – Inference with neural nets - YouTube | video
@@ -42,17 +42,17 @@ https://www.youtube.com/watch?v=CRB266Eyjkg&list=PLZoTAELRMXVPGU70ZGsckrMdr0Ftee
 https://www.youtube.com/watch?v=lZrIPRnoGQQ&list=PLUl4u3cNGP63oMNUHXqIUcrkS2PivhN3k&index=29&t=58s | 27. Backpropagation: Find Partial Derivatives - YouTube | video
 https://ocw.mit.edu/courses/mathematics/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/video-lectures/lecture-27-backpropagation-find-partial-derivatives/ | Lecture 27: Backpropagation: Find Partial Derivatives - Matrix Methods in Data Analysis, Signal Processing, and Machine Learning - Mathematics - MIT OpenCourseWare | doc
 https://arxiv.org/pdf/1502.05767 | [1502.05767] Automatic differentiation in machine learning: a survey | pdf
-http://timvieira.github.io/blog/post/2017/08/18/backprop-is-not-just-the-chain-rule/ | Backprop Is Not Just the Chain Rule | code
+http://timvieira.github.io/blog/post/2017/08/18/backprop-is-not-just-the-chain-rule/ | Backprop Is Not Just the Chain Rule | blog
 http://cs231n.stanford.edu/handouts/linear-backprop.pdf | Backpropagation for a Linear Layer | pdf
-http://colah.github.io/posts/2015-08-Backprop/ | Calculus on Computational Graphs: Backpropagation -- colah's blog | code
-https://alexander-schiendorfer.github.io/2020/02/16/automatic-differentiation.html | Automatic Differentiation for Deep Learning, by example - Connecting deep dots | code
+http://colah.github.io/posts/2015-08-Backprop/ | Calculus on Computational Graphs: Backpropagation -- colah's blog | blog
+https://alexander-schiendorfer.github.io/2020/02/16/automatic-differentiation.html | Automatic Differentiation for Deep Learning, by example - Connecting deep dots | blog
 http://cs231n.stanford.edu/slides/2020/section_2_annotated.pdf | Backpropagation | pdf
 http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf | Ecient BackProp | pdf
 http://cs231n.stanford.edu/slides/2020/lecture_4.pdf | Lecture 4: | pdf
 http://people.idsia.ch/~juergen/who-invented-backpropagation.html | Who Invented Backpropagation? | doc
 https://brilliant.org/practice/backpropagation-vanishing-and-exploding-gradient/?p=1 | Brilliant - Your Personal Tutor for Math and Coding | doc
 https://leanpub.com/pytorch | Deep Learning with PyTorch Step-by-Step [Leanpub PDF/iPad/Kindle] | doc
-https://camdavidsonpilon.github.io/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/#using-the-book | Bayesian Methods for Hackers | code
+https://camdavidsonpilon.github.io/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/#using-the-book | Bayesian Methods for Hackers | blog
 https://towardsdatascience.com/guide-to-file-formats-for-machine-learning-columnar-training-inferencing-and-the-feature-store-2e0c3d18d4f9 | Comparing Performance of Big Data File Formats: A Practical Guide - Towards Data Science | doc
 https://www.quantamagazine.org/artificial-neural-nets-finally-yield-clues-to-how-brains-learn-20210218/ | Artificial Neural Nets Finally Yield Clues to How Brains Learn - Quanta Magazine | doc
 https://statmodeling.stat.columbia.edu/2020/12/03/how-to-think-about-correlation-its-the-slope-of-the-regression-when-x-and-y-have-been-standardized/ | How to think about correlation? It’s the slope of the regression when x and y have been standardized. - Statistical Modeling, Causal Inference, and Social Science | doc
@@ -63,14 +63,14 @@ https://docs.fast.ai/quick_start.html | Quick start – fastai | doc
 https://cs230.stanford.edu/section/4/ | Section 4 (Week 4) | doc
 https://github.com/balavenkatesh3322/CV-pretrained-model | GitHub - balavenkatesh3322/CV-pretrained-model: A collection of computer vision pre-trained models. · GitHub | code
 https://www.youtube.com/watch?v=i94OvYb6noo&list=PLkt2uSq6rBVctENoVBg1TpCC7OQi31AlC&index=4 | CS231n Winter 2016: Lecture 4: Backpropagation, Neural Networks 1 - YouTube | video
-http://iamtrask.github.io/ | i am trask | code
+http://iamtrask.github.io/ | i am trask | blog
 https://kyunghyuncho.me/a-few-qa-from-the-course/ | A few QA’s from the course F’20 <Deep Learning> – Kyunghyun Cho | doc
 https://arxiv.org/pdf/2102.05242 | [2102.05242] Patterns, predictions, and actions: A story about machine learning | pdf
-https://lilianweng.github.io/posts/2021-12-05-semi-supervised/ | Learning with not Enough Data Part 1: Semi-Supervised Learning - Lil'Log | code
+https://lilianweng.github.io/posts/2021-12-05-semi-supervised/ | Learning with not Enough Data Part 1: Semi-Supervised Learning - Lil'Log | blog
 https://theorydish.blog/2021/12/16/backpropagation-%E2%89%A0-chain-rule/ | Backpropagation ≠ Chain Rule – Theory Dish | blog
 https://seeing-theory.brown.edu/ | Seeing Theory | doc
 https://github.com/google-deepmind/penzai?tab=readme-ov-file | GitHub - google-deepmind/penzai: A JAX research toolkit for building, editing, and visualizing neural networks. · GitHub | code
-https://nrehiew.github.io/blog/pytorch/ | Taking PyTorch for Granted - wh | code
+https://nrehiew.github.io/blog/pytorch/ | Taking PyTorch for Granted - wh | blog
 https://ml-science-book.com/supervised-ml.html | 2 Bare-Bones Supervised Machine Learning – Supervised Machine Learning for Science | doc
 https://keras.io/keras_hub/ | KerasHub | doc
 https://complete-pathway.vizuara.ai/ | 10-Course AI & ML Bundle - Vizuara AI Labs | doc
