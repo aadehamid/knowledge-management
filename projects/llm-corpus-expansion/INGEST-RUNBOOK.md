@@ -238,11 +238,14 @@ Batches are reviewed in groups of three. After batches 3/6/9…, run this **befo
 the next batch**.
 
 ```bash
-C=~/.claude/plugins/cache/openai-codex/codex/1.0.6/scripts/codex-companion.mjs
-node "$C" task --background --effort high "$(cat /tmp/review_brief.md)"
-# returns a job id; poll it:
-node "$C" status <job-id> --json
-node "$C" result <job-id>
+REPO=/Users/hamidadesokan/Dropbox/1_PROJECTS/knowledge-management
+BRIEF=projects/llm-corpus-expansion/reviews/<date>-batch<N>-<topic>-brief.md
+
+# Reviewer: DeepSeek V4 Pro 0813 via the Nous Portal (user direction, 2026-08-30;
+# replaced the earlier Codex companion). Submit and poll:
+JOB=$(python3 "$REPO/scripts/deepseek_review.py" submit "$REPO/$BRIEF" | python3 -c "import json,sys;print(json.load(sys.stdin)['job_id'])")
+python3 "$REPO/scripts/deepseek_review.py" status "$JOB"
+python3 "$REPO/scripts/deepseek_review.py" result "$JOB"
 ```
 
 The brief must contain, with absolute paths:
