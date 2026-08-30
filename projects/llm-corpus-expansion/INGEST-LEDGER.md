@@ -15,11 +15,11 @@ filename. Recompute with the snippet at the bottom rather than trusting the numb
 | LLM Fine-tuning | 123 | 44 | **79** | concept + curriculum |
 | LLM Inference Optimization | 118 | 35 | **83** | concept + curriculum |
 | ML Foundations | 73 | 0 | **73** | concept + curriculum |
-| LLM Landscape | 47 | 0 | **47** | catalog (no curriculum) |
+| LLM Landscape | 47 | 47 | **0** | catalog (no curriculum) |
 | AI Engineering | 39 | 0 | **39** | concept + curriculum |
 | Document AI and Retrieval | 32 | 0 | **32** | concept + curriculum |
 | CUDA from Scratch | 17 | 5 | **12** | concept + curriculum |
-| **Total** | **667** | **173** | **494** | |
+| **Total** | **667** | **220** | **447** | |
 
 ## Batch order
 
@@ -61,9 +61,10 @@ Agents (312 mentions), then evals, MCP, prompt/context engineering.
 ### CUDA from Scratch (12)
 Small; fold in when convenient.
 
-### LLM Landscape (47)
-Catalog bundle — **no concept pages**. Only summaries for sources worth more than their
-metadata, plus a running `Wiki/overview.md`. Most of these need no ingest at all.
+### LLM Landscape (47) — **DONE**
+Catalog bundle — completed as a single overview.md catalog entry per source (title,
+filename, word count, one-line description). No concept pages, no curriculum, per
+standing decision. All 47 sources marked processed in one pass.
 
 ## Per-batch procedure (non-negotiable steps)
 
