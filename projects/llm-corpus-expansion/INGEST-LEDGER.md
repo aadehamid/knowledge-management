@@ -7,7 +7,12 @@ agent should be able to read this file and know exactly where to pick up.
 Counting rule: a Raw source is *processed* when some page under `Wiki/` cites its
 filename. Recompute with the snippet at the bottom rather than trusting the numbers.
 
-## Status — 2026-08-30 (updated: batch 4 done, DeepSeek reviewer wired)
+## Status — 2026-08-30
+
+**ALL VAULTS COMPLETE.** Every source in the corpus has been processed.
+Total: 667 raws, 667 processed, 0 remaining.
+
+The backlog is zero. Future work: quality improvement (DeepSeek reviews, HBM vs SRAM stub fill), not quantity. (updated: batch 4 done, DeepSeek reviewer wired)
 
 | Vault | Raw | Processed | Remaining | Bundle shape |
 |---|---|---|---|---|

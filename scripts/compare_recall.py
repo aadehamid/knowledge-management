@@ -33,6 +33,35 @@ MEANINGFUL_QS = {"v", "id", "p", "list", "paper_id", "arxiv"}
 TRACKING = re.compile(r"^(utm_|ref|si|s|feature|fbclid|gclid|mc_|source|usp)")
 
 
+# Known aliases: the same resource reachable under a different host, path or
+# owner. Verified case by case against both corpora — not guessed. Without
+# these the diff reports dozens of false "only in Recall" hits.
+REPO_RENAMES = {
+    "openaccess-ai-collective/axolotl": "axolotl-ai-cloud/axolotl",
+    "facebookresearch/llama-recipes": "meta-llama/llama-cookbook",
+    "mozilla-ocho/llamafile": "mozilla-ai/llamafile",
+    "neuralmagic/guidellm": "vllm-project/guidellm",
+}
+
+
+def apply_aliases(host: str, path: str) -> tuple[str, str]:
+    # Unsloth moved its docs from docs.unsloth.ai/X to unsloth.ai/docs/X.
+    if host == "docs.unsloth.ai":
+        return "unsloth.ai", "/docs" + path
+    # DeepLearning.AI renamed /short-courses/ to /courses/, and learn.* is the
+    # course player for the same course as the www landing page.
+    if host in ("deeplearning.ai", "learn.deeplearning.ai"):
+        path = path.replace("/short-courses/", "/courses/")
+        path = re.sub(r"(/courses/[^/]+)/lesson/.*$", r"\1", path)
+        return "deeplearning.ai", path
+    # GitHub repo renames.
+    if host == "github.com":
+        m = re.match(r"^/([^/]+/[^/]+)(/.*)?$", path)
+        if m and m.group(1).lower() in REPO_RENAMES:
+            path = "/" + REPO_RENAMES[m.group(1).lower()] + (m.group(2) or "")
+    return host, path
+
+
 def norm(url: str) -> str:
     """Canonical key for one URL. Two URLs sharing a key are the same resource."""
     url = (url or "").strip()
@@ -67,6 +96,8 @@ def norm(url: str) -> str:
     # GitHub: strip the trailing view fragments that do not change the resource.
     if host == "github.com":
         path = re.sub(r"/(tree|blob)/(main|master)/?$", "", path)
+
+    host, path = apply_aliases(host, path)
 
     keep = {k: v for k, v in urllib.parse.parse_qs(p.query).items()
             if k in MEANINGFUL_QS and not TRACKING.match(k)}
