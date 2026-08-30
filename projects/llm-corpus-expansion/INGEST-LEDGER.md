@@ -7,19 +7,19 @@ agent should be able to read this file and know exactly where to pick up.
 Counting rule: a Raw source is *processed* when some page under `Wiki/` cites its
 filename. Recompute with the snippet at the bottom rather than trusting the numbers.
 
-## Status — 2026-08-30
+## Status — 2026-08-30 (updated: batch 4 done, DeepSeek reviewer wired)
 
 | Vault | Raw | Processed | Remaining | Bundle shape |
 |---|---|---|---|---|
 | Transformer from Scratch | 218 | 89 | **129** | concept + curriculum |
-| LLM Fine-tuning | 123 | 20 | **103** | concept + curriculum |
+| LLM Fine-tuning | 123 | 29 | **94** | concept + curriculum |
 | LLM Inference Optimization | 118 | 35 | **83** | concept + curriculum |
 | ML Foundations | 73 | 0 | **73** | concept + curriculum |
 | LLM Landscape | 47 | 0 | **47** | catalog (no curriculum) |
 | AI Engineering | 39 | 0 | **39** | concept + curriculum |
 | Document AI and Retrieval | 32 | 0 | **32** | concept + curriculum |
 | CUDA from Scratch | 17 | 5 | **12** | concept + curriculum |
-| **Total** | **667** | **149** | **518** | |
+| **Total** | **667** | **158** | **509** | |
 
 ## Batch order
 
@@ -33,8 +33,8 @@ missing page.
 | 1 | LoRA fundamentals and hyperparameters | 4 | **done** — Codex review, 8 findings applied |
 | 2 | RLHF / DPO / GRPO — preference and RL post-training | 4 | **done** — Codex review, 8 findings applied |
 | 3 | Datasets and synthetic data | 8 | **done** — review deferred to the batch-5 gate |
-| 4 | Unsloth tooling and run guides | ~10 | next |
-| 5 | Frameworks: Axolotl, LlamaFactory, ms-swift, TRL | ~7 | |
+| 4 | Unsloth tooling and run guides | 13 | **done** — DeepSeek review deferred to batch-6 gate |
+| 5 | Frameworks: Axolotl, LlamaFactory, ms-swift, TRL | ~7 | next |
 | 6 | Quantized training and memory | ~8 | |
 | 7 | Vision and multimodal fine-tuning | ~15 | |
 | 8 | Courses and overviews | ~14 | |
