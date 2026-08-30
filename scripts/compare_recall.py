@@ -44,10 +44,29 @@ REPO_RENAMES = {
 }
 
 
+# Unsloth doc pages that were renamed, not just moved. Verified by comparing
+# the slug lists on both sides.
+UNSLOTH_SLUGS = {
+    "reinforcement-learning-guide": "reinforcement-learning-rl-guide",
+    "how-to-finetune-llama-3-and-export-to-ollama":
+        "tutorial-how-to-finetune-llama-3-and-use-in-ollama",
+    "qwen3-vl-run-and-fine-tune": "qwen3-vl-how-to-run-and-fine-tune",
+    "tutorials-how-to-fine-tune-and-run-llms": "tutorials",
+}
+
+
 def apply_aliases(host: str, path: str) -> tuple[str, str]:
-    # Unsloth moved its docs from docs.unsloth.ai/X to unsloth.ai/docs/X.
-    if host == "docs.unsloth.ai":
-        return "unsloth.ai", "/docs" + path
+    # Unsloth moved docs.unsloth.ai/X to unsloth.ai/docs/X AND restructured the
+    # tree underneath. Page slugs stayed unique, so key on the final slug.
+    if host in ("docs.unsloth.ai", "unsloth.ai") and (host == "docs.unsloth.ai"
+                                                      or path.startswith("/docs")):
+        slug = path.rstrip("/").split("/")[-1]
+        slug = UNSLOTH_SLUGS.get(slug, slug)
+        return "unsloth.ai", "/docs/" + slug
+
+    # Lightning renamed /studios/ to /templates/ and /pages/courses/ to /courses/.
+    if host == "lightning.ai":
+        path = path.replace("/studios/", "/templates/").replace("/pages/courses/", "/courses/")
     # DeepLearning.AI renamed /short-courses/ to /courses/, and learn.* is the
     # course player for the same course as the www landing page.
     if host in ("deeplearning.ai", "learn.deeplearning.ai"):
