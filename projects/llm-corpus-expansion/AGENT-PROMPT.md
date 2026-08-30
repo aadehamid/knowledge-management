@@ -1,8 +1,16 @@
 # Prompt for the ingest agent
 
-Paste the block below to start a new agent on the ingest. It is deliberately short —
-the detail lives in `INGEST-RUNBOOK.md`, which the agent is told to read first. What is
-repeated inline is only what must not be missed even if the runbook is skimmed.
+Paste the block below to start a new agent on the ingest.
+
+**When the `knowledge-ingest` skill is installed you should not need this.** Describing the
+work is enough — the skill triggers on intent, reads `knowledge-ingest.config.json`, and
+that config points it at the runbook. This prompt is the fallback for agents without the
+skill: a different harness, a machine where it is not installed, or a session where it
+fails to trigger.
+
+It is deliberately short — the detail lives in `INGEST-RUNBOOK.md`, which the agent is told
+to read first. What is repeated inline is only what must not be missed even if the runbook
+is skimmed.
 
 ---
 

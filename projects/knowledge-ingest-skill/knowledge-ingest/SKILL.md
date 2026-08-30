@@ -14,9 +14,16 @@ never said is indistinguishable from a good page until someone checks.
 ## Configuration
 
 Read `knowledge-ingest.config.json` from the project root — bundles with their paths and
-shapes, the validator command, the reviewer command, the ledger. Never hardcode a path; if
-you are typing one, the project should be describing it instead. With no config, ask for
-the bundle and source paths, then offer to write one.
+shapes, the validator command, the reviewer command, the ledger, and a `runbook` if the
+project has one. Never hardcode a path; if you are typing one, the project should be
+describing it instead. With no config, ask for the bundle and source paths, then offer to
+write one.
+
+**If the config names a `runbook`, read it before writing anything.** This skill is the
+method; a project's runbook carries its local conventions, commands and standing
+decisions — schema details, which reviewer to use, which decisions are already settled.
+Where they differ, the runbook wins on local detail and this skill wins on method. A
+bundle's own schema file (often `CLAUDE.md`) is authoritative for that bundle's layout.
 
 Orient before acting: read the ledger and the bundle's own schema file, and **recompute the
 counts rather than trusting the written numbers**. A source counts as processed when some
