@@ -32,3 +32,8 @@ Evidence captured from the session. These are inputs to the routing pass, not ou
 Routing is complete (see `routing.md`); seeding has not started. A keyword classifier
 was tried first and rejected as insufficiently accurate — see the "Rejected approaches"
 section of the handoff.
+
+## Related
+
+- [../knowledge-ingest-skill/SPEC.md](../knowledge-ingest-skill/SPEC.md) —
+  the brief for turning this workflow into a reusable skill.
