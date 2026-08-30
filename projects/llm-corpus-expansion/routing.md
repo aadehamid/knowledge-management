@@ -30,7 +30,7 @@ See the handoff's "Rejected approaches".
 | `llm-landscape` | 48 | 48 | **48** | 13 | 5 |
 | `transformers` | 43 | 41 | **39** | 9 | 3 |
 | `ai-engineering` | 42 | 40 | **38** | 8 | 3 |
-| `rag-retrieval` | 34 | 33 | **33** | 1 | 3 |
+| `document-ai-retrieval` | 34 | 33 | **33** | 1 | 3 |
 | `_inbox` | 22 | 21 | **20** | 1 | 12 |
 | `cuda` | 13 | 13 | **10** | 4 | 2 |
 | **Total** | **546** | **515** | **480** | **78** | **121** |
@@ -127,7 +127,7 @@ pages stay in `llm-landscape` while run/fine-tune guides follow their task;
 | `llm-landscape` | 48 |
 | `transformers` | 39 |
 | `ai-engineering` | 38 |
-| `rag-retrieval` | 33 |
+| `document-ai-retrieval` | 33 |
 | `cuda` | 10 |
 | **Total** | **455** |
 

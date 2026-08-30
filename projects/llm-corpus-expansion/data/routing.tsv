@@ -47,8 +47,8 @@ idx	subject	confidence	is_duplicate	in_repo	drop_reason	url_rewritten	note	recor
 46	llm-inference-optimization	hi						bookmark	0	https://redwerk.com/blog/llm-inference-optimization-techniques/	llm-inference-optimization-techniques
 47	llm-inference-optimization	hi	dup	llm-inference-optimization				bookmark	0	https://vizuaraai.github.io/convolution-musical-journey/visual-walkthroughs.html	Vizuara Visual Walkthrough Library
 48	llm-inference-optimization	hi	dup	llm-inference-optimization				bookmark	0	https://vizuaraai.github.io/convolution-musical-journey/book.html#ch00-inference-engineers-world	Inference Engineering — The Workshop Book
-49	rag-retrieval	hi						bookmark	0	https://www.llamaindex.ai/blog/parse-gateway-smart-page-level-document-parser-routing	Parse Gateway: Smart, Page-Level Document Parsing Routing
-50	rag-retrieval	hi						bookmark	0	https://github.com/run-llama/parse-gateway	run-llama/parse-gateway: Route every page to the right parser
+49	document-ai-retrieval	hi						bookmark	0	https://www.llamaindex.ai/blog/parse-gateway-smart-page-level-document-parser-routing	Parse Gateway: Smart, Page-Level Document Parsing Routing
+50	document-ai-retrieval	hi						bookmark	0	https://github.com/run-llama/parse-gateway	run-llama/parse-gateway: Route every page to the right parser
 51	llm-inference-optimization	hi					PDF imported without a source URL; canonical arXiv URL identified from the paper text	PDF document	11245	https://arxiv.org/pdf/1910.02054	ZeRO: Memory Optimizations Toward Training Trillion Parameter Models
 52	cuda	hi						bookmark	0	https://horace.io/brrr_intro.html	Making Deep Learning go Brrrr From First Principles
 53	_inbox	hi			x.com post, no retrievable content			bookmark	0	https://x.com/_arohan_/status/2081073678109098256?s=12	rohan anil (@_arohan_) 391 likes · 53 replies
@@ -67,7 +67,7 @@ idx	subject	confidence	is_duplicate	in_repo	drop_reason	url_rewritten	note	recor
 66	ai-engineering	hi						markdown	500	https://aiengineeringfromscratch.com/	AI Engineering from Scratch
 67	llm-landscape	lo						markdown	243	https://build-small-hackathon-field-guide.hf.space/partners/openbmb	OpenBMB · Build Small
 68	_inbox	hi			alphaXiv landing page, not an article			markdown	1910	https://alphaxiv.org/	Explore | alphaXiv
-69	rag-retrieval	hi						markdown	631	https://huggingface.co/datalab-to/lift	datalab-to/lift · Hugging Face
+69	document-ai-retrieval	hi						markdown	631	https://huggingface.co/datalab-to/lift	datalab-to/lift · Hugging Face
 70	llm-inference-optimization	hi						markdown	517	https://huggingface.co/llm-semantic-router	llm-semantic-router (vLLM Semantic Router)
 71	llm-inference-optimization	hi						markdown	592	https://github.com/vllm-project/semantic-router	GitHub - vllm-project/semantic-router: A programmable Mixture-of-Models router for heterogeneous LLM inference · GitHub
 72	llm-inference-optimization	hi						markdown	1503	https://vllm-semantic-router.com/	Build Your Mixture-of-Models | vLLM Semantic Router
@@ -113,10 +113,10 @@ idx	subject	confidence	is_duplicate	in_repo	drop_reason	url_rewritten	note	recor
 112	transformers	hi						markdown	269	https://github.com/rasbt/LLMs-from-scratch/tree/main/ch05/12_gemma3	LLMs-from-scratch/ch05/12_gemma3 at main · rasbt/LLMs-from-scratch · GitHub
 113	transformers	hi						markdown	454	https://www.thelmbook.com/	The Hundred-Page Language Models Book by Andriy Burkov
 114	llm-finetuning	lo						markdown	1006	https://trelis.com/advanced-fine-tuning-scripts/	Fine-tuning and Retrieval (RAG) – Trelis
-115	rag-retrieval	hi						markdown	1590	https://blog.lancedb.com/a-practical-guide-to-fine-tuning-embedding-models/	A Practical Guide to Fine-Tuning Embedding Models
+115	document-ai-retrieval	hi						markdown	1590	https://blog.lancedb.com/a-practical-guide-to-fine-tuning-embedding-models/	A Practical Guide to Fine-Tuning Embedding Models
 116	llm-landscape	hi						markdown	1533	https://ernie.baidu.com/blog/posts/ernie4.5/	Announcing the Open Source Release of the ERNIE 4.5 Model Family | ERNIE Blog
-117	rag-retrieval	hi						markdown	6157	https://huggingface.co/blog/train-sparse-encoder	Training and Finetuning Sparse Embedding Models with Sentence Transformers
-118	rag-retrieval	hi						markdown	2154	https://www.mixedbread.com/blog/maxsim-cpu	maxsim-cpu: Maximising Maxsim Efficiency
+117	document-ai-retrieval	hi						markdown	6157	https://huggingface.co/blog/train-sparse-encoder	Training and Finetuning Sparse Embedding Models with Sentence Transformers
+118	document-ai-retrieval	hi						markdown	2154	https://www.mixedbread.com/blog/maxsim-cpu	maxsim-cpu: Maximising Maxsim Efficiency
 119	llm-inference-optimization	hi						markdown	884	https://docs.unsloth.ai/models/how-to-run-llms-with-docker	How to Run Local LLMs with Docker: Step-by-Step Guide | Unsloth Documentation
 120	llm-inference-optimization	hi						markdown	1132	https://blog.vllm.ai/2025/11/19/docker-model-runner-vllm.html	Docker Model Runner Integrates vLLM for High-Throughput Inferencing | vLLM Blog
 121	llm-inference-optimization	lo						bookmark	0	https://youtu.be/oxwsizy1Spw?si=uz5-VKZWJ8oTqr9j	Inference Providers: Best Way to Build with Open Source Models - YouTube
@@ -147,38 +147,38 @@ idx	subject	confidence	is_duplicate	in_repo	drop_reason	url_rewritten	note	recor
 146	llm-inference-optimization	hi						markdown	746	https://simonwillison.net/2023/Nov/29/llamafile/	llamafile is the new best way to run an LLM on your own computer
 147	llm-finetuning	hi						markdown	183	https://github.com/axolotl-ai-cloud/axolotl/blob/4d2e842e46bf8bd6dd0fda4d2667a7e7d80b4cd4/examples/llama-2/tiny-llama.yml	axolotl/examples/llama-2/tiny-llama.yml (recovered @ 4d2e842e)
 148	llm-finetuning	hi						markdown	14705	https://www.latent.space/p/axolotl	The Busy Person's Intro to Finetuning & Open Source AI - Wing Lian, Axolotl
-149	rag-retrieval	hi						markdown	130	https://huggingface.co/unstructuredio	unstructuredio (unstructured.io)
+149	document-ai-retrieval	hi						markdown	130	https://huggingface.co/unstructuredio	unstructuredio (unstructured.io)
 150	llm-finetuning	hi						bookmark	0	https://www.youtube.com/watch?v=3fsn19OI_C8	The EASIEST way to finetune LLAMA-v2 on local machine! - YouTube
 151	llm-inference-optimization	hi						markdown	5031	https://huggingface.co/blog/hf-bitsandbytes-integration	A Gentle Introduction to 8-bit Matrix Multiplication for transformers at scale using transformers, accelerate and bitsandbytes
 152	transformers	hi						markdown	6554	https://blog.briankitano.com/llama-from-scratch/	Llama from scratch (or how to implement a paper without crying) – Brian Kitano
 153	transformers	hi						markdown	4202	https://lilianweng.github.io/posts/2018-06-24-attention/	Attention? Attention! | Lil'Log
 154	llm-landscape	lo					title repaired from URL slug	markdown	6300	https://heartbeat.comet.ml/large-language-models-a-complete-guide-f818397c82d4	Large Language Models: A Complete Guide
 155	llm-finetuning	hi						markdown	2364	https://magazine.sebastianraschka.com/p/finetuning-large-language-models	Finetuning Large Language Models
-156	rag-retrieval	hi						markdown	1239	https://mistral.ai/news/mistral-ocr	Mistral OCR | Mistral AI
+156	document-ai-retrieval	hi						markdown	1239	https://mistral.ai/news/mistral-ocr	Mistral OCR | Mistral AI
 157	llm-finetuning	hi						markdown	2901	https://github.com/modelscope/ms-swift	GitHub - modelscope/ms-swift: Use PEFT or Full-parameter to CPT/SFT/DPO/GRPO 600+ LLMs (Qwen3.6, DeepSeek-V4, GLM-5.1, InternLM3, Llama4, ...) and 300+ MLLMs (Qwen3-VL, Qwen3-Omni, InternVL3.5, Ovis2.5, GLM4.5v, Gemma4, Llava, Phi4, ...) (AAAI 2025). · Git
-158	rag-retrieval	hi						bookmark	0	https://colbert.aiserv.cloud/	ColBERT Inference in the Browser
-159	rag-retrieval	hi						markdown	772	https://github.com/tonywu71/colpali-cookbooks/blob/b7a0798cbb8e4f1f6223f9c3b7dac2172b1b6ce1/examples/gen_colpali_similarity_maps.ipynb	colpali-cookbooks/examples/gen_colpali_similarity_maps.ipynb at b7a0798cbb8e4f1f6223f9c3b7dac2172b1b6ce1 · tonywu71/colpali-cookbooks · GitHub
-160	rag-retrieval	hi						markdown	2119	https://blog.vespa.ai/pretrained-transformer-language-models-for-search-part-3/	Pretrained Transformer Language Models for Search - part 3 | Vespa Blog
-161	rag-retrieval	hi						markdown	3232	https://huggingface.co/blog/fsommers/document-similarity-colpali	Document Similarity Search with ColPali
-162	rag-retrieval	hi						markdown	3326	https://github.com/illuin-tech/colpali	GitHub - illuin-tech/colpali: The code used to train and run inference with the ColVision models, e.g. ColPali, ColQwen2, and ColSmol. · GitHub
-163	rag-retrieval	hi						markdown	425	https://github.com/tonywu71/colpali-cookbooks	GitHub - tonywu71/colpali-cookbooks: Recipes for learning, fine-tuning, and adapting ColPali to your multimodal RAG use cases. 👨🏻‍🍳 · GitHub
+158	document-ai-retrieval	hi						bookmark	0	https://colbert.aiserv.cloud/	ColBERT Inference in the Browser
+159	document-ai-retrieval	hi						markdown	772	https://github.com/tonywu71/colpali-cookbooks/blob/b7a0798cbb8e4f1f6223f9c3b7dac2172b1b6ce1/examples/gen_colpali_similarity_maps.ipynb	colpali-cookbooks/examples/gen_colpali_similarity_maps.ipynb at b7a0798cbb8e4f1f6223f9c3b7dac2172b1b6ce1 · tonywu71/colpali-cookbooks · GitHub
+160	document-ai-retrieval	hi						markdown	2119	https://blog.vespa.ai/pretrained-transformer-language-models-for-search-part-3/	Pretrained Transformer Language Models for Search - part 3 | Vespa Blog
+161	document-ai-retrieval	hi						markdown	3232	https://huggingface.co/blog/fsommers/document-similarity-colpali	Document Similarity Search with ColPali
+162	document-ai-retrieval	hi						markdown	3326	https://github.com/illuin-tech/colpali	GitHub - illuin-tech/colpali: The code used to train and run inference with the ColVision models, e.g. ColPali, ColQwen2, and ColSmol. · GitHub
+163	document-ai-retrieval	hi						markdown	425	https://github.com/tonywu71/colpali-cookbooks	GitHub - tonywu71/colpali-cookbooks: Recipes for learning, fine-tuning, and adapting ColPali to your multimodal RAG use cases. 👨🏻‍🍳 · GitHub
 164	llm-finetuning	hi			truncated Colab URL, ambiguous (2-4 candidate notebooks)			bookmark	0	https://colab.research.google.com/github/unslothai/notebooks/blob/main/nb/Qwen3_(4B	Google Colab
 165	llm-finetuning	hi						markdown	21	https://lightning.ai/akshay-ddods/studios/fine-tuning-alibaba-s-qwen3-100-local?section=featured	Fine-tuning Alibaba's Qwen3 (100% local) - a Lightning template by avi-chawla
-166	rag-retrieval	hi						markdown	1010	https://huggingface.co/vidore/colqwen2-v0.1	vidore/colqwen2-v0.1 · Hugging Face
+166	document-ai-retrieval	hi						markdown	1010	https://huggingface.co/vidore/colqwen2-v0.1	vidore/colqwen2-v0.1 · Hugging Face
 167	_inbox	hi			dead or blocked page			markdown	15	https://learning.oreilly.com/library/view/pretrain-vision-and/9781804618257/B18942_TOC_ePub.xhtml	Access Denied
-168	rag-retrieval	hi						markdown	1324	https://github.com/merveenoyan/smol-vision/blob/main/Finetune_ColPali.ipynb	smol-vision/Finetune_ColPali.ipynb at main · merveenoyan/smol-vision · GitHub
+168	document-ai-retrieval	hi						markdown	1324	https://github.com/merveenoyan/smol-vision/blob/main/Finetune_ColPali.ipynb	smol-vision/Finetune_ColPali.ipynb at main · merveenoyan/smol-vision · GitHub
 169	_inbox	hi			private Colab drive link, no content			bookmark	0	https://colab.research.google.com/drive/12v2u2IRcmda2fJTNZk88OLF246u_bfSH?usp=sharing	Google Colab
 170	ml-foundations	hi						markdown	131	https://www.byhand.ai/p/computer-vision-lectures	Computer Vision Lectures - by Prof. Tom Yeh - AI by Hand ✍️
 171	llm-finetuning	hi						bookmark	0	https://youtu.be/Ik6nbAjxLk4?si=R0hSkz3N3V6rWRLg	Fine tune Gemma 3, Qwen3, Llama 4, Phi 4 and Mistral Small with Unsloth and Transformers - YouTube
 172	llm-finetuning	lo				yes	Colab -> raw GitHub notebook	bookmark	0	https://raw.githubusercontent.com/merveenoyan/smol-vision/main/Fine_tune_PaliGemma.ipynb	Google Colab
-173	rag-retrieval	hi						markdown	3229	https://github.com/katanaml/sparrow	GitHub - katanaml/sparrow: Structured data extraction, instruction calling and agentic workflows with ML, LLM and Vision LLM · GitHub
+173	document-ai-retrieval	hi						markdown	3229	https://github.com/katanaml/sparrow	GitHub - katanaml/sparrow: Structured data extraction, instruction calling and agentic workflows with ML, LLM and Vision LLM · GitHub
 174	llm-inference-optimization	hi					distributed-training paper, user-assigned to LRIO	markdown	187	https://arxiv.org/abs/2502.08145	[2502.08145] Democratizing AI: Open-source Scalable LLM Training on GPU-based Supercomputers
-175	rag-retrieval	hi						markdown	2539	https://mistral.ai/solutions/document-ai	Document AI and OCR | Mistral AI
+175	document-ai-retrieval	hi						markdown	2539	https://mistral.ai/solutions/document-ai	Document AI and OCR | Mistral AI
 176	transformers	lo						markdown	415	https://huggingface.co/tasks/any-to-any	What is Any-to-Any? - Hugging Face
 177	llm-finetuning	hi			truncated Colab URL, ambiguous (2-4 candidate notebooks)			bookmark	0	https://colab.research.google.com/github/unslothai/notebooks/blob/main/nb/Qwen3_VL_(8B	Google Colab
-178	rag-retrieval	hi						markdown	972	https://allenai.org/blog/olmocr-2	olmOCR 2: Unit test rewards for document OCR | Ai2
-179	rag-retrieval	hi						markdown	635	https://huggingface.co/allenai/olmOCR-2-7B-1025-FP8	allenai/olmOCR-2-7B-1025-FP8 · Hugging Face
-180	rag-retrieval	hi						markdown	520	https://huggingface.co/deepseek-ai/DeepSeek-OCR	deepseek-ai/DeepSeek-OCR · Hugging Face
+178	document-ai-retrieval	hi						markdown	972	https://allenai.org/blog/olmocr-2	olmOCR 2: Unit test rewards for document OCR | Ai2
+179	document-ai-retrieval	hi						markdown	635	https://huggingface.co/allenai/olmOCR-2-7B-1025-FP8	allenai/olmOCR-2-7B-1025-FP8 · Hugging Face
+180	document-ai-retrieval	hi						markdown	520	https://huggingface.co/deepseek-ai/DeepSeek-OCR	deepseek-ai/DeepSeek-OCR · Hugging Face
 181	ai-engineering	hi						markdown	265	https://www.deeplearning.ai/short-courses/improving-accuracy-of-llm-applications/?utm_campaign=lamini-launch&utm_content=304497717&utm_medium=social&utm_source=twitter&hss_channel=tw-992153930095251456	Improving Accuracy of LLM Applications - DeepLearning.AI
 182	llm-finetuning	hi						markdown	4245	https://www.answer.ai/posts/2024-03-06-fsdp-qlora.html	You can now train a 70b language model at home – Answer.AI
 183	llm-finetuning	lo						markdown	2507	https://huggingface.co/blog/visheratin/nomic-data-cleaning	Data exploration and filtering with Nomic Atlas
@@ -255,7 +255,7 @@ idx	subject	confidence	is_duplicate	in_repo	drop_reason	url_rewritten	note	recor
 254	_inbox	hi			dead or blocked page			bookmark	0	https://courses.edx.org/courses/course-v1:MITx+6.008.1x+3T2016/courseware/1__Probability_and_Inference/intro_prob/?activate_block_id=block-v1%3AMITx%2B6.008.1x%2B3T2016%2Btype%40sequential%2Bblock%40intro_prob	Authentication | edX
 255	ml-foundations	lo						markdown	3289	https://towardsdatascience.com/guide-to-file-formats-for-machine-learning-columnar-training-inferencing-and-the-feature-store-2e0c3d18d4f9	Comparing Performance of Big Data File Formats: A Practical Guide | Towards Data Science
 256	llm-finetuning	lo						markdown	262	https://huggingface.co/mrm8488/distilroberta-finetuned-financial-news-sentiment-analysis	mrm8488/distilroberta-finetuned-financial-news-sentiment-analysis · Hugging Face
-257	rag-retrieval	hi						markdown	2044	https://blog.llamaindex.ai/improving-retrieval-performance-by-fine-tuning-cohere-reranker-with-llamaindex-16c0c1f9b33b	Fine-Tune Cohere Reranker for Better RAG | LlamaIndex
+257	document-ai-retrieval	hi						markdown	2044	https://blog.llamaindex.ai/improving-retrieval-performance-by-fine-tuning-cohere-reranker-with-llamaindex-16c0c1f9b33b	Fine-Tune Cohere Reranker for Better RAG | LlamaIndex
 258	_inbox	hi			dead or blocked page			markdown	30	https://towardsdatascience.com/a-guide-on-12-tuning-strategies-for-production-ready-rag-applications-7ca646833439	Page not found | Towards Data Science
 259	ml-foundations	hi						markdown	3045	https://www.quantamagazine.org/artificial-neural-nets-finally-yield-clues-to-how-brains-learn-20210218/	Artificial Neural Nets Finally Yield Clues to How Brains Learn | Quanta Magazine
 260	_inbox	hi			dead or blocked page			markdown	30	https://towardsdatascience.com/backpropagation-for-people-who-are-afraid-of-math-936a2cbebed7	Page not found | Towards Data Science
@@ -384,7 +384,7 @@ idx	subject	confidence	is_duplicate	in_repo	drop_reason	url_rewritten	note	recor
 383	_inbox	hi			job posting, no knowledge content			markdown	610	https://boards.greenhouse.io/anthropic/jobs/4406493008	Jobs at Anthropic
 384	transformers	hi						markdown	1704	https://microsoft.github.io/LLM2CLIP/	LLM2CLIP: Powerful Language Model Unlock Richer Visual Representation
 385	transformers	hi						markdown	59691	https://aman.ai/primers/ai/LLM/	Aman's AI Journal • Primers • Overview of Large Language Models
-386	rag-retrieval	hi	dup					markdown	3326	https://github.com/illuin-tech/colpali#community-projects	GitHub - illuin-tech/colpali: The code used to train and run inference with the ColVision models, e.g. ColPali, ColQwen2, and ColSmol. · GitHub
+386	document-ai-retrieval	hi	dup					markdown	3326	https://github.com/illuin-tech/colpali#community-projects	GitHub - illuin-tech/colpali: The code used to train and run inference with the ColVision models, e.g. ColPali, ColQwen2, and ColSmol. · GitHub
 387	transformers	hi	dup					markdown	454	http://thelmbook.com/	The Hundred-Page Language Models Book by Andriy Burkov
 388	ai-engineering	hi						markdown	385	https://github.com/adithya-s-k/AI-Engineering.academy?tab=readme-ov-file#-why-choose-ai-engineering-academy	GitHub - adithya-s-k/AI-Engineering.academy: Mastering Applied AI, One Concept at a Time · GitHub
 389	llm-finetuning	hi						markdown	3938	https://www.philschmid.de/fine-tune-llms-in-2025	How to fine-tune open LLMs in 2025 with Hugging Face
@@ -396,18 +396,18 @@ idx	subject	confidence	is_duplicate	in_repo	drop_reason	url_rewritten	note	recor
 395	transformers	hi						markdown	203	https://arxiv.org/abs/2501.09223	[2501.09223] Foundations of Large Language Models
 396	llm-finetuning	hi						markdown	2572	https://github.com/bespokelabsai/curator	GitHub - bespokelabsai/curator: Synthetic data curation for post-training and structured data extraction · GitHub
 397	llm-finetuning	hi						markdown	3276	https://www.interconnects.ai/p/deepseek-r1-recipe-for-o1	DeepSeek R1's recipe to replicate o1 and the future of reasoning LMs
-398	rag-retrieval	hi						markdown	27909	https://news.ycombinator.com/item?id=42952605	Ingesting PDFs and why Gemini 2.0 changes everything | Hacker News
+398	document-ai-retrieval	hi						markdown	27909	https://news.ycombinator.com/item?id=42952605	Ingesting PDFs and why Gemini 2.0 changes everything | Hacker News
 399	transformers	hi						markdown	2245	https://www.answer.ai/posts/2025-02-10-modernbert-instruct.html	TIL: Masked Language Models Are Surprisingly Capable Zero-Shot Learners – Answer.AI
 400	llm-finetuning	hi				yes	Colab -> raw GitHub notebook	bookmark	0	https://raw.githubusercontent.com/huggingface/notebooks/main/course/en/chapter13/grpo_finetune.ipynb	GRPO fine-tuning notebook (HF LLM course, ch13)
 401	llm-landscape	hi						markdown	856	https://developers.googleblog.com/en/introducing-gemma3/	Introducing Gemma 3: The Developer Guide - Google Developers Blog
 402	llm-inference-optimization	hi						markdown	2243	https://github.com/neuralmagic/guidellm	GitHub - vllm-project/guidellm: Evaluate and Enhance Your LLM Deployments for Real-World Inference Needs · GitHub
 403	llm-finetuning	hi						markdown	1423	https://unsloth.ai/blog/gemma3	Fine-tune Gemma 3 with Unsloth
 404	llm-finetuning	lo			truncated Colab URL, ambiguous (2-4 candidate notebooks)			bookmark	0	https://colab.research.google.com/github/unslothai/notebooks/blob/main/nb/Llama3.1_(8B	Google Colab
-405	rag-retrieval	hi						markdown	1630	https://huggingface.co/ds4sd/SmolDocling-256M-preview	docling-project/SmolDocling-256M-preview · Hugging Face
+405	document-ai-retrieval	hi						markdown	1630	https://huggingface.co/ds4sd/SmolDocling-256M-preview	docling-project/SmolDocling-256M-preview · Hugging Face
 406	llm-landscape	hi						markdown	561	https://mistral.ai/news/mistral-small-3-1	Mistral Small 3.1 | Mistral AI
 407	llm-landscape	hi						markdown	2254	https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503	mistralai/Mistral-Small-3.1-24B-Instruct-2503 · Hugging Face
 408	llm-landscape	hi						markdown	1559	https://johnowhitaker.dev/essays/future-ai.html	My Thoughts on the Future of “AI” – johnowhitaker.dev
-409	rag-retrieval	hi						markdown	6201	https://huggingface.co/blog/train-reranker	Training and Finetuning Reranker Models with Sentence Transformers
+409	document-ai-retrieval	hi						markdown	6201	https://huggingface.co/blog/train-reranker	Training and Finetuning Reranker Models with Sentence Transformers
 410	llm-finetuning	hi						markdown	166	https://huggingface.co/reasoning-course	reasoning-course (Hugging Face Reasoning Course)
 411	llm-finetuning	hi						markdown	1963	https://www.alphaxiv.org/abs/2501.17161	SFT Memorizes, RL Generalizes: A Comparative Study of Foundation Model Post-training | alphaXiv
 412	llm-finetuning	hi						markdown	2889	https://docs.unsloth.ai/basics/datasets-guide	Datasets Guide | Unsloth Documentation
@@ -421,7 +421,7 @@ idx	subject	confidence	is_duplicate	in_repo	drop_reason	url_rewritten	note	recor
 420	llm-inference-optimization	hi						markdown	514	https://github.com/jax-ml/scaling-book/	"GitHub - jax-ml/scaling-book: Home for ""How To Scale Your Model"", a short blog-style textbook about scaling LLMs on TPUs · GitHub"
 421	ai-engineering	lo						markdown	4750	https://github.com/spiceai/spiceai	GitHub - spiceai/spiceai: Add a real-time analytics node to your operational database. Spice is a portable, accelerated SQL query, search, and LLM-inference engine in Rust for data-grounded AI apps and agents. · GitHub
 422	llm-finetuning	hi						bookmark	0	https://youtu.be/HNpYAz_I4yY?si=dJlVtPt8852lCHfv	Advanced Data Prep and Visualisation Techniques for Fine-tuning LLMs - YouTube
-423	rag-retrieval	lo						markdown	1842	http://deepdive.stanford.edu/quickstart	DeepDive Quick Start - DeepDive
+423	document-ai-retrieval	lo						markdown	1842	http://deepdive.stanford.edu/quickstart	DeepDive Quick Start - DeepDive
 424	ai-engineering	hi						markdown	5593	https://deepwiki.com/	DeepWiki | AI documentation you can talk to, for every repo
 425	ai-engineering	hi						markdown	458	https://www.deeplearning.ai/short-courses/orchestrating-workflows-for-genai-applications/	Orchestrating Workflows for GenAI Applications - DeepLearning.AI
 426	ml-foundations	lo						markdown	530	https://keras.io/keras_hub/	KerasHub
@@ -429,7 +429,7 @@ idx	subject	confidence	is_duplicate	in_repo	drop_reason	url_rewritten	note	recor
 428	llm-landscape	hi						bookmark	0	https://openrouter.ai/z-ai/glm-5	GLM 5 - API Pricing & Benchmarks | OpenRouter
 429	llm-inference-optimization	hi						markdown	1445	https://modal.com/docs/examples/very_large_models	Serve very large language models (DeepSeek V3, Kimi-K2, GLM 4.7/5) | Modal Docs
 430	llm-finetuning	hi						markdown	2283	https://github.com/Goekdeniz-Guelmez/mlx-lm-lora-example-notebooks/blob/main/finetuning/Qwen3_4B_Instruct_32k.ipynb	mlx-lm-lora-example-notebooks/finetuning/Qwen3_4B_Instruct_32k.ipynb at main · Goekdeniz-Guelmez/mlx-lm-lora-example-notebooks · GitHub
-431	rag-retrieval	hi						markdown	3367	https://huggingface.co/datasets/uv-scripts/ocr	uv-scripts/ocr · Datasets at Hugging Face
+431	document-ai-retrieval	hi						markdown	3367	https://huggingface.co/datasets/uv-scripts/ocr	uv-scripts/ocr · Datasets at Hugging Face
 432	llm-finetuning	hi						markdown	950	https://huggingface.co/blog/unsloth-jobs	Train AI models with Unsloth and Hugging Face Jobs for FREE
 433	ml-foundations	lo						markdown	1241	https://complete-pathway.vizuara.ai/	10-Course AI & ML Bundle | Vizuara AI Labs
 434	llm-landscape	lo						markdown	151	https://www.baseten.co/about-us/	Meet the engineers behind Baseten
@@ -439,13 +439,13 @@ idx	subject	confidence	is_duplicate	in_repo	drop_reason	url_rewritten	note	recor
 438	llm-inference-optimization	hi						markdown	324	https://www.baseten.co/inference-engineering/	Inference Engineering | Baseten Books
 439	llm-landscape	hi						markdown	1353	https://mistral.ai/news/leanstral	Leanstral: Open-Source foundation for trustworthy vibe-coding | Mistral AI
 440	llm-finetuning	hi						markdown	1315	https://unsloth.ai/docs/new/studio	Introducing Unsloth Studio | Unsloth Documentation
-441	rag-retrieval	hi						markdown	1564	https://huggingface.co/baidu/Qianfan-OCR	baidu/Qianfan-OCR · Hugging Face
+441	document-ai-retrieval	hi						markdown	1564	https://huggingface.co/baidu/Qianfan-OCR	baidu/Qianfan-OCR · Hugging Face
 442	llm-inference-optimization	hi						markdown	1648	https://unsloth.ai/docs/models/gemma-4	Gemma 4 - How to Run Locally | Unsloth Documentation
 443	llm-landscape	lo					thin product docs; kept as a provider record	markdown	146	https://docs.anarchai.org/	Docs - Mesh LLM
 444	llm-finetuning	hi						markdown	1588	https://unsloth.ai/docs/models/gemma-4/train	Gemma 4 Fine-tuning Guide | Unsloth Documentation
 445	llm-inference-optimization	hi						markdown	1576	https://www.suryasure.com/articles/breaking-down-turboquant	Surya Sure
-446	rag-retrieval	hi						markdown	2160	https://huggingface.co/tiiuae/Falcon-OCR	tiiuae/Falcon-OCR · Hugging Face
-447	rag-retrieval	hi						markdown	1968	https://github.com/tiiuae/Falcon-Perception	GitHub - tiiuae/Falcon-Perception: Inference repo for Falcon-Perception and Falcon-OCR model, early-fusion, natively multimodal, dense Autoregressive Transformer models. · GitHub
+446	document-ai-retrieval	hi						markdown	2160	https://huggingface.co/tiiuae/Falcon-OCR	tiiuae/Falcon-OCR · Hugging Face
+447	document-ai-retrieval	hi						markdown	1968	https://github.com/tiiuae/Falcon-Perception	GitHub - tiiuae/Falcon-Perception: Inference repo for Falcon-Perception and Falcon-OCR model, early-fusion, natively multimodal, dense Autoregressive Transformer models. · GitHub
 448	llm-inference-optimization	hi						markdown	2901	https://machinelearningmastery.com/from-prompt-to-prediction-understanding-prefill-decode-and-the-kv-cache-in-llms/	From Prompt to Prediction: Understanding Prefill, Decode, and the KV Cache in LLMs - MachineLearningMastery.com
 449	llm-finetuning	hi						markdown	2680	https://github.com/mattmireles/gemma-tuner-multimodal	GitHub - mattmireles/gemma-tuner-multimodal: Fine-tune Gemma 4 and 3n with audio, images and text on Apple Silicon, using PyTorch and Metal Performance Shaders. · GitHub
 450	llm-finetuning	hi						markdown	3763	https://github.com/ARahim3/mlx-tune	GitHub - ARahim3/mlx-tune: Fine-tune LLMs on your Mac with Apple Silicon. SFT, DPO, GRPO, Vision, TTS, STT, Embedding, and OCR fine-tuning — natively on MLX. Unsloth-compatible API. · GitHub
@@ -519,7 +519,7 @@ idx	subject	confidence	is_duplicate	in_repo	drop_reason	url_rewritten	note	recor
 518	cuda	hi						markdown	6019	https://szymonozog.github.io/posts/2025-09-21-Penny-worklog-1.html	Writing my own communications library - a worklog of creating Penny part 1 | Szymon Ożóg
 519	llm-finetuning	hi	dup					bookmark	0	https://youtube.com/playlist?list=PLQxDHpeGU14BX9L83JMSoKHsdIjv98BGn&si=MmOccXVt8iAabla9	Complete LLM Finetuning - YouTube
 520	ai-engineering	hi						markdown	914	https://maximerivest.com/posts/is_dspy_worth_it.html	Maxime Rivest – DSPy sounds neat, but is it reliable?
-521	rag-retrieval	hi						markdown	448	https://huggingface.co/Logics-MLLM/Logics-Parsing	Logics-MLLM/Logics-Parsing · Hugging Face
+521	document-ai-retrieval	hi						markdown	448	https://huggingface.co/Logics-MLLM/Logics-Parsing	Logics-MLLM/Logics-Parsing · Hugging Face
 522	transformers	hi						markdown	4191	https://github.com/rasbt/reasoning-from-scratch/blob/main/ch03/01_main-chapter-code/ch03_main.ipynb	reasoning-from-scratch/ch03/01_main-chapter-code/ch03_main.ipynb · rasbt/reasoning-from-scratch
 523	llm-finetuning	hi						markdown	5932	https://thinkingmachines.ai/blog/lora/	LoRA Without Regret - Thinking Machines Lab
 524	_inbox	hi			private Colab drive link, no content			bookmark	0	https://colab.research.google.com/drive/1bT5LWeO1gPL83GKUZsFeFEleHmEDEQRy	Google Colab
@@ -535,9 +535,9 @@ idx	subject	confidence	is_duplicate	in_repo	drop_reason	url_rewritten	note	recor
 534	llm-inference-optimization	hi						markdown	2532	https://bytesofintelligence.substack.com/p/maximizing-gpu-efficiency-the-battle?utm_source=post-banner&utm_medium=web&utm_campaign=posts-open-in-app&triedRedirect=true	Maximizing GPU Efficiency: The Battle of Inference Methods
 535	ai-engineering	hi						markdown	6760	https://magazine.sebastianraschka.com/p/llm-evaluation-4-approaches	Understanding the 4 Main Approaches to LLM Evaluation (From Scratch)
 536	llm-finetuning	lo						PDF document	495	https://github.com/TrelisResearch	Trelis Research · GitHub
-537	rag-retrieval	hi						PDF document	328	https://maven.com/p/935d62/improving-retrievers-by-reranking-and-embedding-fine-tuning?utm_medium=ll_share_link&utm_source=instructor	Improving retrievers by Reranking and embedding fine-tuning
+537	document-ai-retrieval	hi						PDF document	328	https://maven.com/p/935d62/improving-retrievers-by-reranking-and-embedding-fine-tuning?utm_medium=ll_share_link&utm_source=instructor	Improving retrievers by Reranking and embedding fine-tuning
 538	ml-foundations	hi						PDF document	129	https://github.com/matheusfacure/causal-inference-in-python-code	GitHub - matheusfacure/causal-inference-in-python-code: Code for the Book Causal Inference in Python · GitHub
-539	rag-retrieval	hi						PDF document	254	https://qdrant.tech/documentation/	Documentation - Qdrant
+539	document-ai-retrieval	hi						PDF document	254	https://qdrant.tech/documentation/	Documentation - Qdrant
 540	ml-foundations	hi						PDF document	6094	https://distill.pub/2018/differentiable-parameterizations/	Differentiable Image Parameterizations
 541	ml-foundations	hi						PDF document	4508	https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design	SOLID Design Principles Explained: Building Better Software Architecture | DigitalOcean
 542	ml-foundations	hi						PDF document	4508	https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design	SOLID Design Principles Explained: Building Better Software Architecture | DigitalOcean

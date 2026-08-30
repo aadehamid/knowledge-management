@@ -1,4 +1,4 @@
-# RAG & Retrieval subject area - URLs with metadata.
+# Document AI and Retrieval subject area - URLs with metadata.
 # Format: url | title | source_type [| author]
 # source_type: paper, blog, video, course, code, thread, pdf, doc
 # author: optional; used in the output filename for sites with generic URL paths (e.g. YouTube)

@@ -102,8 +102,8 @@ VAULTS = {
             ("6 - Frontier and Open Problems", "where the simple story about optimization stops being true"),
         ],
     },
-    "RAG and Retrieval": {
-        "subject": "rag-retrieval",
+    "Document AI and Retrieval": {
+        "subject": "document-ai-retrieval",
         "domain": "document AI and retrieval",
         "blurb": "getting documents into a form models can use and finding the right passage — "
                  "OCR and document parsing, embeddings, rerankers, late-interaction retrieval, "
