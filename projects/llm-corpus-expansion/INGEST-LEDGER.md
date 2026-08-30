@@ -12,14 +12,14 @@ filename. Recompute with the snippet at the bottom rather than trusting the numb
 | Vault | Raw | Processed | Remaining | Bundle shape |
 |---|---|---|---|---|
 | Transformer from Scratch | 218 | 89 | **129** | concept + curriculum |
-| LLM Fine-tuning | 123 | 12 | **111** | concept + curriculum |
+| LLM Fine-tuning | 123 | 20 | **103** | concept + curriculum |
 | LLM Inference Optimization | 118 | 35 | **83** | concept + curriculum |
 | ML Foundations | 73 | 0 | **73** | concept + curriculum |
 | LLM Landscape | 47 | 0 | **47** | catalog (no curriculum) |
 | AI Engineering | 39 | 0 | **39** | concept + curriculum |
 | Document AI and Retrieval | 32 | 0 | **32** | concept + curriculum |
 | CUDA from Scratch | 17 | 5 | **12** | concept + curriculum |
-| **Total** | **667** | **141** | **526** | |
+| **Total** | **667** | **149** | **518** | |
 
 ## Batch order
 
@@ -32,8 +32,8 @@ missing page.
 |---|---|---|---|
 | 1 | LoRA fundamentals and hyperparameters | 4 | **done** — Codex review, 8 findings applied |
 | 2 | RLHF / DPO / GRPO — preference and RL post-training | 4 | **done** — Codex review, 8 findings applied |
-| 3 | Datasets and synthetic data | ~32 | next |
-| 4 | Unsloth tooling and run guides | ~13 | |
+| 3 | Datasets and synthetic data | 8 | **done** — review deferred to the batch-5 gate |
+| 4 | Unsloth tooling and run guides | ~10 | next |
 | 5 | Frameworks: Axolotl, LlamaFactory, ms-swift, TRL | ~7 | |
 | 6 | Quantized training and memory | ~8 | |
 | 7 | Vision and multimodal fine-tuning | ~15 | |
@@ -76,9 +76,15 @@ metadata, plus a running `Wiki/overview.md`. Most of these need no ingest at all
 4. Trust stamps on every touched page: `generated: { by, at }`.
 5. Learning Path: clear `> SKELETON.`, add `> Populated with N sources: ...`, bump `updated`.
 6. Self-QA: `scripts/test_okf_bundle.py <vault>`, link resolution, wiki_refs round-trip.
-7. **Independent Codex review, report-only.** Apply every HIGH and MEDIUM, re-QA,
-   record the reviewer and finding count in `log.md`, and save the review under
-   `projects/llm-corpus-expansion/reviews/`.
+7. **Independent Codex review, report-only — once every three batches** (user direction,
+   2026-08-30, to cut overhead). Review the whole three-batch span, apply every HIGH and
+   MEDIUM, re-QA, record reviewer and finding counts in `log.md`, and save the review
+   under `projects/llm-corpus-expansion/reviews/`. Batch size is 8-12 sources.
+   **Known exposure:** both reviews run so far returned needs-rework, and both found the
+   same class of error — claims stated more strongly than the source supports. Deferring
+   means up to ~30 sources can carry that before it is caught. Compensate at draft time:
+   keep the source's hedges verbatim, and treat any sentence writable without the source
+   open as suspect.
 8. Update this ledger.
 
 ## Recount snippet
