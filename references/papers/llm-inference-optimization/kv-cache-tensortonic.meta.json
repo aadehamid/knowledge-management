@@ -2,6 +2,6 @@
   "url": "https://www.tensortonic.com/llm-internals/kv-cache",
   "title": "KV Cache in LLMs Explained: How Transformers Make Inference Fast - TensorTonic",
   "source_type": "doc",
-  "fetched_at": "2026-08-29",
-  "converter": "devonthink-readability-capture"
+  "author": "",
+  "fetched_at": "2026-08-29"
 }
