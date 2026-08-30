@@ -1,0 +1,19 @@
+{
+  "bundles": [
+    {"name": "Transformer from Scratch",   "path": "/Users/hamidadesokan/Documents/Knowledge Management/Transformer from Scratch",   "sources": "resources/sources/transformers",               "shape": "concept"},
+    {"name": "CUDA from Scratch",          "path": "/Users/hamidadesokan/Documents/Knowledge Management/CUDA from Scratch",          "sources": "resources/sources/cuda",                       "shape": "concept"},
+    {"name": "LLM Inference Optimization", "path": "/Users/hamidadesokan/Documents/Knowledge Management/LLM Inference Optimization", "sources": "resources/sources/llm-inference-optimization", "shape": "concept"},
+    {"name": "LLM Fine-tuning",            "path": "/Users/hamidadesokan/Documents/Knowledge Management/LLM Fine-tuning",            "sources": "resources/sources/llm-finetuning",             "shape": "concept"},
+    {"name": "ML Foundations",             "path": "/Users/hamidadesokan/Documents/Knowledge Management/ML Foundations",             "sources": "resources/sources/ml-foundations",             "shape": "concept"},
+    {"name": "AI Engineering",             "path": "/Users/hamidadesokan/Documents/Knowledge Management/AI Engineering",             "sources": "resources/sources/ai-engineering",             "shape": "concept"},
+    {"name": "Document AI and Retrieval",  "path": "/Users/hamidadesokan/Documents/Knowledge Management/Document AI and Retrieval",  "sources": "resources/sources/document-ai-retrieval",      "shape": "concept"},
+    {"name": "LLM Landscape",              "path": "/Users/hamidadesokan/Documents/Knowledge Management/LLM Landscape",              "sources": "resources/sources/llm-landscape",              "shape": "catalog"}
+  ],
+  "converted_dir": "references/papers",
+  "validator": "scripts/test_okf_bundle.py",
+  "reviewer": {
+    "kind": "codex",
+    "cmd": "node ~/.claude/plugins/cache/openai-codex/codex/1.0.6/scripts/codex-companion.mjs task --background --effort high"
+  },
+  "ledger": "projects/llm-corpus-expansion/INGEST-LEDGER.md"
+}
