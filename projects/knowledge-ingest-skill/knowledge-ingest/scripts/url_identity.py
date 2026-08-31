@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Diff a Recall knowledge base against the DEVONthink corpus inventory.
+"""Diff an external saved-links source against a corpus inventory.
 
-Answers: what is saved in Recall that never entered the DEVONthink corpus?
+Answers: what is saved in an external tool that never entered this corpus?
 
     # from a file of URLs (one per line, or CSV/JSON containing URLs)
     python3 scripts/compare_recall.py --recall recall_export.json
@@ -23,9 +23,9 @@ import urllib.parse
 from collections import defaultdict
 from pathlib import Path
 
-REPO = Path(__file__).resolve().parent.parent
-DEFAULT_INVENTORY = REPO / "projects/llm-corpus-expansion/data/devonthink-inventory.tsv"
-DEFAULT_ROUTING = REPO / "projects/llm-corpus-expansion/data/routing.tsv"
+# No project defaults live here. The reusable parts of this file are norm() and
+# the alias table; where a project keeps its inventory is the project's business,
+# so those paths are required arguments rather than baked-in guesses.
 
 # Parameters that identify the resource and must be kept.
 MEANINGFUL_QS = {"v", "id", "p", "list", "paper_id", "arxiv"}
@@ -35,7 +35,7 @@ TRACKING = re.compile(r"^(utm_|ref|si|s|feature|fbclid|gclid|mc_|source|usp)")
 
 # Known aliases: the same resource reachable under a different host, path or
 # owner. Verified case by case against both corpora — not guessed. Without
-# these the diff reports dozens of false "only in Recall" hits.
+# these the diff reports dozens of false "only external" hits.
 REPO_RENAMES = {
     "openaccess-ai-collective/axolotl": "axolotl-ai-cloud/axolotl",
     "facebookresearch/llama-recipes": "meta-llama/llama-cookbook",
@@ -179,7 +179,7 @@ def norm(url: str) -> str:
 
 
 def urls_from(path: str) -> list[str]:
-    """Pull URLs out of whatever Recall exported: txt, csv, json, or markdown."""
+    """Pull URLs out of whatever the external tool exported: txt, csv, json, markdown."""
     text = sys.stdin.read() if path == "-" else Path(path).read_text(encoding="utf-8",
                                                                     errors="ignore")
     found: list[str] = []
@@ -212,7 +212,7 @@ def urls_from(path: str) -> list[str]:
 
 
 def load_inventory(path: Path) -> dict[str, dict]:
-    """key -> record, from the DEVONthink inventory TSV."""
+    """key -> record, from the corpus inventory TSV."""
     recs: dict[str, dict] = {}
     with open(path, encoding="utf-8") as f:
         for row in csv.DictReader(f, delimiter="\t"):
@@ -237,18 +237,22 @@ def load_subjects(path: Path) -> dict[str, str]:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--recall", required=True,
-                    help="file of Recall URLs (txt/csv/json/md), or - for stdin")
-    ap.add_argument("--inventory", default=str(DEFAULT_INVENTORY))
-    ap.add_argument("--routing", default=str(DEFAULT_ROUTING))
-    ap.add_argument("--out", help="write the Recall-only URLs here, one per line")
+    ap.add_argument("--external", "--recall", dest="external", required=True,
+                    help="file of URLs from the external source (txt/csv/json/md), or - for stdin")
+    ap.add_argument("--inventory", required=True,
+                    help="TSV of what the corpus already holds; needs a 'url' column")
+    ap.add_argument("--routing", default=None,
+                    help="optional TSV mapping url -> subject, for the overlap breakdown")
+    ap.add_argument("--sources", default=None,
+                    help="directory of <subject>/urls.txt files already queued in the pipeline")
+    ap.add_argument("--out", help="write the external-only URLs here, one per line")
     args = ap.parse_args()
 
     dt = load_inventory(Path(args.inventory))
-    # The corpus is whatever the pipeline already knows about: the DEVONthink
-    # inventory PLUS every resources/sources/*/urls.txt. Comparing against the
-    # inventory alone reports sources as missing when they are already queued.
-    for uf in sorted((REPO / "resources" / "sources").glob("*/urls.txt")):
+    # The corpus is whatever the pipeline already knows about: the
+    # inventory PLUS every <sources>/*/urls.txt when --sources is given. Comparing
+    # against the inventory alone reports sources as missing when already queued.
+    for uf in sorted(Path(args.sources).glob("*/urls.txt")) if args.sources else []:
         subject = uf.parent.name
         for line in uf.read_text(encoding="utf-8").splitlines():
             line = line.strip()
@@ -258,33 +262,33 @@ def main():
             if k:
                 dt.setdefault(k, {"url": line.split("|")[0].strip(),
                                   "title": "", "_from": f"urls.txt:{subject}"})
-    subjects = load_subjects(Path(args.routing))
-    recall_urls = urls_from(args.recall)
-    recall = {}
-    for u in recall_urls:
+    subjects = load_subjects(Path(args.routing)) if args.routing else {}
+    external_urls = urls_from(args.external)
+    external = {}
+    for u in external_urls:
         k = norm(u)
         if k:
-            recall.setdefault(k, u)
+            external.setdefault(k, u)
 
-    only_recall = sorted(set(recall) - set(dt))
-    only_dt = sorted(set(dt) - set(recall))
-    both = sorted(set(dt) & set(recall))
+    only_external = sorted(set(external) - set(dt))
+    only_dt = sorted(set(dt) - set(external))
+    both = sorted(set(dt) & set(external))
 
-    print(f"Recall URLs read      : {len(recall_urls)} ({len(recall)} unique resources)")
-    print(f"DEVONthink records    : {len(dt)} unique resources")
+    print(f"external URLs read : {len(external_urls)} ({len(external)} unique resources)")
+    print(f"corpus resources   : {len(dt)} unique resources")
     print()
-    print(f"  in BOTH             : {len(both)}")
-    print(f"  in RECALL only      : {len(only_recall)}   <- not captured in DEVONthink")
-    print(f"  in DEVONthink only  : {len(only_dt)}")
+    print(f"  in BOTH           : {len(both)}")
+    print(f"  external only     : {len(only_external)}   <- not in the corpus")
+    print(f"  corpus only       : {len(only_dt)}")
     print()
 
-    if only_recall:
+    if only_external:
         by_host = defaultdict(list)
-        for k in only_recall:
-            by_host[urllib.parse.urlparse(recall[k]).netloc.lower().removeprefix("www.")
-                    or "?"].append(recall[k])
+        for k in only_external:
+            by_host[urllib.parse.urlparse(external[k]).netloc.lower().removeprefix("www.")
+                    or "?"].append(external[k])
         print("=" * 72)
-        print("IN RECALL ONLY — candidates to add to the pipeline")
+        print("EXTERNAL ONLY — candidates to add to the pipeline")
         print("=" * 72)
         for host, urls in sorted(by_host.items(), key=lambda kv: -len(kv[1])):
             print(f"\n  {host}  ({len(urls)})")
@@ -294,7 +298,7 @@ def main():
     if both and subjects:
         print()
         print("=" * 72)
-        print("OVERLAP by the subject DEVONthink routed it to")
+        print("OVERLAP by the subject the corpus routed it to")
         print("=" * 72)
         counts = defaultdict(int)
         for k in both:
@@ -303,9 +307,9 @@ def main():
             print(f"  {s:<32}{n:>5}")
 
     if args.out:
-        Path(args.out).write_text("\n".join(recall[k] for k in only_recall) + "\n",
+        Path(args.out).write_text("\n".join(external[k] for k in only_external) + "\n",
                                   encoding="utf-8")
-        print(f"\nRecall-only URLs written to {args.out}")
+        print(f"\nExternal-only URLs written to {args.out}")
         print("These are ready to append to a resources/sources/<subject>/urls.txt "
               "after routing.")
 
